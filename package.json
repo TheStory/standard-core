@@ -1,0 +1,107 @@
+{
+  "name": "standard-core",
+  "version": "0.1.0",
+  "main": "./dist/exports.js",
+  "module": "./dist/exports.js",
+  "types": "./dist/exports.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/exports.js",
+      "require": "./dist/exports.js",
+      "types": "./dist/exports.d.ts"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/library/ThemeInheritor/index.js",
+      "require": "./dist/library/ThemeInheritor/index.js",
+      "types": "./dist/library/ThemeInheritor/index.d.ts"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/library/NextIntlClientInheritor/index.js",
+      "require": "./dist/library/NextIntlClientInheritor/index.js",
+      "types": "./dist/library/ThemeInheritor/index.d.ts"
+    },
+    "./atoms/Avatar": {
+      "import": "./dist/library/atoms/Avatar/index.js",
+      "require": "./dist/library/atoms/Avatar/index.js",
+      "types": "./dist/library/atoms/Avatar/index.d.ts"
+    },
+    "./atoms/Button": {
+      "import": "./dist/library/atoms/Button/index.js",
+      "require": "./dist/library/atoms/Button/index.js",
+      "types": "./dist/library/atoms/Button/index.d.ts"
+    },
+    "./atoms/Link": {
+      "import": "./dist/library/atoms/Link/index.js",
+      "require": "./dist/library/atoms/Link/index.js",
+      "types": "./dist/library/atoms/Link/index.d.ts"
+    },
+    "./atoms/SvgIcon": {
+      "import": "./dist/library/atoms/SvgIcon/index.js",
+      "require": "./dist/library/atoms/SvgIcon/index.js",
+      "types": "./dist/library/atoms/SvgIcon/index.d.ts"
+    },
+    "./atoms/CroppedImage": {
+      "import": "./dist/library/atoms/CroppedImage/index.js",
+      "require": "./dist/library/atoms/CroppedImage/index.js",
+      "types": "./dist/library/atoms/CroppedImage/index.d.ts"
+    },
+    "./atoms/CmsCroppedImage": {
+      "import": "./dist/library/atoms/CmsCroppedImage/index.js",
+      "require": "./dist/library/atoms/CmsCroppedImage/index.js",
+      "types": "./dist/library/atoms/CmsCroppedImage/index.d.ts"
+    },
+    "./utils/cmsMediaUrl": {
+      "import": "./dist/library/utils/cmsMediaUrl.js",
+      "require": "./dist/library/utils/cmsMediaUrl.js",
+      "types": "./dist/library/utils/exports.d.ts"
+    },
+    "./utils/svgFontSizeValues": {
+      "import": "./dist/library/utils/svgFontSizeValues.js",
+      "require": "./dist/library/utils/svgFontSizeValues.js",
+      "types": "./dist/library/utils/exports.d.ts"
+    },
+    "./config/navigation": {
+      "import": "./dist/library/config/navigation.js",
+      "require": "./dist/library/config/navigation.js",
+      "types": "./dist/library/config/index.d.ts"
+    },
+    "./config/i18n": {
+      "import": "./dist/library/config/i18n.js",
+      "require": "./dist/library/config/i18n.js",
+      "types": "./dist/library/config/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "lint": "next lint",
+    "start": "next start",
+    "prepublishOnly": "yarn build"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@imgproxy/imgproxy-node": "^1.0.6",
+    "@mui/material": "^6.3.1",
+    "@strapi/strapi": "^4.20.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "next": "14.2.5",
+    "next-intl": "^3.10.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "rimraf": "^6.0.1",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@4.6.0"
+}

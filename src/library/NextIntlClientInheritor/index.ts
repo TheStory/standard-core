@@ -1,0 +1,1 @@
+export { default as NextIntlClientInheritor } from './NextIntlClientInheritor';
