@@ -219,7 +219,8 @@
     "react-hook-form": "^7.54.2",
     "rimraf": "^6.0.1",
     "storybook": "8.6.0-alpha.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "schema-dts": "^1.1.2"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
 }
