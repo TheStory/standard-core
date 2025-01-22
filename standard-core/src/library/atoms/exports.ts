@@ -6,3 +6,4 @@ export * from "./Avatar";
 export * from "./Accordion";
 export * from "./BackToTopButton";
 export * from "./Form";
+export * from "./Map";
