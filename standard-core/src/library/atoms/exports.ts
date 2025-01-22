@@ -4,3 +4,4 @@ export * from "./CroppedImage";
 export * from "./CmsCroppedImage";
 export * from "./Avatar";
 export * from "./Accordion";
+export * from "./BackToTopButton";
