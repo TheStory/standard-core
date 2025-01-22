@@ -8,3 +8,6 @@ export * from "./BackToTopButton";
 export * from "./Form";
 export * from "./Map";
 export * from "./CopyToClipboard";
+export * from "./Divider";
+export * from "./Breadcrumbs";
+export * from "./Pagination";
