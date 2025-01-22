@@ -1,1 +1,1 @@
-export { default as CmsCroppedImage } from './CmsCroppedImage';
+export { default as CmsCroppedImage } from "./CmsCroppedImage";

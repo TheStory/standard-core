@@ -1,5 +1,4 @@
 import type { SxProps } from "@mui/material";
-
 import { CroppedImage } from "standard-core/atoms/CroppedImage";
 import type { ImageResizeOption } from "standard-core/types";
 import { cmsMediaUrl } from "standard-core/utils/cmsMediaUrl";
@@ -26,7 +25,7 @@ const CmsCroppedImage = ({
   let data;
 
   if (image.hasOwnProperty("data")) {
-    data = (image)?.data;
+    data = image?.data;
   } else {
     data = image;
   }

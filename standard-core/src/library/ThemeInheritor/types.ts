@@ -1,8 +1,9 @@
-import type { Theme} from "@mui/material/styles";
+import type { Theme } from "@mui/material/styles";
+import type { ReactNode } from "react";
 
-export interface ThemeInheritorProps  {
+export interface ThemeInheritorProps {
   theme: Theme;
-  children: React.ReactNode
+  children: ReactNode;
 }
 
 export default ThemeInheritorProps;

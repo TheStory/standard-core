@@ -3,7 +3,7 @@
 import type { ButtonOwnProps } from "@mui/material";
 import { SxProps, Theme } from "@mui/material";
 import MuiButton from "@mui/material/Button";
-import type {ElementType, ReactNode} from "react";
+import type { ElementType, ReactNode } from "react";
 import { LocalizedLink } from "standard-core/config/navigation";
 
 const Button = ({

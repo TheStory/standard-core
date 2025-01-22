@@ -1,7 +1,5 @@
-import { SvgIconOwnProps, SxProps, Theme } from "@mui/material";
+import type { SvgIconOwnProps, SxProps, Theme } from "@mui/material";
 import Box from "@mui/material/Box";
-import React from "react";
-
 import { svgFontSizeValues } from "standard-core/utils/svgFontSizeValues";
 
 interface SvgIconProps {
