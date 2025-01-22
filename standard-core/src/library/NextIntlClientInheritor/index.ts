@@ -1,1 +1,1 @@
-export { default as NextIntlClientInheritor } from './NextIntlClientInheritor';
+export { default as NextIntlClientInheritor } from "./NextIntlClientInheritor";

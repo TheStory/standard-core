@@ -1,6 +1,5 @@
 "use client";
 
-import { SxProps } from "@mui/system";
 import MuiLink, { LinkProps as MuiLinkProps } from "@mui/material/Link";
 import {
   LocalizedLink,

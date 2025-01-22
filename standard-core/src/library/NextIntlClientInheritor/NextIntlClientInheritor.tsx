@@ -3,17 +3,16 @@ import type { PropsWithChildren } from "react";
 import type { Timezone } from "use-intl";
 
 const NextIntlClientInheritor = async ({
-    locale,
-    messages,
-    timeZone,
-    children,
+  locale,
+  messages,
+  timeZone,
+  children,
 }: PropsWithChildren<{
-    locale: string;
-    messages: any
-    timeZone: Timezone;
+  locale: string;
+  messages: any;
+  timeZone: Timezone;
 }>) => {
-
-    return (
+  return (
     <NextIntlClientProvider
       locale={locale}
       messages={messages}
@@ -21,8 +20,7 @@ const NextIntlClientInheritor = async ({
     >
       {children}
     </NextIntlClientProvider>
-    );
+  );
 };
-
 
 export default NextIntlClientInheritor;

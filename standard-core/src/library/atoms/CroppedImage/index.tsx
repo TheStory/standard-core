@@ -1,1 +1,1 @@
-export { default as CroppedImage } from './CroppedImage';
+export { default as CroppedImage } from "./CroppedImage";

@@ -1,1 +1,1 @@
-export { default as ThemeInheritor } from './ThemeInheritor';
+export { default as ThemeInheritor } from "./ThemeInheritor";

@@ -12,6 +12,50 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
+    },
+    "./atoms/Accordion/Accordion": {
+      "import": "./dist/atoms/Accordion/Accordion.js",
+      "require": "./dist/atoms/Accordion/Accordion.js"
+    },
+    "./atoms/Accordion/AccordionCtaButton": {
+      "import": "./dist/atoms/Accordion/AccordionCtaButton.js",
+      "require": "./dist/atoms/Accordion/AccordionCtaButton.js"
+    },
+    "./atoms/Accordion/AccordionIcon": {
+      "import": "./dist/atoms/Accordion/AccordionIcon.js",
+      "require": "./dist/atoms/Accordion/AccordionIcon.js"
+    },
+    "./atoms/Accordion/AccordionList": {
+      "import": "./dist/atoms/Accordion/AccordionList.js",
+      "require": "./dist/atoms/Accordion/AccordionList.js"
+    },
+    "./atoms/Accordion": {
+      "import": "./dist/atoms/Accordion/index.js",
+      "require": "./dist/atoms/Accordion/index.js"
+    },
+    "./atoms/Accordion/types": {
+      "import": "./dist/atoms/Accordion/types.js",
+      "require": "./dist/atoms/Accordion/types.js"
+    },
     "./atoms/Avatar/Avatar": {
       "import": "./dist/atoms/Avatar/Avatar.js",
       "require": "./dist/atoms/Avatar/Avatar.js"
@@ -23,6 +67,14 @@
     "./atoms/Avatar/types": {
       "import": "./dist/atoms/Avatar/types.js",
       "require": "./dist/atoms/Avatar/types.js"
+    },
+    "./atoms/BackToTopButton/BackToTopButton": {
+      "import": "./dist/atoms/BackToTopButton/BackToTopButton.js",
+      "require": "./dist/atoms/BackToTopButton/BackToTopButton.js"
+    },
+    "./atoms/BackToTopButton": {
+      "import": "./dist/atoms/BackToTopButton/index.js",
+      "require": "./dist/atoms/BackToTopButton/index.js"
     },
     "./atoms/Button/Button": {
       "import": "./dist/atoms/Button/Button.js",
@@ -48,25 +100,37 @@
       "import": "./dist/atoms/CroppedImage/index.js",
       "require": "./dist/atoms/CroppedImage/index.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
+    "./atoms/Form/Checkbox": {
+      "import": "./dist/atoms/Form/Checkbox.js",
+      "require": "./dist/atoms/Form/Checkbox.js"
     },
-    "./atoms/Link": {
-      "import": "./dist/atoms/Link/index.js",
-      "require": "./dist/atoms/Link/index.js"
+    "./atoms/Form/TextField": {
+      "import": "./dist/atoms/Form/TextField.js",
+      "require": "./dist/atoms/Form/TextField.js"
+    },
+    "./atoms/Form": {
+      "import": "./dist/atoms/Form/index.js",
+      "require": "./dist/atoms/Form/index.js"
     },
     "./atoms/Link/Link": {
       "import": "./dist/atoms/Link/Link.js",
       "require": "./dist/atoms/Link/Link.js"
     },
-    "./atoms/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/index.js",
-      "require": "./dist/atoms/SvgIcon/index.js"
+    "./atoms/Link": {
+      "import": "./dist/atoms/Link/index.js",
+      "require": "./dist/atoms/Link/index.js"
     },
     "./atoms/SvgIcon/SvgIcon": {
       "import": "./dist/atoms/SvgIcon/SvgIcon.js",
       "require": "./dist/atoms/SvgIcon/SvgIcon.js"
+    },
+    "./atoms/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/index.js",
+      "require": "./dist/atoms/SvgIcon/index.js"
+    },
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
     },
     "./config/i18n": {
       "import": "./dist/config/i18n.js",
@@ -83,26 +147,6 @@
     "./.": {
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/index.js",
-      "require": "./dist/NextIntlClientInheritor/index.js"
-    },
-    "./NextIntlClientInheritor/NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
-      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
-    },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
-    },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
-    },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
@@ -147,6 +191,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.4",
     "@imgproxy/imgproxy-node": "^1.0.6",
+    "@mui/icons-material": "^6.4.1",
     "@mui/material": "^6.3.1",
     "@storybook/addon-essentials": "8.6.0-alpha.1",
     "@storybook/addon-interactions": "8.6.0-alpha.1",
@@ -165,17 +210,16 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-storybook": "^0.11.2",
+    "motion": "^12.0.0",
     "next": "14.2.5",
     "next-intl": "^3.10.0",
     "prettier": "^3.4.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.54.2",
     "rimraf": "^6.0.1",
     "storybook": "8.6.0-alpha.1",
     "typescript": "^5"
   },
-  "packageManager": "yarn@4.6.0",
-  "dependencies": {
-    "@mui/icons-material": "^6.4.1"
-  }
+  "packageManager": "yarn@4.6.0"
 }
