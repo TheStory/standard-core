@@ -5,3 +5,4 @@ export * from "./CmsCroppedImage";
 export * from "./Avatar";
 export * from "./Accordion";
 export * from "./BackToTopButton";
+export * from "./Form";
