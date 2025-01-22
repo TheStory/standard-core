@@ -12,26 +12,6 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
-    "./NextIntlClientInheritor/NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
-      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/index.js",
-      "require": "./dist/NextIntlClientInheritor/index.js"
-    },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
-    },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
-    },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
-    },
     "./atoms/Avatar/Avatar": {
       "import": "./dist/atoms/Avatar/Avatar.js",
       "require": "./dist/atoms/Avatar/Avatar.js"
@@ -68,25 +48,25 @@
       "import": "./dist/atoms/CroppedImage/index.js",
       "require": "./dist/atoms/CroppedImage/index.js"
     },
-    "./atoms/Link/Link": {
-      "import": "./dist/atoms/Link/Link.js",
-      "require": "./dist/atoms/Link/Link.js"
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
     },
     "./atoms/Link": {
       "import": "./dist/atoms/Link/index.js",
       "require": "./dist/atoms/Link/index.js"
     },
-    "./atoms/SvgIcon/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
-      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
+    "./atoms/Link/Link": {
+      "import": "./dist/atoms/Link/Link.js",
+      "require": "./dist/atoms/Link/Link.js"
     },
     "./atoms/SvgIcon": {
       "import": "./dist/atoms/SvgIcon/index.js",
       "require": "./dist/atoms/SvgIcon/index.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
+    "./atoms/SvgIcon/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
+      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
     },
     "./config/i18n": {
       "import": "./dist/config/i18n.js",
@@ -103,6 +83,26 @@
     "./.": {
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
@@ -134,7 +134,9 @@
     "build": "rimraf dist && tsc -p tsconfig.build.json && node scripts/update-exports.js",
     "lint": "next lint",
     "start": "next start",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
@@ -143,25 +145,34 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "3.2.4",
     "@imgproxy/imgproxy-node": "^1.0.6",
     "@mui/material": "^6.3.1",
+    "@storybook/addon-essentials": "8.6.0-alpha.1",
+    "@storybook/addon-interactions": "8.6.0-alpha.1",
+    "@storybook/addon-onboarding": "8.6.0-alpha.1",
+    "@storybook/blocks": "8.6.0-alpha.1",
+    "@storybook/nextjs": "8.6.0-alpha.1",
+    "@storybook/react": "8.6.0-alpha.1",
+    "@storybook/test": "8.6.0-alpha.1",
     "@strapi/strapi": "^4.20.4",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "next": "14.2.5",
-    "next-intl": "^3.10.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "rimraf": "^6.0.1",
-    "typescript": "^5",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-storybook": "^0.11.2",
-    "prettier": "^3.4.2"
+    "next": "14.2.5",
+    "next-intl": "^3.10.0",
+    "prettier": "^3.4.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "rimraf": "^6.0.1",
+    "storybook": "8.6.0-alpha.1",
+    "typescript": "^5"
   },
   "packageManager": "yarn@4.6.0"
 }
