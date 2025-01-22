@@ -17899,6 +17899,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"schema-dts@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "schema-dts@npm:1.1.2"
+  peerDependencies:
+    typescript: ">=4.1.0"
+  checksum: 10c0/bcca8719b1bb1cd71ba2b01a5126b3579e917a2f193e10fcffe020fa42fef911776ed9d2197c9f376780e703994b3ab854db3f962c47064f7282f41eff0f1d24
+  languageName: node
+  linkType: hard
+
 "schema-utils@npm:^3.0.0, schema-utils@npm:^3.1.1, schema-utils@npm:^3.2.0":
   version: 3.3.0
   resolution: "schema-utils@npm:3.3.0"
@@ -18674,6 +18683,7 @@ __metadata:
     react-dom: "npm:^18"
     react-hook-form: "npm:^7.54.2"
     rimraf: "npm:^6.0.1"
+    schema-dts: "npm:^1.1.2"
     storybook: "npm:8.6.0-alpha.1"
     typescript: "npm:^5"
   peerDependencies:
