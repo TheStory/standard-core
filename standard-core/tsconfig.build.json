@@ -21,8 +21,6 @@
       "standard-core/*": ["*"]
     }
   },
-  "include": ["standard-core/src/**/*",
-    "next-env.d.ts",
-    "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["./src/library/**/*"],
   "exclude": ["node_modules"]
 }
