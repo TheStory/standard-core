@@ -76,7 +76,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && node scripts/update-exports.js",
     "lint": "next lint",
     "start": "next start",
     "prepublishOnly": "yarn build"
