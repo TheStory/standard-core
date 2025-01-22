@@ -3,13 +3,13 @@
 import type { ButtonOwnProps } from "@mui/material";
 import { SxProps, Theme } from "@mui/material";
 import MuiButton from "@mui/material/Button";
-import type { ReactNode } from "react";
+import type {ElementType, ReactNode} from "react";
 import { LocalizedLink } from "standard-core/config/navigation";
 
 const Button = ({
   href,
   target,
-  label,
+  children,
   variant = "contained",
   color = "primary",
   size = "large",
@@ -20,13 +20,13 @@ const Button = ({
 }: {
   href?: string;
   target?: string;
-  label?: string | null | ReactNode;
+  children?: ReactNode;
   variant?: ButtonOwnProps["variant"];
   color?: ButtonOwnProps["color"];
   size?: ButtonOwnProps["size"];
   disabled?: boolean;
   onClick?: () => void;
-  component?: React.ElementType;
+  component?: ElementType;
   sx?: SxProps<Theme>;
 }) => (
   <MuiButton
@@ -40,7 +40,7 @@ const Button = ({
     onClick={onClick}
     sx={sx}
   >
-    {label}
+    {children}
   </MuiButton>
 );
 
