@@ -10,68 +10,123 @@
   "exports": {
     ".": {
       "import": "./dist/exports.js",
-      "require": "./dist/exports.js",
-      "types": "./dist/exports.d.ts"
+      "require": "./dist/exports.js"
     },
-    "./ThemeInheritor": {
-      "import": "./dist/library/ThemeInheritor/index.js",
-      "require": "./dist/library/ThemeInheritor/index.js",
-      "types": "./dist/library/ThemeInheritor/index.d.ts"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/library/NextIntlClientInheritor/index.js",
-      "require": "./dist/library/NextIntlClientInheritor/index.js",
-      "types": "./dist/library/ThemeInheritor/index.d.ts"
+    "./atoms/Avatar/Avatar": {
+      "import": "./dist/atoms/Avatar/Avatar.js",
+      "require": "./dist/atoms/Avatar/Avatar.js"
     },
     "./atoms/Avatar": {
-      "import": "./dist/library/atoms/Avatar/index.js",
-      "require": "./dist/library/atoms/Avatar/index.js",
-      "types": "./dist/library/atoms/Avatar/index.d.ts"
+      "import": "./dist/atoms/Avatar/index.js",
+      "require": "./dist/atoms/Avatar/index.js"
+    },
+    "./atoms/Avatar/types": {
+      "import": "./dist/atoms/Avatar/types.js",
+      "require": "./dist/atoms/Avatar/types.js"
+    },
+    "./atoms/Button/Button": {
+      "import": "./dist/atoms/Button/Button.js",
+      "require": "./dist/atoms/Button/Button.js"
     },
     "./atoms/Button": {
-      "import": "./dist/library/atoms/Button/index.js",
-      "require": "./dist/library/atoms/Button/index.js",
-      "types": "./dist/library/atoms/Button/index.d.ts"
+      "import": "./dist/atoms/Button/index.js",
+      "require": "./dist/atoms/Button/index.js"
     },
-    "./atoms/Link": {
-      "import": "./dist/library/atoms/Link/index.js",
-      "require": "./dist/library/atoms/Link/index.js",
-      "types": "./dist/library/atoms/Link/index.d.ts"
-    },
-    "./atoms/SvgIcon": {
-      "import": "./dist/library/atoms/SvgIcon/index.js",
-      "require": "./dist/library/atoms/SvgIcon/index.js",
-      "types": "./dist/library/atoms/SvgIcon/index.d.ts"
-    },
-    "./atoms/CroppedImage": {
-      "import": "./dist/library/atoms/CroppedImage/index.js",
-      "require": "./dist/library/atoms/CroppedImage/index.js",
-      "types": "./dist/library/atoms/CroppedImage/index.d.ts"
+    "./atoms/CmsCroppedImage/CmsCroppedImage": {
+      "import": "./dist/atoms/CmsCroppedImage/CmsCroppedImage.js",
+      "require": "./dist/atoms/CmsCroppedImage/CmsCroppedImage.js"
     },
     "./atoms/CmsCroppedImage": {
-      "import": "./dist/library/atoms/CmsCroppedImage/index.js",
-      "require": "./dist/library/atoms/CmsCroppedImage/index.js",
-      "types": "./dist/library/atoms/CmsCroppedImage/index.d.ts"
+      "import": "./dist/atoms/CmsCroppedImage/index.js",
+      "require": "./dist/atoms/CmsCroppedImage/index.js"
     },
-    "./utils/cmsMediaUrl": {
-      "import": "./dist/library/utils/cmsMediaUrl.js",
-      "require": "./dist/library/utils/cmsMediaUrl.js",
-      "types": "./dist/library/utils/exports.d.ts"
+    "./atoms/CroppedImage/CroppedImage": {
+      "import": "./dist/atoms/CroppedImage/CroppedImage.js",
+      "require": "./dist/atoms/CroppedImage/CroppedImage.js"
     },
-    "./utils/svgFontSizeValues": {
-      "import": "./dist/library/utils/svgFontSizeValues.js",
-      "require": "./dist/library/utils/svgFontSizeValues.js",
-      "types": "./dist/library/utils/exports.d.ts"
+    "./atoms/CroppedImage": {
+      "import": "./dist/atoms/CroppedImage/index.js",
+      "require": "./dist/atoms/CroppedImage/index.js"
     },
-    "./config/navigation": {
-      "import": "./dist/library/config/navigation.js",
-      "require": "./dist/library/config/navigation.js",
-      "types": "./dist/library/config/index.d.ts"
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
+    },
+    "./atoms/Link": {
+      "import": "./dist/atoms/Link/index.js",
+      "require": "./dist/atoms/Link/index.js"
+    },
+    "./atoms/Link/Link": {
+      "import": "./dist/atoms/Link/Link.js",
+      "require": "./dist/atoms/Link/Link.js"
+    },
+    "./atoms/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/index.js",
+      "require": "./dist/atoms/SvgIcon/index.js"
+    },
+    "./atoms/SvgIcon/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
+      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
     },
     "./config/i18n": {
-      "import": "./dist/library/config/i18n.js",
-      "require": "./dist/library/config/i18n.js",
-      "types": "./dist/library/config/index.d.ts"
+      "import": "./dist/config/i18n.js",
+      "require": "./dist/config/i18n.js"
+    },
+    "./config": {
+      "import": "./dist/config/index.js",
+      "require": "./dist/config/index.js"
+    },
+    "./config/navigation": {
+      "import": "./dist/config/navigation.js",
+      "require": "./dist/config/navigation.js"
+    },
+    "./.": {
+      "import": "./dist/exports.js",
+      "require": "./dist/exports.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
+    },
+    "./types": {
+      "import": "./dist/types/index.js",
+      "require": "./dist/types/index.js"
+    },
+    "./types/strapi": {
+      "import": "./dist/types/strapi.js",
+      "require": "./dist/types/strapi.js"
+    },
+    "./types/strapiTypes": {
+      "import": "./dist/types/strapiTypes/index.js",
+      "require": "./dist/types/strapiTypes/index.js"
+    },
+    "./utils/cmsMediaUrl": {
+      "import": "./dist/utils/cmsMediaUrl.js",
+      "require": "./dist/utils/cmsMediaUrl.js"
+    },
+    "./utils": {
+      "import": "./dist/utils/exports.js",
+      "require": "./dist/utils/exports.js"
+    },
+    "./utils/svgFontSizeValues": {
+      "import": "./dist/utils/svgFontSizeValues.js",
+      "require": "./dist/utils/svgFontSizeValues.js"
     }
   },
   "scripts": {
@@ -79,7 +134,7 @@
     "build": "rimraf dist && tsc -p tsconfig.build.json && node scripts/update-exports.js",
     "lint": "next lint",
     "start": "next start",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
