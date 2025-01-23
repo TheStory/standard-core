@@ -1,6 +1,5 @@
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import { Button } from "standard-core/atoms/Button";
 
 const meta: Meta<typeof Button> = {
