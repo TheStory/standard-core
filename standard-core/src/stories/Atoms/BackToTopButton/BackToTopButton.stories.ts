@@ -1,0 +1,26 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { BackToTopButton } from "standard-core/atoms/BackToTopButton";
+
+const meta: Meta<typeof BackToTopButton> = {
+  title: "Atoms/BackToTopButton",
+  component: BackToTopButton,
+  tags: ["autodocs"],
+  argTypes: {
+    sx: { control: "object" },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    sx: {},
+  },
+};
+
+export const CustomStyle: Story = {
+  args: {
+    sx: { backgroundColor: "red" },
+  },
+};
