@@ -15,25 +15,13 @@ const messages = {
 
 
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#1976d2",
-    },
-    secondary: {
-      main: "#dc004e",
-    },
-  },
-  typography: {
-    fontFamily: "Roboto, Arial, sans-serif",
-  },
-});
+import { theStoryTheme } from "../src/theme";
 
 
 export const withMuiTheme = (Story: StoryFn) => {
   return (
     <NextIntlClientProvider locale={"en"} messages={messages}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theStoryTheme}>
         <CssBaseline />
         <Story />
       </ThemeProvider>

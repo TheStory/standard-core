@@ -12,26 +12,6 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
-    "./NextIntlClientInheritor/NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
-      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/index.js",
-      "require": "./dist/NextIntlClientInheritor/index.js"
-    },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
-    },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
-    },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
-    },
     "./atoms/Accordion/Accordion": {
       "import": "./dist/atoms/Accordion/Accordion.js",
       "require": "./dist/atoms/Accordion/Accordion.js"
@@ -76,6 +56,14 @@
       "import": "./dist/atoms/BackToTopButton/index.js",
       "require": "./dist/atoms/BackToTopButton/index.js"
     },
+    "./atoms/Breadcrumbs/Breadcrumbs": {
+      "import": "./dist/atoms/Breadcrumbs/Breadcrumbs.js",
+      "require": "./dist/atoms/Breadcrumbs/Breadcrumbs.js"
+    },
+    "./atoms/Breadcrumbs": {
+      "import": "./dist/atoms/Breadcrumbs/index.js",
+      "require": "./dist/atoms/Breadcrumbs/index.js"
+    },
     "./atoms/Button/Button": {
       "import": "./dist/atoms/Button/Button.js",
       "require": "./dist/atoms/Button/Button.js"
@@ -92,6 +80,18 @@
       "import": "./dist/atoms/CmsCroppedImage/index.js",
       "require": "./dist/atoms/CmsCroppedImage/index.js"
     },
+    "./atoms/CopyToClipboard/CopyToClipboard": {
+      "import": "./dist/atoms/CopyToClipboard/CopyToClipboard.js",
+      "require": "./dist/atoms/CopyToClipboard/CopyToClipboard.js"
+    },
+    "./atoms/CopyToClipboard": {
+      "import": "./dist/atoms/CopyToClipboard/index.js",
+      "require": "./dist/atoms/CopyToClipboard/index.js"
+    },
+    "./atoms/CopyToClipboard/useCopyToClipboard": {
+      "import": "./dist/atoms/CopyToClipboard/useCopyToClipboard.js",
+      "require": "./dist/atoms/CopyToClipboard/useCopyToClipboard.js"
+    },
     "./atoms/CroppedImage/CroppedImage": {
       "import": "./dist/atoms/CroppedImage/CroppedImage.js",
       "require": "./dist/atoms/CroppedImage/CroppedImage.js"
@@ -100,37 +100,77 @@
       "import": "./dist/atoms/CroppedImage/index.js",
       "require": "./dist/atoms/CroppedImage/index.js"
     },
+    "./atoms/Divider/Divider": {
+      "import": "./dist/atoms/Divider/Divider.js",
+      "require": "./dist/atoms/Divider/Divider.js"
+    },
+    "./atoms/Divider": {
+      "import": "./dist/atoms/Divider/index.js",
+      "require": "./dist/atoms/Divider/index.js"
+    },
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
+    },
     "./atoms/Form/Checkbox": {
       "import": "./dist/atoms/Form/Checkbox.js",
       "require": "./dist/atoms/Form/Checkbox.js"
-    },
-    "./atoms/Form/TextField": {
-      "import": "./dist/atoms/Form/TextField.js",
-      "require": "./dist/atoms/Form/TextField.js"
     },
     "./atoms/Form": {
       "import": "./dist/atoms/Form/index.js",
       "require": "./dist/atoms/Form/index.js"
     },
-    "./atoms/Link/Link": {
-      "import": "./dist/atoms/Link/Link.js",
-      "require": "./dist/atoms/Link/Link.js"
+    "./atoms/Form/TextField": {
+      "import": "./dist/atoms/Form/TextField.js",
+      "require": "./dist/atoms/Form/TextField.js"
+    },
+    "./atoms/FormatedData/FormatedData": {
+      "import": "./dist/atoms/FormatedData/FormatedData.js",
+      "require": "./dist/atoms/FormatedData/FormatedData.js"
+    },
+    "./atoms/FormatedData": {
+      "import": "./dist/atoms/FormatedData/index.js",
+      "require": "./dist/atoms/FormatedData/index.js"
     },
     "./atoms/Link": {
       "import": "./dist/atoms/Link/index.js",
       "require": "./dist/atoms/Link/index.js"
     },
-    "./atoms/SvgIcon/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
-      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
+    "./atoms/Link/Link": {
+      "import": "./dist/atoms/Link/Link.js",
+      "require": "./dist/atoms/Link/Link.js"
+    },
+    "./atoms/Map": {
+      "import": "./dist/atoms/Map/index.js",
+      "require": "./dist/atoms/Map/index.js"
+    },
+    "./atoms/Map/Map": {
+      "import": "./dist/atoms/Map/Map.js",
+      "require": "./dist/atoms/Map/Map.js"
+    },
+    "./atoms/Map/Root": {
+      "import": "./dist/atoms/Map/Root.js",
+      "require": "./dist/atoms/Map/Root.js"
+    },
+    "./atoms/Map/types": {
+      "import": "./dist/atoms/Map/types.js",
+      "require": "./dist/atoms/Map/types.js"
+    },
+    "./atoms/Pagination": {
+      "import": "./dist/atoms/Pagination/index.js",
+      "require": "./dist/atoms/Pagination/index.js"
+    },
+    "./atoms/Pagination/Pagination": {
+      "import": "./dist/atoms/Pagination/Pagination.js",
+      "require": "./dist/atoms/Pagination/Pagination.js"
     },
     "./atoms/SvgIcon": {
       "import": "./dist/atoms/SvgIcon/index.js",
       "require": "./dist/atoms/SvgIcon/index.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
+    "./atoms/SvgIcon/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
+      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
     },
     "./config/i18n": {
       "import": "./dist/config/i18n.js",
@@ -147,6 +187,26 @@
     "./.": {
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
@@ -167,6 +227,10 @@
     "./utils": {
       "import": "./dist/utils/exports.js",
       "require": "./dist/utils/exports.js"
+    },
+    "./utils/extractUrlFromText": {
+      "import": "./dist/utils/extractUrlFromText.js",
+      "require": "./dist/utils/extractUrlFromText.js"
     },
     "./utils/svgFontSizeValues": {
       "import": "./dist/utils/svgFontSizeValues.js",
@@ -220,9 +284,9 @@
     "react-dom": "^18",
     "react-hook-form": "^7.54.2",
     "rimraf": "^6.0.1",
+    "schema-dts": "^1.1.2",
     "storybook": "8.6.0-alpha.1",
-    "typescript": "^5",
-    "schema-dts": "^1.1.2"
+    "typescript": "^5"
   },
   "packageManager": "yarn@4.6.0"
 }
