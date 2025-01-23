@@ -45,7 +45,7 @@ const CopyToClipboard = ({
         ) : (
           <SvgIcon
             fontSize={iconSize}
-            url="/svg/contentCopy.svg"
+            url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL ?? "https://icons.storyline.cloud/v1/"}contentCopy.svg`}
             sx={{
               cursor: "pointer",
               color: color,
