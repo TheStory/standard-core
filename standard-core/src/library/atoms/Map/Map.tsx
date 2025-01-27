@@ -1,4 +1,4 @@
-import { extractUrlFromText } from "../../utils/extractUrlFromText";
+import { extractUrlFromText } from "standard-core/utils/extractUrlFromText";
 
 import { Root } from "./Root";
 import type { MapBox } from "./types";
