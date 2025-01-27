@@ -1,3 +1,4 @@
+// FormTextField Component Implementation
 import TextField, {
   type TextFieldProps as MuiTextFieldProps,
 } from "@mui/material/TextField";
@@ -17,7 +18,7 @@ interface TextFieldProps<T extends FieldValues>
   >;
 }
 
-const TextFieldError = (message: string) => (
+const TextFieldError = ({ message }: { message: string }) => (
   <Typography color="error" variant="caption">
     {message}
   </Typography>
@@ -37,7 +38,9 @@ const FormTextField = <T extends FieldValues>({
     {...ControllerProps}
     render={({ field: { ref, ...rest }, fieldState: { error } }) => (
       <TextField
-        helperText={TextFieldError(error?.message || "")}
+        helperText={
+          error ? <TextFieldError message={error.message || ""} /> : ""
+        }
         size="small"
         label={label}
         error={!!error}

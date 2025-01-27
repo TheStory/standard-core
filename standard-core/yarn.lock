@@ -2465,6 +2465,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^3.3.4":
+  version: 3.10.0
+  resolution: "@hookform/resolvers@npm:3.10.0"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: 10c0/7ee44533b4cdc28c4fa2a94894c735411e5a1f830f4a617c580533321a9b901df0cc8c1e2fad81ad8d55154ebc5cb844cf9c116a3148ffae2bc48758c33cbb8e
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.13.0":
   version: 0.13.0
   resolution: "@humanwhocodes/config-array@npm:0.13.0"
@@ -18655,6 +18664,7 @@ __metadata:
     "@chromatic-com/storybook": "npm:3.2.4"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
+    "@hookform/resolvers": "npm:^3.3.4"
     "@imgproxy/imgproxy-node": "npm:^1.0.6"
     "@mui/icons-material": "npm:^6.4.1"
     "@mui/material": "npm:^6.3.1"
@@ -18686,11 +18696,14 @@ __metadata:
     schema-dts: "npm:^1.1.2"
     storybook: "npm:8.6.0-alpha.1"
     typescript: "npm:^5"
+    zod: "npm:^3.22.4"
   peerDependencies:
     "@emotion/react": ^11.14.0
     "@emotion/styled": ^11.14.0
+    "@hookform/resolvers": ^3.3.4
     react: ">=18"
     react-dom: ">=18"
+    zod: ^3.22.4
   languageName: unknown
   linkType: soft
 
@@ -20857,5 +20870,12 @@ __metadata:
     property-expr: "npm:^2.0.4"
     toposort: "npm:^2.0.2"
   checksum: 10c0/b2adff31f4be85aaad338e6db12a26715b9e11270c587afe051d42c423f7f24de2d184f646047cb5c3b8c65163c37611f8309f2ef4eb6bb7a66688158a081d66
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.4":
+  version: 3.24.1
+  resolution: "zod@npm:3.24.1"
+  checksum: 10c0/0223d21dbaa15d8928fe0da3b54696391d8e3e1e2d0283a1a070b5980a1dbba945ce631c2d1eccc088fdbad0f2dfa40155590bf83732d3ac4fcca2cc9237591b
   languageName: node
   linkType: hard

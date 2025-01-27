@@ -20,4 +20,4 @@ const FormattedDate = ({ value }: { value?: Date | string }) => {
   );
 };
 
-export default FormattedDate
+export default FormattedDate;
