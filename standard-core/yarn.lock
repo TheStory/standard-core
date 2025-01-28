@@ -5070,6 +5070,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@strapi/blocks-react-renderer@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@strapi/blocks-react-renderer@npm:1.0.1"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 10c0/99e3d5d6e08d01a1cc37a406668e7ee378d1db7cfa3570d6e0ef1eacf82859793458ac750a8306c634c85c851758d1d163ee35ac113e03d56bad45f4645117a7
+  languageName: node
+  linkType: hard
+
 "@strapi/cloud-cli@npm:4.25.19":
   version: 4.25.19
   resolution: "@strapi/cloud-cli@npm:4.25.19"
@@ -18387,6 +18397,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"slugify@npm:^1.6.6":
+  version: 1.6.6
+  resolution: "slugify@npm:1.6.6"
+  checksum: 10c0/e7e63f08f389a371d6228bc19d64ec84360bf0a538333446cc49dbbf3971751a6d180d2f31551188dd007a65ca771e69f574e0283290a7825a818e90b75ef44d
+  languageName: node
+  linkType: hard
+
 "smart-buffer@npm:^4.2.0":
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
@@ -18675,6 +18692,7 @@ __metadata:
     "@storybook/nextjs": "npm:8.6.0-alpha.1"
     "@storybook/react": "npm:8.6.0-alpha.1"
     "@storybook/test": "npm:8.6.0-alpha.1"
+    "@strapi/blocks-react-renderer": "npm:^1.0.0"
     "@strapi/strapi": "npm:^4.20.4"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.1"
     "@types/node": "npm:^20"
@@ -18694,6 +18712,7 @@ __metadata:
     react-hook-form: "npm:^7.54.2"
     rimraf: "npm:^6.0.1"
     schema-dts: "npm:^1.1.2"
+    slugify: "npm:^1.6.6"
     storybook: "npm:8.6.0-alpha.1"
     typescript: "npm:^5"
     zod: "npm:^3.22.4"
@@ -18701,8 +18720,10 @@ __metadata:
     "@emotion/react": ^11.14.0
     "@emotion/styled": ^11.14.0
     "@hookform/resolvers": ^3.3.4
+    "@strapi/blocks-react-renderer": ^1.0.0
     react: ">=18"
     react-dom: ">=18"
+    slugify: ^1.6.6
     zod: ^3.22.4
   languageName: unknown
   linkType: soft
