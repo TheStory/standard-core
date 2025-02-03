@@ -196,6 +196,18 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
+    "./molecules/Crumbs/Crumbs": {
+      "import": "./dist/molecules/Crumbs/Crumbs.js",
+      "require": "./dist/molecules/Crumbs/Crumbs.js"
+    },
+    "./molecules/Crumbs": {
+      "import": "./dist/molecules/Crumbs/index.js",
+      "require": "./dist/molecules/Crumbs/index.js"
+    },
+    "./molecules": {
+      "import": "./dist/molecules/exports.js",
+      "require": "./dist/molecules/exports.js"
+    },
     "./NextIntlClientInheritor": {
       "import": "./dist/NextIntlClientInheritor/index.js",
       "require": "./dist/NextIntlClientInheritor/index.js"
