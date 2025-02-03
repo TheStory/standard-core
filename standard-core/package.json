@@ -80,6 +80,14 @@
       "import": "./dist/atoms/CmsCroppedImage/index.js",
       "require": "./dist/atoms/CmsCroppedImage/index.js"
     },
+    "./atoms/CmsImage/CmsImage": {
+      "import": "./dist/atoms/CmsImage/CmsImage.js",
+      "require": "./dist/atoms/CmsImage/CmsImage.js"
+    },
+    "./atoms/CmsImage": {
+      "import": "./dist/atoms/CmsImage/index.js",
+      "require": "./dist/atoms/CmsImage/index.js"
+    },
     "./atoms/CmsRichText/CmsRichText": {
       "import": "./dist/atoms/CmsRichText/CmsRichText.js",
       "require": "./dist/atoms/CmsRichText/CmsRichText.js"
