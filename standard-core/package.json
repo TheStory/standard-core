@@ -216,6 +216,14 @@
       "import": "./dist/molecules/exports.js",
       "require": "./dist/molecules/exports.js"
     },
+    "./molecules/LanguageSelector": {
+      "import": "./dist/molecules/LanguageSelector/index.js",
+      "require": "./dist/molecules/LanguageSelector/index.js"
+    },
+    "./molecules/LanguageSelector/LanguageSelector": {
+      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
+      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
+    },
     "./NextIntlClientInheritor": {
       "import": "./dist/NextIntlClientInheritor/index.js",
       "require": "./dist/NextIntlClientInheritor/index.js"
