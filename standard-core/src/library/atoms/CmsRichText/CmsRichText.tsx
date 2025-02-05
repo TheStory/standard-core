@@ -29,7 +29,7 @@ type BlockElements =
   | "blockquote"
   | "list";
 
-interface CmsRichTextProps {
+export interface CmsRichTextProps {
   blocks: Attribute.Blocks | BlocksContent | undefined;
   globalDisableHeadings?: boolean;
   exclude?: BlockElements[];

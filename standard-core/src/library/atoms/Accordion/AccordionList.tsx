@@ -19,60 +19,62 @@ export const AccordionList = ({
   disableIcon = false,
   disableGutters = true,
   sx,
-}: AccordionListProps) => (
-  <div>
-    {items.map((item, index) => (
-      <MuiAccordion
-        key={`accordion-${index}`}
-        defaultExpanded={index === 0}
-        disableGutters={disableGutters}
-        elevation={0}
-        square
-        sx={{
-          mx: "auto",
-          backgroundColor: "transparent",
-          "&.MuiAccordion-root:before": {
-            backgroundColor: "divider",
-            height: 2,
-          },
-          ...sx,
-        }}
-      >
-        <AccordionSummary
+}: AccordionListProps) => {
+  return (
+    <div>
+      {items.map((item, index) => (
+        <MuiAccordion
+          key={`accordion-${index}`}
+          defaultExpanded={index === 0}
+          disableGutters={disableGutters}
+          elevation={0}
+          square
           sx={{
-            height: "66px",
-            my: 0,
-            px: 0,
+            mx: "auto",
+            backgroundColor: "transparent",
+            "&.MuiAccordion-root:before": {
+              backgroundColor: "divider",
+              height: 2,
+            },
+            ...sx,
           }}
-          expandIcon={!disableIcon && <ExpandIcon />}
         >
-          <Typography variant="h6" color="text.primary">
-            {item.label}
-          </Typography>
-          {item.overline && (
-            <Typography
-              variant="overline"
-              alignSelf="center"
-              sx={{
-                ml: "auto",
-                mr: 1,
-              }}
-            >
-              {item.overline}
+          <AccordionSummary
+            sx={{
+              height: "66px",
+              my: 0,
+              px: 0,
+            }}
+            expandIcon={!disableIcon && <ExpandIcon />}
+          >
+            <Typography variant="h6" color="text.primary">
+              {item.label}
             </Typography>
-          )}
-        </AccordionSummary>
+            {item.overline && (
+              <Typography
+                variant="overline"
+                alignSelf="center"
+                sx={{
+                  ml: "auto",
+                  mr: 1,
+                }}
+              >
+                {item.overline}
+              </Typography>
+            )}
+          </AccordionSummary>
 
-        <AccordionDetails
-          sx={{
-            pt: 0,
-            px: 0,
-            maxWidth: "648px",
-          }}
-        >
-          {item.content}
-        </AccordionDetails>
-      </MuiAccordion>
-    ))}
-  </div>
-);
+          <AccordionDetails
+            sx={{
+              pt: 0,
+              px: 0,
+              maxWidth: "648px",
+            }}
+          >
+            {item.content}
+          </AccordionDetails>
+        </MuiAccordion>
+      ))}
+    </div>
+  );
+};

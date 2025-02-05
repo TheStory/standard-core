@@ -904,14 +904,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::author.author'
     >;
-    cacheTags: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<'blog, article'>;
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -926,6 +918,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'blog, article'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1093,6 +1093,13 @@ export interface ApiBlogSettingsBlogSettings extends Schema.SingleType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cacheTags: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1101,13 +1108,6 @@ export interface ApiBlogSettingsBlogSettings extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'blog'>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1155,6 +1155,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    pageTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1175,6 +1181,13 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cacheTags: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1183,19 +1196,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'blog, blog-category-slug'>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    pageTitle: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1292,7 +1292,7 @@ export interface ApiContactThankYouPageContactThankYouPage
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -1307,7 +1307,7 @@ export interface ApiContactThankYouPageContactThankYouPage
           localized: true;
         };
       }>;
-    body: Attribute.String &
+    body: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1329,7 +1329,6 @@ export interface ApiContactThankYouPageContactThankYouPage
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::contact-thank-you-page.contact-thank-you-page',
       'oneToOne',
@@ -1383,8 +1382,7 @@ export interface ApiCookiePolicySettingCookiePolicySetting
           localized: true;
         };
       }>;
-    cookiesWall: Attribute.Text &
-      Attribute.Required &
+    seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1395,12 +1393,6 @@ export interface ApiCookiePolicySettingCookiePolicySetting
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -1518,14 +1510,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
   attributes: {
     heroSection: Attribute.Component<'content.hero-section'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     serviceSection: Attribute.Component<'content.section-title-subtitle-content'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1564,7 +1554,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         number
       >;
     locations: Attribute.Component<'content.locations-section'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1576,51 +1565,31 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
           localized: true;
         };
       }>;
-    cacheTags: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<'homepage'>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     stepSection: Attribute.Component<'content.step-section'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     opinions: Attribute.Component<'content.opinions'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     ourProducts: Attribute.Component<'content.our-products'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     faq: Attribute.Component<'content.faq'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     blogPreview: Attribute.Component<'content.blog-preview'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1639,6 +1608,20 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }>;
     about: Attribute.Component<'content.about-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'homepage'>;
+    seo: Attribute.Component<'shared.seo'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1769,17 +1752,17 @@ export interface ApiPrivacyPolicySettingPrivacyPolicySetting
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cacheTags: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
-        };
-      }>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -1912,13 +1895,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    productInfo: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     faq: Attribute.Component<'content.accordion', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1931,6 +1907,20 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
+    productInfo: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    returns: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2125,7 +2115,7 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -2170,7 +2160,6 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::product-page.product-page',
       'oneToOne',
@@ -2325,13 +2314,6 @@ export interface ApiSettingsSettings extends Schema.SingleType {
           localized: false;
         };
       }>;
-    cacheTags: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     twitter: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2350,6 +2332,13 @@ export interface ApiSettingsSettings extends Schema.SingleType {
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
