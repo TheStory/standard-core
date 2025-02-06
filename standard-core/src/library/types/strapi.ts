@@ -1,6 +1,7 @@
+import { ID } from "@strapi/database/dist/types";
 import type { Attribute, Common, Utils } from "@strapi/strapi";
 
-type IDProperty = { id: number };
+type IDProperty = { id: ID };
 
 type InvalidKeys<TSchemaUID extends Common.UID.Schema> = Utils.Object.KeysBy<
   Attribute.GetAll<TSchemaUID>,
