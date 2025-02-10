@@ -1,5 +1,5 @@
 const customSvgFontSizeValues = JSON.parse(
-  process.env.SVG_FONT_SIZE_VALUES || "{}",
+  process.env.NEXT_PUBLIC_SVG_FONT_SIZE_VALUES || "{}",
 );
 export const svgFontSizeValues = {
   inherit: (customSvgFontSizeValues.inherit as string) ?? "inherit",
