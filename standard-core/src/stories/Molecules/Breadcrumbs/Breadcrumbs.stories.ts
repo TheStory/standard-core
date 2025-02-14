@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Breadcrumbs } from "standard-core/atoms/Breadcrumbs";
+import Crumbs from "standard-core/molecules/Crumbs/Crumbs";
 
-const meta: Meta<typeof Breadcrumbs> = {
-  title: "Atoms/Breadcrumbs",
-  component: Breadcrumbs,
+const meta: Meta<typeof Crumbs> = {
+  title: "Molecules/Crumbs",
+  component: Crumbs,
   tags: ["autodocs"],
   argTypes: {
     crumbs: { control: "object" },

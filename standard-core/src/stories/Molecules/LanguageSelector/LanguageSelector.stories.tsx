@@ -1,4 +1,3 @@
-import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 import LanguageSelector from "standard-core/molecules/LanguageSelector/LanguageSelector";
 
