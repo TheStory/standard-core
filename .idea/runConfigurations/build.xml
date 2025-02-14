@@ -7,7 +7,9 @@
     </scripts>
     <node-interpreter value="project" />
     <package-manager value="yarn" />
-    <envs />
+    <envs>
+      <env name="NEXT_PUBLIC_ICON_CDN_URL" value="NEXT_PUBLIC_ICON_CDN_URL" />
+    </envs>
     <method v="2" />
   </configuration>
 </component>

@@ -1,0 +1,60 @@
+import { IconGallery, IconItem, Meta } from "@storybook/blocks";
+import { ThemeProvider } from "@mui/material/styles";
+
+import { theStoryTheme } from "../theme";
+import SvgIcon from "../library/atoms/SvgIcon/SvgIcon";
+
+<Meta title="Icons" />
+
+
+# Icons
+
+<ThemeProvider theme={theStoryTheme}>
+  <IconGallery style={{ color: "black", marginTop: "24px" }}>
+    <IconItem name="facebook Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}facebook.svg`}/>
+    </IconItem>
+    <IconItem name="instagram Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}instagram.svg`}/>
+    </IconItem>
+    <IconItem name="linkedIn Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}linkedIn.svg`}/>
+    </IconItem>
+    <IconItem name="tiktok Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}tiktok.svg`}/>
+    </IconItem>
+    <IconItem name="twitter Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}twitter.svg`}/>
+    </IconItem>
+    <IconItem name="youtube Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}youtube.svg`}/>
+    </IconItem>
+    <IconItem name="contentCopy Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}contentCopy.svg`}/>
+    </IconItem>
+    <IconItem name="filter Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}filter.svg`}/>
+    </IconItem>
+    <IconItem name="openInNew Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}openInNew.svg`}/>
+    </IconItem>
+    <IconItem name="star Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}star.svg`}/>
+    </IconItem>
+    <IconItem name="starBorder Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}starBorder.svg`}/>
+    </IconItem>
+    <IconItem name="google Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}google.svg`} disableMask={true}/>
+    </IconItem>
+    <IconItem name="location Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}location.svg`}/>
+    </IconItem>
+    <IconItem name="mail Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}mail.svg`}/>
+    </IconItem>
+    <IconItem name="phone Icon">
+      <SvgIcon url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL}phone.svg`}/>
+    </IconItem>
+  </IconGallery>
+</ThemeProvider>

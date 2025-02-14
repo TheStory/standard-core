@@ -1,0 +1,113 @@
+import { ColorItem, ColorPalette, Meta } from "@storybook/blocks";
+import { ThemeProvider } from "@mui/material/styles";
+import { colors, theStoryTheme } from "../theme";
+
+<Meta title="Colors" />
+<ThemeProvider theme={theStoryTheme}>
+  <ColorPalette>
+    <ColorItem
+      title="Text"
+      subtitle=""
+      colors={{
+        primary: colors.text.primary,
+        secondary: colors.text.secondary,
+        disabled: colors.text.disabled
+      }}
+    />
+    <ColorItem
+      title="Primary"
+      subtitle=""
+      colors={{
+        main: colors.primary.main,
+        dark: colors.primary.dark,
+        light: colors.primary.light,
+        contrast: colors.primary.contrastText
+      }}
+    />
+    <ColorItem
+      title="Secondary"
+      subtitle=""
+      colors={{
+        main: colors.secondary.main,
+        dark: colors.secondary.dark,
+        light: colors.secondary.light,
+        contrast: colors.secondary.contrastText
+      }}
+    />
+    <ColorItem
+      title="Success"
+      subtitle=""
+      colors={{
+        main: colors.success.main,
+        dark: colors.success.dark,
+        light: colors.success.light,
+        contrast: colors.success.contrastText
+      }}
+    />
+    <ColorItem
+      title="Info"
+      subtitle=""
+      colors={{
+        main: colors.info.main,
+        dark: colors.info.dark,
+        light: colors.info.light,
+        contrast: colors.info.contrastText
+      }}
+    />
+    <ColorItem
+      title="Warning"
+      subtitle=""
+      colors={{
+        Main: colors.warning.main,
+        Dark: colors.warning.dark,
+        Light: colors.warning.light,
+        Contrast: colors.warning.contrastText
+      }}
+    />
+    <ColorItem
+      title="Error"
+      subtitle=""
+      colors={{
+        main: colors.error.main,
+        dark: colors.error.dark,
+        light: colors.error.light,
+        contrast: colors.error.contrastText
+      }}
+    />
+    <ColorItem
+      title="Common"
+      subtitle=""
+      colors={{
+        black: colors.common.black,
+        white: colors.common.white
+      }}
+    />
+    <ColorItem
+      title="Background"
+      subtitle=""
+      colors={{
+        default: colors.background.default,
+        paper: colors.background.paper
+      }}
+    />
+    <ColorItem
+      title="Action"
+      subtitle=""
+      colors={{
+        active: colors.action.active,
+        hover: colors.action.hover,
+        selected: colors.action.selected,
+        disabled: colors.action.disabled,
+        disabledBackground: colors.action.disabledBackground,
+        focus: colors.action.focus
+      }}
+    />
+    <ColorItem
+      title="Divider"
+      subtitle=""
+      colors={{
+        divider: colors.divider
+      }}
+    />
+  </ColorPalette>
+</ThemeProvider>

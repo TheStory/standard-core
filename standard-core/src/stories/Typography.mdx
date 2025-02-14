@@ -1,0 +1,41 @@
+import { Typography, ThemeProvider, Paper } from "@mui/material";
+import { Meta } from '@storybook/blocks';
+import { theStoryTheme } from "../theme";
+
+<Meta title="Typography" />
+
+## Variable font sizes
+
+<ThemeProvider theme={theStoryTheme}>
+  <Paper sx={{ p: 2 }}>
+    ### H1
+    <Typography variant="h1" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### H2
+    <Typography variant="h2" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### H3
+    <Typography variant="h3" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### H4
+    <Typography variant="h4" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### H5
+    <Typography variant="h5" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### H6
+    <Typography variant="h6" component="p">Lorem ipsum dolor sit amet</Typography>
+  </Paper>
+
+  ## Fixed font sizes
+
+  <Paper sx={{ p: 2 }}>
+    ### Subtitle1
+    <Typography variant="subtitle1" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### Subtitle2
+    <Typography variant="subtitle2" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### Body1
+    <Typography variant="body1" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### Body2
+    <Typography variant="body2" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### Caption
+    <Typography variant="caption" component="p">Lorem ipsum dolor sit amet</Typography>
+    ### Overline
+    <Typography variant="overline" component="p">Lorem ipsum dolor sit amet</Typography>
+  </Paper>
+</ThemeProvider>

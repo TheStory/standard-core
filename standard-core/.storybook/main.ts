@@ -15,6 +15,7 @@ const config: StorybookConfig = {
   env: (config) =>({
     ...config,
     NEXT_PUBLIC_IMAGE_PROXY: process.env.NEXT_PUBLIC_IMAGE_PROXY,
+    NEXT_PUBLIC_ICON_CDN_URL: process.env.NEXT_PUBLIC_ICON_CDN_URL
   })
 };
 export default config;

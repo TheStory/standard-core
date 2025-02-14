@@ -1,0 +1,13 @@
+import { Typography, ThemeProvider, Paper } from "@mui/material";
+import { Meta } from '@storybook/blocks';
+import { theStoryTheme } from "../theme";
+
+<Meta title="Shadows" />
+
+<ThemeProvider theme={theStoryTheme}>
+  {theStoryTheme.shadows.map((shadow, index) => (
+    <Paper key={index} sx={{ p: 2, boxShadow: shadow, mb: 5 }}>
+      <Typography variant="h6" component="p">Elevation {index}</Typography>
+    </Paper>
+  ))}
+</ThemeProvider>

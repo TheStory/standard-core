@@ -1,0 +1,18 @@
+import { Typography, ThemeProvider, Box } from "@mui/material";
+import { Meta } from '@storybook/blocks';
+import { theStoryTheme } from "../theme";
+
+<Meta title="Spacing" />
+
+<ThemeProvider theme={theStoryTheme}>
+  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((spacing, idx) => (
+    <Box key={idx} sx={{ mb: theStoryTheme.spacing(spacing), backgroundColor: "primary.main", p: 2 }}>
+      <Typography variant="h6" component="p" color={"primary.contrastText"}>
+        Spacing {spacing} ({theStoryTheme.spacing(spacing)})
+      </Typography>
+    </Box>
+  ))}
+  <Box key={'the-end'} sx={{ backgroundColor: "primary.main", p: 2 }}>
+    <Typography variant="h6" component="p" color={"primary.contrastText"}>The end</Typography>
+  </Box>
+</ThemeProvider>
