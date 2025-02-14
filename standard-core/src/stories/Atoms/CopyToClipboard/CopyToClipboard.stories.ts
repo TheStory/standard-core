@@ -4,6 +4,9 @@ import { CopyToClipboard } from "standard-core/atoms/CopyToClipboard";
 const meta: Meta<typeof CopyToClipboard> = {
   title: "Atoms/CopyToClipboard",
   component: CopyToClipboard,
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"],
   argTypes: {
     text: { control: "text" },
