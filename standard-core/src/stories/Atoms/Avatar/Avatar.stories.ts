@@ -6,6 +6,10 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "gray",
+      values: [{ name: "gray", value: "#ccc" }],
+    },
   },
   tags: ["autodocs"],
   argTypes: {
