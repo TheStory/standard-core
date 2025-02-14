@@ -17,7 +17,6 @@ const messages = {
 
 import { theStoryTheme } from "../src/theme";
 
-
 export const withMuiTheme = (Story: StoryFn) => {
   return (
     <NextIntlClientProvider locale={"en"} messages={messages}>

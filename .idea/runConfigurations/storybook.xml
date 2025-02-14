@@ -7,7 +7,9 @@
     </scripts>
     <node-interpreter value="project" />
     <package-manager value="yarn" />
-    <envs />
+    <envs>
+      <env name="NEXT_PUBLIC_IMAGE_PROXY" value="http://127.0.0.1:8080" />
+    </envs>
     <method v="2" />
   </configuration>
 </component>

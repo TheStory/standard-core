@@ -110,6 +110,7 @@ export const Default: Story = {
 export const WithoutHeadings: Story = {
   args: {
     blocks: sampleBlocksContent,
+    exclude: ["h1", "h2", "h3", "h4", "h5", "h6"],
     globalDisableHeadings: true,
   },
 };
@@ -127,13 +128,12 @@ export const CustomComponentProps: Story = {
     componentProps: {
       h1: {
         sx: {
-          color: "primary.main",
+          color: "red",
         },
       },
       p: {
         sx: {
-          fontSize: "1.25rem",
-          lineHeight: "1.6",
+          color: "red",
         },
       },
     },

@@ -13,5 +13,9 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["..\\public"],
+  env: (config) =>({
+    ...config,
+    NEXT_PUBLIC_IMAGE_PROXY: process.env.NEXT_PUBLIC_IMAGE_PROXY,
+  })
 };
 export default config;
