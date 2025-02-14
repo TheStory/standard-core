@@ -33,7 +33,7 @@ const meta: Meta<typeof Accordion> = {
       defaultValue: false,
     },
     sx: {
-      control: false,
+      control: "object",
       description: "Custom styles for the accordion",
     },
   },
@@ -114,7 +114,7 @@ export const WithoutIcon: Story = {
   },
 };
 
-export const CustomGutters: Story = {
+export const DisabledGutters: Story = {
   args: {
     items: [
       {
@@ -126,6 +126,11 @@ export const CustomGutters: Story = {
         label: "Item 2",
         content: "Content for item 2",
         overline: "Overline 2",
+      },
+      {
+        label: "Item 3",
+        content: "Content for item 3",
+        overline: "Overline 3",
       },
     ] as AccordionItem[],
     button: {
