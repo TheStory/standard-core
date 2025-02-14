@@ -4,6 +4,13 @@ import { BackToTopButton } from "standard-core/atoms/BackToTopButton";
 const meta: Meta<typeof BackToTopButton> = {
   title: "Atoms/BackToTopButton",
   component: BackToTopButton,
+  parameters: {
+    docs: {
+      story: {
+        height: "80px",
+      },
+    },
+  },
   tags: ["autodocs"],
   argTypes: {
     sx: { control: "object" },
