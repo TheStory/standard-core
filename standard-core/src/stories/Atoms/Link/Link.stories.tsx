@@ -50,14 +50,6 @@ export const Default: Story = {
   },
 };
 
-export const PrimaryLink: Story = {
-  args: {
-    children: "Primary Link",
-    href: "#",
-    color: "primary",
-  },
-};
-
 export const SecondaryLink: Story = {
   args: {
     children: "Secondary Link",

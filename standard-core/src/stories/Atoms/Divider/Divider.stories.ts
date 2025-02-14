@@ -4,7 +4,13 @@ import { Divider } from "standard-core/atoms/Divider";
 const meta: Meta<typeof Divider> = {
   title: "Atoms/Divider",
   component: Divider,
-  parameters: {},
+  parameters: {
+    docs: {
+      story: {
+        height: "80px",
+      },
+    },
+  },
   tags: ["autodocs"],
   argTypes: {
     orientation: {
