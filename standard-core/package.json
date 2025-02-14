@@ -56,14 +56,6 @@
       "import": "./dist/atoms/BackToTopButton/index.js",
       "require": "./dist/atoms/BackToTopButton/index.js"
     },
-    "./atoms/Breadcrumbs/Breadcrumbs": {
-      "import": "./dist/atoms/Breadcrumbs/Breadcrumbs.js",
-      "require": "./dist/atoms/Breadcrumbs/Breadcrumbs.js"
-    },
-    "./atoms/Breadcrumbs": {
-      "import": "./dist/atoms/Breadcrumbs/index.js",
-      "require": "./dist/atoms/Breadcrumbs/index.js"
-    },
     "./atoms/Button/Button": {
       "import": "./dist/atoms/Button/Button.js",
       "require": "./dist/atoms/Button/Button.js"
