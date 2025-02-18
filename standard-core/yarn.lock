@@ -5830,6 +5830,60 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@thestory/standard-core@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@thestory/standard-core@workspace:."
+  dependencies:
+    "@chromatic-com/storybook": "npm:3.2.4"
+    "@emotion/react": "npm:^11.14.0"
+    "@emotion/styled": "npm:^11.14.0"
+    "@hookform/resolvers": "npm:^3.3.4"
+    "@imgproxy/imgproxy-node": "npm:^1.0.6"
+    "@mui/icons-material": "npm:^6.4.1"
+    "@mui/material": "npm:^6.3.1"
+    "@storybook/addon-essentials": "npm:8.6.0-alpha.1"
+    "@storybook/addon-interactions": "npm:8.6.0-alpha.1"
+    "@storybook/addon-onboarding": "npm:8.6.0-alpha.1"
+    "@storybook/blocks": "npm:8.6.0-alpha.1"
+    "@storybook/nextjs": "npm:8.6.0-alpha.1"
+    "@storybook/react": "npm:8.6.0-alpha.1"
+    "@storybook/test": "npm:8.6.0-alpha.1"
+    "@strapi/blocks-react-renderer": "npm:^1.0.0"
+    "@strapi/strapi": "npm:^4.20.4"
+    "@trivago/prettier-plugin-sort-imports": "npm:^5.2.1"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    eslint: "npm:^8"
+    eslint-config-next: "npm:14.2.5"
+    eslint-config-prettier: "npm:^10.0.1"
+    eslint-plugin-prettier: "npm:^5.2.3"
+    eslint-plugin-storybook: "npm:^0.11.2"
+    motion: "npm:^12.0.0"
+    next: "npm:14.2.5"
+    next-intl: "npm:^3.10.0"
+    prettier: "npm:^3.4.2"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    react-hook-form: "npm:^7.54.2"
+    rimraf: "npm:^6.0.1"
+    schema-dts: "npm:^1.1.2"
+    slugify: "npm:^1.6.6"
+    storybook: "npm:8.6.0-alpha.1"
+    typescript: "npm:^5"
+    zod: "npm:^3.22.4"
+  peerDependencies:
+    "@emotion/react": ^11.14.0
+    "@emotion/styled": ^11.14.0
+    "@hookform/resolvers": ^3.3.4
+    "@strapi/blocks-react-renderer": ^1.0.0
+    react: ">=18"
+    react-dom: ">=18"
+    slugify: ^1.6.6
+    zod: ^3.22.4
+  languageName: unknown
+  linkType: soft
+
 "@trivago/prettier-plugin-sort-imports@npm:^5.2.1":
   version: 5.2.1
   resolution: "@trivago/prettier-plugin-sort-imports@npm:5.2.1"
@@ -18673,60 +18727,6 @@ __metadata:
   checksum: 10c0/18410f7a1e0c5d211a4effa83bdbf24adbe8faa8c34db52e1cd3e89837518c592be60b60d8b7270ac53eeeb8b807cd11b399a41667f6c9abb41059c3ccc8a989
   languageName: node
   linkType: hard
-
-"standard-core@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "standard-core@workspace:."
-  dependencies:
-    "@chromatic-com/storybook": "npm:3.2.4"
-    "@emotion/react": "npm:^11.14.0"
-    "@emotion/styled": "npm:^11.14.0"
-    "@hookform/resolvers": "npm:^3.3.4"
-    "@imgproxy/imgproxy-node": "npm:^1.0.6"
-    "@mui/icons-material": "npm:^6.4.1"
-    "@mui/material": "npm:^6.3.1"
-    "@storybook/addon-essentials": "npm:8.6.0-alpha.1"
-    "@storybook/addon-interactions": "npm:8.6.0-alpha.1"
-    "@storybook/addon-onboarding": "npm:8.6.0-alpha.1"
-    "@storybook/blocks": "npm:8.6.0-alpha.1"
-    "@storybook/nextjs": "npm:8.6.0-alpha.1"
-    "@storybook/react": "npm:8.6.0-alpha.1"
-    "@storybook/test": "npm:8.6.0-alpha.1"
-    "@strapi/blocks-react-renderer": "npm:^1.0.0"
-    "@strapi/strapi": "npm:^4.20.4"
-    "@trivago/prettier-plugin-sort-imports": "npm:^5.2.1"
-    "@types/node": "npm:^20"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    eslint: "npm:^8"
-    eslint-config-next: "npm:14.2.5"
-    eslint-config-prettier: "npm:^10.0.1"
-    eslint-plugin-prettier: "npm:^5.2.3"
-    eslint-plugin-storybook: "npm:^0.11.2"
-    motion: "npm:^12.0.0"
-    next: "npm:14.2.5"
-    next-intl: "npm:^3.10.0"
-    prettier: "npm:^3.4.2"
-    react: "npm:^18"
-    react-dom: "npm:^18"
-    react-hook-form: "npm:^7.54.2"
-    rimraf: "npm:^6.0.1"
-    schema-dts: "npm:^1.1.2"
-    slugify: "npm:^1.6.6"
-    storybook: "npm:8.6.0-alpha.1"
-    typescript: "npm:^5"
-    zod: "npm:^3.22.4"
-  peerDependencies:
-    "@emotion/react": ^11.14.0
-    "@emotion/styled": ^11.14.0
-    "@hookform/resolvers": ^3.3.4
-    "@strapi/blocks-react-renderer": ^1.0.0
-    react: ">=18"
-    react-dom: ">=18"
-    slugify: ^1.6.6
-    zod: ^3.22.4
-  languageName: unknown
-  linkType: soft
 
 "static-extend@npm:^0.1.1":
   version: 0.1.2
