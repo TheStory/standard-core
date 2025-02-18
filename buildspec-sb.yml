@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - cd standard-core
+      - yarn install
+  build:
+    commands:
+      - yarn build-storybook
+artifacts:
+  files:
+    - "**/*"
+  base-directory: standard-core/storybook-static
+  discard-paths: no
