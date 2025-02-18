@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="build-storybook" type="js.build_tools.npm" nameIsGenerated="true">
+    <package-json value="$PROJECT_DIR$/standard-core/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="build-storybook" />
+    </scripts>
+    <node-interpreter value="project" />
+    <envs>
+      <env name="NEXT_PUBLIC_ICON_CDN_URL" value="https://icons.storyline.cloud/v1/" />
+      <env name="NEXT_PUBLIC_IMAGE_PROXY" value="http://127.0.0.1:8080" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
