@@ -1,9 +1,10 @@
 {
-  "name": "standard-core",
+  "name": "@thestory/standard-core",
   "version": "0.1.0",
   "main": "./dist/exports.js",
   "module": "./dist/exports.js",
   "types": "./dist/exports.d.ts",
+  "private": true,
   "files": [
     "dist"
   ],
@@ -272,7 +273,9 @@
     "start": "next start",
     "prepublishOnly": "yarn build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "yarn run co:login",
+    "co:login": "aws codeartifact login --tool npm --repository standard-core --domain thestory"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
