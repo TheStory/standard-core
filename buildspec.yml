@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - cd standard-core
+      - yarn install
+  build:
+    commands:
+      - yarn build
+  post_build:
+    commands:
+      - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain thestory --query authorizationToken --output text)
+      - export CODEARTIFACT_ENDPOINT=$(aws codeartifact get-repository-endpoint --domain thestory --repository standard-core --format npm --query repositoryEndpoint --output text)
+      - yarn config set npmRegistryServer $CODEARTIFACT_ENDPOINT
+      - yarn config set npmAuthToken $CODEARTIFACT_AUTH_TOKEN
+      - yarn npm publish

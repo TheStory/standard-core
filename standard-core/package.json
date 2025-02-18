@@ -272,9 +272,7 @@
     "start": "next start",
     "prepublishOnly": "yarn build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "yarn run co:login",
-    "co:login": "aws codeartifact login --namespace @thestory --tool npm --repository standard-core --domain thestory"
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
