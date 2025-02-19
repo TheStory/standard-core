@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import SvgIcon from "standard-core/atoms/SvgIcon/SvgIcon";
+import SvgIcon from "@thestory/standard-core/atoms/SvgIcon/SvgIcon";
 
 const meta: Meta<typeof SvgIcon> = {
   title: "Atoms/SvgIcon",

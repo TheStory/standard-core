@@ -1,7 +1,7 @@
 import type { SxProps } from "@mui/material";
-import { CroppedImage } from "standard-core/atoms/CroppedImage";
-import type { ImageResizeOption } from "standard-core/types";
-import { cmsMediaUrl } from "standard-core/utils/cmsMediaUrl";
+import { CroppedImage } from "@thestory/standard-core/atoms/CroppedImage";
+import type { ImageResizeOption } from "@thestory/standard-core/types";
+import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
 
 type DifferentWidths = number | { xs: number; lg: number };
 

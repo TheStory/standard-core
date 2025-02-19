@@ -1,6 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Accordion, type AccordionItem } from "standard-core/atoms/Accordion";
-import type { AccordionCtaButtonProps } from "standard-core/atoms/Accordion/AccordionCtaButton";
+import {
+  Accordion,
+  type AccordionItem,
+} from "@thestory/standard-core/atoms/Accordion";
+import type { AccordionCtaButtonProps } from "@thestory/standard-core/atoms/Accordion/AccordionCtaButton";
 
 const meta: Meta<typeof Accordion> = {
   title: "Atoms/Accordion",

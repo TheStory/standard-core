@@ -1,8 +1,8 @@
 import Stack from "@mui/material/Stack";
 import { Meta, StoryFn } from "@storybook/react";
+import Button from "@thestory/standard-core/atoms/Button/Button";
+import FormTextField from "@thestory/standard-core/atoms/Form/TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
-import Button from "standard-core/atoms/Button/Button";
-import FormTextField from "standard-core/atoms/Form/TextField";
 
 export default {
   title: "Atoms/Form/FormTextField",

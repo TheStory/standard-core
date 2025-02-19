@@ -5,9 +5,9 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import type { SxProps } from "@mui/material";
 import MuiPagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
+import { usePathname, useRouter } from "@thestory/standard-core/config";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { usePathname, useRouter } from "standard-core/config";
 
 interface PaginationProps {
   pageCount: number;

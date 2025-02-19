@@ -1,4 +1,3 @@
-import { createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import type { Preview, StoryFn } from "@storybook/react";

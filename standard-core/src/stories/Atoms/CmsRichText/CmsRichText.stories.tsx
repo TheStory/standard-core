@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import CmsRichText from "standard-core/atoms/CmsRichText/CmsRichText";
+import CmsRichText from "@thestory/standard-core/atoms/CmsRichText/CmsRichText";
 
 const meta: Meta<typeof CmsRichText> = {
   title: "Atoms/CmsRichText",

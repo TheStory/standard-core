@@ -1,4 +1,4 @@
-import { extractUrlFromText } from "standard-core/utils/extractUrlFromText";
+import { extractUrlFromText } from "@thestory/standard-core/utils/extractUrlFromText";
 
 import { Root } from "./Root";
 import type { MapBox } from "./types";

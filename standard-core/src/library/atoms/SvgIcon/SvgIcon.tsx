@@ -1,6 +1,6 @@
 import type { SvgIconOwnProps, SxProps, Theme } from "@mui/material";
 import Box from "@mui/material/Box";
-import { svgFontSizeValues } from "standard-core/utils/svgFontSizeValues";
+import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
 
 interface SvgIconProps {
   sx?: SxProps<Theme>;

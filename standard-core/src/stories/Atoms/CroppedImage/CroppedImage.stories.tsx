@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import CroppedImage from "standard-core/atoms/CroppedImage/CroppedImage";
+import CroppedImage from "@thestory/standard-core/atoms/CroppedImage/CroppedImage";
 
 const meta: Meta<typeof CroppedImage> = {
   title: "Atoms/CroppedImage",

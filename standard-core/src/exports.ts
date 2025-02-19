@@ -1,1 +1,1 @@
-export * from "standard-core/exports"
+export * from "@thestory/standard-core/exports";

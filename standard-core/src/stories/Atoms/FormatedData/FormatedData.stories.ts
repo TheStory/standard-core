@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import FormattedDate from "standard-core/atoms/FormatedData/FormatedData";
+import FormattedDate from "@thestory/standard-core/atoms/FormatedData/FormatedData";
 
 const meta: Meta<typeof FormattedDate> = {
   title: "Atoms/FormatedDate",

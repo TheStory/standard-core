@@ -1,7 +1,7 @@
 import { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Button } from "standard-core/atoms/Button";
+import { Button } from "@thestory/standard-core/atoms/Button";
 
 export interface AccordionCtaButtonProps {
   button?: {

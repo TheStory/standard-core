@@ -4,9 +4,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { type SxProps, alpha } from "@mui/material";
 import BreadCrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
+import Link from "@thestory/standard-core/atoms/Link/Link";
 import { useTranslations } from "next-intl";
 import type { BreadcrumbList, WithContext } from "schema-dts";
-import Link from "standard-core/atoms/Link/Link";
 
 interface CrumbsProps {
   crumbs?: Array<{ link: string; href?: string }>;

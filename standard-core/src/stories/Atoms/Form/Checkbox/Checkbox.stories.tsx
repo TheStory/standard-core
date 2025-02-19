@@ -1,8 +1,8 @@
 import Stack from "@mui/material/Stack";
 import { Meta, StoryFn } from "@storybook/react";
+import Button from "@thestory/standard-core/atoms/Button/Button";
+import Checkbox from "@thestory/standard-core/atoms/Form/Checkbox";
 import { SubmitHandler, useForm } from "react-hook-form";
-import Button from "standard-core/atoms/Button/Button";
-import Checkbox from "standard-core/atoms/Form/Checkbox";
 
 export default {
   title: "Atoms/Form/Checkbox",

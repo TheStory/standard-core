@@ -1,6 +1,6 @@
+import { locales } from "@thestory/standard-core/config/i18n";
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
-import { locales } from "standard-core/config/i18n";
 
 export const routing = defineRouting({
   locales: locales,

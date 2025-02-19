@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LanguageSelector from "standard-core/molecules/LanguageSelector/LanguageSelector";
+import LanguageSelector from "@thestory/standard-core/molecules/LanguageSelector/LanguageSelector";
 
 const meta: Meta<typeof LanguageSelector> = {
   title: "Molecules/LanguageSelector",

@@ -6,10 +6,10 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { locales } from "@thestory/standard-core/config/i18n";
+import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { type MouseEvent, useState } from "react";
-import { locales } from "standard-core/config/i18n";
-import { LocalizedLink } from "standard-core/config/navigation";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";

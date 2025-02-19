@@ -1,6 +1,6 @@
 import { generateImageUrl } from "@imgproxy/imgproxy-node";
 import Box, { type BoxProps } from "@mui/material/Box";
-import type { ImageResizeOption } from "standard-core/types";
+import type { ImageResizeOption } from "@thestory/standard-core/types";
 
 export const constructCroppedImageUrl = (
   url: string,

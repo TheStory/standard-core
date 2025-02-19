@@ -1,6 +1,6 @@
+import type { APIResponse } from "@thestory/standard-core/types";
+import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
 import Image, { type ImageProps } from "next/image";
-import type { APIResponse } from "standard-core/types";
-import { cmsMediaUrl } from "standard-core/utils/cmsMediaUrl";
 
 type BaseUploadImageProps = {
   url: string;

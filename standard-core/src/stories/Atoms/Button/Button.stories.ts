@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "standard-core/atoms/Button";
+import { Button } from "@thestory/standard-core/atoms/Button";
 
 const meta: Meta<typeof Button> = {
   title: "Atoms/Button",
