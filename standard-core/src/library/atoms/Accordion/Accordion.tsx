@@ -1,14 +1,9 @@
+import { CtaButton, type CtaButtonProps } from "../CtaButton";
 import Stack from "@mui/material/Stack";
 
-import {
-  AccordionCtaButton,
-  type AccordionCtaButtonProps,
-} from "./AccordionCtaButton";
 import { AccordionList, type AccordionListProps } from "./AccordionList";
 
-export interface AccordionProps
-  extends AccordionListProps,
-    AccordionCtaButtonProps {}
+export interface AccordionProps extends AccordionListProps, CtaButtonProps {}
 
 const Accordion = ({
   button,
@@ -24,7 +19,7 @@ const Accordion = ({
       disableGutters={disableGutters}
       sx={sx}
     />
-    {button && <AccordionCtaButton button={button} />}
+    {button && <CtaButton button={button} />}
   </Stack>
 );
 

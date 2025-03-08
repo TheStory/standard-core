@@ -3,7 +3,7 @@ import {
   Accordion,
   type AccordionItem,
 } from "@thestory/standard-core/atoms/Accordion";
-import type { AccordionCtaButtonProps } from "@thestory/standard-core/atoms/Accordion/AccordionCtaButton";
+import type { CtaButtonProps } from "@thestory/standard-core/atoms/CtaButton";
 
 const meta: Meta<typeof Accordion> = {
   title: "Atoms/Accordion",
@@ -67,7 +67,7 @@ export const Default: Story = {
         color: "primary.main",
         textDecoration: "none",
       },
-    } as AccordionCtaButtonProps["button"],
+    } as CtaButtonProps["button"],
     disableIcon: false,
     disableGutters: false,
   },
@@ -111,7 +111,7 @@ export const WithoutIcon: Story = {
       label: "Load More",
       overline: "Explore more options",
       url: "https://example.com",
-    } as AccordionCtaButtonProps["button"],
+    } as CtaButtonProps["button"],
     disableIcon: true,
     disableGutters: false,
   },
@@ -140,7 +140,7 @@ export const DisabledGutters: Story = {
       label: "Load More",
       overline: "Explore more options",
       url: "https://example.com",
-    } as AccordionCtaButtonProps["button"],
+    } as CtaButtonProps["button"],
     disableIcon: false,
     disableGutters: true,
   },
