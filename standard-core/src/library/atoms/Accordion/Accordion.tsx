@@ -11,13 +11,15 @@ const Accordion = ({
   disableIcon,
   disableGutters,
   sx,
+  useContrastColors,
 }: AccordionProps) => (
-  <Stack direction="column" spacing={2}>
+  <Stack direction="column" spacing={4}>
     <AccordionList
       items={items}
       disableIcon={disableIcon}
       disableGutters={disableGutters}
       sx={sx}
+      useContrastColors={useContrastColors}
     />
     {button && <CtaButton button={button} />}
   </Stack>
