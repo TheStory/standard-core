@@ -1,5 +1,6 @@
 "use client";
 
+import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -56,119 +57,133 @@ const CmsRichText = ({
   if (!blocks) return null;
 
   return (
-    <BlocksRenderer
-      content={blocks as BlocksContent}
-      blocks={{
-        paragraph: ({ children }) => {
-          if (exclude?.includes("p")) return null;
-          return (
-            <Typography
-              component={globalDisableHeadings ? "" : "p"}
-              variant="body1"
-              sx={{
-                mb: 4,
-                ...(componentProps ? componentProps["p"]?.sx : {}),
-                ...resetMarginsSx,
-              }}
-              {...(componentProps ? componentProps["p"] : {})}
-            >
-              {children}
-            </Typography>
-          );
-        },
-        heading: ({ children, level }) => {
-          const targetElement = level === 1 ? "h2" : (`h${level}` as const);
-          if (exclude?.includes(targetElement)) return null;
-
-          return (
-            <Typography
-              component={targetElement}
-              variant={targetElement}
-              sx={{
-                mb: 3,
-                ...(componentProps
-                  ? componentProps[`${targetElement}`]?.sx
-                  : {}),
-                ...resetMarginsSx,
-              }}
-              id={targetElement === "h2" ? generateId(children) : ""}
-              {...(componentProps ? componentProps[`${targetElement}`] : {})}
-            >
-              {children}
-            </Typography>
-          );
-        },
-        code: ({ children }) => (
-          <Paper
-            component="code"
-            sx={{
-              p: 1,
-              my: { xs: 3, lg: 6 },
-              whiteSpace: "pre",
-              display: "block",
-              ...resetMarginsSx,
-            }}
-          >
-            {children}
-          </Paper>
-        ),
-        quote: ({ children }) => {
-          if (exclude?.includes("blockquote")) return null;
-          return (
-            <Typography
-              variant="h5"
-              component="blockquote"
-              sx={{
-                my: 6,
-                pl: { xs: 2, lg: 3 },
-                borderLeft: `2px solid`,
-                borderColor: "secondary.main",
-                ...resetMarginsSx,
-              }}
-            >
-              {children}
-            </Typography>
-          );
-        },
-        link: ({ children, url }) => {
-          const props = url.startsWith("http")
-            ? { rel: "noopener nofollow", target: "_blank" }
-            : {};
-
-          return (
-            <Link href={url} {...props}>
-              {children}
-            </Link>
-          );
-        },
-        list: ({ children, format }) => {
-          if (exclude?.includes("list")) return null;
-          if (!children) return null;
-
-          return (
-            <List
-              component={format === "ordered" ? "ol" : "ul"}
-              dense
-              sx={{
-                py: 0,
-                pl: 3,
-                mt: -3,
-                mb: 4,
-                listStyle: format === "ordered" ? "decimal" : "disc",
-                listStylePosition: "outside",
-                ...resetMarginsSx,
-              }}
-            >
-              {children}
-            </List>
-          );
-        },
-        "list-item": ({ children }) => (
-          <ListItem sx={{ display: "list-item", pl: 1 }}>{children}</ListItem>
-        ),
-        image: () => null,
+    <Box
+      sx={{
+        "& > *": { margin: "0px!important" },
+        "& .MuiTypography-root:first-child": { pt: 0 },
+        "& > h2.MuiTypography-h2": { pt: 12, pb: 3 },
+        "& > h3.MuiTypography-h3": { pt: 12, pb: 3 },
+        "& > h4.MuiTypography-h4": { pt: 12, pb: 3 },
+        "& > h5.MuiTypography-h5": { pt: 12, pb: 3 },
+        "& > h6.MuiTypography-h6": { pt: 12, pb: 3 },
+        "& > ol.MuiList-root, & > ul.MuiList-root": { py: 1, m: 0 },
+        "& > p.MuiTypography-body1": { pb: 6 },
       }}
-    />
+    >
+      <BlocksRenderer
+        content={blocks as BlocksContent}
+        blocks={{
+          paragraph: ({ children }) => {
+            if (exclude?.includes("p")) return null;
+            return (
+              <Typography
+                component={globalDisableHeadings ? "" : "p"}
+                variant="body1"
+                sx={{
+                  mb: 4,
+                  ...(componentProps ? componentProps["p"]?.sx : {}),
+                  ...resetMarginsSx,
+                }}
+                {...(componentProps ? componentProps["p"] : {})}
+              >
+                {children}
+              </Typography>
+            );
+          },
+          heading: ({ children, level }) => {
+            const targetElement = level === 1 ? "h2" : (`h${level}` as const);
+            if (exclude?.includes(targetElement)) return null;
+
+            return (
+              <Typography
+                component={targetElement}
+                variant={targetElement}
+                sx={{
+                  mb: 3,
+                  ...(componentProps
+                    ? componentProps[`${targetElement}`]?.sx
+                    : {}),
+                  ...resetMarginsSx,
+                }}
+                id={targetElement === "h2" ? generateId(children) : ""}
+                {...(componentProps ? componentProps[`${targetElement}`] : {})}
+              >
+                {children}
+              </Typography>
+            );
+          },
+          code: ({ children }) => (
+            <Paper
+              component="code"
+              sx={{
+                p: 1,
+                my: { xs: 3, lg: 6 },
+                whiteSpace: "pre",
+                display: "block",
+                ...resetMarginsSx,
+              }}
+            >
+              {children}
+            </Paper>
+          ),
+          quote: ({ children }) => {
+            if (exclude?.includes("blockquote")) return null;
+            return (
+              <Typography
+                variant="h5"
+                component="blockquote"
+                sx={{
+                  my: 6,
+                  pl: { xs: 2, lg: 3 },
+                  borderLeft: `2px solid`,
+                  borderColor: "secondary.main",
+                  ...resetMarginsSx,
+                }}
+              >
+                {children}
+              </Typography>
+            );
+          },
+          link: ({ children, url }) => {
+            const props = url.startsWith("http")
+              ? { rel: "noopener nofollow", target: "_blank" }
+              : {};
+
+            return (
+              <Link href={url} {...props}>
+                {children}
+              </Link>
+            );
+          },
+          list: ({ children, format }) => {
+            if (exclude?.includes("list")) return null;
+            if (!children) return null;
+
+            return (
+              <List
+                component={format === "ordered" ? "ol" : "ul"}
+                dense
+                sx={{
+                  py: 0,
+                  pl: 3,
+                  mt: -3,
+                  mb: 4,
+                  listStyle: format === "ordered" ? "decimal" : "disc",
+                  listStylePosition: "outside",
+                  ...resetMarginsSx,
+                }}
+              >
+                {children}
+              </List>
+            );
+          },
+          "list-item": ({ children }) => (
+            <ListItem sx={{ display: "list-item", pl: 1 }}>{children}</ListItem>
+          ),
+          image: () => null,
+        }}
+      />
+    </Box>
   );
 };
 
