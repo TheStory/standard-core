@@ -61,6 +61,7 @@ const CmsRichText = ({
       sx={{
         "& > *": { margin: "0px!important" },
         "& .MuiTypography-root:first-child": { pt: 0 },
+        "& .MuiTypography-root:last-child": { pb: 0 },
         "& > h2.MuiTypography-h2": { pt: 12, pb: 3 },
         "& > h3.MuiTypography-h3": { pt: 12, pb: 3 },
         "& > h4.MuiTypography-h4": { pt: 12, pb: 3 },
