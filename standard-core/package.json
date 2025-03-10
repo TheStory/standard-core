@@ -1,6 +1,6 @@
 {
   "name": "@thestory/standard-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/exports.js",
   "module": "./dist/exports.js",
   "types": "./dist/exports.d.ts",
@@ -12,13 +12,29 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
+    },
     "./atoms/Accordion/Accordion": {
       "import": "./dist/atoms/Accordion/Accordion.js",
       "require": "./dist/atoms/Accordion/Accordion.js"
-    },
-    "./atoms/Accordion/AccordionCtaButton": {
-      "import": "./dist/atoms/Accordion/AccordionCtaButton.js",
-      "require": "./dist/atoms/Accordion/AccordionCtaButton.js"
     },
     "./atoms/Accordion/AccordionIcon": {
       "import": "./dist/atoms/Accordion/AccordionIcon.js",
@@ -108,6 +124,14 @@
       "import": "./dist/atoms/CroppedImage/index.js",
       "require": "./dist/atoms/CroppedImage/index.js"
     },
+    "./atoms/CtaButton/CtaButton": {
+      "import": "./dist/atoms/CtaButton/CtaButton.js",
+      "require": "./dist/atoms/CtaButton/CtaButton.js"
+    },
+    "./atoms/CtaButton": {
+      "import": "./dist/atoms/CtaButton/index.js",
+      "require": "./dist/atoms/CtaButton/index.js"
+    },
     "./atoms/Divider/Divider": {
       "import": "./dist/atoms/Divider/Divider.js",
       "require": "./dist/atoms/Divider/Divider.js"
@@ -116,21 +140,17 @@
       "import": "./dist/atoms/Divider/index.js",
       "require": "./dist/atoms/Divider/index.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
-    },
     "./atoms/Form/Checkbox": {
       "import": "./dist/atoms/Form/Checkbox.js",
       "require": "./dist/atoms/Form/Checkbox.js"
     },
-    "./atoms/Form": {
-      "import": "./dist/atoms/Form/index.js",
-      "require": "./dist/atoms/Form/index.js"
-    },
     "./atoms/Form/TextField": {
       "import": "./dist/atoms/Form/TextField.js",
       "require": "./dist/atoms/Form/TextField.js"
+    },
+    "./atoms/Form": {
+      "import": "./dist/atoms/Form/index.js",
+      "require": "./dist/atoms/Form/index.js"
     },
     "./atoms/FormatedData/FormatedData": {
       "import": "./dist/atoms/FormatedData/FormatedData.js",
@@ -140,17 +160,13 @@
       "import": "./dist/atoms/FormatedData/index.js",
       "require": "./dist/atoms/FormatedData/index.js"
     },
-    "./atoms/Link": {
-      "import": "./dist/atoms/Link/index.js",
-      "require": "./dist/atoms/Link/index.js"
-    },
     "./atoms/Link/Link": {
       "import": "./dist/atoms/Link/Link.js",
       "require": "./dist/atoms/Link/Link.js"
     },
-    "./atoms/Map": {
-      "import": "./dist/atoms/Map/index.js",
-      "require": "./dist/atoms/Map/index.js"
+    "./atoms/Link": {
+      "import": "./dist/atoms/Link/index.js",
+      "require": "./dist/atoms/Link/index.js"
     },
     "./atoms/Map/Map": {
       "import": "./dist/atoms/Map/Map.js",
@@ -160,25 +176,33 @@
       "import": "./dist/atoms/Map/Root.js",
       "require": "./dist/atoms/Map/Root.js"
     },
+    "./atoms/Map": {
+      "import": "./dist/atoms/Map/index.js",
+      "require": "./dist/atoms/Map/index.js"
+    },
     "./atoms/Map/types": {
       "import": "./dist/atoms/Map/types.js",
       "require": "./dist/atoms/Map/types.js"
-    },
-    "./atoms/Pagination": {
-      "import": "./dist/atoms/Pagination/index.js",
-      "require": "./dist/atoms/Pagination/index.js"
     },
     "./atoms/Pagination/Pagination": {
       "import": "./dist/atoms/Pagination/Pagination.js",
       "require": "./dist/atoms/Pagination/Pagination.js"
     },
-    "./atoms/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/index.js",
-      "require": "./dist/atoms/SvgIcon/index.js"
+    "./atoms/Pagination": {
+      "import": "./dist/atoms/Pagination/index.js",
+      "require": "./dist/atoms/Pagination/index.js"
     },
     "./atoms/SvgIcon/SvgIcon": {
       "import": "./dist/atoms/SvgIcon/SvgIcon.js",
       "require": "./dist/atoms/SvgIcon/SvgIcon.js"
+    },
+    "./atoms/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/index.js",
+      "require": "./dist/atoms/SvgIcon/index.js"
+    },
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
     },
     "./config/i18n": {
       "import": "./dist/config/i18n.js",
@@ -204,37 +228,17 @@
       "import": "./dist/molecules/Crumbs/index.js",
       "require": "./dist/molecules/Crumbs/index.js"
     },
-    "./molecules": {
-      "import": "./dist/molecules/exports.js",
-      "require": "./dist/molecules/exports.js"
+    "./molecules/LanguageSelector/LanguageSelector": {
+      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
+      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
     },
     "./molecules/LanguageSelector": {
       "import": "./dist/molecules/LanguageSelector/index.js",
       "require": "./dist/molecules/LanguageSelector/index.js"
     },
-    "./molecules/LanguageSelector/LanguageSelector": {
-      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
-      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/index.js",
-      "require": "./dist/NextIntlClientInheritor/index.js"
-    },
-    "./NextIntlClientInheritor/NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
-      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
-    },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
-    },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
-    },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
+    "./molecules": {
+      "import": "./dist/molecules/exports.js",
+      "require": "./dist/molecules/exports.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
