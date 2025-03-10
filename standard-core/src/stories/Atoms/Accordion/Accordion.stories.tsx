@@ -182,3 +182,35 @@ export const InverseColors: Story = {
     ),
   ],
 };
+
+export const WithLinks: Story = {
+  args: {
+    items: [
+      {
+        label: "Item 1",
+        content: "Content for item 1",
+        overline: "Overline 1",
+        links: [
+          { id: 11, label: "MeineFläche", overline: null, url: "#" },
+          { id: 12, label: "McClaim", overline: null, url: "#" },
+        ],
+      },
+      {
+        label: "Item 2",
+        content: "Content for item 2",
+        overline: "Overline 2",
+      },
+    ] as AccordionItem[],
+    button: {
+      label: "Load More",
+      overline: "Explore more options",
+      url: "https://example.com",
+      sx: {
+        color: "primary.main",
+        textDecoration: "none",
+      },
+    } as CtaButtonProps["button"],
+    disableIcon: false,
+    disableGutters: false,
+  },
+};

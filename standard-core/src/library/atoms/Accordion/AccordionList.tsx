@@ -1,8 +1,13 @@
 import MuiAccordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { SxProps } from "@mui/system";
+import Button from "@thestory/standard-core/atoms/Button/Button";
+import Link from "@thestory/standard-core/atoms/Link/Link";
+import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import type { ContrastAware } from "@thestory/standard-core/types";
 
 import { ExpandIcon } from "./AccordionIcon";
@@ -22,7 +27,7 @@ export const AccordionList = ({
   useContrastColors,
   sx,
 }: AccordionListProps) => (
-  <div>
+  <Box>
     {items.map((item, index) => (
       <MuiAccordion
         key={`accordion-${index}`}
@@ -72,7 +77,6 @@ export const AccordionList = ({
             </Typography>
           )}
         </AccordionSummary>
-
         <AccordionDetails
           sx={{
             pt: 0,
@@ -82,7 +86,14 @@ export const AccordionList = ({
         >
           {item.content}
         </AccordionDetails>
+        <Stack flexDirection="row" flexWrap="wrap" columnGap={1}>
+          {item?.links?.map((link, index) => (
+            <Link key={`link-${index}`} href={link.url}>
+              {link.label}
+            </Link>
+          ))}
+        </Stack>
       </MuiAccordion>
     ))}
-  </div>
+  </Box>
 );
