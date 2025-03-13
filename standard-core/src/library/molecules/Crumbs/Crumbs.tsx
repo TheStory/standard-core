@@ -6,6 +6,7 @@ import BreadCrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
 import Link from "@thestory/standard-core/atoms/Link/Link";
 import { useTranslations } from "next-intl";
+import Script from "next/script";
 import type { BreadcrumbList, WithContext } from "schema-dts";
 
 interface CrumbsProps {
@@ -57,7 +58,7 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
   return (
     <>
       <BreadCrumbs
-        separator={<ChevronRightIcon fontSize="small" sx={{ mb: "2px" }} />}
+        separator={<ChevronRightIcon fontSize="inherit" />}
         sx={{
           color: ({ palette }) =>
             lightVariant
@@ -88,7 +89,8 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
           ),
         )}
       </BreadCrumbs>
-      <script
+      <Script
+        id="schema-breadcrumbs"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
