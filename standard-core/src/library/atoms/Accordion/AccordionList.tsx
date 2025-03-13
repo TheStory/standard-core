@@ -49,6 +49,7 @@ export const AccordionList = ({
         }}
       >
         <AccordionSummary
+          component="div"
           sx={{
             height: "66px",
             my: 0,
