@@ -62,13 +62,13 @@ const CmsRichText = ({
         "& > *": { margin: "0px!important" },
         "& .MuiTypography-root:first-child": { pt: 0 },
         "& .MuiTypography-root:last-child": { pb: 0 },
-        "& > h2.MuiTypography-h2": { pt: 12, pb: 3 },
-        "& > h3.MuiTypography-h3": { pt: 12, pb: 3 },
-        "& > h4.MuiTypography-h4": { pt: 12, pb: 3 },
-        "& > h5.MuiTypography-h5": { pt: 12, pb: 3 },
-        "& > h6.MuiTypography-h6": { pt: 12, pb: 3 },
-        "& > ol.MuiList-root, & > ul.MuiList-root": { py: 1, m: 0 },
-        "& > p.MuiTypography-body1": { pb: 6 },
+        "& > h2.MuiTypography-h2": { pt: 9, pb: 3 },
+        "& > h3.MuiTypography-h3": { pt: 8, pb: 3 },
+        "& > h4.MuiTypography-h4": { pt: 8, pb: 3 },
+        "& > h5.MuiTypography-h5": { pt: 6, pb: 3 },
+        "& > h6.MuiTypography-h6": { pt: 4, pb: 3 },
+        "& > ol.MuiList-root, & > ul.MuiList-root": { pt: 0.5, pb: 3, m: 0 },
+        "& > p.MuiTypography-body1": { py: 2 },
       }}
     >
       <BlocksRenderer
