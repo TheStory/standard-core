@@ -1,4 +1,4 @@
-import { NestedKeyOf } from "use-intl";
+import type { NestedKeyOf } from "use-intl";
 import { z } from "zod";
 
 type MessageKeys = NestedKeyOf<{ name: { error: "Name is required" } }>;

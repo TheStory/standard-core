@@ -11,16 +11,14 @@ const NextIntlClientInheritor = async ({
   locale: string;
   messages: any;
   timeZone: Timezone;
-}>) => {
-  return (
-    <NextIntlClientProvider
-      locale={locale}
-      messages={messages}
-      timeZone={timeZone}
-    >
-      {children}
-    </NextIntlClientProvider>
-  );
-};
+}>) => (
+  <NextIntlClientProvider
+    locale={locale}
+    messages={messages}
+    timeZone={timeZone}
+  >
+    {children}
+  </NextIntlClientProvider>
+);
 
 export default NextIntlClientInheritor;

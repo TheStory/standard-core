@@ -1,0 +1,1 @@
+export { default as FormatedData } from "./FormatedData";

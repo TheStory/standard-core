@@ -5,9 +5,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { SxProps } from "@mui/system";
-import Button from "@thestory/standard-core/atoms/Button/Button";
 import Link from "@thestory/standard-core/atoms/Link/Link";
-import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import type { ContrastAware } from "@thestory/standard-core/types";
 
 import { ExpandIcon } from "./AccordionIcon";

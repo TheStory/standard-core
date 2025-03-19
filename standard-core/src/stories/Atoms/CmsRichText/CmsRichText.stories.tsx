@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { type BlocksContent } from "@strapi/blocks-react-renderer";
+import type { Meta, StoryObj } from "@storybook/react";
+import type { BlocksContent } from "@strapi/blocks-react-renderer";
 import CmsRichText from "@thestory/standard-core/atoms/CmsRichText/CmsRichText";
 
 const meta: Meta<typeof CmsRichText> = {

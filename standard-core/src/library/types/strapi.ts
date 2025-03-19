@@ -1,4 +1,4 @@
-import { ID } from "@strapi/database/dist/types";
+import type { ID } from "@strapi/database/dist/types";
 import type { Attribute, Common, Utils } from "@strapi/strapi";
 
 type IDProperty = { id: ID };
