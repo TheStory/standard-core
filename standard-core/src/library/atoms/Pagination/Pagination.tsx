@@ -10,11 +10,11 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 interface PaginationProps {
-  pageCount: number;
+  totalPages: number;
   sx?: SxProps;
 }
 
-const Pagination = ({ pageCount, sx }: PaginationProps) => {
+const Pagination = ({ totalPages, sx }: PaginationProps) => {
   const params = useSearchParams();
   const { push } = useRouter();
   const pathname = usePathname();
@@ -29,7 +29,7 @@ const Pagination = ({ pageCount, sx }: PaginationProps) => {
 
   const currentPage = +(params.get("page") || 1);
 
-  if (pageCount <= 1) {
+  if (totalPages <= 1) {
     return null;
   }
 
@@ -47,7 +47,7 @@ const Pagination = ({ pageCount, sx }: PaginationProps) => {
       page={currentPage}
       showFirstButton
       showLastButton
-      count={pageCount}
+      count={totalPages}
       size="large"
       title="pagination"
       renderItem={(item) => (
