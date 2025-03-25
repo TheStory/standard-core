@@ -10,6 +10,7 @@ import { locales } from "@thestory/standard-core/config/i18n";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { type MouseEvent, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";
@@ -26,6 +27,11 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const pathnameWithoutLang = pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
+  const currentUrl = `${pathnameWithoutLang}${searchParams ? `?${searchParams.toString()}` : ""}`;
 
   return (
     <>
@@ -74,7 +80,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
             <Link
               component={LocalizedLink as any}
               underline="none"
-              href="/"
+              href={currentUrl}
               locale={l}
               onClick={handleClose}
               px="4px"
