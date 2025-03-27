@@ -9,8 +9,8 @@ import MenuItem from "@mui/material/MenuItem";
 import { locales } from "@thestory/standard-core/config/i18n";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import { useLocale } from "next-intl";
-import { type MouseEvent, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { type MouseEvent, useState } from "react";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";
@@ -32,6 +32,8 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
   const searchParams = useSearchParams();
   const pathnameWithoutLang = pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
   const currentUrl = `${pathnameWithoutLang}${searchParams ? `?${searchParams.toString()}` : ""}`;
+
+  if (locales.length <= 1) return null;
 
   return (
     <>
