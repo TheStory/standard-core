@@ -912,7 +912,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -925,7 +924,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: false;
         };
       }> &
-      Attribute.DefaultTo<'blog, article'>;
+      Attribute.DefaultTo<'blog, article, article-id, article-slug'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -956,7 +955,8 @@ export interface ApiArticleRatingEntryArticleRatingEntry
   info: {
     singularName: 'article-rating-entry';
     pluralName: 'article-rating-entries';
-    displayName: 'ArticleRatingEntry';
+    displayName: 'Article: review';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1002,7 +1002,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   info: {
     singularName: 'author';
     pluralName: 'authors';
-    displayName: 'Author';
+    displayName: 'Article: author';
     description: '';
   };
   options: {
@@ -1074,7 +1074,7 @@ export interface ApiBlogSettingsBlogSettings extends Schema.SingleType {
   info: {
     singularName: 'blog-settings';
     pluralName: 'blog-settings-list';
-    displayName: 'Blog Settings';
+    displayName: 'Settings: blog';
     description: '';
   };
   options: {
@@ -1094,7 +1094,6 @@ export interface ApiBlogSettingsBlogSettings extends Schema.SingleType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1108,6 +1107,11 @@ export interface ApiBlogSettingsBlogSettings extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'blog'>;
+    defaultCategory: Attribute.Relation<
+      'api::blog-settings.blog-settings',
+      'oneToOne',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1136,7 +1140,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: 'Article: category';
     description: '';
   };
   options: {
@@ -1182,7 +1186,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1225,7 +1228,7 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
   info: {
     singularName: 'contact-page';
     pluralName: 'contact-pages';
-    displayName: 'ContactPage';
+    displayName: 'Settings: contact form';
     description: '';
   };
   options: {
@@ -1245,7 +1248,6 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1288,7 +1290,7 @@ export interface ApiContactThankYouPageContactThankYouPage
   info: {
     singularName: 'contact-thank-you-page';
     pluralName: 'contact-thank-you-pages';
-    displayName: 'ContactThankYouPage';
+    displayName: 'Settings: contact confirmation page';
     description: '';
   };
   options: {
@@ -1324,9 +1326,10 @@ export interface ApiContactThankYouPageContactThankYouPage
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'contact-thank-you'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1356,7 +1359,7 @@ export interface ApiCookiePolicySettingCookiePolicySetting
   info: {
     singularName: 'cookie-policy-setting';
     pluralName: 'cookie-policy-settings';
-    displayName: 'CookiePolicy settings';
+    displayName: 'GDPR: cookies';
     description: '';
   };
   options: {
@@ -1394,7 +1397,8 @@ export interface ApiCookiePolicySettingCookiePolicySetting
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'cookiePolicy'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1471,12 +1475,19 @@ export interface ApiCtaCta extends Schema.CollectionType {
         };
       }>;
     button: Attribute.Component<'content.cta-button'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'cta-id'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::cta.cta', 'oneToOne', 'admin::user'> &
@@ -1613,6 +1624,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     cacheTags: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1621,13 +1638,6 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }> &
       Attribute.DefaultTo<'homepage'>;
-    seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1656,7 +1666,7 @@ export interface ApiOpinionSettingsOpinionSettings extends Schema.SingleType {
   info: {
     singularName: 'opinion-settings';
     pluralName: 'opinions-settings';
-    displayName: 'Opinion Settings';
+    displayName: 'Settings: opinions';
     description: '';
   };
   options: {
@@ -1697,6 +1707,14 @@ export interface ApiOpinionSettingsOpinionSettings extends Schema.SingleType {
           localized: true;
         };
       }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'opinion-settings'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1726,7 +1744,7 @@ export interface ApiPrivacyPolicySettingPrivacyPolicySetting
   info: {
     singularName: 'privacy-policy-setting';
     pluralName: 'privacy-policy-settings';
-    displayName: 'PrivacyPolicy settings';
+    displayName: 'GDPR: privacy policy';
     description: '';
   };
   options: {
@@ -1764,7 +1782,8 @@ export interface ApiPrivacyPolicySettingPrivacyPolicySetting
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'privacyPolicy'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1850,9 +1869,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<0>;
-    category: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::product.product',
-      'oneToOne',
+      'oneToMany',
       'api::product-category.product-category'
     >;
     publishDate: Attribute.DateTime &
@@ -1862,13 +1881,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    slug: Attribute.UID<'api::product.product', 'title'> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     gallery: Attribute.Component<'content.gallery', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1876,7 +1888,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    pieces: Attribute.Relation<
+    parts: Attribute.Relation<
       'api::product.product',
       'oneToMany',
       'api::product-category.product-category'
@@ -1921,6 +1933,33 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'product-id, product-slug'>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cta: Attribute.Component<'content.cta-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1951,7 +1990,7 @@ export interface ApiProductCategoryProductCategory
   info: {
     singularName: 'product-category';
     pluralName: 'product-categories';
-    displayName: 'Product Category';
+    displayName: 'Product: category';
     description: '';
   };
   options: {
@@ -1983,13 +2022,20 @@ export interface ApiProductCategoryProductCategory
         };
       }> &
       Attribute.DefaultTo<0>;
-    namePlural: Attribute.String &
-      Attribute.Required &
+    links: Attribute.Component<'content.button-with-overline', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'product-categories, product-categories-id'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -2018,7 +2064,8 @@ export interface ApiProductColorProductColor extends Schema.CollectionType {
   info: {
     singularName: 'product-color';
     pluralName: 'product-colors';
-    displayName: 'ProductColor';
+    displayName: 'Product: color';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -2065,7 +2112,8 @@ export interface ApiProductMaterialProductMaterial
   info: {
     singularName: 'product-material';
     pluralName: 'product-materials';
-    displayName: 'ProductMaterial';
+    displayName: 'Product: material';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -2111,7 +2159,7 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
   info: {
     singularName: 'product-page';
     pluralName: 'product-pages';
-    displayName: 'ProductPage';
+    displayName: 'Settings: products';
     description: '';
   };
   options: {
@@ -2145,7 +2193,6 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -2155,9 +2202,10 @@ export interface ApiProductPageProductPage extends Schema.SingleType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'product-page'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -2186,7 +2234,7 @@ export interface ApiSettingsSettings extends Schema.SingleType {
   info: {
     singularName: 'settings';
     pluralName: 'settings-list';
-    displayName: 'App Settings';
+    displayName: 'Settings: general';
     description: '';
   };
   options: {
@@ -2334,13 +2382,20 @@ export interface ApiSettingsSettings extends Schema.SingleType {
           localized: true;
         };
       }>;
+    favicon: Attribute.Media<'images'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     cacheTags: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'settings'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

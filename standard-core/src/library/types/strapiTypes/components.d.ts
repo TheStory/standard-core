@@ -286,10 +286,11 @@ export interface ContentGallery extends Schema.Component {
   collectionName: 'components_content_galleries';
   info: {
     displayName: 'gallery';
+    description: '';
   };
   attributes: {
     image: Attribute.Media<'images'> & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    description: Attribute.Text;
   };
 }
 
@@ -433,13 +434,21 @@ export interface ContentAboutSection extends Schema.Component {
   collectionName: 'components_content_about_sections';
   info: {
     displayName: 'aboutSection';
+    description: '';
   };
   attributes: {
     subTitle: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     text: Attribute.Blocks & Attribute.Required;
     blocks: Attribute.Component<'content.value-square', true> &
-      Attribute.Required;
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 3;
+        },
+        number
+      >;
+    image: Attribute.Media<'images'>;
   };
 }
 
