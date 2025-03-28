@@ -1,4 +1,3 @@
-// FormTextField Component Implementation
 import TextField, {
   type TextFieldProps as MuiTextFieldProps,
 } from "@mui/material/TextField";

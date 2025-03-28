@@ -1,8 +1,8 @@
 "use client";
 
-import type { ButtonOwnProps } from "@mui/material";
-import type { SxProps, Theme } from "@mui/material";
+import type { ButtonOwnProps } from "@mui/material/Button";
 import MuiButton from "@mui/material/Button";
+import type { SxProps, Theme } from "@mui/material/styles";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import type { ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 

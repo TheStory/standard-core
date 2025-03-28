@@ -2,9 +2,9 @@
 
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import type { SxProps } from "@mui/material";
 import MuiPagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
+import type { SxProps } from "@mui/material/styles";
 import { usePathname, useRouter } from "@thestory/standard-core/config";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";

@@ -1,9 +1,9 @@
 "use client";
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { type SxProps, alpha } from "@mui/material";
 import BreadCrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
+import { type SxProps, alpha } from "@mui/material/styles";
 import Link from "@thestory/standard-core/atoms/Link/Link";
 import { useTranslations } from "next-intl";
 import Script from "next/script";

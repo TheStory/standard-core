@@ -30,7 +30,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const pathnameWithoutLang = pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
+  const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
   const currentUrl = `${pathnameWithoutLang}${searchParams ? `?${searchParams.toString()}` : ""}`;
 
   if (locales.length <= 1) return null;
@@ -82,7 +82,9 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
             <Link
               component={LocalizedLink as any}
               underline="none"
-              href={currentUrl}
+              // @todo dokończyć w ramach SW-77
+              // href={currentUrl}
+              href="/"
               locale={l}
               onClick={handleClose}
               px="4px"

@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@mui/material/styles";
+// eslint-disable-next-line no-restricted-imports
 import type { ThemeProviderProps } from "@mui/material/styles/ThemeProvider";
 import type { DefaultTheme } from "@mui/system";
 import React from "react";

@@ -2,8 +2,8 @@
 
 import { SvgIcon } from "../SvgIcon";
 import CheckIcon from "@mui/icons-material/Check";
-import type { SvgIconOwnProps } from "@mui/material";
 import Box from "@mui/material/Box";
+import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
 import { useTranslations } from "next-intl";
 

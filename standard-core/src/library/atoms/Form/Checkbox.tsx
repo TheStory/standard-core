@@ -1,4 +1,4 @@
-import Checkbox, { type CheckboxProps } from "@mui/material/Checkbox/Checkbox";
+import Checkbox, { type CheckboxProps } from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import type { ReactElement } from "react";
 import {

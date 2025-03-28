@@ -12,7 +12,7 @@ const meta: Meta<typeof Pagination> = {
     },
   },
   argTypes: {
-    pageCount: {
+    totalPages: {
       control: { type: "number", min: 1, max: 20 },
       description: "Total number of pages.",
     },
@@ -28,6 +28,6 @@ type Story = StoryObj<typeof Pagination>;
 
 export const Default: Story = {
   args: {
-    pageCount: 5,
+    totalPages: 5,
   },
 };

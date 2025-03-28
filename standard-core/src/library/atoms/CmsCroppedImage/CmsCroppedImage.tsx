@@ -1,4 +1,4 @@
-import type { SxProps } from "@mui/material";
+import type { SxProps } from "@mui/material/styles";
 import { CroppedImage } from "@thestory/standard-core/atoms/CroppedImage";
 import type { ImageResizeOption } from "@thestory/standard-core/types";
 import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";

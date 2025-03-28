@@ -1,8 +1,8 @@
 "use client";
 
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import type { SxProps } from "@mui/material";
 import Fab from "@mui/material/Fab";
+import type { SxProps } from "@mui/material/styles";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
