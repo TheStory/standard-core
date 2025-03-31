@@ -2,7 +2,7 @@ import MuiDivider, {
   type DividerProps as MuiDividerProps,
 } from "@mui/material/Divider";
 
-interface DividerProps extends MuiDividerProps {}
+type DividerProps = {} & MuiDividerProps;
 
 const Divider = (props: DividerProps) => (
   <MuiDivider
