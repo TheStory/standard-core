@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { alpha } from "@mui/material/styles";
 import type { SxProps } from "@mui/system";
 import Link from "@thestory/standard-core/atoms/Link/Link";
 import type { ContrastAware } from "@thestory/standard-core/types";
@@ -39,7 +40,7 @@ export const AccordionList = ({
           backgroundColor: "transparent",
           "&.MuiAccordion-root:before": {
             backgroundColor: useContrastColors
-              ? "rgba(255, 255, 255, 0.4)"
+              ? alpha("primary.focus", 0.3)
               : "divider",
             height: 2,
           },
@@ -52,6 +53,8 @@ export const AccordionList = ({
             height: "66px",
             my: 0,
             px: 0,
+            // backgroundColor: "red",
+            // primary/focusVisible
             "& .MuiAccordionSummary-content": {
               gap: 1,
             },
