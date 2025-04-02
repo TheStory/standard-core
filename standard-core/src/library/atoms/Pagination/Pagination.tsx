@@ -15,19 +15,21 @@ interface PaginationProps {
 }
 
 const Pagination = ({ totalPages, sx }: PaginationProps) => {
-  const params = useSearchParams();
-  const { push } = useRouter();
+  const searchParams = useSearchParams();
+  const { replace, push } = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
+    const params = new URLSearchParams(searchParams);
     const page = new URLSearchParams(params.toString());
 
     if (!page.get("page")) {
-      push(`${pathname}?page=1`, { scroll: false });
+      params.set("page", "1");
+      replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
-  }, [pathname, push, params]);
+  }, [pathname, replace, searchParams]);
 
-  const currentPage = +(params.get("page") || 1);
+  const currentPage = +(searchParams.get("page") || 1);
 
   if (totalPages <= 1) {
     return null;
@@ -38,12 +40,14 @@ const Pagination = ({ totalPages, sx }: PaginationProps) => {
       sx={{
         mx: "auto",
         width: "fit-content",
-        mt: 7,
+        my: 7,
         ...sx,
       }}
-      onChange={(_, value) =>
-        push(`${pathname}?page=${value}`, { scroll: false })
-      }
+      onChange={(_, value) => {
+        const params = new URLSearchParams(searchParams);
+        params.set("page", value.toString());
+        push(`${pathname}?${params.toString()}`, { scroll: false });
+      }}
       page={currentPage}
       showFirstButton
       showLastButton
