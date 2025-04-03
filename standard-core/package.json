@@ -144,6 +144,10 @@
       "import": "./dist/atoms/Form/Checkbox.js",
       "require": "./dist/atoms/Form/Checkbox.js"
     },
+    "./atoms/Form/TermsLabel": {
+      "import": "./dist/atoms/Form/TermsLabel.js",
+      "require": "./dist/atoms/Form/TermsLabel.js"
+    },
     "./atoms/Form/TextField": {
       "import": "./dist/atoms/Form/TextField.js",
       "require": "./dist/atoms/Form/TextField.js"
