@@ -9,12 +9,31 @@ import MenuItem from "@mui/material/MenuItem";
 import { locales } from "@thestory/standard-core/config/i18n";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import { useLocale } from "next-intl";
+import {type MouseEvent, useEffect, useMemo, useState} from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { type MouseEvent, useState } from "react";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";
 }
+
+type AlternateLanguage = { href:string, hreflang:string };
+
+const getAlternateLanguages = () => {
+  const alternateLinks = document.querySelectorAll('link[rel="alternate"]');
+
+  const alternateLanguages = [] as Array<AlternateLanguage>;
+
+  alternateLinks.forEach(link => {
+    const hreflang = link.getAttribute('hreflang');
+    const href = link.getAttribute('href');
+
+    if (hreflang && href) {
+      alternateLanguages.push({ hreflang, href });
+    }
+  });
+
+  return alternateLanguages;
+};
 
 const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
   const lang = useLocale();
@@ -28,12 +47,28 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     setAnchorEl(null);
   };
 
+  const [alternateLanguages, setAlternateLanguages] = useState<AlternateLanguage[]>([])
+
+  useEffect(() => {
+      const alternateLanguagesData = getAlternateLanguages();
+      setAlternateLanguages(alternateLanguagesData)
+  }, []);
+
+  const getHrefForLocale = useMemo(() => (l:string) => {
+    if(alternateLanguages) {
+      const href = alternateLanguages?.find((lang) => lang.hreflang === l)?.href;
+      if(href)
+        return href;
+    }
+    return "/"
+  },[alternateLanguages])
+
+  if (locales.length <= 1) return null;
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
-  const currentUrl = `${pathnameWithoutLang}${searchParams ? `?${searchParams.toString()}` : ""}`;
-
-  if (locales.length <= 1) return null;
+  const currentUrl = pathnameWithoutLang + "?" + searchParams.toString();
 
   return (
     <>
@@ -77,22 +112,24 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
           },
         }}
       >
-        {locales.map((l) => (
-          <MenuItem key={`lang-${l}`} selected={lang === l}>
-            <Link
-              component={LocalizedLink as any}
-              underline="none"
-              // @todo dokończyć w ramach SW-77
-              // href={currentUrl}
-              href="/"
-              locale={l}
-              onClick={handleClose}
-              px="4px"
-            >
-              {l.toUpperCase()}
-            </Link>
-          </MenuItem>
-        ))}
+        { locales.map((l) => {
+            const href = lang === l ? currentUrl : getHrefForLocale ? getHrefForLocale(l) : "/"
+
+            return (
+              <MenuItem key={`lang-${l}`} selected={lang === l}>
+                <Link
+                  component={LocalizedLink as any}
+                  underline="none"
+                  href={href}
+                  locale={l}
+                  onClick={handleClose}
+                  px="4px"
+                >
+                  {l.toUpperCase()}
+                </Link>
+              </MenuItem>
+            )
+        })}
       </Menu>
     </>
   );
