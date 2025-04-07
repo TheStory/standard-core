@@ -9,23 +9,23 @@ import MenuItem from "@mui/material/MenuItem";
 import { locales } from "@thestory/standard-core/config/i18n";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
 import { useLocale } from "next-intl";
-import {type MouseEvent, useEffect, useMemo, useState} from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { type MouseEvent, useEffect, useMemo, useState } from "react";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";
 }
 
-type AlternateLanguage = { href:string, hreflang:string };
+type AlternateLanguage = { href: string; hreflang: string };
 
 const getAlternateLanguages = () => {
   const alternateLinks = document.querySelectorAll('link[rel="alternate"]');
 
   const alternateLanguages = [] as Array<AlternateLanguage>;
 
-  alternateLinks.forEach(link => {
-    const hreflang = link.getAttribute('hreflang');
-    const href = link.getAttribute('href');
+  alternateLinks.forEach((link) => {
+    const hreflang = link.getAttribute("hreflang");
+    const href = link.getAttribute("href");
 
     if (hreflang && href) {
       alternateLanguages.push({ hreflang, href });
@@ -47,28 +47,35 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     setAnchorEl(null);
   };
 
-  const [alternateLanguages, setAlternateLanguages] = useState<AlternateLanguage[]>([])
+  const [alternateLanguages, setAlternateLanguages] = useState<
+    AlternateLanguage[]
+  >([]);
 
   useEffect(() => {
-      const alternateLanguagesData = getAlternateLanguages();
-      setAlternateLanguages(alternateLanguagesData)
+    const alternateLanguagesData = getAlternateLanguages();
+    setAlternateLanguages(alternateLanguagesData);
   }, []);
 
-  const getHrefForLocale = useMemo(() => (l:string) => {
-    if(alternateLanguages) {
-      const href = alternateLanguages?.find((lang) => lang.hreflang === l)?.href;
-      if(href)
-        return href;
-    }
-    return "/"
-  },[alternateLanguages])
-
-  if (locales.length <= 1) return null;
+  const getHrefForLocale = useMemo(
+    () => (l: string) => {
+      if (alternateLanguages) {
+        const href = alternateLanguages?.find(
+          (lang) => lang.hreflang === l,
+        )?.href;
+        if (href) return href;
+      }
+      return "/";
+    },
+    [alternateLanguages],
+  );
 
   const pathname = usePathname();
+
   const searchParams = useSearchParams();
   const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
   const currentUrl = pathnameWithoutLang + "?" + searchParams.toString();
+
+  if (locales.length <= 1) return null;
 
   return (
     <>
@@ -112,23 +119,28 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
           },
         }}
       >
-        { locales.map((l) => {
-            const href = lang === l ? currentUrl : getHrefForLocale ? getHrefForLocale(l) : "/"
+        {locales.map((l) => {
+          const href =
+            lang === l
+              ? currentUrl
+              : getHrefForLocale
+                ? getHrefForLocale(l)
+                : "/";
 
-            return (
-              <MenuItem key={`lang-${l}`} selected={lang === l}>
-                <Link
-                  component={LocalizedLink as any}
-                  underline="none"
-                  href={href}
-                  locale={l}
-                  onClick={handleClose}
-                  px="4px"
-                >
-                  {l.toUpperCase()}
-                </Link>
-              </MenuItem>
-            )
+          return (
+            <MenuItem key={`lang-${l}`} selected={lang === l}>
+              <Link
+                component={LocalizedLink as any}
+                underline="none"
+                href={href}
+                locale={l}
+                onClick={handleClose}
+                px="4px"
+              >
+                {l.toUpperCase()}
+              </Link>
+            </MenuItem>
+          );
         })}
       </Menu>
     </>
