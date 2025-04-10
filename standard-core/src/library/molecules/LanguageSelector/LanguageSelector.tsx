@@ -70,8 +70,6 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     [alternateLanguages],
   );
 
-
-
   const searchParams = useSearchParams();
   const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
   const currentUrl = pathnameWithoutLang + "?" + searchParams.toString();
