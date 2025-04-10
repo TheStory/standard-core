@@ -50,11 +50,12 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
   const [alternateLanguages, setAlternateLanguages] = useState<
     AlternateLanguage[]
   >([]);
+  const pathname = usePathname();
 
   useEffect(() => {
     const alternateLanguagesData = getAlternateLanguages();
     setAlternateLanguages(alternateLanguagesData);
-  }, []);
+  }, [pathname]);
 
   const getHrefForLocale = useMemo(
     () => (l: string) => {
@@ -69,7 +70,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     [alternateLanguages],
   );
 
-  const pathname = usePathname();
+
 
   const searchParams = useSearchParams();
   const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
