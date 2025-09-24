@@ -1,8 +1,9 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   Accordion,
   type AccordionItem,
 } from "@thestory/standard-core/atoms/Accordion";
+import { CmsRichText } from "@thestory/standard-core/atoms/CmsRichText";
 import type { CtaButtonProps } from "@thestory/standard-core/atoms/CtaButton";
 
 const meta: Meta<typeof Accordion> = {
@@ -187,8 +188,64 @@ export const WithLinks: Story = {
   args: {
     items: [
       {
-        label: "Item 1",
-        content: "Content for item 1",
+        label: "Lorem ipsum dolor sit amet",
+        content: (
+          <CmsRichText
+            blocks={[
+              {
+                type: "paragraph",
+                children: [
+                  {
+                    type: "text",
+                    text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.",
+                  },
+                ],
+              },
+              {
+                type: "paragraph",
+                children: [
+                  {
+                    type: "text",
+                    text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.",
+                  },
+                ],
+              },
+              {
+                type: "list",
+                format: "unordered",
+                children: [
+                  {
+                    type: "list-item",
+                    children: [
+                      {
+                        type: "text",
+                        text: "Lorem ipsum dolor sit amet",
+                      },
+                    ],
+                  },
+                  {
+                    type: "list-item",
+                    children: [
+                      {
+                        type: "text",
+                        text: "Lorem psum dolor",
+                      },
+                    ],
+                  },
+                  {
+                    type: "list-item",
+                    children: [
+                      {
+                        type: "text",
+                        text: "Sit amet lorem",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]}
+          />
+        ),
         overline: "Overline 1",
         links: [
           { id: 11, label: "MeineFläche", overline: null, url: "#" },
