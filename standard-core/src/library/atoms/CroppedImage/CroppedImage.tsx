@@ -16,7 +16,7 @@ export const constructCroppedImageUrl = (
       resizing_type: resizingType,
       width,
       height,
-      enlarge: 1,
+      enlarge: resizingType !== "fit",
       format: "webp",
       dpr,
     },
@@ -46,17 +46,6 @@ const CroppedImage = ({
   sx,
   ...props
 }: CroppedImageProps) => {
-  let finalWidth = width as number | "auto";
-  let finalHeight = height as number | "auto";
-
-  if (resizingType === "fit" && width && height) {
-    if (width < height) {
-      finalWidth = "auto";
-    } else {
-      finalHeight = "auto";
-    }
-  }
-
   // eslint-disable-next-line @next/next/no-img-element
   return (
     <Box
@@ -76,8 +65,7 @@ const CroppedImage = ({
         resizingType,
       )} 3x`}
       src={constructCroppedImageUrl(src, width, height, 1, resizingType)}
-      width={finalWidth}
-      height={finalHeight}
+      {...(resizingType !== "fit" && { width, height })}
       sx={{
         maxWidth: "100%",
         display: "block",
