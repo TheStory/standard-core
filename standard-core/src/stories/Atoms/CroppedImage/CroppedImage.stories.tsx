@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
 import CroppedImage from "@thestory/standard-core/atoms/CroppedImage/CroppedImage";
 
@@ -28,5 +29,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
+  render: (props) => (
+    <Box sx={{ width: "300px", height: "200px", position: "relative" }}>
+      <CroppedImage {...props} />
+    </Box>
+  ),
   args: {},
 };
