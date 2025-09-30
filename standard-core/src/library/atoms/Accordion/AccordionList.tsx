@@ -39,9 +39,7 @@ export const AccordionList = ({
           color: useContrastColors ? "primary.contrastText" : "text.primary",
           backgroundColor: "transparent",
           "&.MuiAccordion-root:before": {
-            backgroundColor: useContrastColors
-              ? alpha("primary.focus", 0.3)
-              : "divider",
+            backgroundColor: useContrastColors ? alpha("#FFF", 0.3) : "divider",
             height: 2,
           },
           ...sx,
@@ -53,8 +51,6 @@ export const AccordionList = ({
             height: "66px",
             my: 0,
             px: 0,
-            // backgroundColor: "red",
-            // primary/focusVisible
             "& .MuiAccordionSummary-content": {
               gap: 1,
             },
