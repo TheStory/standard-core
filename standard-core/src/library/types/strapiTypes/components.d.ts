@@ -1,127 +1,339 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
+export interface ContentAboutSection extends Schema.Component {
+  collectionName: 'components_content_about_sections';
   info: {
-    displayName: 'seo';
-    icon: 'search';
-  };
-  attributes: {
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 50;
-        maxLength: 160;
-      }>;
-    metaImage: Attribute.Media<'images' | 'files' | 'videos'>;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    keywords: Attribute.Text;
-    metaRobots: Attribute.String;
-    structuredData: Attribute.JSON;
-    metaViewport: Attribute.String;
-    canonicalURL: Attribute.String;
-  };
-}
-
-export interface SharedMetaSocial extends Schema.Component {
-  collectionName: 'components_shared_meta_socials';
-  info: {
-    displayName: 'metaSocial';
-    icon: 'project-diagram';
-  };
-  attributes: {
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 60;
-      }>;
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 65;
-      }>;
-    image: Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface ContentValueSquare extends Schema.Component {
-  collectionName: 'components_content_value_squares';
-  info: {
-    displayName: 'valueSquare';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentTextSection extends Schema.Component {
-  collectionName: 'components_content_text_sections';
-  info: {
-    displayName: 'Text Section';
     description: '';
+    displayName: 'aboutSection';
   };
   attributes: {
-    title: Attribute.String;
-    content: Attribute.Blocks;
-  };
-}
-
-export interface ContentStep extends Schema.Component {
-  collectionName: 'components_content_steps';
-  info: {
-    displayName: 'Step';
-  };
-  attributes: {
+    blocks: Attribute.Component<'content.value-square', true> &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 0;
+        },
+        number
+      >;
+    image: Attribute.Media<'images'>;
+    subTitle: Attribute.String & Attribute.Required;
+    text: Attribute.Blocks & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
-export interface ContentStepSection extends Schema.Component {
-  collectionName: 'components_content_step_sections';
+export interface ContentAccordion extends Schema.Component {
+  collectionName: 'components_content_accordions';
   info: {
-    displayName: 'stepSection';
-    description: '';
+    displayName: 'accordion';
   };
   attributes: {
-    steps: Attribute.Component<'content.step', true> & Attribute.Required;
-    preStep: Attribute.Component<'content.pre-step'> & Attribute.Required;
-    postStep: Attribute.Component<'content.post-step'> & Attribute.Required;
+    answer: Attribute.Text & Attribute.Required;
+    question: Attribute.String & Attribute.Required;
   };
 }
 
-export interface ContentSource extends Schema.Component {
-  collectionName: 'components_content_sources';
+export interface ContentBlogPreview extends Schema.Component {
+  collectionName: 'components_content_blog_previews';
   info: {
-    displayName: 'Source';
+    displayName: 'blogPreview';
   };
   attributes: {
+    article: Attribute.Relation<
+      'content.blog-preview',
+      'oneToOne',
+      'api::article.article'
+    >;
+    subTitle: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    link: Attribute.String;
   };
 }
 
-export interface ContentSectionTitleSubtitleContent extends Schema.Component {
-  collectionName: 'components_content_section_title_subtitle_content_s';
+export interface ContentButtonWithOverline extends Schema.Component {
+  collectionName: 'components_content_button_with_overlines';
   info: {
-    displayName: 'Content Section (title, sub, descr, btn)';
     description: '';
+    displayName: 'Button with overline';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    overline: Attribute.String;
+    url: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentContentSectionTitleSubtitle extends Schema.Component {
+  collectionName: 'components_content_content_section_title_subtitle_s';
+  info: {
+    description: '';
+    displayName: 'Content Section (title, sub)';
   };
   attributes: {
     subtitle: Attribute.String;
     title: Attribute.String & Attribute.Required;
-    description: Attribute.Blocks;
+  };
+}
+
+export interface ContentCtaButton extends Schema.Component {
+  collectionName: 'components_content_cta_buttons';
+  info: {
+    description: '';
+    displayName: 'CTA Button';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentCtaSection extends Schema.Component {
+  collectionName: 'components_content_cta_sections';
+  info: {
+    description: '';
+    displayName: 'CTA Section';
+  };
+  attributes: {
+    cta: Attribute.Relation<'content.cta-section', 'oneToOne', 'api::cta.cta'>;
+  };
+}
+
+export interface ContentDimensions extends Schema.Component {
+  collectionName: 'components_content_dimensions';
+  info: {
+    displayName: 'dimensions';
+  };
+  attributes: {
+    attribute: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentFaq extends Schema.Component {
+  collectionName: 'components_content_faqs';
+  info: {
+    description: '';
+    displayName: 'Faq';
+  };
+  attributes: {
     button: Attribute.Component<'content.button-with-overline'> &
       Attribute.Required;
+    faqQuestion: Attribute.Component<'content.faq-questions', true> &
+      Attribute.Required;
+    subTitle: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentFaqQuestions extends Schema.Component {
+  collectionName: 'components_content_faq_questions';
+  info: {
+    displayName: 'faqQuestions';
+  };
+  attributes: {
+    answer: Attribute.Blocks & Attribute.Required;
+    question: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentFloatingCards extends Schema.Component {
+  collectionName: 'components_content_floating_cards';
+  info: {
+    displayName: 'floatingCards';
+  };
+  attributes: {
+    description: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentGallery extends Schema.Component {
+  collectionName: 'components_content_galleries';
+  info: {
+    description: '';
+    displayName: 'gallery';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images'> & Attribute.Required;
+  };
+}
+
+export interface ContentGallerySection extends Schema.Component {
+  collectionName: 'components_content_gallery_sections';
+  info: {
+    displayName: 'Gallery Section';
+  };
+  attributes: {
+    slides: Attribute.Component<'content.gallery-slide', true> &
+      Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
+export interface ContentGallerySlide extends Schema.Component {
+  collectionName: 'components_content_gallery_slides';
+  info: {
+    displayName: 'Gallery Slide';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    link: Attribute.Component<'content.cta-button'>;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentHeroSection extends Schema.Component {
+  collectionName: 'components_content_hero_sections';
+  info: {
+    description: '';
+    displayName: 'heroSection';
+  };
+  attributes: {
+    button: Attribute.Component<'content.button-with-overline'> &
+      Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    floatingCards: Attribute.Component<'content.floating-cards', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 0;
+        },
+        number
+      >;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentHighlight extends Schema.Component {
+  collectionName: 'components_content_highlights';
+  info: {
+    description: '';
+    displayName: 'Highlight';
+  };
+  attributes: {
+    highlightText: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface ContentImage extends Schema.Component {
+  collectionName: 'components_content_images';
+  info: {
+    description: '';
+    displayName: 'Image';
+  };
+  attributes: {
+    image: Attribute.Media<'images'> & Attribute.Required;
+    imgDescription: Attribute.Text;
+    variant: Attribute.Enumeration<['fullWidth', 'contentWidth']> &
+      Attribute.DefaultTo<'fullWidth'>;
+  };
+}
+
+export interface ContentLocationsSection extends Schema.Component {
+  collectionName: 'components_content_locations_sections';
+  info: {
+    description: '';
+    displayName: 'Locations Section';
+  };
+  attributes: {
+    embedCode: Attribute.Text & Attribute.Required;
+    offices: Attribute.Component<'content.office', true>;
+    subtitle: Attribute.String;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentOffice extends Schema.Component {
+  collectionName: 'components_content_offices';
+  info: {
+    description: '';
+    displayName: 'Office';
+  };
+  attributes: {
+    addressLine1: Attribute.String & Attribute.Required;
+    addressLine2: Attribute.String;
+    city: Attribute.String & Attribute.Required;
+    country: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    postalCode: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentOpinionCard extends Schema.Component {
+  collectionName: 'components_content_opinion_cards';
+  info: {
+    description: '';
+    displayName: 'OpinionCard';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    fullName: Attribute.String & Attribute.Required;
+    opinionNumber: Attribute.String & Attribute.Required;
+    opinionTime: Attribute.String & Attribute.Required;
+    starRating: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      > &
+      Attribute.DefaultTo<5>;
+  };
+}
+
+export interface ContentOpinions extends Schema.Component {
+  collectionName: 'components_content_opinions';
+  info: {
+    description: '';
+    displayName: 'opinions';
+  };
+  attributes: {
+    opinionCard: Attribute.Component<'content.opinion-card', true> &
+      Attribute.Required;
+    settings: Attribute.Component<'home.settings-opinions'>;
+    subTitle: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentOurProducts extends Schema.Component {
+  collectionName: 'components_content_our_products';
+  info: {
+    description: '';
+    displayName: 'ourProducts';
+  };
+  attributes: {
+    highlightedProducts: Attribute.Relation<
+      'content.our-products',
+      'oneToMany',
+      'api::product.product'
+    >;
+    subTitle: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
+export interface ContentPostStep extends Schema.Component {
+  collectionName: 'components_content_post_steps';
+  info: {
+    displayName: 'postStep';
+  };
+  attributes: {
+    bottomButtonLabel: Attribute.String & Attribute.Required;
+    titleLine1: Attribute.String & Attribute.Required;
+    titleLine2: Attribute.String & Attribute.Required;
   };
 }
 
@@ -136,356 +348,291 @@ export interface ContentPreStep extends Schema.Component {
   };
 }
 
-export interface ContentPostStep extends Schema.Component {
-  collectionName: 'components_content_post_steps';
+export interface ContentSectionTitleSubtitleContent extends Schema.Component {
+  collectionName: 'components_content_section_title_subtitle_content_s';
   info: {
-    displayName: 'postStep';
-  };
-  attributes: {
-    titleLine1: Attribute.String & Attribute.Required;
-    titleLine2: Attribute.String & Attribute.Required;
-    bottomButtonLabel: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentOurProducts extends Schema.Component {
-  collectionName: 'components_content_our_products';
-  info: {
-    displayName: 'ourProducts';
     description: '';
+    displayName: 'Content Section (title, sub, descr, btn)';
   };
   attributes: {
-    highlightedProducts: Attribute.Relation<
-      'content.our-products',
-      'oneToMany',
-      'api::product.product'
-    >;
-    title: Attribute.String;
-    subTitle: Attribute.String;
-  };
-}
-
-export interface ContentOpinions extends Schema.Component {
-  collectionName: 'components_content_opinions';
-  info: {
-    displayName: 'opinions';
-    description: '';
-  };
-  attributes: {
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    opinionCard: Attribute.Component<'content.opinion-card', true> &
+    button: Attribute.Component<'content.button-with-overline'> &
       Attribute.Required;
+    description: Attribute.Blocks;
+    subtitle: Attribute.String;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
-export interface ContentOpinionCard extends Schema.Component {
-  collectionName: 'components_content_opinion_cards';
+export interface ContentSource extends Schema.Component {
+  collectionName: 'components_content_sources';
   info: {
-    displayName: 'OpinionCard';
-    description: '';
+    displayName: 'Source';
   };
   attributes: {
-    fullName: Attribute.String & Attribute.Required;
-    starRating: Attribute.Decimal &
-      Attribute.Required &
+    link: Attribute.String;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentStep extends Schema.Component {
+  collectionName: 'components_content_steps';
+  info: {
+    displayName: 'Step';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ContentStepSection extends Schema.Component {
+  collectionName: 'components_content_step_sections';
+  info: {
+    description: '';
+    displayName: 'stepSection';
+  };
+  attributes: {
+    postStep: Attribute.Component<'content.post-step'> & Attribute.Required;
+    preStep: Attribute.Component<'content.pre-step'> & Attribute.Required;
+    steps: Attribute.Component<'content.step', true> & Attribute.Required;
+  };
+}
+
+export interface ContentTextSection extends Schema.Component {
+  collectionName: 'components_content_text_sections';
+  info: {
+    description: '';
+    displayName: 'Text Section';
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    title: Attribute.String;
+  };
+}
+
+export interface ContentValueSquare extends Schema.Component {
+  collectionName: 'components_content_value_squares';
+  info: {
+    displayName: 'valueSquare';
+  };
+  attributes: {
+    description: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface HomePricingSection extends Schema.Component {
+  collectionName: 'components_home_pricing_sections';
+  info: {
+    displayName: 'Pricing section';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.simple-price', true>;
+    subtitle: Attribute.String;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface HomeService extends Schema.Component {
+  collectionName: 'components_home_services';
+  info: {
+    displayName: 'Service';
+  };
+  attributes: {
+    description: Attribute.Blocks;
+    link: Attribute.Component<'content.cta-button'>;
+    title: Attribute.String;
+  };
+}
+
+export interface HomeServicesSection extends Schema.Component {
+  collectionName: 'components_home_services_sections';
+  info: {
+    displayName: 'Services section';
+  };
+  attributes: {
+    section: Attribute.Component<'content.section-title-subtitle-content'>;
+    services: Attribute.Component<'home.service', true>;
+  };
+}
+
+export interface HomeSettingsOpinions extends Schema.Component {
+  collectionName: 'components_home_settings_opinions';
+  info: {
+    displayName: 'Settings: opinions';
+  };
+  attributes: {
+    description: Attribute.String;
+    link: Attribute.String;
+    value: Attribute.Decimal &
       Attribute.SetMinMax<
         {
-          min: 1;
           max: 5;
+          min: 0;
+        },
+        number
+      >;
+  };
+}
+
+export interface SharedMetaSocial extends Schema.Component {
+  collectionName: 'components_shared_meta_socials';
+  info: {
+    displayName: 'metaSocial';
+    icon: 'project-diagram';
+  };
+  attributes: {
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 65;
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos'>;
+    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Attribute.Required;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+  };
+}
+
+export interface SharedPrices extends Schema.Component {
+  collectionName: 'components_shared_prices';
+  info: {
+    description: '';
+    displayName: 'prices';
+  };
+  attributes: {
+    productPrice: Attribute.Component<'shared.product-price'> &
+      Attribute.Required;
+    showUnit: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    unit: Attribute.Enumeration<['szt.', 'm2', 'm3']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'szt.'>;
+  };
+}
+
+export interface SharedProductPrice extends Schema.Component {
+  collectionName: 'components_shared_product_prices';
+  info: {
+    description: '';
+    displayName: 'ProductPrice';
+  };
+  attributes: {
+    priceBrutto: Attribute.Decimal &
+      Attribute.SetMinMax<
+        {
+          min: 0;
         },
         number
       > &
-      Attribute.DefaultTo<5>;
-    opinionTime: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    opinionNumber: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentOffice extends Schema.Component {
-  collectionName: 'components_content_offices';
-  info: {
-    displayName: 'Office';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    addressLine1: Attribute.String & Attribute.Required;
-    addressLine2: Attribute.String;
-    postalCode: Attribute.String & Attribute.Required;
-    city: Attribute.String & Attribute.Required;
-    country: Attribute.String;
-    phone: Attribute.String;
-    email: Attribute.String;
-  };
-}
-
-export interface ContentLocationsSection extends Schema.Component {
-  collectionName: 'components_content_locations_sections';
-  info: {
-    displayName: 'Locations Section';
-    description: '';
-  };
-  attributes: {
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
-    offices: Attribute.Component<'content.office', true>;
-    embedCode: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface ContentImage extends Schema.Component {
-  collectionName: 'components_content_images';
-  info: {
-    displayName: 'Image';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    imgDescription: Attribute.Text;
-  };
-}
-
-export interface ContentHighlight extends Schema.Component {
-  collectionName: 'components_content_highlights';
-  info: {
-    displayName: 'Highlight';
-    description: '';
-  };
-  attributes: {
-    highlightText: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface ContentHeroSection extends Schema.Component {
-  collectionName: 'components_content_hero_sections';
-  info: {
-    displayName: 'heroSection';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    floatingCards: Attribute.Component<'content.floating-cards', true> &
+      Attribute.DefaultTo<0>;
+    priceNetto: Attribute.Decimal &
       Attribute.Required &
       Attribute.SetMinMax<
         {
           min: 0;
-          max: 3;
         },
         number
       >;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    button: Attribute.Component<'content.button-with-overline'> &
-      Attribute.Required;
+    vat: Attribute.Enumeration<['vat23', 'vat8', 'vat5', 'vat0', 'brak']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'vat23'>;
   };
 }
 
-export interface ContentGallery extends Schema.Component {
-  collectionName: 'components_content_galleries';
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
   info: {
-    displayName: 'gallery';
-    description: '';
+    displayName: 'seo';
+    icon: 'search';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    description: Attribute.Text;
+    canonicalURL: Attribute.String;
+    keywords: Attribute.Text;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 160;
+        minLength: 50;
+      }>;
+    metaImage: Attribute.Media<'images' | 'files' | 'videos'>;
+    metaRobots: Attribute.String;
+    metaSocial: Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Attribute.String;
+    structuredData: Attribute.JSON;
   };
 }
 
-export interface ContentGallerySlide extends Schema.Component {
-  collectionName: 'components_content_gallery_slides';
+export interface SharedSimplePrice extends Schema.Component {
+  collectionName: 'components_shared_simple_prices';
   info: {
-    displayName: 'Gallery Slide';
+    displayName: 'Simple price';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    link: Attribute.Component<'content.cta-button'>;
-    image: Attribute.Media<'images'> & Attribute.Required;
-  };
-}
-
-export interface ContentFloatingCards extends Schema.Component {
-  collectionName: 'components_content_floating_cards';
-  info: {
-    displayName: 'floatingCards';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentFaq extends Schema.Component {
-  collectionName: 'components_content_faqs';
-  info: {
-    displayName: 'Faq';
-    description: '';
-  };
-  attributes: {
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    faqQuestion: Attribute.Component<'content.faq-questions', true> &
-      Attribute.Required;
-    button: Attribute.Component<'content.button-with-overline'> &
-      Attribute.Required;
-  };
-}
-
-export interface ContentFaqQuestions extends Schema.Component {
-  collectionName: 'components_content_faq_questions';
-  info: {
-    displayName: 'faqQuestions';
-  };
-  attributes: {
-    question: Attribute.String & Attribute.Required;
-    answer: Attribute.Blocks & Attribute.Required;
-  };
-}
-
-export interface ContentDimensions extends Schema.Component {
-  collectionName: 'components_content_dimensions';
-  info: {
-    displayName: 'dimensions';
-  };
-  attributes: {
-    attribute: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentCtaSection extends Schema.Component {
-  collectionName: 'components_content_cta_sections';
-  info: {
-    displayName: 'CTA Section';
-    description: '';
-  };
-  attributes: {
-    cta: Attribute.Relation<'content.cta-section', 'oneToOne', 'api::cta.cta'>;
-  };
-}
-
-export interface ContentCtaButton extends Schema.Component {
-  collectionName: 'components_content_cta_buttons';
-  info: {
-    displayName: 'CTA Button';
-    description: '';
-  };
-  attributes: {
-    label: Attribute.String & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentContentSectionTitleSubtitle extends Schema.Component {
-  collectionName: 'components_content_content_section_title_subtitle_s';
-  info: {
-    displayName: 'Content Section (title, sub)';
-    description: '';
-  };
-  attributes: {
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentButtonWithOverline extends Schema.Component {
-  collectionName: 'components_content_button_with_overlines';
-  info: {
-    displayName: 'Button with overline';
-    description: '';
-  };
-  attributes: {
-    label: Attribute.String & Attribute.Required;
-    overline: Attribute.String;
-    url: Attribute.String & Attribute.Required;
-  };
-}
-
-export interface ContentBlogPreview extends Schema.Component {
-  collectionName: 'components_content_blog_previews';
-  info: {
-    displayName: 'blogPreview';
-  };
-  attributes: {
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    article: Attribute.Relation<
-      'content.blog-preview',
-      'oneToOne',
-      'api::article.article'
-    >;
-  };
-}
-
-export interface ContentAccordion extends Schema.Component {
-  collectionName: 'components_content_accordions';
-  info: {
-    displayName: 'accordion';
-  };
-  attributes: {
-    question: Attribute.String & Attribute.Required;
-    answer: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface ContentAboutSection extends Schema.Component {
-  collectionName: 'components_content_about_sections';
-  info: {
-    displayName: 'aboutSection';
-    description: '';
-  };
-  attributes: {
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
-    text: Attribute.Blocks & Attribute.Required;
-    blocks: Attribute.Component<'content.value-square', true> &
+    price: Attribute.Decimal &
       Attribute.SetMinMax<
         {
           min: 0;
-          max: 3;
         },
         number
       >;
-    image: Attribute.Media<'images'>;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'shared.seo': SharedSeo;
-      'shared.meta-social': SharedMetaSocial;
-      'content.value-square': ContentValueSquare;
-      'content.text-section': ContentTextSection;
-      'content.step': ContentStep;
-      'content.step-section': ContentStepSection;
-      'content.source': ContentSource;
-      'content.section-title-subtitle-content': ContentSectionTitleSubtitleContent;
-      'content.pre-step': ContentPreStep;
-      'content.post-step': ContentPostStep;
-      'content.our-products': ContentOurProducts;
-      'content.opinions': ContentOpinions;
-      'content.opinion-card': ContentOpinionCard;
-      'content.office': ContentOffice;
-      'content.locations-section': ContentLocationsSection;
-      'content.image': ContentImage;
-      'content.highlight': ContentHighlight;
-      'content.hero-section': ContentHeroSection;
-      'content.gallery': ContentGallery;
-      'content.gallery-slide': ContentGallerySlide;
-      'content.floating-cards': ContentFloatingCards;
+      'content.about-section': ContentAboutSection;
+      'content.accordion': ContentAccordion;
+      'content.blog-preview': ContentBlogPreview;
+      'content.button-with-overline': ContentButtonWithOverline;
+      'content.content-section-title-subtitle': ContentContentSectionTitleSubtitle;
+      'content.cta-button': ContentCtaButton;
+      'content.cta-section': ContentCtaSection;
+      'content.dimensions': ContentDimensions;
       'content.faq': ContentFaq;
       'content.faq-questions': ContentFaqQuestions;
-      'content.dimensions': ContentDimensions;
-      'content.cta-section': ContentCtaSection;
-      'content.cta-button': ContentCtaButton;
-      'content.content-section-title-subtitle': ContentContentSectionTitleSubtitle;
-      'content.button-with-overline': ContentButtonWithOverline;
-      'content.blog-preview': ContentBlogPreview;
-      'content.accordion': ContentAccordion;
-      'content.about-section': ContentAboutSection;
+      'content.floating-cards': ContentFloatingCards;
+      'content.gallery': ContentGallery;
+      'content.gallery-section': ContentGallerySection;
+      'content.gallery-slide': ContentGallerySlide;
+      'content.hero-section': ContentHeroSection;
+      'content.highlight': ContentHighlight;
+      'content.image': ContentImage;
+      'content.locations-section': ContentLocationsSection;
+      'content.office': ContentOffice;
+      'content.opinion-card': ContentOpinionCard;
+      'content.opinions': ContentOpinions;
+      'content.our-products': ContentOurProducts;
+      'content.post-step': ContentPostStep;
+      'content.pre-step': ContentPreStep;
+      'content.section-title-subtitle-content': ContentSectionTitleSubtitleContent;
+      'content.source': ContentSource;
+      'content.step': ContentStep;
+      'content.step-section': ContentStepSection;
+      'content.text-section': ContentTextSection;
+      'content.value-square': ContentValueSquare;
+      'home.pricing-section': HomePricingSection;
+      'home.service': HomeService;
+      'home.services-section': HomeServicesSection;
+      'home.settings-opinions': HomeSettingsOpinions;
+      'shared.meta-social': SharedMetaSocial;
+      'shared.prices': SharedPrices;
+      'shared.product-price': SharedProductPrice;
+      'shared.seo': SharedSeo;
+      'shared.simple-price': SharedSimplePrice;
     }
   }
 }
