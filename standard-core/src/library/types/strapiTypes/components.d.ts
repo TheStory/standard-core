@@ -114,10 +114,8 @@ export interface ContentFaq extends Schema.Component {
     displayName: 'Faq';
   };
   attributes: {
-    button: Attribute.Component<'content.button-with-overline'> &
-      Attribute.Required;
-    faqQuestion: Attribute.Component<'content.faq-questions', true> &
-      Attribute.Required;
+    button: Attribute.Component<'content.button-with-overline'>;
+    faq: Attribute.Relation<'content.faq', 'oneToOne', 'api::faq.faq'>;
     subTitle: Attribute.String & Attribute.Required;
     title: Attribute.String & Attribute.Required;
   };

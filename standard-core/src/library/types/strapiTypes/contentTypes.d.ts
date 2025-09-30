@@ -1032,6 +1032,51 @@ export interface ApiCtaCta extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::faq.faq',
+      'oneToMany',
+      'api::faq.faq'
+    >;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    publishedAt: Attribute.DateTime;
+    questions: Attribute.Component<'content.faq-questions', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -1544,7 +1589,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    faq: Attribute.Component<'content.accordion', true> &
+    faq: Attribute.Component<'content.faq'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1788,6 +1833,13 @@ export interface ApiSettingsSettings extends Schema.SingleType {
           localized: true;
         };
       }>;
+    openingHours: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'Mo-Fr 09:00-17:00'>;
     postalCode: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -2326,6 +2378,7 @@ declare module '@strapi/types' {
       'api::contact-thank-you-page.contact-thank-you-page': ApiContactThankYouPageContactThankYouPage;
       'api::cookie-policy-setting.cookie-policy-setting': ApiCookiePolicySettingCookiePolicySetting;
       'api::cta.cta': ApiCtaCta;
+      'api::faq.faq': ApiFaqFaq;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::privacy-policy-setting.privacy-policy-setting': ApiPrivacyPolicySettingPrivacyPolicySetting;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
