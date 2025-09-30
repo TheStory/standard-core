@@ -51,19 +51,22 @@ const CroppedImage = ({
     <Box
       component="img"
       loading={loading}
-      srcSet={`${constructCroppedImageUrl(
-        src,
-        width,
-        height,
-        2,
-        resizingType,
-      )} 2x, ${constructCroppedImageUrl(
-        src,
-        width,
-        height,
-        3,
-        resizingType,
-      )} 3x`}
+  
+      {...(resizingType !== "fit" && {
+        srcSet: `${constructCroppedImageUrl(
+          src,
+          width,
+          height,
+          2,
+          resizingType,
+        )} 2x, ${constructCroppedImageUrl(
+          src,
+          width,
+          height,
+          3,
+          resizingType,
+        )} 3x`
+      })}
       src={constructCroppedImageUrl(src, width, height, 1, resizingType)}
       {...(resizingType !== "fit" && { width, height })}
       sx={{
