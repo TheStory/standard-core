@@ -12,6 +12,7 @@ interface CmsCroppedImageProps {
   cover?: boolean;
   resizingType?: ImageResizeOption;
   sx?: SxProps;
+  loading?: "lazy" | "eager";
 }
 
 const CmsCroppedImage = ({
@@ -21,6 +22,7 @@ const CmsCroppedImage = ({
   cover = false,
   resizingType = "fill",
   sx,
+  loading,
 }: CmsCroppedImageProps) => {
   let data;
 
@@ -77,6 +79,7 @@ const CmsCroppedImage = ({
           alt={alternativeText}
           resizingType={resizingType}
           sx={sx}
+          loading={loading}
           mobileOnly
         />
         <CroppedImage
@@ -87,6 +90,7 @@ const CmsCroppedImage = ({
           alt={alternativeText}
           resizingType={resizingType}
           sx={sx}
+          loading={loading}
           desktopOnly
         />
       </>
@@ -102,6 +106,7 @@ const CmsCroppedImage = ({
       alt={alternativeText}
       resizingType={resizingType}
       sx={sx}
+      loading={loading}
     />
   );
 };
