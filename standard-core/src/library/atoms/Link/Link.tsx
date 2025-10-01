@@ -22,7 +22,8 @@ const Link = ({ children, href, onClick, ...props }: LinkType) => {
       const [targetPath, hash] = href.split("#");
 
       const isSamePage =
-        (targetPath === "" || targetPath === pathname) && !!hash;
+        (targetPath === "" || targetPath === "/" || targetPath === pathname) &&
+        !!hash;
 
       if (isSamePage) {
         e.preventDefault();
