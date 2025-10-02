@@ -1,14 +1,25 @@
+import type { Format } from "@imgproxy/imgproxy-js-core";
 import { generateImageUrl } from "@imgproxy/imgproxy-node";
 import Box, { type BoxProps } from "@mui/material/Box";
 import type { ImageResizeOption } from "@thestory/standard-core/types";
 
-export const constructCroppedImageUrl = (
-  url: string,
-  width?: number,
-  height?: number,
+type ConstructCroppedImageUrlParams = {
+  url: string;
+  width?: number;
+  height?: number;
+  dpr?: number;
+  resizingType?: ImageResizeOption;
+  format?: Format | undefined;
+};
+
+export const constructCroppedImageUrl = ({
+  url,
+  width,
+  height,
   dpr = 1,
-  resizingType: ImageResizeOption = "fill",
-) =>
+  resizingType = "fill",
+  format = "webp",
+}: ConstructCroppedImageUrlParams) =>
   generateImageUrl({
     endpoint: `${process.env.NEXT_PUBLIC_IMAGE_PROXY}/`,
     url,
@@ -17,7 +28,7 @@ export const constructCroppedImageUrl = (
       width,
       height,
       enlarge: resizingType !== "fit",
-      format: "webp",
+      format: format,
       dpr,
     },
   });
@@ -51,23 +62,28 @@ const CroppedImage = ({
     <Box
       component="img"
       loading={loading}
-  
       {...(resizingType !== "fit" && {
-        srcSet: `${constructCroppedImageUrl(
-          src,
+        srcSet: `${constructCroppedImageUrl({
+          url: src,
           width,
           height,
-          2,
+          dpr: 2,
           resizingType,
-        )} 2x, ${constructCroppedImageUrl(
-          src,
+        })} 2x, ${constructCroppedImageUrl({
+          url: src,
           width,
           height,
-          3,
+          dpr: 3,
           resizingType,
-        )} 3x`
+        })} 3x`,
       })}
-      src={constructCroppedImageUrl(src, width, height, 1, resizingType)}
+      src={constructCroppedImageUrl({
+        url: src,
+        width,
+        height,
+        dpr: 1,
+        resizingType,
+      })}
       {...(resizingType !== "fit" && { width, height })}
       sx={{
         maxWidth: "100%",
