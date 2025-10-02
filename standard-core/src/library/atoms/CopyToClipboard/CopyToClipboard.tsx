@@ -5,6 +5,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import Box from "@mui/material/Box";
 import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
+import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
 import { useTranslations } from "next-intl";
 
 import { useCopyToClipboard } from "./useCopyToClipboard";
@@ -32,7 +33,12 @@ const CopyToClipboard = ({
     >
       <Box
         sx={{
-          height: iconSize,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height:
+            svgFontSizeValues[iconSize as keyof typeof svgFontSizeValues] ||
+            svgFontSizeValues.small,
         }}
       >
         {copiedText ? (
