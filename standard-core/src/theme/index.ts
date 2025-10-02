@@ -52,13 +52,6 @@ export const theStoryTheme = createTheme({
   shape: tokens.shape,
   shadows: tokens.shadows as Shadows,
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          lineHeight: "normal",
-        },
-      },
-    },
     MuiButton: {
       variants: [
         {
