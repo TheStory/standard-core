@@ -558,7 +558,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    description: Attribute.String &
+    description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -697,13 +697,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     > &
       Attribute.Private;
     description: Attribute.Text &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    leadImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1182,6 +1175,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         };
       }>;
     pricing: Attribute.Component<'home.pricing-section'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    reelsSection: Attribute.Component<'content.reels-section'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

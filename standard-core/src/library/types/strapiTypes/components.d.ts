@@ -346,6 +346,33 @@ export interface ContentPreStep extends Schema.Component {
   };
 }
 
+export interface ContentReelsSection extends Schema.Component {
+  collectionName: 'components_content_reels_sections';
+  info: {
+    displayName: 'Reels Section';
+  };
+  attributes: {
+    button: Attribute.Component<'content.cta-button'>;
+    items: Attribute.Component<'content.reels-slide', true>;
+    section: Attribute.Component<'content.content-section-title-subtitle'>;
+  };
+}
+
+export interface ContentReelsSlide extends Schema.Component {
+  collectionName: 'components_content_reels_slides';
+  info: {
+    description: '';
+    displayName: 'Reels Slide';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    link: Attribute.Component<'content.cta-button'>;
+    title: Attribute.String & Attribute.Required;
+    video: Attribute.Media<'videos'>;
+  };
+}
+
 export interface ContentSectionTitleSubtitleContent extends Schema.Component {
   collectionName: 'components_content_section_title_subtitle_content_s';
   info: {
@@ -616,6 +643,8 @@ declare module '@strapi/types' {
       'content.our-products': ContentOurProducts;
       'content.post-step': ContentPostStep;
       'content.pre-step': ContentPreStep;
+      'content.reels-section': ContentReelsSection;
+      'content.reels-slide': ContentReelsSlide;
       'content.section-title-subtitle-content': ContentSectionTitleSubtitleContent;
       'content.source': ContentSource;
       'content.step': ContentStep;
