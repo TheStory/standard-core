@@ -501,6 +501,42 @@ export interface HomeSettingsOpinions extends Schema.Component {
   };
 }
 
+export interface ProjectsContentSection extends Schema.Component {
+  collectionName: 'components_projects_content_sections';
+  info: {
+    displayName: 'Content Section';
+  };
+  attributes: {
+    align: Attribute.Enumeration<['left', 'center', 'right']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'left'>;
+    content: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface ProjectsGallery extends Schema.Component {
+  collectionName: 'components_projects_galleries';
+  info: {
+    displayName: 'Gallery';
+  };
+  attributes: {
+    items: Attribute.Component<'projects.gallery-slide', true> &
+      Attribute.Required;
+  };
+}
+
+export interface ProjectsGallerySlide extends Schema.Component {
+  collectionName: 'components_projects_gallery_slides';
+  info: {
+    description: '';
+    displayName: 'Gallery Slide';
+  };
+  attributes: {
+    image: Attribute.Media<'images'> & Attribute.Required;
+    isFull: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -655,6 +691,9 @@ declare module '@strapi/types' {
       'home.service': HomeService;
       'home.services-section': HomeServicesSection;
       'home.settings-opinions': HomeSettingsOpinions;
+      'projects.content-section': ProjectsContentSection;
+      'projects.gallery': ProjectsGallery;
+      'projects.gallery-slide': ProjectsGallerySlide;
       'shared.meta-social': SharedMetaSocial;
       'shared.prices': SharedPrices;
       'shared.product-price': SharedProductPrice;

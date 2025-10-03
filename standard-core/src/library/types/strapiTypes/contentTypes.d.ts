@@ -948,7 +948,7 @@ export interface ApiCtaCta extends Schema.CollectionType {
   collectionName: 'ctas';
   info: {
     description: '';
-    displayName: 'Cta';
+    displayName: 'CTA';
     pluralName: 'ctas';
     singularName: 'cta';
   };
@@ -1789,6 +1789,14 @@ export interface ApiProjectProject extends Schema.CollectionType {
       }> &
       Attribute.SetMinMaxLength<{
         maxLength: 75;
+      }>;
+    content: Attribute.DynamicZone<
+      ['projects.content-section', 'projects.gallery']
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
