@@ -1690,6 +1690,267 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiProjectCategoryProjectCategory
+  extends Schema.CollectionType {
+  collectionName: 'project_categories';
+  info: {
+    displayName: 'Project: category';
+    pluralName: 'project-categories';
+    singularName: 'project-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'projects'>;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToMany',
+      'api::project-category.project-category'
+    >;
+    projects: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToMany',
+      'api::project.project'
+    >;
+    publishedAt: Attribute.DateTime;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::project-category.project-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    description: '';
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'project-slug, project-id, projects'>;
+    category: Attribute.Relation<
+      'api::project.project',
+      'manyToOne',
+      'api::project-category.project-category'
+    >;
+    client: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 75;
+      }>;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    cta: Attribute.Relation<'api::project.project', 'oneToOne', 'api::cta.cta'>;
+    date: Attribute.Date &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media<'images'> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    listWeight: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<0>;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::project.project'
+    >;
+    location: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 75;
+      }>;
+    publishedAt: Attribute.DateTime;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    status: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 75;
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    video: Attribute.Media<'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+  };
+}
+
+export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
+  collectionName: 'projects_pages';
+  info: {
+    displayName: 'Settings: projects';
+    pluralName: 'projects-pages';
+    singularName: 'projects-page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    cacheTags: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<'projects'>;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    header: Attribute.Component<'content.content-section-title-subtitle'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToMany',
+      'api::projects-page.projects-page'
+    >;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSettingsSettings extends Schema.SingleType {
   collectionName: 'settings_list';
   info: {
@@ -2385,6 +2646,9 @@ declare module '@strapi/types' {
       'api::product-material.product-material': ApiProductMaterialProductMaterial;
       'api::product-page.product-page': ApiProductPageProductPage;
       'api::product.product': ApiProductProduct;
+      'api::project-category.project-category': ApiProjectCategoryProjectCategory;
+      'api::project.project': ApiProjectProject;
+      'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'api::settings.settings': ApiSettingsSettings;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
