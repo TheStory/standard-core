@@ -1,5 +1,5 @@
-import type { SxProps } from "@mui/material";
 import Box from "@mui/material/Box";
+import type { SxProps } from "@mui/material/styles";
 import { constructCroppedImageUrl } from "@thestory/standard-core/atoms/CroppedImage/CroppedImage";
 import React from "react";
 
