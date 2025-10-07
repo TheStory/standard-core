@@ -11,3 +11,4 @@ export * from "./CopyToClipboard";
 export * from "./Divider";
 export * from "./Pagination";
 export * from "./CtaButton";
+export * from "./VideoPlayer";
