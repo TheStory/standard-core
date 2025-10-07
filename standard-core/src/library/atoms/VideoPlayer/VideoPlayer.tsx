@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
+  useState,
 } from "react";
 
 const fullSizeStyles = {
@@ -24,6 +25,8 @@ export interface VideoPlayerProps {
   muted?: boolean; // default true
   loop?: boolean; // default false
   playing?: boolean; // controlled playing state
+  showPlayPauseMobile?: boolean; // show overlay button on mobile (default true)
+  showPlayPauseDesktop?: boolean; // show overlay button on desktop (default true)
 }
 
 export type VideoPlayerHandle = {
@@ -49,10 +52,13 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
       muted = true,
       loop = false,
       playing,
+      showPlayPauseMobile = true,
+      showPlayPauseDesktop = true,
     },
     ref,
   ) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
+    const [paused, setPaused] = useState(true);
 
     const play = () => videoRef.current?.play();
     const pause = () => videoRef.current?.pause();
@@ -94,6 +100,25 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
       getElement: () => videoRef.current,
     }));
 
+    // keep paused state in sync with media events
+    useEffect(() => {
+      const v = videoRef.current;
+      if (!v) return;
+      const onPlay = () => setPaused(false);
+      const onPause = () => setPaused(true);
+      const onEnded = () => setPaused(true);
+      v.addEventListener("play", onPlay);
+      v.addEventListener("pause", onPause);
+      v.addEventListener("ended", onEnded);
+      // initialize
+      setPaused(v.paused);
+      return () => {
+        v.removeEventListener("play", onPlay);
+        v.removeEventListener("pause", onPause);
+        v.removeEventListener("ended", onEnded);
+      };
+    }, []);
+
     // Sync with controlled `playing` prop
     useEffect(() => {
       if (playing === undefined) return; // uncontrolled
@@ -107,6 +132,8 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
         videoRef.current.pause();
       }
     }, [playing]);
+
+    const showNativeControls = controls === true;
 
     return (
       <Box
@@ -142,8 +169,49 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           height={height}
           muted={muted}
           loop={loop}
-          controls={controls}
+          controls={showNativeControls}
         />
+        {!showNativeControls && (
+          <Box
+            component="button"
+            type="button"
+            aria-label={paused ? "Play video" : "Pause video"}
+            onClick={toggle}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+              width: 64,
+              height: 64,
+              borderRadius: "50%",
+              border: "none",
+              display: {
+                xs: showPlayPauseMobile ? "flex" : "none",
+                md: showPlayPauseDesktop ? "flex" : "none",
+              },
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              color: "#fff",
+              backgroundColor: "rgba(0,0,0,0.6)",
+              transition: "background-color .2s ease",
+              "&:hover": { backgroundColor: "rgba(0,0,0,0.75)" },
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                fontSize: 24,
+                lineHeight: 1,
+                userSelect: "none",
+              }}
+            >
+              {paused ? "▶" : "❚❚"}
+            </Box>
+          </Box>
+        )}
       </Box>
     );
   },

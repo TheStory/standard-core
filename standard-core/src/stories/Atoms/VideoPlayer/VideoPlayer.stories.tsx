@@ -16,6 +16,8 @@ const meta: Meta<typeof VideoPlayer> = {
     muted: { control: "boolean" },
     loop: { control: "boolean" },
     playing: { control: "boolean" },
+    showPlayPauseMobile: { control: "boolean" },
+    showPlayPauseDesktop: { control: "boolean" },
     sx: { control: "object" },
   },
   args: {
@@ -24,10 +26,12 @@ const meta: Meta<typeof VideoPlayer> = {
     videoSrc:
       "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     videoPoster: "https://storybook.js.org/images/placeholders/350x150.png",
-    controls: true,
+    controls: false,
     muted: true,
     loop: false,
     cover: false,
+    showPlayPauseMobile: true,
+    showPlayPauseDesktop: true,
   },
 };
 
@@ -42,5 +46,33 @@ export const Default: Story = {
 export const Cover: Story = {
   args: {
     cover: true,
+  },
+};
+
+export const HideOnMobile: Story = {
+  name: "Hide Play/Pause on Mobile",
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+  },
+  args: {
+    showPlayPauseMobile: false,
+  },
+};
+
+export const HideOnDesktop: Story = {
+  name: "Hide Play/Pause on Desktop",
+  args: {
+    showPlayPauseDesktop: false,
+  },
+};
+
+export const BothHidden: Story = {
+  name: "Hide Play/Pause on Both",
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+  },
+  args: {
+    showPlayPauseMobile: false,
+    showPlayPauseDesktop: false,
   },
 };
