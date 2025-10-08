@@ -194,10 +194,10 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
-              color: "#fff",
-              backgroundColor: "rgba(0,0,0,0.6)",
+              color: "primary.contrastText",
+              backgroundColor: "action.disabled",
               transition: "background-color .2s ease",
-              "&:hover": { backgroundColor: "rgba(0,0,0,0.75)" },
+              "&:hover": { backgroundColor: "action.active" },
             }}
           >
             <Box
