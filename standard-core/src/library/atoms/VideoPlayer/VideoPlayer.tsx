@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import type { SxProps } from "@mui/material/styles";
-import { constructCroppedImageUrl } from "@thestory/standard-core/atoms/CroppedImage";
+import { constructCroppedImageUrl } from "@thestory/standard-core/atoms/CroppedImage/utils";
+import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
 import React, {
   forwardRef,
   useEffect,
@@ -155,11 +156,11 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
       >
         <video
           ref={videoRef}
-          src={videoSrc}
+          src={cmsMediaUrl(videoSrc)}
           poster={
             videoPoster
               ? constructCroppedImageUrl({
-                  url: videoPoster,
+                  url: cmsMediaUrl(videoPoster),
                   width: width || 640,
                   height: height || 360,
                 })
