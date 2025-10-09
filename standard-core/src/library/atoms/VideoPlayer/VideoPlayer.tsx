@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import type { SxProps } from "@mui/material/styles";
-import { constructCroppedImageUrl } from "@thestory/standard-core/atoms/CroppedImage/CroppedImage";
+import { constructCroppedImageUrl } from "@thestory/standard-core/atoms/CroppedImage";
 import React, {
   forwardRef,
   useEffect,
