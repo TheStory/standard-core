@@ -124,6 +124,10 @@
       "import": "./dist/atoms/CroppedImage/index.js",
       "require": "./dist/atoms/CroppedImage/index.js"
     },
+    "./atoms/CroppedImage/utils": {
+      "import": "./dist/atoms/CroppedImage/utils.js",
+      "require": "./dist/atoms/CroppedImage/utils.js"
+    },
     "./atoms/CtaButton/CtaButton": {
       "import": "./dist/atoms/CtaButton/CtaButton.js",
       "require": "./dist/atoms/CtaButton/CtaButton.js"
@@ -204,6 +208,14 @@
       "import": "./dist/atoms/SvgIcon/index.js",
       "require": "./dist/atoms/SvgIcon/index.js"
     },
+    "./atoms/VideoPlayer/VideoPlayer": {
+      "import": "./dist/atoms/VideoPlayer/VideoPlayer.js",
+      "require": "./dist/atoms/VideoPlayer/VideoPlayer.js"
+    },
+    "./atoms/VideoPlayer": {
+      "import": "./dist/atoms/VideoPlayer/index.js",
+      "require": "./dist/atoms/VideoPlayer/index.js"
+    },
     "./atoms": {
       "import": "./dist/atoms/exports.js",
       "require": "./dist/atoms/exports.js"
@@ -248,10 +260,6 @@
       "import": "./dist/types/index.js",
       "require": "./dist/types/index.js"
     },
-    "./types/strapi": {
-      "import": "./dist/types/strapi.js",
-      "require": "./dist/types/strapi.js"
-    },
     "./types/strapiTypes": {
       "import": "./dist/types/strapiTypes/index.js",
       "require": "./dist/types/strapiTypes/index.js"
@@ -293,22 +301,18 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "3.2.4",
+    "@chromatic-com/storybook": "4.1.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.3.4",
     "@imgproxy/imgproxy-node": "^1.0.6",
     "@mui/icons-material": "^6.4.1",
     "@mui/material": "^6.3.1",
-    "@storybook/addon-essentials": "8.6.0-alpha.1",
-    "@storybook/addon-interactions": "8.6.0-alpha.1",
-    "@storybook/addon-onboarding": "8.6.0-alpha.1",
-    "@storybook/blocks": "8.6.0-alpha.1",
-    "@storybook/nextjs": "8.6.0-alpha.1",
-    "@storybook/react": "8.6.0-alpha.1",
-    "@storybook/test": "8.6.0-alpha.1",
+    "@storybook/addon-docs": "9.1.10",
+    "@storybook/addon-onboarding": "9.1.10",
+    "@storybook/nextjs": "9.1.10",
     "@strapi/blocks-react-renderer": "^1.0.0",
-    "@strapi/strapi": "^4.20.4",
+    "@strapi/strapi": "5.27.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -318,7 +322,7 @@
     "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-storybook": "^0.11.2",
+    "eslint-plugin-storybook": "^9.1.10",
     "motion": "^12.0.0",
     "next": "14.2.5",
     "next-intl": "^3.10.0",
@@ -329,9 +333,13 @@
     "rimraf": "^6.0.1",
     "schema-dts": "^1.1.2",
     "slugify": "^1.6.6",
-    "storybook": "8.6.0-alpha.1",
+    "storybook": "9.1.10",
     "typescript": "^5",
     "zod": "^3.22.4"
+  },
+  "resolutions": {
+    "webpack": "^5.94.0",
+    "tapable": "^2.2.1"
   },
   "packageManager": "yarn@4.6.0"
 }

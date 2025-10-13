@@ -1,22 +1,15 @@
 import type { StorybookConfig } from "@storybook/nextjs";
-import * as path from "node:path";
 
 const config: StorybookConfig = {
+  framework: "@storybook/nextjs",
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-  ],
-  framework: {
-    name: "@storybook/nextjs",
-    options: {},
-  },
-  staticDirs: [path.join(__dirname, "../public")],
-  env: (config) =>({
+  addons: ["@chromatic-com/storybook", "@storybook/addon-docs"],
+  staticDirs: ["../public"],
+  env: (config) => ({
     ...config,
-    NEXT_PUBLIC_IMAGE_PROXY: process.env.NEXT_PUBLIC_IMAGE_PROXY,
-    NEXT_PUBLIC_ICON_CDN_URL: process.env.NEXT_PUBLIC_ICON_CDN_URL
-  })
+    // Storybook/esbuild requires env values to be strings. Fallback to empty strings when undefined.
+    NEXT_PUBLIC_IMAGE_PROXY: process.env.NEXT_PUBLIC_IMAGE_PROXY ?? "",
+    NEXT_PUBLIC_ICON_CDN_URL: process.env.NEXT_PUBLIC_ICON_CDN_URL ?? ""
+  }),
 };
 export default config;

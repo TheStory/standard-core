@@ -1,6 +1,6 @@
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import type { Preview, StoryFn } from "@storybook/react";
+import type { Preview, StoryFn } from "@storybook/nextjs";
 import {NextIntlClientProvider} from "next-intl";
 
 const messages = {
