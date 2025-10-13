@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/nextjs";
 import SvgIcon from "@thestory/standard-core/atoms/SvgIcon/SvgIcon";
 
 const meta: Meta<typeof SvgIcon> = {

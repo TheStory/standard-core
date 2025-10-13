@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import FormattedDate from "@thestory/standard-core/atoms/FormatedData/FormatedData";
 
 const meta: Meta<typeof FormattedDate> = {

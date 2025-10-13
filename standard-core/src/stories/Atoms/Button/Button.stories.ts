@@ -1,5 +1,5 @@
-import { action } from "@storybook/addon-actions";
-import type { Meta, StoryObj } from "@storybook/react";
+import { action } from "storybook/actions";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Button } from "@thestory/standard-core/atoms/Button";
 
 const meta: Meta<typeof Button> = {

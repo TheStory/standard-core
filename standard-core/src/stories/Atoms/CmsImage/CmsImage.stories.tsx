@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import CmsImage from "@thestory/standard-core/atoms/CmsImage/CmsImage";
 
 const meta: Meta<typeof CmsImage> = {
@@ -15,14 +15,10 @@ const meta: Meta<typeof CmsImage> = {
   },
   args: {
     image: {
-      data: {
-        //@ts-ignore
-        attributes: {
-          url: "https://storybook.js.org/images/placeholders/350x150.png",
-          width: 350,
-          height: 150,
-        },
-      },
+      documentId: "abc",
+      url: "https://storybook.js.org/images/placeholders/350x150.png",
+      width: 350,
+      height: 150,
     },
   },
 };
