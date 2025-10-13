@@ -5,12 +5,13 @@ import BreadCrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
 import { type SxProps, alpha } from "@mui/material/styles";
 import Link from "@thestory/standard-core/atoms/Link/Link";
+import type { APIString } from "@thestory/standard-core/types";
 import { useTranslations } from "next-intl";
 import Script from "next/script";
 import type { BreadcrumbList, WithContext } from "schema-dts";
 
 interface CrumbsProps {
-  crumbs?: Array<{ link: string; href?: string }>;
+  crumbs?: { link?: APIString; href?: APIString }[];
   sx?: SxProps;
   lightVariant?: boolean;
 }
@@ -30,13 +31,13 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
         return {
           "@type": "ListItem",
           position: i + 2,
-          name: value.link,
+          name: value.link ?? undefined,
         };
 
       return {
         "@type": "ListItem",
         position: i + 2,
-        name: value.link,
+        name: value.link ?? undefined,
         item: `${process.env.NEXT_PUBLIC_BASE_URL}/${value?.href}`,
       };
     });

@@ -1,8 +1,15 @@
+import type { APIString } from "@thestory/standard-core/types";
 import type { ReactNode } from "react";
 
 export interface AccordionItem {
-  label: ReactNode | string;
-  overline?: string;
-  content: ReactNode | string;
-  links?: { label: string; url: string; overline?: string }[];
+  label?: ReactNode | APIString;
+  overline?: APIString;
+  content?: ReactNode | APIString;
+  links?:
+    | {
+        label?: APIString;
+        url?: APIString;
+        overline?: APIString;
+      }[]
+    | null;
 }

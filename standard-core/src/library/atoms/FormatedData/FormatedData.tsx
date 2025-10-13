@@ -1,12 +1,12 @@
 import Box from "@mui/material/Box";
 import { useFormatter, useTranslations } from "next-intl";
 
-const FormattedDate = ({ value }: { value?: Date | string }) => {
+const FormattedDate = ({ value }: { value?: Date | string | null }) => {
   const t = useTranslations("common");
   const f = useFormatter();
 
   const formatDate = () => {
-    if (value === undefined) return "-";
+    if (value === undefined || value === null) return "-";
 
     return f.dateTime(new Date(value), {
       dateStyle: "medium",

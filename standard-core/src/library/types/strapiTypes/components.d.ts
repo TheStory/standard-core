@@ -1,497 +1,503 @@
-import type { Attribute, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ContentAboutSection extends Schema.Component {
+export interface ContentAboutSection extends Struct.ComponentSchema {
   collectionName: 'components_content_about_sections';
   info: {
     description: '';
     displayName: 'aboutSection';
   };
   attributes: {
-    blocks: Attribute.Component<'content.value-square', true> &
-      Attribute.SetMinMax<
+    blocks: Schema.Attribute.Component<'content.value-square', true> &
+      Schema.Attribute.SetMinMax<
         {
           max: 3;
           min: 0;
         },
         number
       >;
-    image: Attribute.Media<'images'>;
-    subTitle: Attribute.String & Attribute.Required;
-    text: Attribute.Blocks & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    subTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentAccordion extends Schema.Component {
+export interface ContentAccordion extends Struct.ComponentSchema {
   collectionName: 'components_content_accordions';
   info: {
     displayName: 'accordion';
   };
   attributes: {
-    answer: Attribute.Text & Attribute.Required;
-    question: Attribute.String & Attribute.Required;
+    answer: Schema.Attribute.Text & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentBlogPreview extends Schema.Component {
+export interface ContentBlogPreview extends Struct.ComponentSchema {
   collectionName: 'components_content_blog_previews';
   info: {
     displayName: 'blogPreview';
   };
   attributes: {
-    article: Attribute.Relation<
-      'content.blog-preview',
-      'oneToOne',
-      'api::article.article'
-    >;
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
+    subTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentButtonWithOverline extends Schema.Component {
+export interface ContentButtonWithOverline extends Struct.ComponentSchema {
   collectionName: 'components_content_button_with_overlines';
   info: {
     description: '';
     displayName: 'Button with overline';
   };
   attributes: {
-    label: Attribute.String & Attribute.Required;
-    overline: Attribute.String;
-    url: Attribute.String & Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    overline: Schema.Attribute.String;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentContentSectionTitleSubtitle extends Schema.Component {
+export interface ContentContentSectionTitleSubtitle
+  extends Struct.ComponentSchema {
   collectionName: 'components_content_content_section_title_subtitle_s';
   info: {
     description: '';
     displayName: 'Content Section (title, sub)';
   };
   attributes: {
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentCtaButton extends Schema.Component {
+export interface ContentCtaButton extends Struct.ComponentSchema {
   collectionName: 'components_content_cta_buttons';
   info: {
     description: '';
     displayName: 'CTA Button';
   };
   attributes: {
-    label: Attribute.String & Attribute.Required;
-    url: Attribute.String & Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentCtaSection extends Schema.Component {
+export interface ContentCtaSection extends Struct.ComponentSchema {
   collectionName: 'components_content_cta_sections';
   info: {
     description: '';
     displayName: 'CTA Section';
   };
   attributes: {
-    cta: Attribute.Relation<'content.cta-section', 'oneToOne', 'api::cta.cta'>;
+    cta: Schema.Attribute.Relation<'oneToOne', 'api::cta.cta'>;
   };
 }
 
-export interface ContentDimensions extends Schema.Component {
+export interface ContentDimensions extends Struct.ComponentSchema {
   collectionName: 'components_content_dimensions';
   info: {
     displayName: 'dimensions';
   };
   attributes: {
-    attribute: Attribute.String & Attribute.Required;
+    attribute: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentFaq extends Schema.Component {
+export interface ContentFaq extends Struct.ComponentSchema {
   collectionName: 'components_content_faqs';
   info: {
     description: '';
     displayName: 'Faq';
   };
   attributes: {
-    button: Attribute.Component<'content.button-with-overline'>;
-    faq: Attribute.Relation<'content.faq', 'oneToOne', 'api::faq.faq'>;
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    button: Schema.Attribute.Component<'content.button-with-overline', false>;
+    faq: Schema.Attribute.Relation<'oneToOne', 'api::faq.faq'>;
+    subTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentFaqQuestions extends Schema.Component {
+export interface ContentFaqQuestions extends Struct.ComponentSchema {
   collectionName: 'components_content_faq_questions';
   info: {
     displayName: 'faqQuestions';
   };
   attributes: {
-    answer: Attribute.Blocks & Attribute.Required;
-    question: Attribute.String & Attribute.Required;
+    answer: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentFloatingCards extends Schema.Component {
+export interface ContentFloatingCards extends Struct.ComponentSchema {
   collectionName: 'components_content_floating_cards';
   info: {
     displayName: 'floatingCards';
   };
   attributes: {
-    description: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentGallery extends Schema.Component {
+export interface ContentGallery extends Struct.ComponentSchema {
   collectionName: 'components_content_galleries';
   info: {
     description: '';
     displayName: 'gallery';
   };
   attributes: {
-    description: Attribute.Text;
-    image: Attribute.Media<'images'> & Attribute.Required;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
-export interface ContentGallerySection extends Schema.Component {
+export interface ContentGallerySection extends Struct.ComponentSchema {
   collectionName: 'components_content_gallery_sections';
   info: {
     displayName: 'Gallery Section';
   };
   attributes: {
-    slides: Attribute.Component<'content.gallery-slide', true> &
-      Attribute.SetMinMax<
+    slides: Schema.Attribute.Component<'content.gallery-slide', true> &
+      Schema.Attribute.SetMinMax<
         {
           max: 6;
         },
         number
       >;
-    subtitle: Attribute.String;
-    title: Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ContentGallerySlide extends Schema.Component {
+export interface ContentGallerySlide extends Struct.ComponentSchema {
   collectionName: 'components_content_gallery_slides';
   info: {
     displayName: 'Gallery Slide';
   };
   attributes: {
-    description: Attribute.Text;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    link: Attribute.Component<'content.cta-button'>;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.Component<'content.cta-button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentHeroSection extends Schema.Component {
+export interface ContentHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_content_hero_sections';
   info: {
     description: '';
     displayName: 'heroSection';
   };
   attributes: {
-    button: Attribute.Component<'content.button-with-overline'> &
-      Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    floatingCards: Attribute.Component<'content.floating-cards', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
+    button: Schema.Attribute.Component<'content.button-with-overline', false> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    floatingCards: Schema.Attribute.Component<'content.floating-cards', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
         {
           max: 3;
           min: 0;
         },
         number
       >;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentHighlight extends Schema.Component {
+export interface ContentHighlight extends Struct.ComponentSchema {
   collectionName: 'components_content_highlights';
   info: {
     description: '';
     displayName: 'Highlight';
   };
   attributes: {
-    highlightText: Attribute.Text & Attribute.Required;
+    highlightText: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
-export interface ContentImage extends Schema.Component {
+export interface ContentImage extends Struct.ComponentSchema {
   collectionName: 'components_content_images';
   info: {
     description: '';
     displayName: 'Image';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    imgDescription: Attribute.Text;
-    variant: Attribute.Enumeration<['fullWidth', 'contentWidth']> &
-      Attribute.DefaultTo<'fullWidth'>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imgDescription: Schema.Attribute.Text;
+    variant: Schema.Attribute.Enumeration<['fullWidth', 'contentWidth']> &
+      Schema.Attribute.DefaultTo<'fullWidth'>;
   };
 }
 
-export interface ContentLocationsSection extends Schema.Component {
+export interface ContentLocationsSection extends Struct.ComponentSchema {
   collectionName: 'components_content_locations_sections';
   info: {
     description: '';
     displayName: 'Locations Section';
   };
   attributes: {
-    embedCode: Attribute.Text & Attribute.Required;
-    offices: Attribute.Component<'content.office', true>;
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    embedCode: Schema.Attribute.Text & Schema.Attribute.Required;
+    offices: Schema.Attribute.Component<'content.office', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentOffice extends Schema.Component {
+export interface ContentOffice extends Struct.ComponentSchema {
   collectionName: 'components_content_offices';
   info: {
     description: '';
     displayName: 'Office';
   };
   attributes: {
-    addressLine1: Attribute.String & Attribute.Required;
-    addressLine2: Attribute.String;
-    city: Attribute.String & Attribute.Required;
-    country: Attribute.String;
-    email: Attribute.String;
-    phone: Attribute.String;
-    postalCode: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    addressLine1: Schema.Attribute.String & Schema.Attribute.Required;
+    addressLine2: Schema.Attribute.String;
+    city: Schema.Attribute.String & Schema.Attribute.Required;
+    country: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    postalCode: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentOpinionCard extends Schema.Component {
+export interface ContentOpinionCard extends Struct.ComponentSchema {
   collectionName: 'components_content_opinion_cards';
   info: {
     description: '';
     displayName: 'OpinionCard';
   };
   attributes: {
-    description: Attribute.Text & Attribute.Required;
-    fullName: Attribute.String & Attribute.Required;
-    opinionNumber: Attribute.String & Attribute.Required;
-    opinionTime: Attribute.String & Attribute.Required;
-    starRating: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.SetMinMax<
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    fullName: Schema.Attribute.String & Schema.Attribute.Required;
+    opinionNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    opinionTime: Schema.Attribute.String & Schema.Attribute.Required;
+    starRating: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
         {
           max: 5;
           min: 1;
         },
         number
       > &
-      Attribute.DefaultTo<5>;
+      Schema.Attribute.DefaultTo<5>;
   };
 }
 
-export interface ContentOpinions extends Schema.Component {
+export interface ContentOpinions extends Struct.ComponentSchema {
   collectionName: 'components_content_opinions';
   info: {
     description: '';
     displayName: 'opinions';
   };
   attributes: {
-    opinionCard: Attribute.Component<'content.opinion-card', true> &
-      Attribute.Required;
-    settings: Attribute.Component<'home.settings-opinions'>;
-    subTitle: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    opinionCard: Schema.Attribute.Component<'content.opinion-card', true> &
+      Schema.Attribute.Required;
+    settings: Schema.Attribute.Component<'home.settings-opinions', false>;
+    subTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentOurProducts extends Schema.Component {
+export interface ContentOurProducts extends Struct.ComponentSchema {
   collectionName: 'components_content_our_products';
   info: {
     description: '';
     displayName: 'ourProducts';
   };
   attributes: {
-    highlightedProducts: Attribute.Relation<
-      'content.our-products',
+    highlightedProducts: Schema.Attribute.Relation<
       'oneToMany',
       'api::product.product'
     >;
-    subTitle: Attribute.String;
-    title: Attribute.String;
+    subTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ContentPostStep extends Schema.Component {
+export interface ContentPostStep extends Struct.ComponentSchema {
   collectionName: 'components_content_post_steps';
   info: {
     displayName: 'postStep';
   };
   attributes: {
-    bottomButtonLabel: Attribute.String & Attribute.Required;
-    titleLine1: Attribute.String & Attribute.Required;
-    titleLine2: Attribute.String & Attribute.Required;
+    bottomButtonLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    titleLine1: Schema.Attribute.String & Schema.Attribute.Required;
+    titleLine2: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentPreStep extends Schema.Component {
+export interface ContentPreStep extends Struct.ComponentSchema {
   collectionName: 'components_content_pre_steps';
   info: {
     displayName: 'preStep';
   };
   attributes: {
-    titleLine1: Attribute.String & Attribute.Required;
-    titleLine2: Attribute.String & Attribute.Required;
+    titleLine1: Schema.Attribute.String & Schema.Attribute.Required;
+    titleLine2: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentReelsSection extends Schema.Component {
+export interface ContentReelsSection extends Struct.ComponentSchema {
   collectionName: 'components_content_reels_sections';
   info: {
     displayName: 'Reels Section';
   };
   attributes: {
-    button: Attribute.Component<'content.cta-button'>;
-    items: Attribute.Component<'content.reels-slide', true>;
-    section: Attribute.Component<'content.content-section-title-subtitle'>;
+    button: Schema.Attribute.Component<'content.cta-button', false>;
+    items: Schema.Attribute.Component<'content.reels-slide', true>;
+    section: Schema.Attribute.Component<
+      'content.content-section-title-subtitle',
+      false
+    >;
   };
 }
 
-export interface ContentReelsSlide extends Schema.Component {
+export interface ContentReelsSlide extends Struct.ComponentSchema {
   collectionName: 'components_content_reels_slides';
   info: {
     description: '';
     displayName: 'Reels Slide';
   };
   attributes: {
-    description: Attribute.Text;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    link: Attribute.Component<'content.cta-button'>;
-    title: Attribute.String & Attribute.Required;
-    video: Attribute.Media<'videos'>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.Component<'content.cta-button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    video: Schema.Attribute.Media<'videos'>;
   };
 }
 
-export interface ContentSectionTitleSubtitleContent extends Schema.Component {
+export interface ContentSectionTitleSubtitleContent
+  extends Struct.ComponentSchema {
   collectionName: 'components_content_section_title_subtitle_content_s';
   info: {
     description: '';
     displayName: 'Content Section (title, sub, descr, btn)';
   };
   attributes: {
-    button: Attribute.Component<'content.button-with-overline'> &
-      Attribute.Required;
-    description: Attribute.Blocks;
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    button: Schema.Attribute.Component<'content.button-with-overline', false> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentSource extends Schema.Component {
+export interface ContentSource extends Struct.ComponentSchema {
   collectionName: 'components_content_sources';
   info: {
     displayName: 'Source';
   };
   attributes: {
-    link: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentStep extends Schema.Component {
+export interface ContentStep extends Struct.ComponentSchema {
   collectionName: 'components_content_steps';
   info: {
     displayName: 'Step';
   };
   attributes: {
-    description: Attribute.Text & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface ContentStepSection extends Schema.Component {
+export interface ContentStepSection extends Struct.ComponentSchema {
   collectionName: 'components_content_step_sections';
   info: {
     description: '';
     displayName: 'stepSection';
   };
   attributes: {
-    postStep: Attribute.Component<'content.post-step'> & Attribute.Required;
-    preStep: Attribute.Component<'content.pre-step'> & Attribute.Required;
-    steps: Attribute.Component<'content.step', true> & Attribute.Required;
+    postStep: Schema.Attribute.Component<'content.post-step', false> &
+      Schema.Attribute.Required;
+    preStep: Schema.Attribute.Component<'content.pre-step', false> &
+      Schema.Attribute.Required;
+    steps: Schema.Attribute.Component<'content.step', true> &
+      Schema.Attribute.Required;
   };
 }
 
-export interface ContentTextSection extends Schema.Component {
+export interface ContentTextSection extends Struct.ComponentSchema {
   collectionName: 'components_content_text_sections';
   info: {
     description: '';
     displayName: 'Text Section';
   };
   attributes: {
-    content: Attribute.Blocks;
-    title: Attribute.String;
+    content: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ContentValueSquare extends Schema.Component {
+export interface ContentValueSquare extends Struct.ComponentSchema {
   collectionName: 'components_content_value_squares';
   info: {
     displayName: 'valueSquare';
   };
   attributes: {
-    description: Attribute.String & Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface HomePricingSection extends Schema.Component {
+export interface HomePricingSection extends Struct.ComponentSchema {
   collectionName: 'components_home_pricing_sections';
   info: {
     displayName: 'Pricing section';
   };
   attributes: {
-    items: Attribute.Component<'shared.simple-price', true>;
-    subtitle: Attribute.String;
-    title: Attribute.String & Attribute.Required;
+    items: Schema.Attribute.Component<'shared.simple-price', true>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface HomeService extends Schema.Component {
+export interface HomeService extends Struct.ComponentSchema {
   collectionName: 'components_home_services';
   info: {
     displayName: 'Service';
   };
   attributes: {
-    description: Attribute.Blocks;
-    link: Attribute.Component<'content.cta-button'>;
-    title: Attribute.String;
+    description: Schema.Attribute.Blocks;
+    link: Schema.Attribute.Component<'content.cta-button', false>;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface HomeServicesSection extends Schema.Component {
+export interface HomeServicesSection extends Struct.ComponentSchema {
   collectionName: 'components_home_services_sections';
   info: {
     displayName: 'Services section';
   };
   attributes: {
-    section: Attribute.Component<'content.section-title-subtitle-content'>;
-    services: Attribute.Component<'home.service', true>;
+    section: Schema.Attribute.Component<
+      'content.section-title-subtitle-content',
+      false
+    >;
+    services: Schema.Attribute.Component<'home.service', true>;
   };
 }
 
-export interface HomeSettingsOpinions extends Schema.Component {
+export interface HomeSettingsOpinions extends Struct.ComponentSchema {
   collectionName: 'components_home_settings_opinions';
   info: {
     displayName: 'Settings: opinions';
   };
   attributes: {
-    description: Attribute.String;
-    link: Attribute.String;
-    value: Attribute.Decimal &
-      Attribute.SetMinMax<
+    description: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    value: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
         {
           max: 5;
           min: 0;
@@ -501,160 +507,164 @@ export interface HomeSettingsOpinions extends Schema.Component {
   };
 }
 
-export interface ProjectsContentSection extends Schema.Component {
+export interface ProjectsContentSection extends Struct.ComponentSchema {
   collectionName: 'components_projects_content_sections';
   info: {
     displayName: 'Content Section';
   };
   attributes: {
-    align: Attribute.Enumeration<['left', 'center', 'right']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'left'>;
-    content: Attribute.Blocks & Attribute.Required;
+    align: Schema.Attribute.Enumeration<['left', 'center', 'right']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'left'>;
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
   };
 }
 
-export interface ProjectsGallery extends Schema.Component {
+export interface ProjectsGallery extends Struct.ComponentSchema {
   collectionName: 'components_projects_galleries';
   info: {
     displayName: 'Gallery';
   };
   attributes: {
-    items: Attribute.Component<'projects.gallery-slide', true> &
-      Attribute.Required;
+    items: Schema.Attribute.Component<'projects.gallery-slide', true> &
+      Schema.Attribute.Required;
   };
 }
 
-export interface ProjectsGallerySlide extends Schema.Component {
+export interface ProjectsGallerySlide extends Struct.ComponentSchema {
   collectionName: 'components_projects_gallery_slides';
   info: {
     description: '';
     displayName: 'Gallery Slide';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    isFull: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    isFull: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
   };
 }
 
-export interface SharedMetaSocial extends Schema.Component {
+export interface SharedMetaSocial extends Struct.ComponentSchema {
   collectionName: 'components_shared_meta_socials';
   info: {
     displayName: 'metaSocial';
     icon: 'project-diagram';
   };
   attributes: {
-    description: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 65;
       }>;
-    image: Attribute.Media<'images' | 'files' | 'videos'>;
-    socialNetwork: Attribute.Enumeration<['Facebook', 'Twitter']> &
-      Attribute.Required;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
   };
 }
 
-export interface SharedPrices extends Schema.Component {
+export interface SharedPrices extends Struct.ComponentSchema {
   collectionName: 'components_shared_prices';
   info: {
     description: '';
     displayName: 'prices';
   };
   attributes: {
-    productPrice: Attribute.Component<'shared.product-price'> &
-      Attribute.Required;
-    showUnit: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
-    unit: Attribute.Enumeration<['szt.', 'm2', 'm3']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'szt.'>;
+    productPrice: Schema.Attribute.Component<'shared.product-price', false> &
+      Schema.Attribute.Required;
+    showUnit: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    unit: Schema.Attribute.Enumeration<['szt.', 'm2', 'm3']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'szt.'>;
   };
 }
 
-export interface SharedProductPrice extends Schema.Component {
+export interface SharedProductPrice extends Struct.ComponentSchema {
   collectionName: 'components_shared_product_prices';
   info: {
     description: '';
     displayName: 'ProductPrice';
   };
   attributes: {
-    priceBrutto: Attribute.Decimal &
-      Attribute.SetMinMax<
+    priceBrutto: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
         {
           min: 0;
         },
         number
       > &
-      Attribute.DefaultTo<0>;
-    priceNetto: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.SetMinMax<
+      Schema.Attribute.DefaultTo<0>;
+    priceNetto: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
         {
           min: 0;
         },
         number
       >;
-    vat: Attribute.Enumeration<['vat23', 'vat8', 'vat5', 'vat0', 'brak']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'vat23'>;
+    vat: Schema.Attribute.Enumeration<
+      ['vat23', 'vat8', 'vat5', 'vat0', 'brak']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'vat23'>;
   };
 }
 
-export interface SharedSeo extends Schema.Component {
+export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
     displayName: 'seo';
     icon: 'search';
   };
   attributes: {
-    canonicalURL: Attribute.String;
-    keywords: Attribute.Text;
-    metaDescription: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
         minLength: 50;
       }>;
-    metaImage: Attribute.Media<'images' | 'files' | 'videos'>;
-    metaRobots: Attribute.String;
-    metaSocial: Attribute.Component<'shared.meta-social', true>;
-    metaTitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
+    metaImage: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    metaRobots: Schema.Attribute.String;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    metaViewport: Attribute.String;
-    structuredData: Attribute.JSON;
+    metaViewport: Schema.Attribute.String;
+    structuredData: Schema.Attribute.JSON;
   };
 }
 
-export interface SharedSimplePrice extends Schema.Component {
+export interface SharedSimplePrice extends Struct.ComponentSchema {
   collectionName: 'components_shared_simple_prices';
   info: {
     displayName: 'Simple price';
   };
   attributes: {
-    price: Attribute.Decimal &
-      Attribute.SetMinMax<
+    price: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
         {
           min: 0;
         },
         number
       >;
-    title: Attribute.String & Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'content.about-section': ContentAboutSection;
       'content.accordion': ContentAccordion;
       'content.blog-preview': ContentBlogPreview;

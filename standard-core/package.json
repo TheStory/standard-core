@@ -260,6 +260,10 @@
       "import": "./dist/types/index.js",
       "require": "./dist/types/index.js"
     },
+    "./types/strapi": {
+      "import": "./dist/types/strapi.js",
+      "require": "./dist/types/strapi.js"
+    },
     "./types/strapiTypes": {
       "import": "./dist/types/strapiTypes/index.js",
       "require": "./dist/types/strapiTypes/index.js"

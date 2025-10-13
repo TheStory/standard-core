@@ -4,14 +4,17 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { SxProps } from "@mui/material/styles";
 import { Button } from "@thestory/standard-core/atoms/Button";
+import type { APINullable, APIString } from "@thestory/standard-core/types";
 
 export interface CtaButtonProps {
-  button?: {
-    label: string;
-    overline?: string;
-    url: string;
-    sx?: SxProps;
-  };
+  button?:
+    | {
+        label?: APIString;
+        overline?: APIString;
+        url?: APIString;
+        sx?: SxProps;
+      }
+    | APINullable;
 }
 
 const CtaButton = ({ button }: CtaButtonProps) =>
@@ -23,7 +26,7 @@ const CtaButton = ({ button }: CtaButtonProps) =>
     >
       <Button
         size="large"
-        href={button.url}
+        href={button.url || undefined}
         sx={{
           color: "text.primary",
           width: "fit-content",

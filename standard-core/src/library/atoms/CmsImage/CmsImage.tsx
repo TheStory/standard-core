@@ -1,14 +1,15 @@
-import type { APIResponse } from "@thestory/standard-core/types";
+import type { Data } from "@strapi/strapi";
+import type { APINumber, APIString } from "@thestory/standard-core/types";
 import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
 import Image, { type ImageProps } from "next/image";
 
 type BaseUploadImageProps = {
-  url: string;
-  alternativeText?: string | null;
-  width?: number;
-  height?: number;
+  url?: APIString;
+  alternativeText?: APIString;
+  width?: APINumber;
+  height?: APINumber;
   fill?: boolean;
-} & Omit<ImageProps, "src" | "alt">;
+} & Omit<ImageProps, "src" | "alt" | "width" | "height" | "id">;
 
 export const BaseUploadedImage = ({
   url,
@@ -18,6 +19,8 @@ export const BaseUploadedImage = ({
   fill = false,
   ...props
 }: BaseUploadImageProps) => {
+  if (!url) return null;
+
   let baseProps: Partial<ImageProps> = {
     ...props,
   };
@@ -48,21 +51,17 @@ export const BaseUploadedImage = ({
 };
 
 type UploadedImageProps = {
-  image: APIResponse<"plugin::upload.file">;
+  image: Data.ContentType<"plugin::upload.file"> | null;
   fill?: boolean;
   sizes?: string;
 };
 
 const CmsImage = ({ image, fill = false, sizes }: UploadedImageProps) => {
-  const { data } = image;
-
-  if (!data) {
+  if (!image || !image.url) {
     return null;
   }
 
-  const { attributes: imageData } = data;
-
-  return <BaseUploadedImage sizes={sizes} {...imageData} fill={fill} />;
+  return <BaseUploadedImage sizes={sizes} {...image} fill={fill} />;
 };
 
 export default CmsImage;
