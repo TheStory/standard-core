@@ -1,13 +1,16 @@
+import type { APIString } from "@thestory/standard-core/types";
 import { extractUrlFromText } from "@thestory/standard-core/utils/extractUrlFromText";
 
 import { Root } from "./Root";
 import type { MapBox } from "./types";
 
 interface GoogleEmbedMapProps extends MapBox {
-  embedCode: string;
+  embedCode?: APIString;
 }
 
 const Map = ({ embedCode, ...rest }: GoogleEmbedMapProps) => {
+  if (!embedCode) return null;
+
   const locationFromIFrame = extractUrlFromText(embedCode);
 
   if (!locationFromIFrame) return null;

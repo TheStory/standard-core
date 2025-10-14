@@ -1,3 +1,5 @@
+"use client";
+
 import Checkbox, { type CheckboxProps } from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import type { ReactElement } from "react";

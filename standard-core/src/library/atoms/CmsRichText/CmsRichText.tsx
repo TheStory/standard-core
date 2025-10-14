@@ -10,7 +10,8 @@ import {
   type BlocksContent,
   BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
-import type { Attribute } from "@strapi/strapi";
+import type { Schema } from "@strapi/strapi";
+import type { APINullable } from "@thestory/standard-core/types";
 import type { ReactNode } from "react";
 import slugify from "slugify";
 
@@ -31,7 +32,7 @@ type BlockElements =
   | "list";
 
 export interface CmsRichTextProps {
-  blocks: Attribute.Blocks | BlocksContent | undefined;
+  blocks: Schema.Attribute.Blocks | BlocksContent | APINullable;
   globalDisableHeadings?: boolean;
   exclude?: BlockElements[];
   componentProps?: Partial<{

@@ -4,5 +4,5 @@ export interface ContrastAware {
   useContrastColors?: boolean;
 }
 
-export * from "@thestory/standard-core/types/strapi";
-export * from "@thestory/standard-core/types/strapiTypes";
+export * from "./strapiTypes";
+export * from "./strapi";

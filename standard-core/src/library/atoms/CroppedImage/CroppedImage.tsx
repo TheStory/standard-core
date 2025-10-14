@@ -1,5 +1,6 @@
 import Box, { type BoxProps } from "@mui/material/Box";
 import type { ImageResizeOption } from "@thestory/standard-core/types";
+import type { APIString } from "@thestory/standard-core/types";
 
 import { constructCroppedImageUrl } from "./utils";
 
@@ -10,7 +11,7 @@ interface CroppedImageProps extends BoxProps {
   cover?: boolean;
   desktopOnly?: boolean;
   mobileOnly?: boolean;
-  alt?: string;
+  alt?: APIString;
   loading?: "lazy" | "eager";
   resizingType?: ImageResizeOption;
 }

@@ -23,5 +23,5 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: ["src/types/strapiTypes/*"],
+  ignorePatterns: ["src/library/types/strapiTypes/*"],
 };

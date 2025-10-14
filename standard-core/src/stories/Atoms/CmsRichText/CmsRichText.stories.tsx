@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import type { BlocksContent } from "@strapi/blocks-react-renderer";
 import CmsRichText from "@thestory/standard-core/atoms/CmsRichText/CmsRichText";
 

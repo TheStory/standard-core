@@ -1,12 +1,13 @@
 import type { SxProps } from "@mui/material/styles";
+import type { Data } from "@strapi/strapi";
 import { CroppedImage } from "@thestory/standard-core/atoms/CroppedImage";
 import type { ImageResizeOption } from "@thestory/standard-core/types";
 import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
 
-type DifferentWidths = number | { xs: number; lg: number };
+type DifferentWidths = number | { xs: number; lg: number } | null;
 
 interface CmsCroppedImageProps {
-  image: any;
+  image?: Data.ContentType<"plugin::upload.file"> | null;
   width?: DifferentWidths;
   height?: DifferentWidths;
   cover?: boolean;
@@ -24,21 +25,9 @@ const CmsCroppedImage = ({
   sx,
   loading,
 }: CmsCroppedImageProps) => {
-  let data;
+  if (!image) return null;
 
-  if (image.hasOwnProperty("data")) {
-    data = image?.data;
-  } else {
-    data = image;
-  }
-
-  if (!data) return null;
-
-  const { attributes } = data;
-
-  if (!attributes) return null;
-
-  const { url, alternativeText = "" } = attributes;
+  const { url, alternativeText = "" } = image;
 
   let setMobileWidth;
   let setDesktopWidth;

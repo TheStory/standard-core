@@ -4,6 +4,7 @@ import type { ButtonOwnProps } from "@mui/material/Button";
 import MuiButton from "@mui/material/Button";
 import type { SxProps, Theme } from "@mui/material/styles";
 import { LocalizedLink } from "@thestory/standard-core/config/navigation";
+import type { APIString } from "@thestory/standard-core/types";
 import type { ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 
 const Button = ({
@@ -20,7 +21,7 @@ const Button = ({
   sx,
 }: {
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
-  href?: string;
+  href?: APIString;
   target?: string;
   children?: ReactNode;
   variant?: ButtonOwnProps["variant"];
@@ -33,7 +34,7 @@ const Button = ({
 }) => (
   <MuiButton
     type={type}
-    href={href}
+    href={href || undefined}
     component={href ? component : "button"}
     target={target}
     variant={variant}

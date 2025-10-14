@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import LanguageSelector from "@thestory/standard-core/molecules/LanguageSelector/LanguageSelector";
 
 const meta: Meta<typeof LanguageSelector> = {

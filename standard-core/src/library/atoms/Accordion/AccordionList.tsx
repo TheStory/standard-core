@@ -86,7 +86,7 @@ export const AccordionList = ({
         </AccordionDetails>
         <Stack flexDirection="row" flexWrap="wrap" columnGap={1}>
           {item?.links?.map((link, index) => (
-            <Link key={`link-${index}`} href={link.url}>
+            <Link key={`link-${index}`} href={link.url || ""}>
               {link.label}
             </Link>
           ))}
