@@ -15,6 +15,7 @@ const meta: Meta<typeof CmsImage> = {
   },
   args: {
     image: {
+      id: 0,
       documentId: "abc",
       url: "https://storybook.js.org/images/placeholders/350x150.png",
       width: 350,
