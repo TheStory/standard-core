@@ -76,6 +76,9 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
     const toggle = (event?: React.SyntheticEvent) => {
       // Prevent click from bubbling to parent (e.g., link wrappers)
       event?.stopPropagation?.();
+      event?.nativeEvent?.stopImmediatePropagation?.();
+      event?.preventDefault?.();
+
       if (!videoRef.current) return;
       if (videoRef.current.paused) {
         return videoRef.current.play();
