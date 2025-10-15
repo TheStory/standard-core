@@ -34,7 +34,7 @@ export type VideoPlayerHandle = {
   play: () => Promise<void> | void;
   pause: () => void;
   stop: () => void; // pause and reset to 0
-  toggle: () => Promise<void> | void;
+  toggle: (event?: React.MouseEvent) => Promise<void> | void;
   setCurrentTime: (seconds: number) => void;
   getCurrentTime: () => number;
   getElement: () => HTMLVideoElement | null;
@@ -73,7 +73,9 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
         }
       }
     };
-    const toggle = () => {
+    const toggle = (event?: React.SyntheticEvent) => {
+      // Prevent click from bubbling to parent (e.g., link wrappers)
+      event?.stopPropagation?.();
       if (!videoRef.current) return;
       if (videoRef.current.paused) {
         return videoRef.current.play();
