@@ -50,7 +50,7 @@ if (fs.existsSync(packageJsonPath)) {
 
   packageJson.exports = exportsMap;
 
-  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n");
   console.log("Exports have been updated in package.json.");
 } else {
   console.error("Error: package.json not found!");
