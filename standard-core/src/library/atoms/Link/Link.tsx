@@ -6,6 +6,7 @@ import {
   LocalizedLink,
   type LinkProps as LocalizedLinkProps,
 } from "@thestory/standard-core/config/navigation";
+import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
 
@@ -13,6 +14,7 @@ type LinkType = LocalizedLinkProps & MuiLinkProps;
 
 const Link = ({ children, href, onClick, ...props }: LinkType) => {
   const pathname = usePathname();
+  const locale = useLocale();
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (onClick) onClick(e);
@@ -21,9 +23,13 @@ const Link = ({ children, href, onClick, ...props }: LinkType) => {
     if (typeof href === "string") {
       const [targetPath, hash] = href.split("#");
 
-      const isSamePage =
-        (targetPath === "" || targetPath === "/" || targetPath === pathname) &&
-        !!hash;
+      const normalizedPathname =
+        "/" +
+        (pathname.startsWith(`/${locale}`)
+          ? pathname.replace(new RegExp(`^/${locale}/?`), "")
+          : pathname);
+
+      const isSamePage = targetPath === normalizedPathname && !!hash;
 
       if (isSamePage) {
         e.preventDefault();
