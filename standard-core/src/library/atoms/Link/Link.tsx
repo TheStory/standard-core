@@ -23,11 +23,9 @@ const Link = ({ children, href, onClick, ...props }: LinkType) => {
     if (typeof href === "string") {
       const [targetPath, hash] = href.split("#");
 
-      const normalizedPathname =
-        "/" +
-        (pathname.startsWith(`/${locale}`)
-          ? pathname.replace(new RegExp(`^/${locale}/?`), "")
-          : pathname);
+      const normalizedPathname = pathname.startsWith(`/${locale}`)
+        ? "/" + pathname.replace(new RegExp(`^/${locale}/?`), "")
+        : pathname;
 
       const isSamePage = targetPath === normalizedPathname && !!hash;
 
