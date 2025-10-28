@@ -40,7 +40,8 @@ const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
       if (scrollToId) {
         const el = document.getElementById(scrollToId);
         if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
+          const y = el.getBoundingClientRect().top + window.scrollY - 74;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       }
 
