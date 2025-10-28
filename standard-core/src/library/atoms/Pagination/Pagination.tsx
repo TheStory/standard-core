@@ -7,14 +7,15 @@ import PaginationItem from "@mui/material/PaginationItem";
 import type { SxProps } from "@mui/material/styles";
 import { usePathname, useRouter } from "@thestory/standard-core/config";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 interface PaginationProps {
   totalPages: number;
   sx?: SxProps;
+  scrollToId?: string;
 }
 
-const Pagination = ({ totalPages, sx }: PaginationProps) => {
+const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
   const searchParams = useSearchParams();
   const { replace, push } = useRouter();
   const pathname = usePathname();
@@ -31,6 +32,25 @@ const Pagination = ({ totalPages, sx }: PaginationProps) => {
 
   const currentPage = +(searchParams.get("page") || 1);
 
+  const handleChange = useCallback(
+    (_: React.ChangeEvent<unknown>, value: number) => {
+      const params = new URLSearchParams(searchParams);
+      params.set("page", value.toString());
+
+      if (scrollToId) {
+        const el = document.getElementById(scrollToId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      push(`${pathname}?${params.toString()}`, {
+        scroll: !scrollToId,
+      });
+    },
+    [scrollToId, searchParams, pathname, push],
+  );
+
   if (totalPages <= 1) {
     return null;
   }
@@ -43,11 +63,7 @@ const Pagination = ({ totalPages, sx }: PaginationProps) => {
         my: 7,
         ...sx,
       }}
-      onChange={(_, value) => {
-        const params = new URLSearchParams(searchParams);
-        params.set("page", value.toString());
-        push(`${pathname}?${params.toString()}`, { scroll: false });
-      }}
+      onChange={handleChange}
       page={currentPage}
       showFirstButton
       showLastButton
