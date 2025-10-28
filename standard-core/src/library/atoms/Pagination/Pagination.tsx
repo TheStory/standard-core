@@ -13,9 +13,15 @@ interface PaginationProps {
   totalPages: number;
   sx?: SxProps;
   scrollToId?: string;
+  onIsScrolledChange?: (isScrolled: boolean) => void;
 }
 
-const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
+const Pagination = ({
+  totalPages,
+  sx,
+  scrollToId,
+  onIsScrolledChange,
+}: PaginationProps) => {
   const searchParams = useSearchParams();
   const { replace, push } = useRouter();
   const pathname = usePathname();
@@ -37,19 +43,23 @@ const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
       const params = new URLSearchParams(searchParams);
       params.set("page", value.toString());
 
+      let isScrolled = false;
       if (scrollToId) {
         const el = document.getElementById(scrollToId);
         if (el) {
           const y = el.getBoundingClientRect().top + window.scrollY - 74;
           window.scrollTo({ top: y, behavior: "smooth" });
+          isScrolled = true;
         }
       }
+
+      onIsScrolledChange?.(isScrolled);
 
       push(`${pathname}?${params.toString()}`, {
         scroll: !scrollToId,
       });
     },
-    [scrollToId, searchParams, pathname, push],
+    [scrollToId, searchParams, pathname, push, onIsScrolledChange],
   );
 
   if (totalPages <= 1) {
