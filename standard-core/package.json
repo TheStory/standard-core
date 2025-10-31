@@ -1,6 +1,6 @@
 {
   "name": "@thestory/standard-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Standard landing boilerplate",
   "main": "./dist/exports.js",
   "module": "./dist/exports.js",
