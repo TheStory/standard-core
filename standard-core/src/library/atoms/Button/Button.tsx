@@ -16,7 +16,7 @@ const Button = ({
   color = "primary",
   size = "large",
   disabled = false,
-  onClick = () => {},
+  onClick = (e: any) => {},
   component = LocalizedLink,
   sx,
 }: {
@@ -28,7 +28,7 @@ const Button = ({
   color?: ButtonOwnProps["color"];
   size?: ButtonOwnProps["size"];
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   component?: ElementType;
   sx?: SxProps<Theme>;
 }) => (
