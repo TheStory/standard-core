@@ -15,6 +15,10 @@ type LinkType = LocalizedLinkProps & MuiLinkProps;
 const Link = ({ children, href, onClick, ...props }: LinkType) => {
   const pathname = usePathname();
   const locale = useLocale();
+  const isExternal = href?.startsWith("http");
+
+  let setRel = isExternal ? "noopener noreferrer nofollow" : undefined;
+  let setTarget = isExternal ? "_blank" : undefined;
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (onClick) onClick(e);
@@ -45,6 +49,8 @@ const Link = ({ children, href, onClick, ...props }: LinkType) => {
       {...props}
       href={href}
       component={LocalizedLink as any}
+      rel={setRel}
+      target={setTarget}
       onClick={handleClick}
     >
       {children}
