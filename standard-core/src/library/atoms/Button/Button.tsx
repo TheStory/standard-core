@@ -17,6 +17,7 @@ const Button = ({
   size = "large",
   disabled = false,
   onClick = (e: any) => {},
+  onMouseEnter = (e: any) => {},
   component = LocalizedLink,
   sx,
 }: {
@@ -29,6 +30,7 @@ const Button = ({
   size?: ButtonOwnProps["size"];
   disabled?: boolean;
   onClick?: (e: any) => void;
+  onMouseEnter?: (e: any) => void;
   component?: ElementType;
   sx?: SxProps<Theme>;
 }) => (
@@ -42,6 +44,7 @@ const Button = ({
     size={size}
     disabled={disabled}
     onClick={onClick}
+    onMouseEnter={onMouseEnter}
     sx={sx}
   >
     {children}
