@@ -5,24 +5,38 @@ import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValu
 
 interface SvgIconProps {
   sx?: SxProps<Theme>;
-  url: string;
+  iconName?: string;
   fontSize?: SvgIconOwnProps["fontSize"];
   disableMask?: boolean;
+  url?: string;
 }
 
 const SvgIcon = ({
   sx,
-  url,
+  iconName,
   fontSize = "medium",
   disableMask = false,
+  url,
 }: SvgIconProps) => {
   const fontSizeValue =
     svgFontSizeValues[fontSize as keyof typeof svgFontSizeValues] ?? null;
+
+  const baseIconsPath =
+    process.env.NEXT_PUBLIC_ICON_CDN_URL ?? "https://icons.storyline.cloud/v2/";
 
   const backgroundColor =
     !disableMask && sx && typeof sx === "object" && "color" in sx
       ? (sx as any).color
       : undefined;
+
+  // Determine the final image URL. Prefer explicit `url` prop; otherwise use `iconName`.
+  const imgUrl =
+    url ?? (iconName ? `${baseIconsPath}${iconName}.svg` : undefined);
+
+  // If neither `url` nor `iconName` provided, render nothing to avoid invalid URLs.
+  if (!imgUrl) {
+    return null;
+  }
 
   return (
     <Box
@@ -32,14 +46,14 @@ const SvgIcon = ({
         height: fontSizeValue,
         ...(disableMask
           ? {
-              backgroundImage: `url(${url})`,
+              backgroundImage: `url(${imgUrl})`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }
           : {
               backgroundColor: backgroundColor ?? "text.primary",
-              maskImage: `url(${url})`,
+              maskImage: `url(${imgUrl})`,
               maskRepeat: "no-repeat",
               maskSize: "contain",
             }),

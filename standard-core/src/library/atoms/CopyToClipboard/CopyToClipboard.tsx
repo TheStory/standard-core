@@ -25,6 +25,8 @@ const CopyToClipboard = ({
   const [copiedText, copy] = useCopyToClipboard();
   const t = useTranslations("settings.utils");
 
+  const dupa = <T, K extends keyof T>(obj: T, key: K) => obj[key];
+
   return (
     <Tooltip
       title={copiedText ? t("copySuccess") : t("copyIcon")}
@@ -51,7 +53,7 @@ const CopyToClipboard = ({
         ) : (
           <SvgIcon
             fontSize={iconSize}
-            url={`${process.env.NEXT_PUBLIC_ICON_CDN_URL ?? "https://icons.storyline.cloud/v1/"}contentCopy.svg`}
+            iconName="content-copy"
             sx={{
               cursor: "pointer",
               color: color,
