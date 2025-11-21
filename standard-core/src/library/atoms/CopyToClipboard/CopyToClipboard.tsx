@@ -51,7 +51,7 @@ const CopyToClipboard = ({
         ) : (
           <SvgIcon
             fontSize={iconSize}
-            iconName="content-copy"
+            iconName="ContentCopy"
             sx={{
               cursor: "pointer",
               color: color,

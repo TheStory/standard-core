@@ -3,9 +3,32 @@ import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
 import type { SxProps, Theme } from "@mui/material/styles";
 import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
 
+// Enum of all icon names used in Icons.mdx for stronger typing and discoverability
+export enum SvgIconName {
+  Facebook = "facebook",
+  Instagram = "instagram",
+  Linkedin = "linkedin",
+  Tiktok = "tiktok",
+  Twitter = "twitter",
+  Youtube = "youtube",
+  ContentCopy = "content-copy",
+  Filter = "filter",
+  OpenInNew = "open-in-new",
+  Star = "star",
+  StarBorder = "star-border",
+  Google = "google",
+  LocationOnFilled = "location-on-filled",
+  MailFilled = "mail-filled",
+  PhoneIphoneFilled = "phone-iphone-filled",
+  ChevronDown = "chevron-down",
+}
+
 interface SvgIconProps {
   sx?: SxProps<Theme>;
-  iconName?: string;
+  // Prefer using SvgIconName for type safety; string remains for backward compatibility
+  iconName?: keyof typeof SvgIconName;
+  // New: allow passing the enum key name directly to avoid importing SvgIconName
+  // Example: <SvgIcon iconKey="ContentCopy" />
   fontSize?: SvgIconOwnProps["fontSize"];
   disableMask?: boolean;
   url?: string;
@@ -29,9 +52,10 @@ const SvgIcon = ({
       ? (sx as any).color
       : undefined;
 
-  // Determine the final image URL. Prefer explicit `url` prop; otherwise use `iconName`.
+  // Determine the final image URL. Prefer explicit `url` prop; otherwise use resolved icon name.
   const imgUrl =
-    url ?? (iconName ? `${baseIconsPath}${iconName}.svg` : undefined);
+    url ??
+    (iconName ? `${baseIconsPath}${SvgIconName[iconName]}.svg` : undefined);
 
   // If neither `url` nor `iconName` provided, render nothing to avoid invalid URLs.
   if (!imgUrl) {
