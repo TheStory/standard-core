@@ -25,8 +25,6 @@ const CopyToClipboard = ({
   const [copiedText, copy] = useCopyToClipboard();
   const t = useTranslations("settings.utils");
 
-  const dupa = <T, K extends keyof T>(obj: T, key: K) => obj[key];
-
   return (
     <Tooltip
       title={copiedText ? t("copySuccess") : t("copyIcon")}
