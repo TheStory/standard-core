@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/nextjs";
-import SvgIcon from "@thestory/standard-core/atoms/SvgIcon/SvgIcon";
+import SvgIcon, { SvgIconName } from "@thestory/standard-core/atoms/SvgIcon/SvgIcon";
 
 const meta: Meta<typeof SvgIcon> = {
   title: "Atoms/SvgIcon",
@@ -10,6 +10,11 @@ const meta: Meta<typeof SvgIcon> = {
   tags: ["autodocs"],
   argTypes: {
     url: { control: "text" },
+    // Expose iconName for enum-based usage in stories
+    iconName: {
+      control: "select",
+      options: Object.keys(SvgIconName),
+    },
     //@ts-ignore
     fontSize: {
       control: "select",
@@ -25,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    url: "https://icons.storyline.cloud/v1/facebook.svg",
+    iconName: "Facebook",
     //@ts-ignore
     fontSize: "3xl",
   },
