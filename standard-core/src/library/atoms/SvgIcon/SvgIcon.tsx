@@ -21,6 +21,7 @@ export enum SvgIconName {
   MailFilled = "mail-filled",
   PhoneIphoneFilled = "phone-iphone-filled",
   ChevronDown = "chevron-down",
+  ChevronRight = "chevron-right",
 }
 
 interface SvgIconProps {
