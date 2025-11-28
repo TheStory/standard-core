@@ -20,6 +20,7 @@ const Button = ({
   onMouseEnter = (e: any) => {},
   component = LocalizedLink,
   endIcon = null,
+  startIcon = null,
   sx,
 }: {
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
@@ -34,6 +35,7 @@ const Button = ({
   onMouseEnter?: (e: any) => void;
   component?: ElementType;
   endIcon?: ReactNode;
+  startIcon?: ReactNode;
   sx?: SxProps<Theme>;
 }) => (
   <MuiButton
@@ -49,6 +51,7 @@ const Button = ({
     onMouseEnter={onMouseEnter}
     sx={sx}
     endIcon={endIcon}
+    startIcon={startIcon}
   >
     {children}
   </MuiButton>
