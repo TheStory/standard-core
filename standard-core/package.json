@@ -1,6 +1,6 @@
 {
-  "name": "@thestory/standard-core",
-  "version": "1.0.2",
+  "name": "@the-story/standard-core",
+  "version": "1.0.3",
   "description": "Standard landing boilerplate",
   "main": "./dist/exports.js",
   "module": "./dist/exports.js",
@@ -8,6 +8,19 @@
   "files": [
     "dist"
   ],
+  "license": "Apache-2.0",
+  "author": "Story Design Sp. z o.o.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheStory/standard-core.git"
+  },
+  "homepage": "https://github.com/TheStory/standard-core#readme",
+  "bugs": {
+    "url": "https://github.com/TheStory/standard-core/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": "./dist/exports.js",
@@ -265,10 +278,6 @@
       "import": "./dist/types/strapi.js",
       "require": "./dist/types/strapi.js"
     },
-    "./types/strapiTypes": {
-      "import": "./dist/types/strapiTypes/index.js",
-      "require": "./dist/types/strapiTypes/index.js"
-    },
     "./utils/cmsMediaUrl": {
       "import": "./dist/utils/cmsMediaUrl.js",
       "require": "./dist/utils/cmsMediaUrl.js"
@@ -294,6 +303,9 @@
     "prepublishOnly": "yarn build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
