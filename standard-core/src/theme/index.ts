@@ -25,6 +25,7 @@ const epilogueFont = Epilogue({
 
 declare module "@mui/material/SvgIcon" {
   interface SvgIconPropsSizeOverrides {
+    xSmall: true;
     xl: true;
     "3xl": true;
   }
@@ -33,6 +34,7 @@ declare module "@mui/material/SvgIcon" {
 declare module "@mui/material/IconButton" {
   interface IconButtonPropsSizeOverrides {
     inherit: true;
+    xSmall: true;
     xl: true;
     "3xl": true;
   }
@@ -64,6 +66,12 @@ export const theStoryTheme = createTheme({
     },
     MuiSvgIcon: {
       variants: [
+        {
+          props: { fontSize: "xSmall" },
+          style: {
+            fontSize: svgFontSizeValues.xSmall,
+          },
+        },
         {
           props: { fontSize: "xl" },
           style: {

@@ -3,6 +3,7 @@ const customSvgFontSizeValues = JSON.parse(
 );
 export const svgFontSizeValues = {
   inherit: (customSvgFontSizeValues.inherit as string) ?? "inherit",
+  xSmall: (customSvgFontSizeValues.xSmall as string) ?? "16px",
   small: (customSvgFontSizeValues.small as string) ?? "20px",
   medium: (customSvgFontSizeValues.medium as string) ?? "24px",
   large: (customSvgFontSizeValues.large as string) ?? "36px",
