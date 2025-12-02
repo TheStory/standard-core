@@ -19,6 +19,8 @@
 
 # misc
 .DS_Store
+# JetBrains IDE (do not commit IDE workspace settings)
+.idea/
 *.pem
 
 # debug
