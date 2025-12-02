@@ -66,10 +66,12 @@ const SvgIcon = ({
 
   return (
     <Box
+      component="span"
       sx={{
         width: fontSizeValue,
         maxWidth: fontSizeValue,
         height: fontSizeValue,
+        display: "inline-block",
         ...(disableMask
           ? {
               backgroundImage: `url(${imgUrl})`,
