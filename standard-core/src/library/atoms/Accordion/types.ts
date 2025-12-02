@@ -1,4 +1,4 @@
-import type { APIString } from "@thestory/standard-core/types";
+import type { APIString } from "@the-story/standard-core/types";
 import type { ReactNode } from "react";
 
 export interface AccordionItem {

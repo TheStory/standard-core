@@ -5,7 +5,7 @@ import {
   type TypographyVariant,
   createTheme,
 } from "@mui/material/styles";
-import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
+import { svgFontSizeValues } from "@the-story/standard-core/utils/svgFontSizeValues";
 import { Epilogue, Source_Serif_4 as SourceSerif } from "next/font/google";
 import type { CSSProperties } from "react";
 

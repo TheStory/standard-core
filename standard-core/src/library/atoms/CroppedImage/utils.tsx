@@ -1,6 +1,6 @@
 import type { Format } from "@imgproxy/imgproxy-js-core";
 import { generateImageUrl } from "@imgproxy/imgproxy-node";
-import type { ImageResizeOption } from "@thestory/standard-core/types";
+import type { ImageResizeOption } from "@the-story/standard-core/types";
 
 interface ConstructCroppedImageUrlParams {
   url: string;

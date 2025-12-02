@@ -19,7 +19,7 @@
     ],
     "baseUrl": "./src/library",
     "paths": {
-      "@thestory/standard-core/*": ["*"]
+      "@the-story/standard-core/*": ["*"]
     }
   },
   "include": [

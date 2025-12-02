@@ -1,6 +1,6 @@
 import Box, { type BoxProps } from "@mui/material/Box";
-import type { ImageResizeOption } from "@thestory/standard-core/types";
-import type { APIString } from "@thestory/standard-core/types";
+import type { ImageResizeOption } from "@the-story/standard-core/types";
+import type { APIString } from "@the-story/standard-core/types";
 
 import { constructCroppedImageUrl } from "./utils";
 

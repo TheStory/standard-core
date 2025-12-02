@@ -5,7 +5,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import Box from "@mui/material/Box";
 import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
-import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
+import { svgFontSizeValues } from "@the-story/standard-core/utils/svgFontSizeValues";
 import { useTranslations } from "next-intl";
 
 import { useCopyToClipboard } from "./useCopyToClipboard";

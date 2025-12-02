@@ -1,6 +1,6 @@
 import type { Data } from "@strapi/strapi";
-import type { APINumber, APIString } from "@thestory/standard-core/types";
-import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
+import type { APINumber, APIString } from "@the-story/standard-core/types";
+import { cmsMediaUrl } from "@the-story/standard-core/utils/cmsMediaUrl";
 import Image, { type ImageProps } from "next/image";
 
 type BaseUploadImageProps = {

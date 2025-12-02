@@ -6,8 +6,8 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha } from "@mui/material/styles";
 import type { SxProps } from "@mui/system";
-import Link from "@thestory/standard-core/atoms/Link/Link";
-import type { ContrastAware } from "@thestory/standard-core/types";
+import Link from "@the-story/standard-core/atoms/Link/Link";
+import type { ContrastAware } from "@the-story/standard-core/types";
 
 import { ExpandIcon } from "./AccordionIcon";
 import type { AccordionItem } from "./types";
