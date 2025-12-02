@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { CtaButton } from "@thestory/standard-core/atoms/CtaButton";
+import { CtaButton } from "@the-story/standard-core/atoms/CtaButton";
 
 const meta: Meta<typeof CtaButton> = {
   title: "Atoms/CtaButton",

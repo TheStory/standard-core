@@ -1,7 +1,7 @@
 import Stack from "@mui/material/Stack";
 import type { Meta, StoryFn } from "@storybook/nextjs";
-import Button from "@thestory/standard-core/atoms/Button/Button";
-import FormTextField from "@thestory/standard-core/atoms/Form/TextField";
+import Button from "@the-story/standard-core/atoms/Button/Button";
+import FormTextField from "@the-story/standard-core/atoms/Form/TextField";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 

@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import { Meta, StoryObj } from "@storybook/nextjs";
-import Link from "@thestory/standard-core/atoms/Link/Link";
+import Link from "@the-story/standard-core/atoms/Link/Link";
 
 const meta: Meta<typeof Link> = {
   title: "Atoms/Link",

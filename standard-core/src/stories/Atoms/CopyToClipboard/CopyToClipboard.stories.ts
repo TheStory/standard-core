@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { CopyToClipboard } from "@thestory/standard-core/atoms/CopyToClipboard";
+import { CopyToClipboard } from "@the-story/standard-core/atoms/CopyToClipboard";
 
 const meta: Meta<typeof CopyToClipboard> = {
   title: "Atoms/CopyToClipboard",

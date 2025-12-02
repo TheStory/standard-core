@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import type { BlocksContent } from "@strapi/blocks-react-renderer";
-import CmsRichText from "@thestory/standard-core/atoms/CmsRichText/CmsRichText";
+import CmsRichText from "@the-story/standard-core/atoms/CmsRichText/CmsRichText";
 
 const meta: Meta<typeof CmsRichText> = {
   title: "Atoms/CmsRichText",

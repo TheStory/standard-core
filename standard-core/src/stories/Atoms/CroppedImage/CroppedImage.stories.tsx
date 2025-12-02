@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import CroppedImage from "@thestory/standard-core/atoms/CroppedImage/CroppedImage";
+import CroppedImage from "@the-story/standard-core/atoms/CroppedImage/CroppedImage";
 
 const meta: Meta<typeof CroppedImage> = {
   title: "Atoms/CroppedImage",
