@@ -4,5 +4,4 @@ export interface ContrastAware {
   useContrastColors?: boolean;
 }
 
-export * from "./strapiTypes";
 export * from "./strapi";
