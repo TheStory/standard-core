@@ -12,13 +12,13 @@ During development, we use yalc for local linking (a lightweight alternative to 
    - In PyCharm, use the already added Run configurations: "build", "yalc:publish" (optionally also "yalc:push").
    - Run "yalc:publish".
 2. In the consuming application:
-   - Use the existing project configuration that adds the package via yalc (e.g., "yalc:add" or a "Shell Script" configuration with: yalc add @thestory/standard-core).
+   - Use the existing project configuration that adds the package via yalc (e.g., "yalc:add" or a "Shell Script" configuration with: yalc add @the-story/standard-core).
    - Run the prepared configuration that installs dependencies (e.g., NPM "install"/"yarn install").
    - Start the application using its dedicated Run configuration and verify it works.
 3. Updating when the library changes:
    - In the library: run "yalc:publish" to push the update to all consumers.
    - In the app: run the "yalc:update" configuration to update the package; optionally restart the dev server.
-4. Removing the yalc package in the app: run the existing configuration that removes the package (e.g., a "Shell Script" with: yalc remove @thestory/standard-core).
+4. Removing the yalc package in the app: run the existing configuration that removes the package (e.g., a "Shell Script" with: yalc remove @the-story/standard-core).
 
 Note: Eventually the package may be published to an npm registry (public or private). yalc is intended only for local development.
 
