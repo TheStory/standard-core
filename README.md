@@ -1,6 +1,6 @@
 # The Story – Standard Core
 
-[![Release](https://github.com/TheStory/standard-core/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/TheStory/standard-core/actions/workflows/release.yml)
+[![Release](https://github.com/TheStory/standard-core/actions/workflows/release.yml/badge.svg)](https://github.com/TheStory/standard-core/actions/workflows/release.yml)
 
 ## Overview
 
