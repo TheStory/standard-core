@@ -1,5 +1,7 @@
 # The Story – Standard Core
 
+[![Release](https://github.com/TheStory/standard-core/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/TheStory/standard-core/actions/workflows/release.yml)
+
 ## Overview
 
 This is the monorepo root. The UI and utilities library lives under the "standard-core/" directory and is published to npm as the package `@the-story/standard-core`.
