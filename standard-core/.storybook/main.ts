@@ -9,7 +9,6 @@ const config: StorybookConfig = {
     ...config,
     // Storybook/esbuild requires env values to be strings. Fallback to empty strings when undefined.
     NEXT_PUBLIC_IMAGE_PROXY: process.env.NEXT_PUBLIC_IMAGE_PROXY ?? "",
-    NEXT_PUBLIC_ICON_CDN_URL: process.env.NEXT_PUBLIC_ICON_CDN_URL ?? ""
   }),
 };
 export default config;
