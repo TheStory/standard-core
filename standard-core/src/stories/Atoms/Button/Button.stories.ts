@@ -1,6 +1,6 @@
-import { action } from "storybook/actions";
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Button } from "@the-story/standard-core/atoms/Button";
+import { action } from "storybook/actions";
 
 const meta: Meta<typeof Button> = {
   title: "Atoms/Button",

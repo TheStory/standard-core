@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import CroppedImage from "@the-story/standard-core/atoms/CroppedImage/CroppedImage";
 
