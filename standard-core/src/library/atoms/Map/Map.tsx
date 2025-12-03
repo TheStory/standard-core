@@ -1,5 +1,5 @@
-import type { APIString } from "@thestory/standard-core/types";
-import { extractUrlFromText } from "@thestory/standard-core/utils/extractUrlFromText";
+import type { APIString } from "@the-story/standard-core/types";
+import { extractUrlFromText } from "@the-story/standard-core/utils/extractUrlFromText";
 
 import { Root } from "./Root";
 import type { MapBox } from "./types";

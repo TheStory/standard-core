@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { SxProps } from "@mui/material/styles";
-import { Button } from "@thestory/standard-core/atoms/Button";
-import type { APINullable, APIString } from "@thestory/standard-core/types";
+import { Button } from "@the-story/standard-core/atoms/Button";
+import type { APINullable, APIString } from "@the-story/standard-core/types";
 
 export interface CtaButtonProps {
   button?:

@@ -3,8 +3,8 @@
 import type { ButtonOwnProps } from "@mui/material/Button";
 import MuiButton from "@mui/material/Button";
 import type { SxProps, Theme } from "@mui/material/styles";
-import { LocalizedLink } from "@thestory/standard-core/config/navigation";
-import type { APIString } from "@thestory/standard-core/types";
+import { LocalizedLink } from "@the-story/standard-core/config/navigation";
+import type { APIString } from "@the-story/standard-core/types";
 import type { ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 
 const Button = ({

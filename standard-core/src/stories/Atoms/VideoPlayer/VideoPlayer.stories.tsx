@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import VideoPlayer from "@thestory/standard-core/atoms/VideoPlayer/VideoPlayer";
+import VideoPlayer from "@the-story/standard-core/atoms/VideoPlayer/VideoPlayer";
 
 const meta: Meta<typeof VideoPlayer> = {
   title: "Atoms/VideoPlayer",

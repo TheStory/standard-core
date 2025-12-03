@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import LanguageSelector from "@thestory/standard-core/molecules/LanguageSelector/LanguageSelector";
+import LanguageSelector from "@the-story/standard-core/molecules/LanguageSelector/LanguageSelector";
 
 const meta: Meta<typeof LanguageSelector> = {
   title: "Molecules/LanguageSelector",

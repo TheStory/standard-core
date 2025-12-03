@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { BackToTopButton } from "@thestory/standard-core/atoms/BackToTopButton";
+import { BackToTopButton } from "@the-story/standard-core/atoms/BackToTopButton";
 
 const meta: Meta<typeof BackToTopButton> = {
   title: "Atoms/BackToTopButton",

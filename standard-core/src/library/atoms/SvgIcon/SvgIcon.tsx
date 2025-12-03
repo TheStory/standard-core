@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
 import type { SxProps, Theme } from "@mui/material/styles";
-import { svgFontSizeValues } from "@thestory/standard-core/utils/svgFontSizeValues";
+import { svgFontSizeValues } from "@the-story/standard-core/utils/svgFontSizeValues";
 
 // Enum of all icon names used in Icons.mdx for stronger typing and discoverability
 export enum SvgIconName {

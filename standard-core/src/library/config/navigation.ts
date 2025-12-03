@@ -2,7 +2,7 @@ import {
   defaultLocale,
   localePrefix,
   locales,
-} from "@thestory/standard-core/config/i18n";
+} from "@the-story/standard-core/config/i18n";
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
 

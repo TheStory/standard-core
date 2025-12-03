@@ -18,9 +18,11 @@
     "declaration": true,
     "baseUrl": "./src/library",
     "paths": {
-      "@thestory/standard-core/*": ["*"]
+      "@the-story/standard-core/*": ["*"]
     }
   },
   "include": ["./src/library/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

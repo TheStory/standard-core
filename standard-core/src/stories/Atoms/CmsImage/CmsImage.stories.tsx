@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import CmsImage from "@thestory/standard-core/atoms/CmsImage/CmsImage";
+import CmsImage from "@the-story/standard-core/atoms/CmsImage/CmsImage";
 
 const meta: Meta<typeof CmsImage> = {
   title: "Atoms/CmsImage",

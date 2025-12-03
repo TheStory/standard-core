@@ -1,8 +1,8 @@
 import type { SxProps } from "@mui/material/styles";
 import type { Data } from "@strapi/strapi";
-import { CroppedImage } from "@thestory/standard-core/atoms/CroppedImage";
-import type { ImageResizeOption } from "@thestory/standard-core/types";
-import { cmsMediaUrl } from "@thestory/standard-core/utils/cmsMediaUrl";
+import { CroppedImage } from "@the-story/standard-core/atoms/CroppedImage";
+import type { ImageResizeOption } from "@the-story/standard-core/types";
+import { cmsMediaUrl } from "@the-story/standard-core/utils/cmsMediaUrl";
 
 type DifferentWidths = number | { xs: number; lg: number } | null;
 
@@ -27,7 +27,15 @@ const CmsCroppedImage = ({
 }: CmsCroppedImageProps) => {
   if (!image) return null;
 
-  const { url, alternativeText = "" } = image;
+  const { url, alternativeText } = image as {
+    url?: unknown;
+    alternativeText?: unknown;
+  };
+
+  const safeUrl: string | null | undefined =
+    typeof url === "string" ? url : null;
+  const safeAlt: string | null | undefined =
+    typeof alternativeText === "string" ? alternativeText : undefined;
 
   let setMobileWidth;
   let setDesktopWidth;
@@ -61,22 +69,22 @@ const CmsCroppedImage = ({
     return (
       <>
         <CroppedImage
-          src={cmsMediaUrl(url)}
+          src={cmsMediaUrl(safeUrl)}
           width={setMobileWidth}
           height={setMobileHeight}
           cover={cover}
-          alt={alternativeText}
+          alt={safeAlt}
           resizingType={resizingType}
           sx={sx}
           loading={loading}
           mobileOnly
         />
         <CroppedImage
-          src={cmsMediaUrl(url)}
+          src={cmsMediaUrl(safeUrl)}
           width={setDesktopWidth}
           height={setDesktopHeight}
           cover={cover}
-          alt={alternativeText}
+          alt={safeAlt}
           resizingType={resizingType}
           sx={sx}
           loading={loading}
@@ -88,11 +96,11 @@ const CmsCroppedImage = ({
 
   return (
     <CroppedImage
-      src={cmsMediaUrl(url)}
+      src={cmsMediaUrl(safeUrl)}
       width={setMobileWidth}
       height={setMobileHeight}
       cover={cover}
-      alt={alternativeText}
+      alt={safeAlt}
       resizingType={resizingType}
       sx={sx}
       loading={loading}

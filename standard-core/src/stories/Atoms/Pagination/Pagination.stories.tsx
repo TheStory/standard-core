@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import Pagination from "@thestory/standard-core/atoms/Pagination/Pagination";
+import Pagination from "@the-story/standard-core/atoms/Pagination/Pagination";
 
 const meta: Meta<typeof Pagination> = {
   title: "Atoms/Pagination",

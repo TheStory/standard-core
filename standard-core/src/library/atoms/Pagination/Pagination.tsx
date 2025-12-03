@@ -5,7 +5,7 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import MuiPagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import type { SxProps } from "@mui/material/styles";
-import { usePathname, useRouter } from "@thestory/standard-core/config";
+import { usePathname, useRouter } from "@the-story/standard-core/config";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect } from "react";
 

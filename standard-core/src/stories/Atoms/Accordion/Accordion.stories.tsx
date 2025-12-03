@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import {
   Accordion,
   type AccordionItem,
-} from "@thestory/standard-core/atoms/Accordion";
-import { CmsRichText } from "@thestory/standard-core/atoms/CmsRichText";
-import type { CtaButtonProps } from "@thestory/standard-core/atoms/CtaButton";
+} from "@the-story/standard-core/atoms/Accordion";
+import { CmsRichText } from "@the-story/standard-core/atoms/CmsRichText";
+import type { CtaButtonProps } from "@the-story/standard-core/atoms/CtaButton";
 
 const meta: Meta<typeof Accordion> = {
   title: "Atoms/Accordion",

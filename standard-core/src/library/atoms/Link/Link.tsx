@@ -5,7 +5,7 @@ import MuiLink from "@mui/material/Link";
 import {
   LocalizedLink,
   type LinkProps as LocalizedLinkProps,
-} from "@thestory/standard-core/config/navigation";
+} from "@the-story/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";

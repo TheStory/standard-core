@@ -1,11 +1,11 @@
-import type { Schema, UID } from "@strapi/strapi";
+import type { UID } from "@strapi/strapi";
 import type { Data } from "@strapi/types";
 
 export type APINullable = null | undefined;
-export type APIString = Schema.Attribute.StringValue | APINullable;
+export type APIString = string | APINullable;
 export type APINumber = number | APINullable;
-export type APIDate = Schema.Attribute.DateTimeValue | APINullable;
-export type APIBoolean = Schema.Attribute.BooleanValue | APINullable;
+export type APIDate = string | Date | APINullable;
+export type APIBoolean = boolean | APINullable;
 
 export type APIResponseMeta = {
   pagination: {
@@ -33,13 +33,13 @@ export type APIResponse<T extends UID.ContentType> =
 type InferItem<T> =
   T extends APIItem<infer U> ? U : T extends APICollection<infer U> ? U : never;
 
-// Nadpisanie jednego elementu
+// Override a single item
 export type OverrideAPIItem<T extends UID.ContentType, Ext> = {
   data: Data.ContentType<T> & Ext;
   meta: {};
 };
 
-// Nadpisanie kolekcji
+// Override a collection
 export type OverrideAPICollection<
   T extends UID.ContentType,
   Ext,

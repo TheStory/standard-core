@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import SvgIcon, {
   SvgIconName,
-} from "@thestory/standard-core/atoms/SvgIcon/SvgIcon";
+} from "@the-story/standard-core/atoms/SvgIcon/SvgIcon";
 
 const meta: Meta<typeof SvgIcon> = {
   title: "Atoms/SvgIcon",
