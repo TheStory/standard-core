@@ -28,6 +28,7 @@ We use Storybook to build and preview components. Every component MUST have at l
 
 - Launching Storybook: in PyCharm run the existing NPM configuration "storybook" from the Run toolbar.
 - Building a static version: in PyCharm run the existing NPM configuration "build-storybook".
+- Hosted Storybook: https://standard-core.storyline.cloud
 
 Guidelines:
 - In this project, stories live in the `src/stories` directory, grouped into categories (e.g., `Atoms`, `Molecules`) and mirroring component structure, e.g., `src/stories/Atoms/Button/Button.stories.tsx`.

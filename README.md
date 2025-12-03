@@ -19,6 +19,11 @@ yarn add @the-story/standard-core
 The full README for the package is located at:
 - standard-core/README.md
 
+## Storybook
+
+The hosted Storybook for this library is available at:
+- https://standard-core.storyline.cloud
+
 ## Releases
 
 Releases are tag‑driven via GitHub Actions with npm provenance enabled.
