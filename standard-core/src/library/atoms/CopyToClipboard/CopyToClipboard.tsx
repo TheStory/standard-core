@@ -4,7 +4,7 @@ import { SvgIcon } from "../SvgIcon";
 import CheckIcon from "@mui/icons-material/Check";
 import Box from "@mui/material/Box";
 import type { SvgIconOwnProps } from "@mui/material/SvgIcon";
-import Tooltip from "@mui/material/Tooltip";
+import Tooltip, { type TooltipProps } from "@mui/material/Tooltip";
 import { svgFontSizeValues } from "@the-story/standard-core/utils/svgFontSizeValues";
 import { useTranslations } from "next-intl";
 
@@ -15,21 +15,29 @@ interface CopyToClipboardProps {
   placement?: "top" | "bottom" | "left" | "right";
   iconSize?: SvgIconOwnProps["fontSize"];
   color?: string;
+  // Additional props forwarded to MUI Tooltip
+  tooltipProps?: TooltipProps;
+  // Optional slotProps for MUI Tooltip
+  slotProps?: TooltipProps["slotProps"];
 }
 const CopyToClipboard = ({
   text,
   placement = "top",
   iconSize = "small",
   color = "text.primary",
+  tooltipProps,
+  slotProps,
 }: CopyToClipboardProps) => {
   const [copiedText, copy] = useCopyToClipboard();
   const t = useTranslations("settings.utils");
 
   return (
     <Tooltip
+      {...tooltipProps}
       title={copiedText ? t("copySuccess") : t("copyIcon")}
       placement={placement}
       onClick={() => copy(text)}
+      slotProps={slotProps}
     >
       <Box
         sx={{

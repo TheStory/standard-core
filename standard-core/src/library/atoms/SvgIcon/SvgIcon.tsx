@@ -21,6 +21,8 @@ export enum SvgIconName {
   MailFilled = "mail-filled",
   PhoneIphoneFilled = "phone-iphone-filled",
   ChevronDown = "chevron-down",
+  ChevronRight = "chevron-right",
+  ChevronLeft = "chevron-left",
 }
 
 interface SvgIconProps {
@@ -64,10 +66,12 @@ const SvgIcon = ({
 
   return (
     <Box
+      component="span"
       sx={{
         width: fontSizeValue,
         maxWidth: fontSizeValue,
         height: fontSizeValue,
+        display: "inline-block",
         ...(disableMask
           ? {
               backgroundImage: `url(${imgUrl})`,

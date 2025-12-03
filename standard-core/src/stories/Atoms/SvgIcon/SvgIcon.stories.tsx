@@ -1,5 +1,7 @@
-import { Meta, StoryObj } from "@storybook/nextjs";
-import SvgIcon, { SvgIconName } from "@the-story/standard-core/atoms/SvgIcon/SvgIcon";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import SvgIcon, {
+  SvgIconName,
+} from "@the-story/standard-core/atoms/SvgIcon/SvgIcon";
 
 const meta: Meta<typeof SvgIcon> = {
   title: "Atoms/SvgIcon",
@@ -18,7 +20,7 @@ const meta: Meta<typeof SvgIcon> = {
     //@ts-ignore
     fontSize: {
       control: "select",
-      options: ["inherit", "small", "medium", "large", "xl", "3xl"],
+      options: ["inherit", "xSmall", "small", "medium", "large", "xl", "3xl"],
     },
     disableMask: { control: "boolean" },
     sx: { control: "object" },
