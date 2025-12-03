@@ -298,7 +298,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "rimraf dist && tsc -p tsconfig.build.json && node scripts/update-exports.js",
-    "lint": "eslint src/library src/exports.ts --ext .ts,.tsx --max-warnings=0",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "start": "next start",
     "prepublishOnly": "yarn build",
     "storybook": "storybook dev -p 6006",
