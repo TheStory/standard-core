@@ -1,3 +1,5 @@
+import Box from "@mui/material/Box";
+// @ts-ignore
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import LanguageSelector from "@the-story/standard-core/molecules/LanguageSelector/LanguageSelector";
 
@@ -15,6 +17,16 @@ const meta: Meta<typeof LanguageSelector> = {
     },
   },
   args: {},
+  decorators: [
+    // @ts-ignore
+    (Story: any, { args }) => (
+      <Box
+        sx={{ p: 1, bgcolor: args.color === "white" ? "gray" : "transparent" }}
+      >
+        <Story />
+      </Box>
+    ),
+  ],
 };
 
 export default meta;
@@ -26,10 +38,4 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: { color: "white" },
-  parameters: {
-    backgrounds: {
-      default: "gray",
-      values: [{ name: "gray", value: "#271911" }],
-    },
-  },
 };

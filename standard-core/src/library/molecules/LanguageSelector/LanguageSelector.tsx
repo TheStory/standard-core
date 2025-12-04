@@ -3,11 +3,10 @@
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "@the-story/standard-core/atoms/Link";
 import { locales } from "@the-story/standard-core/config/i18n";
-import { LocalizedLink } from "@the-story/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 import { type MouseEvent, useEffect, useMemo, useState } from "react";
@@ -57,22 +56,35 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     setAlternateLanguages(alternateLanguagesData);
   }, [pathname]);
 
-  const getHrefForLocale = useMemo(
-    () => (l: string) => {
-      if (alternateLanguages) {
-        const href = alternateLanguages?.find(
-          (lang) => lang.hreflang === l,
-        )?.href;
-        if (href) return href;
-      }
-      return "/";
-    },
-    [alternateLanguages],
-  );
-
   const searchParams = useSearchParams();
-  const pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "");
-  const currentUrl = pathnameWithoutLang + "?" + searchParams?.toString();
+  let pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "") ?? "/";
+
+  const queryString = searchParams?.toString();
+  let currentUrl = pathnameWithoutLang;
+  if (queryString) currentUrl += `?${queryString}`;
+
+  const getHrefForLocale = useMemo(() => {
+    const normalizeHref = (href: string) => {
+      try {
+        const url = new URL(href, window.location.origin);
+        let path = url.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
+        if (path === "") path = "/";
+        return url.search ? `${path}${url.search}` : path;
+      } catch {
+        // If it's not a valid URL, fallback to currentUrl which is already normalized
+        return currentUrl;
+      }
+    };
+
+    return (l: string) => {
+      if (alternateLanguages && alternateLanguages.length > 0) {
+        const href = alternateLanguages.find((lang) => lang.hreflang === l)?.href;
+        if (href) return normalizeHref(href);
+      }
+      // Fallback to current page path/query without any locale prefix
+      return currentUrl;
+    };
+  }, [alternateLanguages, currentUrl]);
 
   if (locales.length <= 1) return null;
 
@@ -129,7 +141,6 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
           return (
             <MenuItem key={`lang-${l}`} selected={lang === l}>
               <Link
-                component={LocalizedLink as any}
                 underline="none"
                 href={href}
                 locale={l}
