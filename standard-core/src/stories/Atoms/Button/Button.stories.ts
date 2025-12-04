@@ -1,5 +1,7 @@
+// @ts-ignore
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Button } from "@the-story/standard-core/atoms/Button";
+// @ts-ignore
 import { action } from "storybook/actions";
 
 const meta: Meta<typeof Button> = {

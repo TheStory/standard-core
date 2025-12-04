@@ -1,5 +1,6 @@
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+// @ts-ignore
 import type { Preview, StoryFn } from "@storybook/nextjs";
 import {NextIntlClientProvider} from "next-intl";
 
