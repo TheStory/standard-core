@@ -78,7 +78,9 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
 
     return (l: string) => {
       if (alternateLanguages && alternateLanguages.length > 0) {
-        const href = alternateLanguages.find((lang) => lang.hreflang === l)?.href;
+        const href = alternateLanguages.find(
+          (lang) => lang.hreflang === l,
+        )?.href;
         if (href) return normalizeHref(href);
       }
       // Fallback to current page path/query without any locale prefix
