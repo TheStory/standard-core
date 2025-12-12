@@ -251,8 +251,8 @@
       "require": "./dist/exports.js"
     },
     "./hooks": {
-      "import": "./dist/hooks/exports.js",
-      "require": "./dist/hooks/exports.js"
+      "import": "./dist/hooks/index.js",
+      "require": "./dist/hooks/index.js"
     },
     "./hooks/useMaskedPhoneReveal": {
       "import": "./dist/hooks/useMaskedPhoneReveal.js",

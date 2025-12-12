@@ -54,5 +54,3 @@ export const useMaskedPhoneReveal = (
 
   return { revealed, masked, reveal };
 };
-
-export default useMaskedPhoneReveal;

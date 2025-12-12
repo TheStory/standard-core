@@ -3,7 +3,7 @@
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { useMaskedPhoneReveal } from "@the-story/standard-core/hooks/exports";
+import { useMaskedPhoneReveal } from "@the-story/standard-core/hooks";
 import type { APIString } from "@the-story/standard-core/types";
 
 export interface MaskedPhoneNumberProps {
