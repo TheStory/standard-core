@@ -250,6 +250,14 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
+    "./hooks": {
+      "import": "./dist/hooks/exports.js",
+      "require": "./dist/hooks/exports.js"
+    },
+    "./hooks/useMaskedPhoneReveal": {
+      "import": "./dist/hooks/useMaskedPhoneReveal.js",
+      "require": "./dist/hooks/useMaskedPhoneReveal.js"
+    },
     "./molecules/Crumbs/Crumbs": {
       "import": "./dist/molecules/Crumbs/Crumbs.js",
       "require": "./dist/molecules/Crumbs/Crumbs.js"
@@ -265,6 +273,14 @@
     "./molecules/LanguageSelector": {
       "import": "./dist/molecules/LanguageSelector/index.js",
       "require": "./dist/molecules/LanguageSelector/index.js"
+    },
+    "./molecules/MaskedPhoneNumber/MaskedPhoneNumber": {
+      "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
+      "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
+    },
+    "./molecules/MaskedPhoneNumber": {
+      "import": "./dist/molecules/MaskedPhoneNumber/index.js",
+      "require": "./dist/molecules/MaskedPhoneNumber/index.js"
     },
     "./molecules": {
       "import": "./dist/molecules/exports.js",
