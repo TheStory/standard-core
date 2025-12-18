@@ -254,6 +254,10 @@
       "import": "./dist/hooks/index.js",
       "require": "./dist/hooks/index.js"
     },
+    "./hooks/useInfiniteSlides": {
+      "import": "./dist/hooks/useInfiniteSlides.js",
+      "require": "./dist/hooks/useInfiniteSlides.js"
+    },
     "./hooks/useMaskedPhoneReveal": {
       "import": "./dist/hooks/useMaskedPhoneReveal.js",
       "require": "./dist/hooks/useMaskedPhoneReveal.js"
