@@ -47,7 +47,7 @@ export const useMaskedPhoneReveal = (
 
   const masked = useMemo(
     () => maskLastDigits(phone, options),
-    [phone, options.maskDigits, options.maskChar],
+    [phone, options],
   );
 
   const reveal = useCallback(() => setRevealed(true), []);
