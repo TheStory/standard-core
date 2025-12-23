@@ -1,3 +1,5 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import type { SxProps } from "@mui/material/styles";
 import { constructCroppedImageUrl } from "@the-story/standard-core/atoms/CroppedImage/utils";
