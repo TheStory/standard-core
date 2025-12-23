@@ -1,23 +1,16 @@
 "use client";
 
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
 import Typography, { type TypographyProps } from "@mui/material/Typography";
 import {
   type BlocksContent,
   BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import { Link } from "@the-story/standard-core/atoms/Link";
 import type { APINullable } from "@the-story/standard-core/types";
-import type { ReactNode } from "react";
-import slugify from "slugify";
-
-const generateId = (children: ReactNode) =>
-  slugify((children as { props: { text: string } }[])[0].props.text, {
-    lower: true,
-  });
 
 type BlockElements =
   | "h1"
@@ -39,15 +32,6 @@ export interface CmsRichTextProps {
   }>;
 }
 
-const resetMarginsSx = {
-  "&:first-child": {
-    mt: 0,
-  },
-  "&:last-child": {
-    mb: 0,
-  },
-};
-
 const CmsRichText = ({
   blocks,
   globalDisableHeadings = false,
@@ -57,15 +41,13 @@ const CmsRichText = ({
   if (!blocks) return null;
 
   return (
-    <Box
+    <Stack
+      spacing={3}
       sx={{
-        "& > *": { margin: "0px!important" },
-        "& .MuiTypography-root:first-child": { pt: 0 },
-        "& .MuiTypography-root:last-child": { pb: 0 },
         "& > h2.MuiTypography-h2, & > h3.MuiTypography-h3, & > h4.MuiTypography-h4, & > h5.MuiTypography-h5, & > h6.MuiTypography-h6":
-          { pb: 3 },
-        "& > ol.MuiList-root, & > ul.MuiList-root": { pt: 0.5, pb: 3, m: 0 },
-        "& > p.MuiTypography-body1": { pb: 2 },
+          { mt: 4, mb: -1 },
+        "& .MuiTypography-root:first-child": { mt: 0 },
+        "& .MuiTypography-root:last-child": { mb: 0 },
       }}
     >
       <BlocksRenderer
@@ -78,9 +60,7 @@ const CmsRichText = ({
                 component={globalDisableHeadings ? "" : "p"}
                 variant="body1"
                 sx={{
-                  mb: 4,
                   ...(componentProps ? componentProps["p"]?.sx : {}),
-                  ...resetMarginsSx,
                 }}
                 {...(componentProps ? componentProps["p"] : {})}
               >
@@ -97,13 +77,10 @@ const CmsRichText = ({
                 component={targetElement}
                 variant={targetElement}
                 sx={{
-                  mb: 3,
                   ...(componentProps
                     ? componentProps[`${targetElement}`]?.sx
                     : {}),
-                  ...resetMarginsSx,
                 }}
-                id={targetElement === "h2" ? generateId(children) : ""}
                 {...(componentProps ? componentProps[`${targetElement}`] : {})}
               >
                 {children}
@@ -115,10 +92,8 @@ const CmsRichText = ({
               component="code"
               sx={{
                 p: 1,
-                my: { xs: 3, lg: 6 },
                 whiteSpace: "pre",
                 display: "block",
-                ...resetMarginsSx,
               }}
             >
               {children}
@@ -131,11 +106,9 @@ const CmsRichText = ({
                 variant="h5"
                 component="blockquote"
                 sx={{
-                  my: 6,
-                  pl: { xs: 2, lg: 3 },
+                  p: { xs: 2, lg: 3 },
                   borderLeft: `2px solid`,
                   borderColor: "secondary.main",
-                  ...resetMarginsSx,
                 }}
               >
                 {children}
@@ -143,15 +116,7 @@ const CmsRichText = ({
             );
           },
           link: ({ children, url }) => {
-            const props = url.startsWith("http")
-              ? { rel: "noopener nofollow", target: "_blank" }
-              : {};
-
-            return (
-              <Link href={url} {...props}>
-                {children}
-              </Link>
-            );
+            return <Link href={url}>{children}</Link>;
           },
           list: ({ children, format }) => {
             if (exclude?.includes("list")) return null;
@@ -164,11 +129,8 @@ const CmsRichText = ({
                 sx={{
                   py: 0,
                   pl: 3,
-                  mt: -3,
-                  mb: 4,
                   listStyle: format === "ordered" ? "decimal" : "disc",
                   listStylePosition: "outside",
-                  ...resetMarginsSx,
                 }}
               >
                 {children}
@@ -181,7 +143,7 @@ const CmsRichText = ({
           image: () => null,
         }}
       />
-    </Box>
+    </Stack>
   );
 };
 

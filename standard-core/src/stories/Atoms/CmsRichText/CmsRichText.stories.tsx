@@ -1,3 +1,4 @@
+// @ts-ignore
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import type { BlocksContent } from "@strapi/blocks-react-renderer";
 import CmsRichText from "@the-story/standard-core/atoms/CmsRichText/CmsRichText";
@@ -130,7 +131,7 @@ const paragraph: {
   children: [
     {
       type: "text",
-      text: "This is a sample paragraph rendered by CmsRichText.",
+      text: "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.",
     },
   ],
 };
@@ -160,7 +161,7 @@ const list: {
       children: [
         {
           type: "text",
-          text: "List item 1",
+          text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
         },
       ],
     },
@@ -169,7 +170,16 @@ const list: {
       children: [
         {
           type: "text",
-          text: "List item 2",
+          text: "Aliquam tincidunt mauris eu risus",
+        },
+      ],
+    },
+    {
+      type: "list-item",
+      children: [
+        {
+          type: "text",
+          text: "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus",
         },
       ],
     },
@@ -206,8 +216,12 @@ const sampleBlocksContent: BlocksContent = [
   paragraph,
   paragraph,
   quote,
+  paragraph,
   list,
+  paragraph,
   code,
+  paragraph,
+  paragraph,
 ];
 
 export const Default: Story = {
