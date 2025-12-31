@@ -30,6 +30,7 @@ export const AccordionList = ({
     {items.map((item, index) => (
       <MuiAccordion
         key={`accordion-${index}`}
+        className="accordion-item"
         defaultExpanded={index === 0}
         disableGutters={disableGutters}
         elevation={0}
@@ -47,6 +48,7 @@ export const AccordionList = ({
       >
         <AccordionSummary
           component="div"
+          className="accordion-item-summary"
           sx={{
             height: "66px",
             my: 0,
@@ -76,6 +78,7 @@ export const AccordionList = ({
           )}
         </AccordionSummary>
         <AccordionDetails
+          className="accordion-item-details"
           sx={{
             pt: 0,
             px: 0,
@@ -84,7 +87,12 @@ export const AccordionList = ({
         >
           {item.content}
         </AccordionDetails>
-        <Stack flexDirection="row" flexWrap="wrap" columnGap={1}>
+        <Stack
+          className="accordion-item-links"
+          flexDirection="row"
+          flexWrap="wrap"
+          columnGap={1}
+        >
           {item?.links?.map((link, index) => (
             <Link key={`link-${index}`} href={link.url || ""}>
               {link.label}

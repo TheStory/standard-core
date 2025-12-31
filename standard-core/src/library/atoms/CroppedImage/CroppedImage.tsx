@@ -28,11 +28,14 @@ const CroppedImage = ({
   sx,
   ...props
 }: CroppedImageProps) => {
+  const className = `cropped-image ${desktopOnly ? "desktop-only" : ""} ${mobileOnly ? "mobile-only" : ""}`;
+
   // eslint-disable-next-line @next/next/no-img-element
   return (
     <Box
       component="img"
       loading={loading}
+      className={className}
       {...(resizingType !== "fit" && {
         srcSet: `${constructCroppedImageUrl({
           url: src,
