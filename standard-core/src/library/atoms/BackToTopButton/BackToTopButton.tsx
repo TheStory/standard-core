@@ -7,7 +7,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-const FMFab = motion(Fab);
+const FMFab = motion.create(Fab);
 
 const BackToTopButton = ({ sx }: { sx?: SxProps }) => {
   const [hidden, setHidden] = useState(true);
