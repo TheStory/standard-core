@@ -34,6 +34,7 @@ const CopyToClipboard = ({
   return (
     <Tooltip
       {...tooltipProps}
+      className="copy-to-clipboard"
       title={copiedText ? t("copySuccess") : t("copyIcon")}
       placement={placement}
       onClick={() => copy(text)}

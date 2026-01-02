@@ -28,7 +28,10 @@ const MaskedPhoneNumber = ({
   if (!officePhoneNumber) return null;
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+    <Box
+      className="masked-phone-number"
+      sx={{ display: "flex", alignItems: "center", gap: 1 }}
+    >
       {showFullPhone ? (
         <Link href={`tel:${officePhoneNumber}`}>{officePhoneNumber}</Link>
       ) : (
