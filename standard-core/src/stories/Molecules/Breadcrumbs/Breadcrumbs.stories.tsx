@@ -37,12 +37,13 @@ export const LightVariant: Story = {
     sx: {},
     lightVariant: true,
   },
-  parameters: {
-    backgrounds: {
-      default: "gray",
-      values: [{ name: "gray", value: "#271911" }],
-    },
-  },
+  decorators: [
+    (Story: any) => (
+      <div style={{ backgroundColor: "#271911", padding: "20px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const CustomStyle: Story = {
