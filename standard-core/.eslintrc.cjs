@@ -31,7 +31,6 @@ module.exports = {
   },
   ignorePatterns: [
     "dist/**",
-    ".next/**",
     "storybook-static/**",
     "node_modules/**",
     "src/library/types/strapiTypes/*",

@@ -7,12 +7,14 @@
 .yarn/install-state.gz
 /dist
 
+# lock files (use yarn.lock only)
+package-lock.json
+
 # testing
 /coverage
 
-# next.js
+# next.js cache (created by @storybook/nextjs-vite)
 /.next/
-/out/
 
 # production
 /build
