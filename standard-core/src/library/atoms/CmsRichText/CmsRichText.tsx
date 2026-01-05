@@ -42,6 +42,7 @@ const CmsRichText = ({
 
   return (
     <Stack
+      className="rich-text"
       spacing={3}
       sx={{
         "& > h2.MuiTypography-h2, & > h3.MuiTypography-h3, & > h4.MuiTypography-h4, & > h5.MuiTypography-h5, & > h6.MuiTypography-h6":
