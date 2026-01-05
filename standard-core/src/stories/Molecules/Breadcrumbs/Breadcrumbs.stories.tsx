@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Crumbs from "@the-story/standard-core/molecules/Crumbs/Crumbs";
 
 const meta: Meta<typeof Crumbs> = {

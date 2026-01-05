@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import VideoPlayer from "@the-story/standard-core/atoms/VideoPlayer/VideoPlayer";
 
 const meta: Meta<typeof VideoPlayer> = {

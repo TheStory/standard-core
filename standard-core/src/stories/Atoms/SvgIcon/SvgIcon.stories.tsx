@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import SvgIcon, {
   SvgIconName,
 } from "@the-story/standard-core/atoms/SvgIcon/SvgIcon";
@@ -17,7 +17,6 @@ const meta: Meta<typeof SvgIcon> = {
       control: "select",
       options: Object.keys(SvgIconName),
     },
-    //@ts-ignore
     fontSize: {
       control: "select",
       options: ["inherit", "xSmall", "small", "medium", "large", "xl", "3xl"],
@@ -33,7 +32,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     iconName: "Facebook",
-    //@ts-ignore
     fontSize: "3xl",
   },
 };

@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
-// @ts-ignore
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import MaskedPhoneNumber from "@the-story/standard-core/molecules/MaskedPhoneNumber/MaskedPhoneNumber";
 
 const meta: Meta<typeof MaskedPhoneNumber> = {
@@ -23,7 +22,6 @@ const meta: Meta<typeof MaskedPhoneNumber> = {
     maskChar: "*",
   },
   decorators: [
-    // @ts-ignore
     (Story: any) => (
       <Box sx={{ p: 2 }}>
         <Story />

@@ -1,5 +1,5 @@
 import Stack from "@mui/material/Stack";
-import type { Meta, StoryFn } from "@storybook/nextjs";
+import type { Meta, StoryFn } from "@storybook/nextjs-vite";
 import Button from "@the-story/standard-core/atoms/Button/Button";
 import Checkbox from "@the-story/standard-core/atoms/Form/Checkbox";
 import type { SubmitHandler } from "react-hook-form";

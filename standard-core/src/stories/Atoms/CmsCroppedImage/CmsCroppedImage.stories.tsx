@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import CmsCroppedImage from "@the-story/standard-core/atoms/CmsCroppedImage/CmsCroppedImage";
 
 const meta: Meta<typeof CmsCroppedImage> = {

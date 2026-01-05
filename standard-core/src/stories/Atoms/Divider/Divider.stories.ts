@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Divider } from "@the-story/standard-core/atoms/Divider";
 
 const meta: Meta<typeof Divider> = {

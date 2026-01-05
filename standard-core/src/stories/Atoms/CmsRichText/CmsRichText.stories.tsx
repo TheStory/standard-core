@@ -1,5 +1,4 @@
-// @ts-ignore
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import type { BlocksContent } from "@strapi/blocks-react-renderer";
 import CmsRichText from "@the-story/standard-core/atoms/CmsRichText/CmsRichText";
 

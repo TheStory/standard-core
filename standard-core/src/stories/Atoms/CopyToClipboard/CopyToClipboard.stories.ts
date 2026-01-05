@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CopyToClipboard } from "@the-story/standard-core/atoms/CopyToClipboard";
 
 const meta: Meta<typeof CopyToClipboard> = {

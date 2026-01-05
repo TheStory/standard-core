@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CtaButton } from "@the-story/standard-core/atoms/CtaButton";
 
 const meta: Meta<typeof CtaButton> = {

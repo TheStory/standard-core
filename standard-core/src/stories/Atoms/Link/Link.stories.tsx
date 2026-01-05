@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Link from "@the-story/standard-core/atoms/Link/Link";
 
 const meta: Meta<typeof Link> = {
