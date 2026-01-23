@@ -23,6 +23,7 @@ export enum SvgIconName {
   ChevronDown = "chevron-down",
   ChevronRight = "chevron-right",
   ChevronLeft = "chevron-left",
+  Calendar = "calendar",
 }
 
 interface SvgIconProps {
