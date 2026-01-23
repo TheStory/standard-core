@@ -2,6 +2,7 @@
 
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
+import type { TypographyProps } from "@mui/material/Typography";
 import Typography from "@mui/material/Typography";
 import { useMaskedPhoneReveal } from "@the-story/standard-core/hooks";
 import type { APIString } from "@the-story/standard-core/types";
@@ -11,6 +12,7 @@ export interface MaskedPhoneNumberProps {
   showPhoneButtonLabelTranslations?: string;
   maskDigits?: number;
   maskChar?: string;
+  typographyVariant?: TypographyProps["variant"];
 }
 
 const MaskedPhoneNumber = ({
@@ -18,6 +20,7 @@ const MaskedPhoneNumber = ({
   showPhoneButtonLabelTranslations,
   maskDigits = 6,
   maskChar = "*",
+  typographyVariant = "body1",
 }: MaskedPhoneNumberProps) => {
   const {
     revealed: showFullPhone,
@@ -35,7 +38,7 @@ const MaskedPhoneNumber = ({
       {showFullPhone ? (
         <Link href={`tel:${officePhoneNumber}`}>{officePhoneNumber}</Link>
       ) : (
-        <Typography variant="body1">{maskedPhone}</Typography>
+        <Typography variant={typographyVariant}>{maskedPhone}</Typography>
       )}
       {!showFullPhone && (
         <Link
