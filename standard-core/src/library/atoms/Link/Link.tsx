@@ -11,9 +11,9 @@ import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
 import { forwardRef } from "react";
 
-type LinkType = LocalizedLinkProps & MuiLinkProps;
+export type LinkComponentProps = LocalizedLinkProps & MuiLinkProps;
 
-const Link = forwardRef<HTMLAnchorElement, LinkType>(
+const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
   ({ children, href, onClick, ...props }, ref) => {
     const pathname = usePathname();
     const locale = useLocale();
