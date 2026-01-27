@@ -13,6 +13,7 @@ export interface CtaButtonProps {
         overline?: APIString;
         url?: APIString;
         sx?: SxProps;
+        variant?: "default" | "line";
       }
     | APINullable;
 }
@@ -28,29 +29,39 @@ const CtaButton = ({ button }: CtaButtonProps) =>
       <Button
         size="large"
         href={button.url || undefined}
-        sx={{
-          color: "text.primary",
-          width: "fit-content",
-          backgroundColor: "secondary.main",
-          textTransform: "none",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "start",
-          py: 1,
-          px: 2.5,
-          fontSize: 15,
-          boxShadow: "none",
-          "& .arrow": {
-            transition: "transform 0.3s",
-          },
-          "&:hover": {
-            backgroundColor: "secondary.dark",
+        sx={[
+          {
+            color: "text.primary",
+            width: "fit-content",
+            backgroundColor: "secondary.main",
+            textTransform: "none",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
+            py: 1,
+            px: 2.5,
+            fontSize: 15,
             boxShadow: "none",
             "& .arrow": {
-              transform: "translateX(5px)",
+              transition: "transform 0.3s",
+            },
+            "&:hover": {
+              backgroundColor: "secondary.dark",
+              boxShadow: "none",
+              "& .arrow": {
+                transform: "translateX(5px)",
+              },
             },
           },
-        }}
+          button.variant === "line" && {
+            backgroundColor: "transparent",
+            borderTop: 2,
+            borderColor: "secondary.main",
+            "&:hover": {
+              backgroundColor: "action.hover",
+            },
+          },
+        ]}
       >
         {button.overline && (
           <Typography
