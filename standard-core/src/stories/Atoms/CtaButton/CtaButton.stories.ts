@@ -5,18 +5,34 @@ const meta: Meta<typeof CtaButton> = {
   title: "Atoms/CtaButton",
   component: CtaButton,
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    button: {
+      control: "object",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     button: {
       overline: "Lorem ipsum",
       label: "Lorem ipsum dolor sit amet",
       url: "/",
+      variant: "default",
+    },
+  },
+};
+
+export const Line: Story = {
+  args: {
+    button: {
+      overline: "Lorem ipsum",
+      label: "Lorem ipsum dolor sit amet",
+      url: "/",
+      variant: "line",
     },
   },
 };
