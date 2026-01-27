@@ -36,7 +36,12 @@ const MaskedPhoneNumber = ({
       sx={{ display: "flex", alignItems: "center", gap: 1 }}
     >
       {showFullPhone ? (
-        <Link href={`tel:${officePhoneNumber}`}>{officePhoneNumber}</Link>
+        <Link
+          href={`tel:${officePhoneNumber}`}
+          sx={{ typography: typographyVariant }}
+        >
+          {officePhoneNumber}
+        </Link>
       ) : (
         <Typography variant={typographyVariant}>{maskedPhone}</Typography>
       )}
