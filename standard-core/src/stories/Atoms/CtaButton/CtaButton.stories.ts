@@ -22,6 +22,8 @@ export const Default: Story = {
       label: "Lorem ipsum dolor sit amet",
       url: "/",
       variant: "default",
+      rel: "noopener noreferrer",
+      target: "_blank",
     },
   },
 };
@@ -33,6 +35,8 @@ export const Line: Story = {
       label: "Lorem ipsum dolor sit amet",
       url: "/",
       variant: "line",
+      rel: "noopener noreferrer",
+      target: "_blank",
     },
   },
 };

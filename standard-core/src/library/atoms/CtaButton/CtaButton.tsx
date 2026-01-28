@@ -14,6 +14,8 @@ export interface CtaButtonProps {
         url?: APIString;
         sx?: SxProps;
         variant?: "default" | "line";
+        rel?: string;
+        target?: string;
       }
     | APINullable;
 }
@@ -29,6 +31,8 @@ const CtaButton = ({ button }: CtaButtonProps) =>
       <Button
         size="large"
         href={button.url || undefined}
+        rel={button.rel || undefined}
+        target={button.target || undefined}
         sx={[
           {
             color: "text.primary",
