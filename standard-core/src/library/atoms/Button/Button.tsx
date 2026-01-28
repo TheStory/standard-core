@@ -25,6 +25,7 @@ const Button = ({
   startIcon = null,
   sx,
   className,
+  rel,
 }: ButtonProps) => (
   <MuiButton
     type={type}
@@ -41,6 +42,7 @@ const Button = ({
     endIcon={endIcon}
     startIcon={startIcon}
     className={className}
+    rel={rel}
   >
     {children}
   </MuiButton>
