@@ -310,6 +310,10 @@
       "import": "./dist/utils/extractUrlFromText.js",
       "require": "./dist/utils/extractUrlFromText.js"
     },
+    "./utils/hasBlocks": {
+      "import": "./dist/utils/hasBlocks.js",
+      "require": "./dist/utils/hasBlocks.js"
+    },
     "./utils/svgFontSizeValues": {
       "import": "./dist/utils/svgFontSizeValues.js",
       "require": "./dist/utils/svgFontSizeValues.js"
