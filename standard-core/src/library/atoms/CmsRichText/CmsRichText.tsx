@@ -11,6 +11,10 @@ import {
 } from "@strapi/blocks-react-renderer";
 import { Link } from "@the-story/standard-core/atoms/Link";
 import type { APINullable } from "@the-story/standard-core/types";
+import {
+  hasBlocks,
+  isBlocksEmpty,
+} from "@the-story/standard-core/utils/hasBlocks";
 
 type BlockElements =
   | "h1"
@@ -38,7 +42,7 @@ const CmsRichText = ({
   componentProps,
   exclude,
 }: CmsRichTextProps) => {
-  if (!blocks) return null;
+  if (isBlocksEmpty(blocks)) return null;
 
   return (
     <Stack
