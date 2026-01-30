@@ -6,6 +6,7 @@ import {
   LocalizedLink,
   type LinkProps as LocalizedLinkProps,
 } from "@the-story/standard-core/config/navigation";
+import { isExternalLink } from "@the-story/standard-core/utils/isExternalLink";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
@@ -17,7 +18,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
   ({ children, href, onClick, ...props }, ref) => {
     const pathname = usePathname();
     const locale = useLocale();
-    const isExternal = href?.startsWith("http");
+    const isExternal = isExternalLink(href);
 
     let setRel = isExternal ? "noopener noreferrer nofollow" : undefined;
     let setTarget = isExternal ? "_blank" : undefined;
