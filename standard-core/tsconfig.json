@@ -13,17 +13,17 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-//    "plugins": [
-//      {
-//        "name": "next"
-//      }
-//    ],
     "baseUrl": "./src/library",
     "paths": {
       "@the-story/standard-core/*": ["*"]
     }
   },
   "include": [
-    "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".storybook/**/*"
+  ],
   "exclude": ["node_modules"]
 }
