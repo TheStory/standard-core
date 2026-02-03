@@ -6,89 +6,27 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "@the-story/standard-core/atoms/Link";
-import { locales } from "@the-story/standard-core/config/i18n";
-import { useLocale } from "next-intl";
-import { usePathname, useSearchParams } from "next/navigation";
-import { type MouseEvent, useEffect, useMemo, useState } from "react";
+
+import useLanguageSelector from "./useLanguageSelector";
 
 interface LanguageSelectorTypes {
   color: "primary" | "white";
 }
 
-type AlternateLanguage = { href: string; hreflang: string };
-
-const getAlternateLanguages = () => {
-  const alternateLinks = document.querySelectorAll('link[rel="alternate"]');
-
-  const alternateLanguages = [] as Array<AlternateLanguage>;
-
-  alternateLinks.forEach((link) => {
-    const hreflang = link.getAttribute("hreflang");
-    const href = link.getAttribute("href");
-
-    if (hreflang && href) {
-      alternateLanguages.push({ hreflang, href });
-    }
-  });
-
-  return alternateLanguages;
-};
-
 const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
-  const lang = useLocale();
+  const {
+    lang,
+    locales,
+    anchorEl,
+    open,
+    handleClick,
+    handleClose,
+    currentUrl,
+    getHrefForLocale,
+    hasMultipleLocales,
+  } = useLanguageSelector();
 
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const [alternateLanguages, setAlternateLanguages] = useState<
-    AlternateLanguage[]
-  >([]);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const alternateLanguagesData = getAlternateLanguages();
-    setAlternateLanguages(alternateLanguagesData);
-  }, [pathname]);
-
-  const searchParams = useSearchParams();
-  let pathnameWithoutLang = pathname?.replace(/^\/[a-z]{2}(?=\/|$)/, "") ?? "/";
-
-  const queryString = searchParams?.toString();
-  let currentUrl = pathnameWithoutLang;
-  if (queryString) currentUrl += `?${queryString}`;
-
-  const getHrefForLocale = useMemo(() => {
-    const normalizeHref = (href: string) => {
-      try {
-        const url = new URL(href, window.location.origin);
-        let path = url.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
-        if (path === "") path = "/";
-        return url.search ? `${path}${url.search}` : path;
-      } catch {
-        // If it's not a valid URL, fallback to currentUrl which is already normalized
-        return currentUrl;
-      }
-    };
-
-    return (l: string) => {
-      if (alternateLanguages && alternateLanguages.length > 0) {
-        const href = alternateLanguages.find(
-          (lang) => lang.hreflang === l,
-        )?.href;
-        if (href) return normalizeHref(href);
-      }
-      // Fallback to current page path/query without any locale prefix
-      return currentUrl;
-    };
-  }, [alternateLanguages, currentUrl]);
-
-  if (locales.length <= 1) return null;
+  if (!hasMultipleLocales) return null;
 
   return (
     <>
