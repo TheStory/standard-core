@@ -10,6 +10,10 @@ export function isInternalLink(link: APIString) {
     return true;
   }
 
+  if (link.startsWith("#")) {
+    return true;
+  }
+
   if (link.startsWith("/")) {
     return true;
   }

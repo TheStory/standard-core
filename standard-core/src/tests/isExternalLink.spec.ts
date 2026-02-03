@@ -87,4 +87,12 @@ describe("isInternalLink/isExternalLink", () => {
     expect(isExternalLink(undefined)).toBe(false);
     expect(isExternalLink("")).toBe(false);
   });
+
+  it("anchors are not considered external", async () => {
+    const { isExternalLink } = await loadUtils({
+      NEXT_PUBLIC_BASE_URL: "https://app.example.local",
+    });
+
+    expect(isExternalLink("#anchor")).toBe(false);
+  });
 });
