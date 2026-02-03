@@ -314,6 +314,10 @@
       "import": "./dist/utils/hasBlocks.js",
       "require": "./dist/utils/hasBlocks.js"
     },
+    "./utils/isExternalLink": {
+      "import": "./dist/utils/isExternalLink.js",
+      "require": "./dist/utils/isExternalLink.js"
+    },
     "./utils/svgFontSizeValues": {
       "import": "./dist/utils/svgFontSizeValues.js",
       "require": "./dist/utils/svgFontSizeValues.js"
