@@ -26,7 +26,7 @@ export const AccordionList = ({
   useContrastColors,
   sx,
 }: AccordionListProps) => (
-  <Box>
+  <div>
     {items.map((item, index) => (
       <MuiAccordion
         key={`accordion-${index}`}
@@ -101,5 +101,5 @@ export const AccordionList = ({
         </Stack>
       </MuiAccordion>
     ))}
-  </Box>
+  </div>
 );
