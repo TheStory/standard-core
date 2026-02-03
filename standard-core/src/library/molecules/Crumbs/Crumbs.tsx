@@ -59,7 +59,7 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
   return (
     <>
       <BreadCrumbs
-        className="breadcrumbs"
+        data-testid="breadcrumbs"
         separator={<ChevronRightIcon fontSize="inherit" />}
         sx={{
           color: ({ palette }) =>

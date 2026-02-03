@@ -23,7 +23,7 @@ export interface CtaButtonProps {
 const CtaButton = ({ button }: CtaButtonProps) =>
   button && (
     <Box
-      className="cta-button"
+      data-testid="cta-button"
       sx={{
         ...button.sx,
       }}

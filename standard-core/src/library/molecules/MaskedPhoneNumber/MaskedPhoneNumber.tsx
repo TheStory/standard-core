@@ -32,7 +32,7 @@ const MaskedPhoneNumber = ({
 
   return (
     <Box
-      className="masked-phone-number"
+      data-testid="masked-phone-number"
       sx={{ display: "flex", alignItems: "center", gap: 1 }}
     >
       {showFullPhone ? (

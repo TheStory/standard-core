@@ -13,7 +13,7 @@ const Accordion = ({
   sx,
   useContrastColors,
 }: AccordionProps) => (
-  <Stack className="accordion" direction="column" spacing={4}>
+  <Stack data-testid="accordion" direction="column" spacing={4}>
     <AccordionList
       items={items}
       disableIcon={disableIcon}

@@ -32,7 +32,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
     <>
       <Button
         key="lang selector"
-        id="language-selector-button"
+        data-testid="language-selector-button"
         aria-controls={open ? "language-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
