@@ -174,13 +174,13 @@
       "import": "./dist/atoms/Form/index.js",
       "require": "./dist/atoms/Form/index.js"
     },
-    "./atoms/FormatedData/FormatedData": {
-      "import": "./dist/atoms/FormatedData/FormatedData.js",
-      "require": "./dist/atoms/FormatedData/FormatedData.js"
+    "./atoms/FormatedDate/FormatedDate": {
+      "import": "./dist/atoms/FormatedDate/FormatedDate.js",
+      "require": "./dist/atoms/FormatedDate/FormatedDate.js"
     },
-    "./atoms/FormatedData": {
-      "import": "./dist/atoms/FormatedData/index.js",
-      "require": "./dist/atoms/FormatedData/index.js"
+    "./atoms/FormatedDate": {
+      "import": "./dist/atoms/FormatedDate/index.js",
+      "require": "./dist/atoms/FormatedDate/index.js"
     },
     "./atoms/Link/Link": {
       "import": "./dist/atoms/Link/Link.js",

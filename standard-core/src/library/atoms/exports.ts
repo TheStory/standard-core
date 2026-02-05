@@ -12,3 +12,4 @@ export * from "./Divider";
 export * from "./Pagination";
 export * from "./CtaButton";
 export * from "./VideoPlayer";
+export * from "./FormatedDate";
