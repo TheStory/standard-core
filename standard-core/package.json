@@ -278,6 +278,10 @@
       "import": "./dist/molecules/LanguageSelector/index.js",
       "require": "./dist/molecules/LanguageSelector/index.js"
     },
+    "./molecules/LanguageSelector/useLanguageSelector": {
+      "import": "./dist/molecules/LanguageSelector/useLanguageSelector.js",
+      "require": "./dist/molecules/LanguageSelector/useLanguageSelector.js"
+    },
     "./molecules/MaskedPhoneNumber/MaskedPhoneNumber": {
       "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
       "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
