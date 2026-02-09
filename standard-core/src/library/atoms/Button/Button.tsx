@@ -18,15 +18,11 @@ const Button = ({
   variant = "contained",
   color = "primary",
   size = "large",
-  disabled = false,
-  onClick,
-  onMouseEnter,
   component = LocalizedLink,
   endIcon = null,
   startIcon = null,
-  sx,
-  className,
   rel,
+  ...props
 }: ButtonProps) => {
   const isExternal = isExternalLink(href);
   const resolvedRel =
@@ -42,14 +38,10 @@ const Button = ({
       variant={variant}
       color={color}
       size={size}
-      disabled={disabled}
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      sx={sx}
       endIcon={endIcon}
       startIcon={startIcon}
-      className={className}
       rel={resolvedRel}
+      {...props}
     >
       {children}
     </MuiButton>
