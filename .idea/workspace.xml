@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AIDiffSettings">
+    <option name="showAIDiff" value="true" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7014fd7-c93c-4213-a8d9-2597576e55d3" name="Changes" comment="fix(Divider): use theme-based color token for background styling" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="147" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="vitest-integration" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;CLOSED&quot;,
+      &quot;assignee&quot;: &quot;saadhre&quot;
+    },
+    {
+      &quot;assignee&quot;: &quot;saadhre&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;saadhre&quot;
+  }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDONrqD8M6ti10A&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1763540196979
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:TheStory/standard-core.git&quot;,
+    &quot;accountId&quot;: &quot;0c800c92-c32d-4a02-97a4-71f239c5966f&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;TheStory&quot;,
+    &quot;repository&quot;: &quot;standard-core&quot;
+  }
+}</component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2tD78Ycbmd0o1Dg7LgMzW76THZK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js Test Runner.basic sanity check.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Shell Script.yalc:publish.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.basic sanity check.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.isExternalLink.spec.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Vitest.isInternalLink/isExternalLink.anchors are not considered external.executor&quot;: &quot;Run&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.5&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.19.25&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/urfin/dev/thestory/standard-core/standard-core/.storybook&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;npm.build-storybook --debug.executor&quot;: &quot;Debug&quot;,
+    &quot;npm.build-storybook.executor&quot;: &quot;Run&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint:fix.executor&quot;: &quot;Run&quot;,
+    &quot;npm.storybook.executor&quot;: &quot;Run&quot;,
+    &quot;npm.storybook:build.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/urfin/dev/thestory/standard-core/standard-core/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/urfin/dev/thestory/standard-core/standard-core/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
+  }
+}</component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1767387600000" />
+    <option name="spentUsd" value="0.04736985" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/standard-core/.storybook" />
+      <recent name="$PROJECT_DIR$/standard-core/src/stories/Molecules/Crumbs" />
+      <recent name="$PROJECT_DIR$/standard-core/src/library/types/strapiTypes" />
+      <recent name="$PROJECT_DIR$/standard-core/src/stories/Atoms/CtaButton" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/standard-core/src/library/atoms/CtaButton" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/standard-core/src/library/atoms/CroppedImage/utils.tsx" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.storybook">
+    <configuration name="basic sanity check" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/standard-core/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/standard-core" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/standard-core/src/tests/test.spec.ts" />
+      <test-names>
+        <test-name value="basic sanity check" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="isExternalLink.spec.ts" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/standard-core/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/standard-core" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/standard-core/src/tests/isExternalLink.spec.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="isInternalLink/isExternalLink.anchors are not considered external" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/standard-core/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/standard-core" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/standard-core/src/tests/isExternalLink.spec.ts" />
+      <test-names>
+        <test-name value="isInternalLink/isExternalLink" />
+        <test-name value="anchors are not considered external" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="basic sanity check" type="NodeJsTestRunner" temporary="true">
+      <node-interpreter value="project" />
+      <working-dir value="$PROJECT_DIR$/standard-core" />
+      <language value="TYPE_SCRIPT" />
+      <typescript-loader value="MANUAL_SETUP_IN_NODE_OPTION" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/standard-core/src/tests/test.spec.ts" />
+      <test-names>
+        <test-name value="basic sanity check" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Vitest.isExternalLink.spec.ts" />
+        <item itemvalue="Vitest.isInternalLink/isExternalLink.anchors are not considered external" />
+        <item itemvalue="Vitest.basic sanity check" />
+        <item itemvalue="Node.js Test Runner.basic sanity check" />
+        <item itemvalue="Vitest.basic sanity check" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7014fd7-c93c-4213-a8d9-2597576e55d3" name="Changes" comment="Bump version to 0.1.7 in package.json" />
+      <created>1745995696049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745995696049</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="d2692df0-9043-4d8d-9401-0e4194c9b44b" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="d2692df0-9043-4d8d-9401-0e4194c9b44b">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/urfin/dev/thestory/standard-core/standard-core" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: bump package version to 1.0.5" />
+    <MESSAGE value="Refactor `CmsRichText`, simplify styling rules, and remove unused utility functions" />
+    <MESSAGE value="chore: remove unused `slugify` dependency" />
+    <MESSAGE value="fix: add &quot;use client&quot; directive to `VideoPlayer` component" />
+    <MESSAGE value="fix: update motion wrapper initialization in `BackToTopButton` component to fix deprecation warning" />
+    <MESSAGE value="fix: update motion wrapper initialization in the ` BackToTopButton ` component to fix the deprecation warning" />
+    <MESSAGE value="refactor: add `className` props and structured class names for better identification in e2e tests" />
+    <MESSAGE value="fix: migrate `Link` component to use `forwardRef`" />
+    <MESSAGE value="fix: replace `parameters.backgrounds` with decorator for custom background styling in `Breadcrumbs` LightVariant stories" />
+    <MESSAGE value="chore: remove unused Next.js project files, assets, and configurations" />
+    <MESSAGE value="chore: remove `next.config.mjs` and related `package-lock.json` as part of project cleanup" />
+    <MESSAGE value="chore: upgrade to Storybook Vite builder, update dependencies, and optimize config" />
+    <MESSAGE value="chore: remove unused Next.js boilerplate files and dependencies" />
+    <MESSAGE value="chore: replace `@storybook/nextjs` with `@storybook/nextjs-vite` across all stories" />
+    <MESSAGE value="refactor: add `className` props to `CmsRichText` and `Crumbs` for improved e2e test identification" />
+    <MESSAGE value="refactor: update `Link` component types for improved readability and consistency" />
+    <MESSAGE value="refactor: remove unused `hasBlocks` import from `CmsRichText` component" />
+    <MESSAGE value="chore: integrate Vitest for unit testing and add initial test configuration" />
+    <MESSAGE value="chore: update tsconfig and Storybook setup for Vite and Storybook compatibility" />
+    <MESSAGE value="fix: handle anchor links in `isExternalLink` utility and update tests" />
+    <MESSAGE value="fix: expose `isExternalLink` utility in `package.json` exports" />
+    <MESSAGE value="test: replace `className` with `data-testid` across components for improved test targeting" />
+    <MESSAGE value="refactor(Button): simplify props by using spread operator and removing unused props" />
+    <MESSAGE value="chore: bump package version to 1.1.0" />
+    <MESSAGE value="fix(Divider): use theme-based color token for background styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Divider): use theme-based color token for background styling" />
+  </component>
+</project>
