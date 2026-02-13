@@ -1,0 +1,50 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { simpleMarkdown } from "../library/utils/simpleMarkdown";
+import { Typography } from "@mui/material";
+import Stack from "@mui/material/Stack";
+import Paper from "@mui/material/Paper";
+
+<Meta title="Utils" />
+
+## simpleMarkdown
+
+<Stack gap={1}>
+  <Typography variant="caption">
+    Source
+  </Typography>
+  <Typography
+    component="pre"
+    style={{
+      margin: 0,
+      padding: 12,
+      background: "#f2f2f2",
+      borderRadius: 8,
+      whiteSpace: "pre-wrap",
+      fontFamily: "monospace",
+    }}
+  >
+    {"Lorem *ipsum* _dolor_|sit"}
+  </Typography>
+  <Typography variant="caption">
+    Render
+  </Typography>
+  <Paper sx={{ p: 3 }} elevation={3}>
+    <Typography>{simpleMarkdown("Lorem *ipsum* _dolor_|sit")}</Typography>
+  </Paper>
+  <Typography variant="caption">
+    Usage
+  </Typography>
+  <Typography
+    component="pre"
+    style={{
+      margin: 0,
+      padding: 12,
+      background: "#f2f2f2",
+      borderRadius: 8,
+      whiteSpace: "pre-wrap",
+      fontFamily: "monospace",
+    }}
+  >
+    {`<Typography>{simpleMarkdown("Lorem *ipsum* _dolor_|sit")}</Typography>`}
+  </Typography>
+</Stack>

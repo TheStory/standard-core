@@ -322,6 +322,10 @@
       "import": "./dist/utils/isExternalLink.js",
       "require": "./dist/utils/isExternalLink.js"
     },
+    "./utils/simpleMarkdown": {
+      "import": "./dist/utils/simpleMarkdown.js",
+      "require": "./dist/utils/simpleMarkdown.js"
+    },
     "./utils/svgFontSizeValues": {
       "import": "./dist/utils/svgFontSizeValues.js",
       "require": "./dist/utils/svgFontSizeValues.js"
