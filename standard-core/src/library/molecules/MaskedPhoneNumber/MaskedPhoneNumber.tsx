@@ -38,12 +38,14 @@ const MaskedPhoneNumber = ({
       {showFullPhone ? (
         <Link
           href={`tel:${officePhoneNumber}`}
-          sx={{ typography: typographyVariant }}
+          sx={{ typography: typographyVariant, whiteSpace: "nowrap" }}
         >
           {officePhoneNumber}
         </Link>
       ) : (
-        <Typography variant={typographyVariant}>{maskedPhone}</Typography>
+        <Typography variant={typographyVariant} sx={{ whiteSpace: "nowrap" }}>
+          {maskedPhone}
+        </Typography>
       )}
       {!showFullPhone && (
         <Link
@@ -51,7 +53,7 @@ const MaskedPhoneNumber = ({
             e.preventDefault();
             reveal();
           }}
-          sx={{ cursor: "pointer" }}
+          sx={{ cursor: "pointer", whiteSpace: "nowrap" }}
         >
           {showPhoneButtonLabelTranslations || "show"}
         </Link>
