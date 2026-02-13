@@ -3,7 +3,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { alpha } from "@mui/material/styles";
 import type { SxProps } from "@mui/system";
 import Link from "@the-story/standard-core/atoms/Link/Link";
 import type { ContrastAware } from "@the-story/standard-core/types";
@@ -39,7 +38,9 @@ export const AccordionList = ({
           color: useContrastColors ? "primary.contrastText" : "text.primary",
           backgroundColor: "transparent",
           "&.MuiAccordion-root:before": {
-            backgroundColor: useContrastColors ? alpha("#FFF", 0.3) : "divider",
+            backgroundColor: useContrastColors
+              ? "primary.contrastText"
+              : "divider",
             height: 2,
           },
           ...sx,
@@ -58,7 +59,9 @@ export const AccordionList = ({
           }}
           expandIcon={
             !disableIcon && (
-              <ExpandIcon color={useContrastColors ? "secondary" : "primary"} />
+              <ExpandIcon
+                color={useContrastColors ? "primary.contrastText" : "divider"}
+              />
             )
           }
         >
