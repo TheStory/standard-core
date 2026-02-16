@@ -3,6 +3,7 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Paper from "@mui/material/Paper";
+import type { StackProps } from "@mui/material/Stack";
 import Stack from "@mui/material/Stack";
 import Typography, { type TypographyProps } from "@mui/material/Typography";
 import {
@@ -24,7 +25,7 @@ type BlockElements =
   | "blockquote"
   | "list";
 
-export interface CmsRichTextProps {
+export interface CmsRichTextProps extends StackProps {
   blocks: BlocksContent | APINullable;
   globalDisableHeadings?: boolean;
   exclude?: BlockElements[];
@@ -38,11 +39,13 @@ const CmsRichText = ({
   globalDisableHeadings = false,
   componentProps,
   exclude,
+  ...props
 }: CmsRichTextProps) => {
   if (isBlocksEmpty(blocks)) return null;
 
   return (
     <Stack
+      className="cms-rich-text"
       data-testid="rich-text"
       spacing={3}
       sx={{
@@ -51,6 +54,7 @@ const CmsRichText = ({
         "& .MuiTypography-root:first-child": { mt: 0 },
         "& .MuiTypography-root:last-child": { mb: 0 },
       }}
+      {...props}
     >
       <BlocksRenderer
         content={blocks as BlocksContent}
