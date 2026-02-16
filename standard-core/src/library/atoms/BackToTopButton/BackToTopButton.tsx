@@ -26,6 +26,7 @@ const BackToTopButton = ({ sx }: { sx?: SxProps }) => {
     <FMFab
       layout
       data-testid="back-to-top"
+      className="back-to-top-button"
       initial="hidden"
       animate={hidden ? "hidden" : "visible"}
       transition={{
