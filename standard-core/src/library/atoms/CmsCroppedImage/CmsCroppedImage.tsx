@@ -1,7 +1,10 @@
 import type { SxProps } from "@mui/material/styles";
 import type { Data } from "@strapi/strapi";
 import { CroppedImage } from "@the-story/standard-core/atoms/CroppedImage";
-import type { ImageResizeOption } from "@the-story/standard-core/types";
+import type {
+  APIString,
+  ImageResizeOption,
+} from "@the-story/standard-core/types";
 import { cmsMediaUrl } from "@the-story/standard-core/utils/cmsMediaUrl";
 
 type DifferentWidths = number | { xs: number; lg: number } | null;
@@ -11,7 +14,7 @@ interface CmsCroppedImageProps {
   width?: DifferentWidths;
   height?: DifferentWidths;
   cover?: boolean;
-  alt?: string | null;
+  alt?: APIString;
   resizingType?: ImageResizeOption;
   sx?: SxProps;
   loading?: "lazy" | "eager";
