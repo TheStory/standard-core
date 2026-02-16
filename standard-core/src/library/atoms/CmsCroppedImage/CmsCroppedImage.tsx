@@ -11,6 +11,7 @@ interface CmsCroppedImageProps {
   width?: DifferentWidths;
   height?: DifferentWidths;
   cover?: boolean;
+  alt?: string | null;
   resizingType?: ImageResizeOption;
   sx?: SxProps;
   loading?: "lazy" | "eager";
@@ -21,6 +22,7 @@ const CmsCroppedImage = ({
   width,
   height,
   cover = false,
+  alt,
   resizingType = "fill",
   sx,
   loading,
@@ -35,7 +37,11 @@ const CmsCroppedImage = ({
   const safeUrl: string | null | undefined =
     typeof url === "string" ? url : null;
   const safeAlt: string | null | undefined =
-    typeof alternativeText === "string" ? alternativeText : undefined;
+    typeof alt === "string"
+      ? alt
+      : typeof alternativeText === "string"
+        ? alternativeText
+        : undefined;
 
   let setMobileWidth;
   let setDesktopWidth;
