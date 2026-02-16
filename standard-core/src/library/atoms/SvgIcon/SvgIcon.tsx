@@ -68,6 +68,7 @@ const SvgIcon = ({
   return (
     <Box
       component="span"
+      className="standard-icon"
       sx={{
         width: fontSizeValue,
         maxWidth: fontSizeValue,
