@@ -83,6 +83,7 @@ const Pagination = ({
       title="pagination"
       renderItem={(item) => (
         <PaginationItem
+          className="pagination-item"
           slots={{
             first: (props) => <SkipPreviousIcon {...props} />,
             last: (props) => <SkipNextIcon {...props} />,
