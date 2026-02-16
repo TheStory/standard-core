@@ -44,6 +44,17 @@ const config: StorybookConfig = {
   ],
   framework: "@storybook/nextjs-vite",
   async viteFinal(config) {
+    const cdn = process.env.NEXT_PUBLIC_CDN ?? "http://127.0.0.1:1337";
+    const imageProxy =
+      process.env.NEXT_PUBLIC_IMAGE_PROXY ?? "http://127.0.0.1:8080";
+    config.define = {
+      ...(config.define || {}),
+      "process.env.NEXT_PUBLIC_CDN": JSON.stringify(cdn),
+      "process.env.NEXT_PUBLIC_IMAGE_PROXY": JSON.stringify(imageProxy),
+      "import.meta.env.NEXT_PUBLIC_CDN": JSON.stringify(cdn),
+      "import.meta.env.NEXT_PUBLIC_IMAGE_PROXY": JSON.stringify(imageProxy),
+    };
+
     config.plugins = config.plugins || [];
 
     // Custom plugin to fix MDX React shim resolution
