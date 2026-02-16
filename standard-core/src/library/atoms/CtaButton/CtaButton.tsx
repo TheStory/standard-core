@@ -16,6 +16,8 @@ export interface CtaButtonProps {
         variant?: "default" | "line";
         rel?: string;
         target?: string;
+        contentSx?: SxProps;
+        overlineSx?: SxProps;
       }
     | APINullable;
 }
@@ -24,6 +26,7 @@ const CtaButton = ({ button }: CtaButtonProps) =>
   button && (
     <Box
       data-testid="cta-button"
+      className={`cta-button variant-${button.variant || "default"}`}
       sx={{
         ...button.sx,
       }}
@@ -57,21 +60,34 @@ const CtaButton = ({ button }: CtaButtonProps) =>
               },
             },
           },
-          button.variant === "line" && {
-            backgroundColor: "transparent",
-            borderTop: 2,
-            borderColor: "secondary.main",
-            "&:hover": {
-              backgroundColor: "action.hover",
-            },
-          },
+          ...(button.variant === "line"
+            ? [
+                {
+                  backgroundColor: "transparent",
+                  borderTop: 2,
+                  borderColor: "secondary.main",
+                  "&:hover": {
+                    backgroundColor: "action.hover",
+                  },
+                },
+              ]
+            : []),
+          ...(button.contentSx !== undefined
+            ? Array.isArray(button.contentSx)
+              ? button.contentSx
+              : [button.contentSx]
+            : []),
         ]}
       >
         {button.overline && (
           <Typography
             variant="overline"
-            color="text.secondary"
-            sx={{ display: "block", fontSize: 12 }}
+            sx={{
+              display: "block",
+              fontSize: 12,
+              color: "text.secondary",
+              ...button.overlineSx,
+            }}
           >
             {button.overline}
           </Typography>
