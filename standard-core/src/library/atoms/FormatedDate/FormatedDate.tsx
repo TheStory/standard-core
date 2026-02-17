@@ -1,21 +1,29 @@
+"use client";
+
 import Box from "@mui/material/Box";
-import { useFormatter, useTranslations } from "next-intl";
+import type { APIDate } from "@the-story/standard-core/types";
+import { useFormatter } from "next-intl";
+import { useMemo } from "react";
 
-const FormattedDate = ({ value }: { value?: Date | string | null }) => {
-  const t = useTranslations("common");
-  const f = useFormatter();
+interface FormattedDateProps {
+  value?: APIDate;
+}
 
-  const formatDate = () => {
-    if (value === undefined || value === null) return "-";
+const FormattedDate = ({ value }: FormattedDateProps) => {
+  const dateFormatter = useFormatter();
 
-    return f.dateTime(new Date(value), {
+  const formatted = useMemo(() => {
+    if (!value) return null;
+    return dateFormatter.dateTime(new Date(value), {
       dateStyle: "medium",
     });
-  };
+  }, [dateFormatter, value]);
+
+  if (!formatted) return null;
 
   return (
     <Box component="span" sx={{ whiteSpace: "nowrap" }}>
-      {formatDate()} {t("year")}
+      {formatted}
     </Box>
   );
 };
