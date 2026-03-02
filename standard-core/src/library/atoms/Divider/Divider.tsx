@@ -7,6 +7,7 @@ type DividerProps = {} & MuiDividerProps;
 const Divider = (props: DividerProps) => (
   <MuiDivider
     {...props}
+    className="divider"
     sx={{
       backgroundColor: "divider",
       ...props?.sx,
