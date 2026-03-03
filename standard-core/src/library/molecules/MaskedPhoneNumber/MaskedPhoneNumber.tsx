@@ -33,17 +33,23 @@ const MaskedPhoneNumber = ({
   return (
     <Box
       data-testid="masked-phone-number"
+      className="masked-phone-number"
       sx={{ display: "flex", alignItems: "center", gap: 1 }}
     >
       {showFullPhone ? (
         <Link
           href={`tel:${officePhoneNumber}`}
+          className="masked-phone-number-link"
           sx={{ typography: typographyVariant, whiteSpace: "nowrap" }}
         >
           {officePhoneNumber}
         </Link>
       ) : (
-        <Typography variant={typographyVariant} sx={{ whiteSpace: "nowrap" }}>
+        <Typography
+          className="masked-phone-number-text"
+          variant={typographyVariant}
+          sx={{ whiteSpace: "nowrap" }}
+        >
           {maskedPhone}
         </Typography>
       )}
@@ -53,6 +59,7 @@ const MaskedPhoneNumber = ({
             e.preventDefault();
             reveal();
           }}
+          className="masked-phone-number-reveal"
           sx={{ cursor: "pointer", whiteSpace: "nowrap" }}
         >
           {showPhoneButtonLabelTranslations || "show"}

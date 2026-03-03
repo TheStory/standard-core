@@ -33,6 +33,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
       <Button
         key="lang selector"
         data-testid="language-selector-button"
+        className="language-selector-button"
         aria-controls={open ? "language-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
@@ -48,6 +49,7 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
       </Button>
       <Menu
         id="language-menu"
+        className="language-selector-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -79,7 +81,11 @@ const LanguageSelector = ({ color }: LanguageSelectorTypes) => {
                 : "/";
 
           return (
-            <MenuItem key={`lang-${l}`} selected={lang === l}>
+            <MenuItem
+              key={`lang-${l}`}
+              className="language-selector-item"
+              selected={lang === l}
+            >
               <Link
                 underline="none"
                 href={href}
