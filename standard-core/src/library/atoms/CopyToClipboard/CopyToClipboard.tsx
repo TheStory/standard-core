@@ -41,6 +41,7 @@ const CopyToClipboard = ({
       slotProps={slotProps}
     >
       <Box
+        className="copy-to-clipboard"
         sx={{
           display: "flex",
           alignItems: "center",
@@ -52,6 +53,7 @@ const CopyToClipboard = ({
       >
         {copiedText ? (
           <CheckIcon
+            className="copy-to-clipboard-icon"
             sx={{
               fontSize: iconSize,
               color: color,

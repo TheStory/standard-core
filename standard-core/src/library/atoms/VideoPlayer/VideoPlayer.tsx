@@ -145,6 +145,7 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
 
     return (
       <Box
+        className="video-player"
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -162,6 +163,7 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
         }}
       >
         <video
+          className="video-player-media"
           ref={videoRef}
           src={cmsMediaUrl(videoSrc)}
           poster={
@@ -183,6 +185,7 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           <Box
             component="button"
             type="button"
+            className="video-player-toggle"
             aria-label={paused ? "Play video" : "Pause video"}
             onClick={toggle}
             sx={{
@@ -210,6 +213,7 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           >
             <Box
               component="span"
+              className="video-player-toggle-icon"
               sx={{
                 fontSize: 24,
                 lineHeight: 1,

@@ -24,6 +24,7 @@ const FormCheckbox = <T extends FieldValues>({
   ...controllerProps
 }: FormCheckboxProps<T>) => (
   <FormControlLabel
+    className="form-checkbox"
     control={
       <Controller
         name={name}
@@ -47,6 +48,7 @@ const FormCheckbox = <T extends FieldValues>({
               disabled={disabled}
               {...rest}
               {...muiProps}
+              className="form-checkbox-input"
             />
           </>
         )}

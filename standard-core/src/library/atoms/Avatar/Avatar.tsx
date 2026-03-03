@@ -23,6 +23,7 @@ const Avatar = ({
   value,
 }: AvatarProps) => (
   <MuiAvatar
+    className="avatar"
     sx={{
       border: disableBorder ? 0 : (theme) => `2px solid white`,
       width: "40px",
@@ -33,6 +34,7 @@ const Avatar = ({
     variant="circular"
   >
     <Typography
+      className="avatar-text"
       sx={{
         fontFamily: "Epilogue",
         fontSize: 20,
