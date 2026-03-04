@@ -6,7 +6,7 @@ const TermsLabel = () => {
   const t = useTranslations("contact.form");
 
   return (
-    <Typography mb="6px" className="terms-label">
+    <>
       {t.rich("terms.label", {
         linkPrivacy: (chunks) => (
           <Link href="/privacy-policy" sx={{ textTransform: "capitalize" }}>
@@ -19,7 +19,7 @@ const TermsLabel = () => {
           </Link>
         ),
       })}
-    </Typography>
+    </>
   );
 };
 

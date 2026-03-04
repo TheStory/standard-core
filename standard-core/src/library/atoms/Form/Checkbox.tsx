@@ -25,6 +25,9 @@ const FormCheckbox = <T extends FieldValues>({
 }: FormCheckboxProps<T>) => (
   <FormControlLabel
     className="form-checkbox"
+    slotProps={{
+      typography: { className: "form-checkbox-label" },
+    }}
     control={
       <Controller
         name={name}
@@ -35,13 +38,16 @@ const FormCheckbox = <T extends FieldValues>({
             <Checkbox
               sx={{
                 height: "fit-content",
-                mt: -1,
                 ml: 1,
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 color: !!error ? "error.main" : "text.secondary",
                 "& + .MuiTypography-caption": {
                   color: !!error ? "error.main" : "text.secondary",
                 },
-                alignSelf: "flex-start",
+                alignSelf: "center",
               }}
               checked={!!rest.value}
               inputRef={ref}
