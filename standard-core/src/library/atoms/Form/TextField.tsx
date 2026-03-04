@@ -57,6 +57,7 @@ const FormTextField = <T extends FieldValues>({
         }}
         {...rest}
         {...muiProps}
+        className="form-text-field"
       />
     )}
   />

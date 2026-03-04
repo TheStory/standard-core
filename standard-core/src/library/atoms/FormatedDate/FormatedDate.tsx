@@ -22,7 +22,11 @@ const FormattedDate = ({ value }: FormattedDateProps) => {
   if (!formatted) return null;
 
   return (
-    <Box component="span" sx={{ whiteSpace: "nowrap" }}>
+    <Box
+      component="span"
+      className="formatted-date"
+      sx={{ whiteSpace: "nowrap" }}
+    >
       {formatted}
     </Box>
   );

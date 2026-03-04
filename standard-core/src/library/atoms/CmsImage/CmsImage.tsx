@@ -47,7 +47,14 @@ export const BaseUploadedImage = ({
 
   const { src, ...restProps } = baseProps;
 
-  return <Image src={src} {...restProps} alt={alternativeText || ""} />;
+  return (
+    <Image
+      src={src}
+      {...restProps}
+      className="cms-image"
+      alt={alternativeText || ""}
+    />
+  );
 };
 
 type UploadedImageProps = {

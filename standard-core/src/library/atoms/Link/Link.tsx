@@ -56,6 +56,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
         rel={setRel}
         target={setTarget}
         onClick={handleClick}
+        className="link"
       >
         {children}
       </MuiLink>

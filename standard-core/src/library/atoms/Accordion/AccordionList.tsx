@@ -24,10 +24,11 @@ export const AccordionList = ({
   useContrastColors,
   sx,
 }: AccordionListProps) => (
-  <div>
+  <div className="accordion-list">
     {items.map((item, index) => (
       <MuiAccordion
         key={`accordion-${index}`}
+        className="accordion-item"
         data-testid="accordion-item"
         defaultExpanded={index === 0}
         disableGutters={disableGutters}
@@ -48,6 +49,7 @@ export const AccordionList = ({
       >
         <AccordionSummary
           component="div"
+          className="accordion-item-summary"
           data-testid="accordion-item-summary"
           sx={{
             height: "66px",
@@ -80,6 +82,7 @@ export const AccordionList = ({
           )}
         </AccordionSummary>
         <AccordionDetails
+          className="accordion-item-details"
           data-testid="accordion-item-details"
           sx={{
             pt: 0,
@@ -90,6 +93,7 @@ export const AccordionList = ({
           {item.content}
         </AccordionDetails>
         <Stack
+          className="accordion-item-links"
           data-testid="accordion-item-links"
           flexDirection="row"
           flexWrap="wrap"

@@ -60,6 +60,7 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
     <>
       <BreadCrumbs
         data-testid="breadcrumbs"
+        className="breadcrumbs"
         separator={<ChevronRightIcon fontSize="inherit" />}
         sx={{
           color: ({ palette }) =>
@@ -81,6 +82,7 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
           ) : (
             <Typography
               key={`crumb-${i}`}
+              className="breadcrumb-current"
               sx={{
                 color: lightVariant ? "primary.contrastText" : "primary.main",
                 textTransform: "capitalize",

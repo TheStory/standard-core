@@ -19,6 +19,7 @@ const Map = ({ embedCode, ...rest }: GoogleEmbedMapProps) => {
     <Root {...rest}>
       <iframe
         src={locationFromIFrame}
+        className="map-iframe"
         referrerPolicy="no-referrer-when-downgrade"
         loading="lazy"
         allowFullScreen={false}

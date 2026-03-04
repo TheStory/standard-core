@@ -42,6 +42,7 @@ const Button = ({
       startIcon={startIcon}
       rel={resolvedRel}
       {...props}
+      className="button"
     >
       {children}
     </MuiButton>
