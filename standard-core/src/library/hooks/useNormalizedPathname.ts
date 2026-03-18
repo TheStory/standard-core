@@ -1,3 +1,4 @@
+import { useRouter } from "@the-story/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -5,6 +6,7 @@ export const useNormalizedPathname = () => {
   const pathname = usePathname();
   const locale = useLocale();
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const normalizedPathname = pathname.startsWith(`/${locale}`)
     ? "/" + pathname.replace(new RegExp(`^/${locale}/?`), "")
@@ -25,5 +27,5 @@ export const useNormalizedPathname = () => {
     return `${normalizedPathname}${query}`;
   };
 
-  return { normalizedPathname, createUrlWithQueryParams, searchParams };
+  return { normalizedPathname, createUrlWithQueryParams, searchParams, router };
 };

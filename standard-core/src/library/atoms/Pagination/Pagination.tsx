@@ -19,7 +19,8 @@ const Pagination = ({
   scrollToId,
   onIsScrolledChange,
 }: PaginationProps) => {
-  const { createUrlWithQueryParams, searchParams } = useNormalizedPathname();
+  const { createUrlWithQueryParams, searchParams, router } =
+    useNormalizedPathname();
 
   const currentPage = +(searchParams.get("page") || 1);
 
@@ -43,13 +44,21 @@ const Pagination = ({
             last: (props) => <SkipNextIcon {...props} />,
           }}
           {...item}
-          onClick={() => {
+          onClick={(e) => {
             if (scrollToId) {
               const el = document.getElementById(scrollToId);
               if (el) {
+                e.preventDefault();
                 const y = el.getBoundingClientRect().top + window.scrollY - 74;
                 window.scrollTo({ top: y, behavior: "smooth" });
                 onIsScrolledChange?.(true);
+
+                const nextUrl = createUrlWithQueryParams({
+                  page: item.page ?? 1,
+                });
+                setTimeout(() => {
+                  router.push(nextUrl as any);
+                }, 250);
               }
             }
           }}
