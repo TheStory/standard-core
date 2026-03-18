@@ -1,20 +1,25 @@
+import { useNormalizedPathname } from "../../hooks";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import MuiPagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import type { SxProps } from "@mui/material/styles";
 import { Link } from "@the-story/standard-core/atoms/Link";
-import { usePathname, useSearchParams } from "next/navigation";
 
 interface PaginationProps {
   totalPages: number;
   sx?: SxProps;
   scrollToId?: string;
+  onIsScrolledChange?: (isScrolled: boolean) => void;
 }
 
-const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+const Pagination = ({
+  totalPages,
+  sx,
+  scrollToId,
+  onIsScrolledChange,
+}: PaginationProps) => {
+  const { createUrlWithQueryParams, searchParams } = useNormalizedPathname();
 
   const currentPage = +(searchParams.get("page") || 1);
 
@@ -32,7 +37,7 @@ const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
         <PaginationItem
           className="pagination-item"
           component={Link}
-          href={`${pathname}?page=${item.page}`}
+          href={createUrlWithQueryParams({ page: item.page ?? 1 })}
           slots={{
             first: (props) => <SkipPreviousIcon {...props} />,
             last: (props) => <SkipNextIcon {...props} />,
@@ -44,6 +49,7 @@ const Pagination = ({ totalPages, sx, scrollToId }: PaginationProps) => {
               if (el) {
                 const y = el.getBoundingClientRect().top + window.scrollY - 74;
                 window.scrollTo({ top: y, behavior: "smooth" });
+                onIsScrolledChange?.(true);
               }
             }
           }}

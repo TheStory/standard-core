@@ -1,5 +1,6 @@
 "use client";
 
+import { useNormalizedPathname } from "../../hooks";
 import type { LinkProps as MuiLinkProps } from "@mui/material/Link";
 import MuiLink from "@mui/material/Link";
 import {
@@ -7,8 +8,6 @@ import {
   type LinkProps as LocalizedLinkProps,
 } from "@the-story/standard-core/config/navigation";
 import { isExternalLink } from "@the-story/standard-core/utils/isExternalLink";
-import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
 import { forwardRef } from "react";
 
@@ -16,8 +15,7 @@ export type LinkComponentProps = LocalizedLinkProps & MuiLinkProps;
 
 const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
   ({ children, href, onClick, ...props }, ref) => {
-    const pathname = usePathname();
-    const locale = useLocale();
+    const { normalizedPathname } = useNormalizedPathname();
     const isExternal = isExternalLink(href);
 
     let setRel = isExternal ? "noopener noreferrer nofollow" : undefined;
@@ -29,10 +27,6 @@ const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
 
       if (typeof href === "string") {
         const [targetPath, hash] = href.split("#");
-
-        const normalizedPathname = pathname.startsWith(`/${locale}`)
-          ? "/" + pathname.replace(new RegExp(`^/${locale}/?`), "")
-          : pathname;
 
         const isSamePage = targetPath === normalizedPathname && !!hash;
 
