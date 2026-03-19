@@ -55,14 +55,15 @@ const Pagination = ({
                   el.getBoundingClientRect().top +
                   window.scrollY -
                   scrollOffset;
-                window.scrollTo({ top: y, behavior: "smooth" });
-                onIsScrolledChange?.(true);
 
                 const nextUrl = createUrlWithQueryParams({
                   page: item.page ?? 1,
                 });
+                window.scrollTo({ top: y, behavior: "smooth" });
+
                 setTimeout(() => {
                   router.push(nextUrl as any, { scroll: false });
+                  onIsScrolledChange?.(true);
                 }, 500);
               }
             }
