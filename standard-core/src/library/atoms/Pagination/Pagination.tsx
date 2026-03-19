@@ -11,6 +11,7 @@ interface PaginationProps {
   sx?: SxProps;
   scrollToId?: string;
   onIsScrolledChange?: (isScrolled: boolean) => void;
+  scrollOffset?: number;
 }
 
 const Pagination = ({
@@ -18,6 +19,7 @@ const Pagination = ({
   sx,
   scrollToId,
   onIsScrolledChange,
+  scrollOffset = 100,
 }: PaginationProps) => {
   const { createUrlWithQueryParams, searchParams, router } =
     useNormalizedPathname();
@@ -49,7 +51,10 @@ const Pagination = ({
               const el = document.getElementById(scrollToId);
               if (el) {
                 e.preventDefault();
-                const y = el.getBoundingClientRect().top + window.scrollY - 74;
+                const y =
+                  el.getBoundingClientRect().top +
+                  window.scrollY -
+                  scrollOffset;
                 window.scrollTo({ top: y, behavior: "smooth" });
                 onIsScrolledChange?.(true);
 
@@ -57,8 +62,8 @@ const Pagination = ({
                   page: item.page ?? 1,
                 });
                 setTimeout(() => {
-                  router.push(nextUrl as any);
-                }, 250);
+                  router.push(nextUrl as any, { scroll: false });
+                }, 500);
               }
             }
           }}
