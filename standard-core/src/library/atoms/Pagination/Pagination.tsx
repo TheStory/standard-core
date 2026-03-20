@@ -1,3 +1,5 @@
+"use client";
+
 import { useNormalizedPathname } from "../../hooks";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
