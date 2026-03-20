@@ -14,7 +14,7 @@ import { forwardRef } from "react";
 export type LinkComponentProps = LocalizedLinkProps & MuiLinkProps;
 
 const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
-  ({ children, href, onClick, ...props }, ref) => {
+  ({ children, href, onClick, target, ...props }, ref) => {
     const { normalizedPathname } = useNormalizedPathname();
     const isExternal = isExternalLink(href);
 
@@ -48,7 +48,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkComponentProps>(
         href={href}
         component={LocalizedLink as any}
         rel={setRel}
-        target={setTarget}
+        target={target || setTarget}
         onClick={handleClick}
       >
         {children}
