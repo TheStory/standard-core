@@ -26,26 +26,6 @@
       "import": "./dist/exports.js",
       "require": "./dist/exports.js"
     },
-    "./NextIntlClientInheritor/NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
-      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
-    },
-    "./NextIntlClientInheritor": {
-      "import": "./dist/NextIntlClientInheritor/index.js",
-      "require": "./dist/NextIntlClientInheritor/index.js"
-    },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
-    },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
-    },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
-    },
     "./atoms/Accordion/Accordion": {
       "import": "./dist/atoms/Accordion/Accordion.js",
       "require": "./dist/atoms/Accordion/Accordion.js"
@@ -158,9 +138,17 @@
       "import": "./dist/atoms/Divider/index.js",
       "require": "./dist/atoms/Divider/index.js"
     },
+    "./atoms": {
+      "import": "./dist/atoms/exports.js",
+      "require": "./dist/atoms/exports.js"
+    },
     "./atoms/Form/Checkbox": {
       "import": "./dist/atoms/Form/Checkbox.js",
       "require": "./dist/atoms/Form/Checkbox.js"
+    },
+    "./atoms/Form": {
+      "import": "./dist/atoms/Form/index.js",
+      "require": "./dist/atoms/Form/index.js"
     },
     "./atoms/Form/TermsLabel": {
       "import": "./dist/atoms/Form/TermsLabel.js",
@@ -170,10 +158,6 @@
       "import": "./dist/atoms/Form/TextField.js",
       "require": "./dist/atoms/Form/TextField.js"
     },
-    "./atoms/Form": {
-      "import": "./dist/atoms/Form/index.js",
-      "require": "./dist/atoms/Form/index.js"
-    },
     "./atoms/FormatedDate/FormatedDate": {
       "import": "./dist/atoms/FormatedDate/FormatedDate.js",
       "require": "./dist/atoms/FormatedDate/FormatedDate.js"
@@ -182,13 +166,17 @@
       "import": "./dist/atoms/FormatedDate/index.js",
       "require": "./dist/atoms/FormatedDate/index.js"
     },
+    "./atoms/Link": {
+      "import": "./dist/atoms/Link/index.js",
+      "require": "./dist/atoms/Link/index.js"
+    },
     "./atoms/Link/Link": {
       "import": "./dist/atoms/Link/Link.js",
       "require": "./dist/atoms/Link/Link.js"
     },
-    "./atoms/Link": {
-      "import": "./dist/atoms/Link/index.js",
-      "require": "./dist/atoms/Link/index.js"
+    "./atoms/Map": {
+      "import": "./dist/atoms/Map/index.js",
+      "require": "./dist/atoms/Map/index.js"
     },
     "./atoms/Map/Map": {
       "import": "./dist/atoms/Map/Map.js",
@@ -198,41 +186,33 @@
       "import": "./dist/atoms/Map/Root.js",
       "require": "./dist/atoms/Map/Root.js"
     },
-    "./atoms/Map": {
-      "import": "./dist/atoms/Map/index.js",
-      "require": "./dist/atoms/Map/index.js"
-    },
     "./atoms/Map/types": {
       "import": "./dist/atoms/Map/types.js",
       "require": "./dist/atoms/Map/types.js"
-    },
-    "./atoms/Pagination/Pagination": {
-      "import": "./dist/atoms/Pagination/Pagination.js",
-      "require": "./dist/atoms/Pagination/Pagination.js"
     },
     "./atoms/Pagination": {
       "import": "./dist/atoms/Pagination/index.js",
       "require": "./dist/atoms/Pagination/index.js"
     },
-    "./atoms/SvgIcon/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
-      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
+    "./atoms/Pagination/Pagination": {
+      "import": "./dist/atoms/Pagination/Pagination.js",
+      "require": "./dist/atoms/Pagination/Pagination.js"
     },
     "./atoms/SvgIcon": {
       "import": "./dist/atoms/SvgIcon/index.js",
       "require": "./dist/atoms/SvgIcon/index.js"
     },
-    "./atoms/VideoPlayer/VideoPlayer": {
-      "import": "./dist/atoms/VideoPlayer/VideoPlayer.js",
-      "require": "./dist/atoms/VideoPlayer/VideoPlayer.js"
+    "./atoms/SvgIcon/SvgIcon": {
+      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
+      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
     },
     "./atoms/VideoPlayer": {
       "import": "./dist/atoms/VideoPlayer/index.js",
       "require": "./dist/atoms/VideoPlayer/index.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
+    "./atoms/VideoPlayer/VideoPlayer": {
+      "import": "./dist/atoms/VideoPlayer/VideoPlayer.js",
+      "require": "./dist/atoms/VideoPlayer/VideoPlayer.js"
     },
     "./config/i18n": {
       "import": "./dist/config/i18n.js",
@@ -274,29 +254,49 @@
       "import": "./dist/molecules/Crumbs/index.js",
       "require": "./dist/molecules/Crumbs/index.js"
     },
-    "./molecules/LanguageSelector/LanguageSelector": {
-      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
-      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
+    "./molecules": {
+      "import": "./dist/molecules/exports.js",
+      "require": "./dist/molecules/exports.js"
     },
     "./molecules/LanguageSelector": {
       "import": "./dist/molecules/LanguageSelector/index.js",
       "require": "./dist/molecules/LanguageSelector/index.js"
     },
+    "./molecules/LanguageSelector/LanguageSelector": {
+      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
+      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
+    },
     "./molecules/LanguageSelector/useLanguageSelector": {
       "import": "./dist/molecules/LanguageSelector/useLanguageSelector.js",
       "require": "./dist/molecules/LanguageSelector/useLanguageSelector.js"
-    },
-    "./molecules/MaskedPhoneNumber/MaskedPhoneNumber": {
-      "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
-      "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
     },
     "./molecules/MaskedPhoneNumber": {
       "import": "./dist/molecules/MaskedPhoneNumber/index.js",
       "require": "./dist/molecules/MaskedPhoneNumber/index.js"
     },
-    "./molecules": {
-      "import": "./dist/molecules/exports.js",
-      "require": "./dist/molecules/exports.js"
+    "./molecules/MaskedPhoneNumber/MaskedPhoneNumber": {
+      "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
+      "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
+    },
+    "./NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/index.js",
+      "require": "./dist/NextIntlClientInheritor/index.js"
+    },
+    "./NextIntlClientInheritor/NextIntlClientInheritor": {
+      "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
+      "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
+    },
+    "./ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/index.js",
+      "require": "./dist/ThemeInheritor/index.js"
+    },
+    "./ThemeInheritor/ThemeInheritor": {
+      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
+      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    },
+    "./ThemeInheritor/types": {
+      "import": "./dist/ThemeInheritor/types.js",
+      "require": "./dist/ThemeInheritor/types.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
@@ -356,7 +356,7 @@
     "@strapi/blocks-react-renderer": "^1.0.0",
     "motion": "^12.0.0",
     "next": "^14.0.0",
-    "next-intl": "^3.0.0",
+    "next-intl": "^4.0.0",
     "react": ">=18",
     "react-dom": ">=18",
     "react-hook-form": "^7.0.0",
@@ -387,7 +387,7 @@
     "eslint-plugin-storybook": "^10.1.11",
     "motion": "^12.0.0",
     "next": "14.2.35",
-    "next-intl": "^3.10.0",
+    "next-intl": "4.8.3",
     "prettier": "^3.4.2",
     "react": "^18",
     "react-dom": "^18",
