@@ -48,7 +48,14 @@ processDirectory(distPath, 'dist');
 if (fs.existsSync(packageJsonPath)) {
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
-  packageJson.exports = exportsMap;
+  const sortedExports = Object.keys(exportsMap)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = exportsMap[key];
+      return acc;
+    }, {});
+
+  packageJson.exports = sortedExports;
 
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n");
   console.log("Exports have been updated in package.json.");
