@@ -278,6 +278,10 @@
       "import": "./dist/molecules/Crumbs/Crumbs.js",
       "require": "./dist/molecules/Crumbs/Crumbs.js"
     },
+    "./molecules/Crumbs/CrumbsSchema": {
+      "import": "./dist/molecules/Crumbs/CrumbsSchema.js",
+      "require": "./dist/molecules/Crumbs/CrumbsSchema.js"
+    },
     "./molecules/LanguageSelector": {
       "import": "./dist/molecules/LanguageSelector/index.js",
       "require": "./dist/molecules/LanguageSelector/index.js"
