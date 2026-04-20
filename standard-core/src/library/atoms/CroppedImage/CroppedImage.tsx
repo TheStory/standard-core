@@ -13,6 +13,7 @@ interface CroppedImageProps extends BoxProps {
   mobileOnly?: boolean;
   alt?: APIString;
   loading?: "lazy" | "eager";
+  fetchPriority?: "high" | "low" | "auto";
   resizingType?: ImageResizeOption;
 }
 
@@ -24,6 +25,7 @@ const CroppedImage = ({
   desktopOnly = false,
   mobileOnly = false,
   loading = "lazy",
+  fetchPriority,
   resizingType = "fill",
   sx,
   ...props
@@ -42,6 +44,7 @@ const CroppedImage = ({
     <Box
       component="img"
       loading={loading}
+      fetchPriority={fetchPriority}
       {...(resizingType !== "fit" && {
         srcSet: `${constructCroppedImageUrl({
           url: src,

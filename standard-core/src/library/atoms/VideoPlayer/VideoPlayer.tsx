@@ -30,6 +30,7 @@ export interface VideoPlayerProps {
   playing?: boolean; // controlled playing state
   showPlayPauseMobile?: boolean; // show overlay button on mobile (default true)
   showPlayPauseDesktop?: boolean; // show overlay button on desktop (default true)
+  preload?: "none" | "metadata" | "auto";
 }
 
 export type VideoPlayerHandle = {
@@ -57,6 +58,7 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
       playing,
       showPlayPauseMobile = true,
       showPlayPauseDesktop = true,
+      preload = "metadata",
     },
     ref,
   ) => {
@@ -180,6 +182,11 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           muted={muted}
           loop={loop}
           controls={showNativeControls}
+          preload={preload}
+          // Lighthouse workaround – `fetchpriority` isn't a React prop,
+          // but Lighthouse penalizes the page without it.
+          //@ts-ignore
+          fetchpriority={preload === "auto" ? "high" : "low"}
         />
         {!showNativeControls && (
           <Box

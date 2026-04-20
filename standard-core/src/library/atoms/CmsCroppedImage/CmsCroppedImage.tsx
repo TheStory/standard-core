@@ -1,6 +1,7 @@
 import type { SxProps } from "@mui/material/styles";
 import type { Data } from "@strapi/strapi";
 import { CroppedImage } from "@the-story/standard-core/atoms/CroppedImage";
+import { constructCroppedImageUrl } from "@the-story/standard-core/atoms/CroppedImage/utils";
 import type {
   APIString,
   ImageResizeOption,
@@ -18,6 +19,7 @@ interface CmsCroppedImageProps {
   resizingType?: ImageResizeOption;
   sx?: SxProps;
   loading?: "lazy" | "eager";
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 const CmsCroppedImage = ({
@@ -29,6 +31,7 @@ const CmsCroppedImage = ({
   resizingType = "fill",
   sx,
   loading,
+  fetchPriority,
 }: CmsCroppedImageProps) => {
   if (!image) return null;
 
@@ -45,6 +48,9 @@ const CmsCroppedImage = ({
       : typeof alternativeText === "string"
         ? alternativeText
         : undefined;
+
+  const resolvedFetchPriority =
+    fetchPriority ?? (loading === "eager" ? "high" : undefined);
 
   let setMobileWidth;
   let setDesktopWidth;
@@ -75,6 +81,10 @@ const CmsCroppedImage = ({
     setMobileWidth !== setDesktopWidth ||
     setMobileHeight !== setDesktopHeight
   ) {
+    const desktopLoading = loading === "eager" ? "lazy" : loading;
+    const desktopFetchPriority =
+      fetchPriority ?? (loading === "eager" ? "low" : undefined);
+
     return (
       <>
         <CroppedImage
@@ -87,6 +97,7 @@ const CmsCroppedImage = ({
           resizingType={resizingType}
           sx={sx}
           loading={loading}
+          fetchPriority={resolvedFetchPriority}
           mobileOnly
         />
         <CroppedImage
@@ -98,7 +109,8 @@ const CmsCroppedImage = ({
           alt={safeAlt}
           resizingType={resizingType}
           sx={sx}
-          loading={loading}
+          loading={desktopLoading}
+          fetchPriority={desktopFetchPriority}
           desktopOnly
         />
       </>
@@ -116,6 +128,7 @@ const CmsCroppedImage = ({
       resizingType={resizingType}
       sx={sx}
       loading={loading}
+      fetchPriority={resolvedFetchPriority}
     />
   );
 };
