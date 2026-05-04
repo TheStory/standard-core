@@ -1,7 +1,6 @@
 import type { SxProps } from "@mui/material/styles";
 import type { Data } from "@strapi/strapi";
 import { CroppedImage } from "@the-story/standard-core/atoms/CroppedImage";
-import { constructCroppedImageUrl } from "@the-story/standard-core/atoms/CroppedImage/utils";
 import type {
   APIString,
   ImageResizeOption,
@@ -81,10 +80,6 @@ const CmsCroppedImage = ({
     setMobileWidth !== setDesktopWidth ||
     setMobileHeight !== setDesktopHeight
   ) {
-    const desktopLoading = loading === "eager" ? "lazy" : loading;
-    const desktopFetchPriority =
-      fetchPriority ?? (loading === "eager" ? "low" : undefined);
-
     return (
       <>
         <CroppedImage
@@ -109,8 +104,8 @@ const CmsCroppedImage = ({
           alt={safeAlt}
           resizingType={resizingType}
           sx={sx}
-          loading={desktopLoading}
-          fetchPriority={desktopFetchPriority}
+          loading={loading}
+          fetchPriority={resolvedFetchPriority}
           desktopOnly
         />
       </>
