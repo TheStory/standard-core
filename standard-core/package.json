@@ -270,6 +270,14 @@
       "import": "./dist/molecules/exports.js",
       "require": "./dist/molecules/exports.js"
     },
+    "./molecules/CountryPicker": {
+      "import": "./dist/molecules/CountryPicker/index.js",
+      "require": "./dist/molecules/CountryPicker/index.js"
+    },
+    "./molecules/CountryPicker/CountryPicker": {
+      "import": "./dist/molecules/CountryPicker/CountryPicker.js",
+      "require": "./dist/molecules/CountryPicker/CountryPicker.js"
+    },
     "./molecules/Crumbs": {
       "import": "./dist/molecules/Crumbs/index.js",
       "require": "./dist/molecules/Crumbs/index.js"
@@ -405,5 +413,8 @@
     "webpack": "^5.94.0",
     "tapable": "^2.2.1"
   },
-  "packageManager": "yarn@4.10.3"
+  "packageManager": "yarn@4.10.3",
+  "dependencies": {
+    "i18n-iso-countries": "^7.14.0"
+  }
 }
