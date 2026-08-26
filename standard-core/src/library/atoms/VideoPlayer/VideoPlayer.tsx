@@ -182,6 +182,8 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           muted={muted}
           loop={loop}
           controls={showNativeControls}
+          autoPlay={playing === true}
+          playsInline
           preload={preload}
           // React supports this DOM property, but VideoHTMLAttributes does not type it yet.
           // @ts-expect-error -- missing fetchPriority in the video element typings
