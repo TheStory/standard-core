@@ -183,10 +183,9 @@ const VideoPlayer = forwardRef<VideoPlayerHandle, VideoPlayerProps>(
           loop={loop}
           controls={showNativeControls}
           preload={preload}
-          // Lighthouse workaround – `fetchpriority` isn't a React prop,
-          // but Lighthouse penalizes the page without it.
-          //@ts-ignore
-          fetchpriority={preload === "auto" ? "high" : "low"}
+          // React supports this DOM property, but VideoHTMLAttributes does not type it yet.
+          // @ts-expect-error -- missing fetchPriority in the video element typings
+          fetchPriority={preload === "auto" ? "high" : "low"}
         />
         {!showNativeControls && (
           <Box
