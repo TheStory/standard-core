@@ -334,6 +334,10 @@
       "import": "./dist/utils/isExternalLink.js",
       "require": "./dist/utils/isExternalLink.js"
     },
+    "./utils/priceUtils": {
+      "import": "./dist/utils/priceUtils.js",
+      "require": "./dist/utils/priceUtils.js"
+    },
     "./utils/simpleMarkdown": {
       "import": "./dist/utils/simpleMarkdown.js",
       "require": "./dist/utils/simpleMarkdown.js"
