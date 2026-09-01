@@ -8,6 +8,7 @@ import deCountries from "i18n-iso-countries/langs/de.json";
 import enCountries from "i18n-iso-countries/langs/en.json";
 import plCountries from "i18n-iso-countries/langs/pl.json";
 import { useLocale } from "next-intl";
+import type { FocusEvent } from "react";
 import { useMemo } from "react";
 
 isoCountries.registerLocale(deCountries);
@@ -34,7 +35,17 @@ export type CountryPickerProps = {
   fullWidth?: boolean;
   id?: string;
   name?: string;
+  autoComplete?: string;
 };
+
+const supportedLocales = ["de", "en", "pl"] as const;
+
+const normalizeCountryValue = (value: string) =>
+  value
+    .trim()
+    .toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
 const CountryPicker = ({
   countries,
@@ -50,13 +61,16 @@ const CountryPicker = ({
   fullWidth = true,
   id,
   name,
+  autoComplete = "country",
 }: CountryPickerProps) => {
   const activeLocale = useLocale();
   const options = useMemo<readonly CountryOption[]>(() => {
     if (countries) return countries;
 
     const requestedLocale = (locale ?? activeLocale).split("-")[0];
-    const countryLocale = ["de", "en", "pl"].includes(requestedLocale)
+    const countryLocale = supportedLocales.includes(
+      requestedLocale as (typeof supportedLocales)[number],
+    )
       ? requestedLocale
       : "en";
     const excludedCodes = new Set(
@@ -73,6 +87,39 @@ const CountryPicker = ({
     options.find(
       (country) => country.code.toUpperCase() === value.toUpperCase(),
     ) ?? null;
+  const autofillCountryCodes = useMemo(() => {
+    const aliases = new Map<string, string>();
+
+    options.forEach((country) => {
+      const labels = [
+        country.code,
+        country.label,
+        ...supportedLocales.map((language) =>
+          isoCountries.getName(country.code, language),
+        ),
+      ];
+
+      labels.forEach((countryValue) => {
+        if (countryValue) {
+          aliases.set(
+            normalizeCountryValue(countryValue),
+            country.code.toUpperCase(),
+          );
+        }
+      });
+    });
+
+    return aliases;
+  }, [options]);
+  const syncAutofilledCountry = (inputValue: string) => {
+    const countryCode = autofillCountryCodes.get(
+      normalizeCountryValue(inputValue),
+    );
+
+    if (countryCode && countryCode !== value.toUpperCase()) {
+      onChange?.(countryCode);
+    }
+  };
 
   return (
     <Autocomplete
@@ -87,6 +134,9 @@ const CountryPicker = ({
         option.code.toUpperCase() === selected.code.toUpperCase()
       }
       onChange={(_, country) => onChange?.(country?.code ?? "")}
+      onInputChange={(_, inputValue, reason) => {
+        if (reason === "input") syncAutofilledCountry(inputValue);
+      }}
       renderOption={(props, option) => {
         const { key, ...optionProps } = props;
 
@@ -117,7 +167,11 @@ const CountryPicker = ({
           required={required}
           inputProps={{
             ...params.inputProps,
-            autoComplete: "new-password",
+            autoComplete,
+            onBlur: (event) => {
+              params.inputProps.onBlur?.(event as FocusEvent<HTMLInputElement>);
+              syncAutofilledCountry(event.currentTarget.value);
+            },
           }}
         />
       )}
