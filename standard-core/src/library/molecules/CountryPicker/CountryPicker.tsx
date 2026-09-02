@@ -9,7 +9,7 @@ import enCountries from "i18n-iso-countries/langs/en.json";
 import plCountries from "i18n-iso-countries/langs/pl.json";
 import { useLocale } from "next-intl";
 import type { FocusEvent } from "react";
-import { useMemo } from "react";
+import { useMemo, useRef, useState } from "react";
 
 isoCountries.registerLocale(deCountries);
 isoCountries.registerLocale(enCountries);
@@ -64,6 +64,8 @@ const CountryPicker = ({
   autoComplete = "country",
 }: CountryPickerProps) => {
   const activeLocale = useLocale();
+  const [open, setOpen] = useState(false);
+  const suppressOpenUntilInteraction = useRef(false);
   const options = useMemo<readonly CountryOption[]>(() => {
     if (countries) return countries;
 
@@ -119,6 +121,8 @@ const CountryPicker = ({
     if (countryCode && countryCode !== value.toUpperCase()) {
       onChange?.(countryCode);
     }
+
+    return Boolean(countryCode);
   };
 
   return (
@@ -126,6 +130,19 @@ const CountryPicker = ({
       id={id}
       options={options}
       value={selectedCountry}
+      open={open}
+      onOpen={() => {
+        if (suppressOpenUntilInteraction.current) return;
+
+        setOpen(true);
+      }}
+      onClose={() => setOpen(false)}
+      onPointerDownCapture={() => {
+        suppressOpenUntilInteraction.current = false;
+      }}
+      onKeyDownCapture={() => {
+        suppressOpenUntilInteraction.current = false;
+      }}
       disabled={disabled}
       fullWidth={fullWidth}
       autoHighlight
@@ -135,7 +152,10 @@ const CountryPicker = ({
       }
       onChange={(_, country) => onChange?.(country?.code ?? "")}
       onInputChange={(_, inputValue, reason) => {
-        if (reason === "input") syncAutofilledCountry(inputValue);
+        if (reason === "input" && syncAutofilledCountry(inputValue)) {
+          suppressOpenUntilInteraction.current = true;
+          setOpen(false);
+        }
       }}
       renderOption={(props, option) => {
         const { key, ...optionProps } = props;
