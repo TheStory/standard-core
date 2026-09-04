@@ -118,6 +118,14 @@
       "import": "./dist/atoms/CmsImage/CmsImage.js",
       "require": "./dist/atoms/CmsImage/CmsImage.js"
     },
+    "./atoms/CmsMarkdown": {
+      "import": "./dist/atoms/CmsMarkdown/index.js",
+      "require": "./dist/atoms/CmsMarkdown/index.js"
+    },
+    "./atoms/CmsMarkdown/CmsMarkdown": {
+      "import": "./dist/atoms/CmsMarkdown/CmsMarkdown.js",
+      "require": "./dist/atoms/CmsMarkdown/CmsMarkdown.js"
+    },
     "./atoms/CmsRichText": {
       "import": "./dist/atoms/CmsRichText/index.js",
       "require": "./dist/atoms/CmsRichText/index.js"
@@ -428,6 +436,7 @@
   "packageManager": "yarn@4.10.3",
   "dependencies": {
     "i18n-iso-countries": "^7.14.0",
-    "mui-tel-input": "8.0.1"
+    "mui-tel-input": "8.0.1",
+    "react-markdown": "9.1.0"
   }
 }
