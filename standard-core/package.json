@@ -306,6 +306,14 @@
       "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
       "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
     },
+    "./molecules/PhoneInput": {
+      "import": "./dist/molecules/PhoneInput/index.js",
+      "require": "./dist/molecules/PhoneInput/index.js"
+    },
+    "./molecules/PhoneInput/PhoneInput": {
+      "import": "./dist/molecules/PhoneInput/PhoneInput.js",
+      "require": "./dist/molecules/PhoneInput/PhoneInput.js"
+    },
     "./types": {
       "import": "./dist/types/index.js",
       "require": "./dist/types/index.js"
@@ -419,6 +427,7 @@
   },
   "packageManager": "yarn@4.10.3",
   "dependencies": {
-    "i18n-iso-countries": "^7.14.0"
+    "i18n-iso-countries": "^7.14.0",
+    "mui-tel-input": "8.0.1"
   }
 }

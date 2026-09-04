@@ -5192,6 +5192,7 @@ __metadata:
     eslint-plugin-storybook: "npm:^10.1.11"
     i18n-iso-countries: "npm:^7.14.0"
     motion: "npm:^12.0.0"
+    mui-tel-input: "npm:8.0.1"
     next: "npm:14.2.35"
     next-intl: "npm:4.8.3"
     prettier: "npm:^3.4.2"
@@ -5741,6 +5742,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.19.2"
   checksum: 10c0/a5ba630b5ead5144e8f605402bc14d77dc3cf6b31708a92c7221de9b06b17724ada661d0f66b6c974830857a79e7f38e976dd105fca330ab706de9e4d75cf8b9
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.13.7":
+  version: 22.20.1
+  resolution: "@types/node@npm:22.20.1"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/f2ba54d3d1fb92e1c57c78d32c3a17655b1e87363b707136f55c422b4838d4054901ce5d27f75bb0e5ecb7ebfee3804e0987822d22b473473008091857a09353
   languageName: node
   linkType: hard
 
@@ -13201,6 +13211,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"libphonenumber-js@npm:^1.11.19":
+  version: 1.13.12
+  resolution: "libphonenumber-js@npm:1.13.12"
+  checksum: 10c0/1cf4ab35ee1a926fe0da553dfa8d9f9af04c29c7d8f719f19ae3db9718c2b843a2a2ba3232926c89628bee6654e23e3f97b6228b1db9359a60e423be079e9d42
+  languageName: node
+  linkType: hard
+
 "libqp@npm:1.1.0":
   version: 1.1.0
   resolution: "libqp@npm:1.1.0"
@@ -14482,6 +14499,26 @@ __metadata:
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: 10c0/d924b57e7312b3b63ad21fc5b3dc0af5e78d61a1fc7cfb5457edaf26326bf62be5307cc87ffb6862ef1c2b33b0233cdb5d4f01c4c958cc0d660948b65a287a48
+  languageName: node
+  linkType: hard
+
+"mui-tel-input@npm:8.0.1":
+  version: 8.0.1
+  resolution: "mui-tel-input@npm:8.0.1"
+  dependencies:
+    "@types/node": "npm:^22.13.7"
+    libphonenumber-js: "npm:^1.11.19"
+  peerDependencies:
+    "@emotion/react": ^11.13.0
+    "@emotion/styled": ^11.13.0
+    "@mui/material": ^6.0.0
+    "@types/react": ^18.0.0 || ^19.0.0
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/9e5b7590ce0ad8372e68886bebcc46c1ce2a5e051474b1d35102d222ea081310d211eb6d2e4a11b309576cb78706ce21f79757daeaf8436db7809669c91fbdc8
   languageName: node
   linkType: hard
 
@@ -19068,6 +19105,13 @@ __metadata:
   version: 6.20.0
   resolution: "undici-types@npm:6.20.0"
   checksum: 10c0/68e659a98898d6a836a9a59e6adf14a5d799707f5ea629433e025ac90d239f75e408e2e5ff086afc3cace26f8b26ee52155293564593fbb4a2f666af57fc59bf
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 
