@@ -88,6 +88,9 @@ export const AccordionList = ({
             pt: 0,
             px: 0,
             maxWidth: "648px",
+            "& .cms-rich-text > :not(style) ~ :not(style)": {
+              mt: 2,
+            },
           }}
         >
           {item.content}
