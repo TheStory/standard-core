@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 24
     commands:
       - cd standard-core
       - yarn install

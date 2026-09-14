@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from "@the-story/standard-core/config/navigation";
 import { useLocale } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";

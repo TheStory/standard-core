@@ -19,8 +19,8 @@ describe("VideoPlayer", () => {
   it("renders the native mobile autoplay attributes when playing", () => {
     const video = renderVideoPlayer(true);
 
-    expect(video).toContain('autoplay=""');
-    expect(video).toContain('playsinline=""');
+    expect(video).toMatch(/auto[Pp]lay=""/);
+    expect(video).toMatch(/plays[Ii]nline=""/);
     expect(video).toContain('preload="metadata"');
     expect(video).toContain('muted=""');
   });
@@ -28,8 +28,8 @@ describe("VideoPlayer", () => {
   it("does not render autoplay when playing is false", () => {
     const video = renderVideoPlayer(false);
 
-    expect(video).not.toContain("autoplay");
-    expect(video).toContain('playsinline=""');
+    expect(video).not.toMatch(/auto[Pp]lay/);
+    expect(video).toMatch(/plays[Ii]nline=""/);
     expect(video).toContain('preload="metadata"');
     expect(video).toContain('muted=""');
   });

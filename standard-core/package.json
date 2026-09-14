@@ -373,7 +373,7 @@
     "test:watch": "vitest --watch"
   },
   "engines": {
-    "node": ">=18"
+    "node": "24.x"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
@@ -383,7 +383,7 @@
     "@mui/material": "^6.0.0",
     "@strapi/blocks-react-renderer": "^1.0.0",
     "motion": "^12.0.0",
-    "next": "^14.0.0 || ^15.0.0",
+    "next": "^15.0.0",
     "next-intl": "^4.0.0",
     "react": ">=18 <20",
     "react-dom": ">=18 <20",
@@ -403,11 +403,11 @@
     "@strapi/blocks-react-renderer": "^1.0.0",
     "@strapi/strapi": "5.27.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.26.1",
-    "@typescript-eslint/parser": "^8.26.1",
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
     "eslint": "^8",
     "eslint-config-next": "^15.5.25",
     "eslint-config-prettier": "^10.0.1",
@@ -429,6 +429,7 @@
     "zod": "^3.22.4"
   },
   "resolutions": {
+    "prettier": "3.4.2",
     "typescript": "5.4.5",
     "webpack": "^5.94.0",
     "tapable": "^2.2.1"
