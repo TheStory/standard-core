@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/nextjs-vite";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
 import type { Plugin } from "vite";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 // Suppress various build warnings
 const suppressWarning = (chunk: any): boolean => {
@@ -9,16 +9,16 @@ const suppressWarning = (chunk: any): boolean => {
     if (chunk.includes("The CJS build of Vite's Node API is deprecated")) {
       return true;
     }
-    // Suppress MUI icons package.json warning
-    if (chunk.includes("unable to find package.json for @mui/icons-material")) {
-      return true;
-    }
   }
   return false;
 };
 
 const originalStderrWrite = process.stderr.write.bind(process.stderr);
-process.stderr.write = ((chunk: any, encoding?: any, callback?: any): boolean => {
+process.stderr.write = ((
+  chunk: any,
+  encoding?: any,
+  callback?: any,
+): boolean => {
   if (suppressWarning(chunk)) {
     return true;
   }
@@ -26,7 +26,11 @@ process.stderr.write = ((chunk: any, encoding?: any, callback?: any): boolean =>
 }) as typeof process.stderr.write;
 
 const originalStdoutWrite = process.stdout.write.bind(process.stdout);
-process.stdout.write = ((chunk: any, encoding?: any, callback?: any): boolean => {
+process.stdout.write = ((
+  chunk: any,
+  encoding?: any,
+  callback?: any,
+): boolean => {
   if (suppressWarning(chunk)) {
     return true;
   }
@@ -38,10 +42,7 @@ const config: StorybookConfig = {
     "../src/stories/**/*.mdx",
     "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
-  addons: [
-    "@storybook/addon-a11y",
-    "@storybook/addon-docs",
-  ],
+  addons: ["@storybook/addon-a11y", "@storybook/addon-docs"],
   framework: "@storybook/nextjs-vite",
   async viteFinal(config) {
     const cdn = process.env.NEXT_PUBLIC_CDN ?? "http://127.0.0.1:1337";
@@ -98,7 +99,9 @@ const config: StorybookConfig = {
     config.build.rollupOptions.onLog = (level, log, handler) => {
       // Suppress sourcemap resolution errors
       if (
-        log.message?.includes("Error when using sourcemap for reporting an error")
+        log.message?.includes(
+          "Error when using sourcemap for reporting an error",
+        )
       ) {
         return;
       }
@@ -117,7 +120,9 @@ const config: StorybookConfig = {
       // Ignore crypto module externalization warnings (we have polyfills)
       if (
         warning.message?.includes('Module "crypto" has been externalized') ||
-        warning.message?.includes("module-externalized-for-browser-compatibility")
+        warning.message?.includes(
+          "module-externalized-for-browser-compatibility",
+        )
       ) {
         return;
       }
@@ -143,8 +148,7 @@ const config: StorybookConfig = {
         if (
           typeof msg === "string" &&
           (msg.includes('Module "crypto" has been externalized') ||
-            msg.includes("module-externalized-for-browser-compatibility") ||
-            msg.includes("unable to find package.json for @mui/icons-material"))
+            msg.includes("module-externalized-for-browser-compatibility"))
         ) {
           return;
         }

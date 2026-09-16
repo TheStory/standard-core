@@ -38,213 +38,162 @@
       "import": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js",
       "require": "./dist/NextIntlClientInheritor/NextIntlClientInheritor.js"
     },
-    "./ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/index.js",
-      "require": "./dist/ThemeInheritor/index.js"
+    "./components/shadcn": {
+      "import": "./dist/components/shadcn/exports.js",
+      "require": "./dist/components/shadcn/exports.js"
     },
-    "./ThemeInheritor/ThemeInheritor": {
-      "import": "./dist/ThemeInheritor/ThemeInheritor.js",
-      "require": "./dist/ThemeInheritor/ThemeInheritor.js"
+    "./components/shadcn/atoms": {
+      "import": "./dist/components/shadcn/atoms/index.js",
+      "require": "./dist/components/shadcn/atoms/index.js"
     },
-    "./ThemeInheritor/types": {
-      "import": "./dist/ThemeInheritor/types.js",
-      "require": "./dist/ThemeInheritor/types.js"
+    "./components/shadcn/atoms/accordion": {
+      "import": "./dist/components/shadcn/atoms/accordion.js",
+      "require": "./dist/components/shadcn/atoms/accordion.js"
     },
-    "./atoms": {
-      "import": "./dist/atoms/exports.js",
-      "require": "./dist/atoms/exports.js"
+    "./components/shadcn/atoms/avatar": {
+      "import": "./dist/components/shadcn/atoms/avatar.js",
+      "require": "./dist/components/shadcn/atoms/avatar.js"
     },
-    "./atoms/Accordion": {
-      "import": "./dist/atoms/Accordion/index.js",
-      "require": "./dist/atoms/Accordion/index.js"
+    "./components/shadcn/atoms/back-to-top-button": {
+      "import": "./dist/components/shadcn/atoms/back-to-top-button.js",
+      "require": "./dist/components/shadcn/atoms/back-to-top-button.js"
     },
-    "./atoms/Accordion/Accordion": {
-      "import": "./dist/atoms/Accordion/Accordion.js",
-      "require": "./dist/atoms/Accordion/Accordion.js"
+    "./components/shadcn/atoms/badge": {
+      "import": "./dist/components/shadcn/atoms/badge.js",
+      "require": "./dist/components/shadcn/atoms/badge.js"
     },
-    "./atoms/Accordion/AccordionIcon": {
-      "import": "./dist/atoms/Accordion/AccordionIcon.js",
-      "require": "./dist/atoms/Accordion/AccordionIcon.js"
+    "./components/shadcn/atoms/breadcrumb": {
+      "import": "./dist/components/shadcn/atoms/breadcrumb.js",
+      "require": "./dist/components/shadcn/atoms/breadcrumb.js"
     },
-    "./atoms/Accordion/AccordionList": {
-      "import": "./dist/atoms/Accordion/AccordionList.js",
-      "require": "./dist/atoms/Accordion/AccordionList.js"
+    "./components/shadcn/atoms/button": {
+      "import": "./dist/components/shadcn/atoms/button.js",
+      "require": "./dist/components/shadcn/atoms/button.js"
     },
-    "./atoms/Accordion/types": {
-      "import": "./dist/atoms/Accordion/types.js",
-      "require": "./dist/atoms/Accordion/types.js"
+    "./components/shadcn/atoms/card": {
+      "import": "./dist/components/shadcn/atoms/card.js",
+      "require": "./dist/components/shadcn/atoms/card.js"
     },
-    "./atoms/Avatar": {
-      "import": "./dist/atoms/Avatar/index.js",
-      "require": "./dist/atoms/Avatar/index.js"
+    "./components/shadcn/atoms/checkbox": {
+      "import": "./dist/components/shadcn/atoms/checkbox.js",
+      "require": "./dist/components/shadcn/atoms/checkbox.js"
     },
-    "./atoms/Avatar/Avatar": {
-      "import": "./dist/atoms/Avatar/Avatar.js",
-      "require": "./dist/atoms/Avatar/Avatar.js"
+    "./components/shadcn/atoms/cms-cropped-image": {
+      "import": "./dist/components/shadcn/atoms/cms-cropped-image.js",
+      "require": "./dist/components/shadcn/atoms/cms-cropped-image.js"
     },
-    "./atoms/Avatar/types": {
-      "import": "./dist/atoms/Avatar/types.js",
-      "require": "./dist/atoms/Avatar/types.js"
+    "./components/shadcn/atoms/cms-image": {
+      "import": "./dist/components/shadcn/atoms/cms-image.js",
+      "require": "./dist/components/shadcn/atoms/cms-image.js"
     },
-    "./atoms/BackToTopButton": {
-      "import": "./dist/atoms/BackToTopButton/index.js",
-      "require": "./dist/atoms/BackToTopButton/index.js"
+    "./components/shadcn/atoms/cms-markdown": {
+      "import": "./dist/components/shadcn/atoms/cms-markdown.js",
+      "require": "./dist/components/shadcn/atoms/cms-markdown.js"
     },
-    "./atoms/BackToTopButton/BackToTopButton": {
-      "import": "./dist/atoms/BackToTopButton/BackToTopButton.js",
-      "require": "./dist/atoms/BackToTopButton/BackToTopButton.js"
+    "./components/shadcn/atoms/cms-rich-text": {
+      "import": "./dist/components/shadcn/atoms/cms-rich-text.js",
+      "require": "./dist/components/shadcn/atoms/cms-rich-text.js"
     },
-    "./atoms/Button": {
-      "import": "./dist/atoms/Button/index.js",
-      "require": "./dist/atoms/Button/index.js"
+    "./components/shadcn/atoms/copy-to-clipboard": {
+      "import": "./dist/components/shadcn/atoms/copy-to-clipboard.js",
+      "require": "./dist/components/shadcn/atoms/copy-to-clipboard.js"
     },
-    "./atoms/Button/Button": {
-      "import": "./dist/atoms/Button/Button.js",
-      "require": "./dist/atoms/Button/Button.js"
+    "./components/shadcn/atoms/cropped-image": {
+      "import": "./dist/components/shadcn/atoms/cropped-image.js",
+      "require": "./dist/components/shadcn/atoms/cropped-image.js"
     },
-    "./atoms/CmsCroppedImage": {
-      "import": "./dist/atoms/CmsCroppedImage/index.js",
-      "require": "./dist/atoms/CmsCroppedImage/index.js"
+    "./components/shadcn/atoms/cta-button": {
+      "import": "./dist/components/shadcn/atoms/cta-button.js",
+      "require": "./dist/components/shadcn/atoms/cta-button.js"
     },
-    "./atoms/CmsCroppedImage/CmsCroppedImage": {
-      "import": "./dist/atoms/CmsCroppedImage/CmsCroppedImage.js",
-      "require": "./dist/atoms/CmsCroppedImage/CmsCroppedImage.js"
+    "./components/shadcn/atoms/dropdown-menu": {
+      "import": "./dist/components/shadcn/atoms/dropdown-menu.js",
+      "require": "./dist/components/shadcn/atoms/dropdown-menu.js"
     },
-    "./atoms/CmsImage": {
-      "import": "./dist/atoms/CmsImage/index.js",
-      "require": "./dist/atoms/CmsImage/index.js"
+    "./components/shadcn/atoms/formatted-date": {
+      "import": "./dist/components/shadcn/atoms/formatted-date.js",
+      "require": "./dist/components/shadcn/atoms/formatted-date.js"
     },
-    "./atoms/CmsImage/CmsImage": {
-      "import": "./dist/atoms/CmsImage/CmsImage.js",
-      "require": "./dist/atoms/CmsImage/CmsImage.js"
+    "./components/shadcn/atoms/input": {
+      "import": "./dist/components/shadcn/atoms/input.js",
+      "require": "./dist/components/shadcn/atoms/input.js"
     },
-    "./atoms/CmsMarkdown": {
-      "import": "./dist/atoms/CmsMarkdown/index.js",
-      "require": "./dist/atoms/CmsMarkdown/index.js"
+    "./components/shadcn/atoms/label": {
+      "import": "./dist/components/shadcn/atoms/label.js",
+      "require": "./dist/components/shadcn/atoms/label.js"
     },
-    "./atoms/CmsMarkdown/CmsMarkdown": {
-      "import": "./dist/atoms/CmsMarkdown/CmsMarkdown.js",
-      "require": "./dist/atoms/CmsMarkdown/CmsMarkdown.js"
+    "./components/shadcn/atoms/link": {
+      "import": "./dist/components/shadcn/atoms/link.js",
+      "require": "./dist/components/shadcn/atoms/link.js"
     },
-    "./atoms/CmsRichText": {
-      "import": "./dist/atoms/CmsRichText/index.js",
-      "require": "./dist/atoms/CmsRichText/index.js"
+    "./components/shadcn/atoms/map": {
+      "import": "./dist/components/shadcn/atoms/map.js",
+      "require": "./dist/components/shadcn/atoms/map.js"
     },
-    "./atoms/CmsRichText/CmsRichText": {
-      "import": "./dist/atoms/CmsRichText/CmsRichText.js",
-      "require": "./dist/atoms/CmsRichText/CmsRichText.js"
+    "./components/shadcn/atoms/pagination": {
+      "import": "./dist/components/shadcn/atoms/pagination.js",
+      "require": "./dist/components/shadcn/atoms/pagination.js"
     },
-    "./atoms/CopyToClipboard": {
-      "import": "./dist/atoms/CopyToClipboard/index.js",
-      "require": "./dist/atoms/CopyToClipboard/index.js"
+    "./components/shadcn/atoms/progress": {
+      "import": "./dist/components/shadcn/atoms/progress.js",
+      "require": "./dist/components/shadcn/atoms/progress.js"
     },
-    "./atoms/CopyToClipboard/CopyToClipboard": {
-      "import": "./dist/atoms/CopyToClipboard/CopyToClipboard.js",
-      "require": "./dist/atoms/CopyToClipboard/CopyToClipboard.js"
+    "./components/shadcn/atoms/select": {
+      "import": "./dist/components/shadcn/atoms/select.js",
+      "require": "./dist/components/shadcn/atoms/select.js"
     },
-    "./atoms/CopyToClipboard/useCopyToClipboard": {
-      "import": "./dist/atoms/CopyToClipboard/useCopyToClipboard.js",
-      "require": "./dist/atoms/CopyToClipboard/useCopyToClipboard.js"
+    "./components/shadcn/atoms/separator": {
+      "import": "./dist/components/shadcn/atoms/separator.js",
+      "require": "./dist/components/shadcn/atoms/separator.js"
     },
-    "./atoms/CroppedImage": {
-      "import": "./dist/atoms/CroppedImage/index.js",
-      "require": "./dist/atoms/CroppedImage/index.js"
+    "./components/shadcn/atoms/skeleton": {
+      "import": "./dist/components/shadcn/atoms/skeleton.js",
+      "require": "./dist/components/shadcn/atoms/skeleton.js"
     },
-    "./atoms/CroppedImage/CroppedImage": {
-      "import": "./dist/atoms/CroppedImage/CroppedImage.js",
-      "require": "./dist/atoms/CroppedImage/CroppedImage.js"
+    "./components/shadcn/atoms/svg-icon": {
+      "import": "./dist/components/shadcn/atoms/svg-icon.js",
+      "require": "./dist/components/shadcn/atoms/svg-icon.js"
     },
-    "./atoms/CroppedImage/utils": {
-      "import": "./dist/atoms/CroppedImage/utils.js",
-      "require": "./dist/atoms/CroppedImage/utils.js"
+    "./components/shadcn/atoms/textarea": {
+      "import": "./dist/components/shadcn/atoms/textarea.js",
+      "require": "./dist/components/shadcn/atoms/textarea.js"
     },
-    "./atoms/CtaButton": {
-      "import": "./dist/atoms/CtaButton/index.js",
-      "require": "./dist/atoms/CtaButton/index.js"
+    "./components/shadcn/atoms/tooltip": {
+      "import": "./dist/components/shadcn/atoms/tooltip.js",
+      "require": "./dist/components/shadcn/atoms/tooltip.js"
     },
-    "./atoms/CtaButton/CtaButton": {
-      "import": "./dist/atoms/CtaButton/CtaButton.js",
-      "require": "./dist/atoms/CtaButton/CtaButton.js"
+    "./components/shadcn/atoms/video-player": {
+      "import": "./dist/components/shadcn/atoms/video-player.js",
+      "require": "./dist/components/shadcn/atoms/video-player.js"
     },
-    "./atoms/Divider": {
-      "import": "./dist/atoms/Divider/index.js",
-      "require": "./dist/atoms/Divider/index.js"
+    "./components/shadcn/molecules": {
+      "import": "./dist/components/shadcn/molecules/index.js",
+      "require": "./dist/components/shadcn/molecules/index.js"
     },
-    "./atoms/Divider/Divider": {
-      "import": "./dist/atoms/Divider/Divider.js",
-      "require": "./dist/atoms/Divider/Divider.js"
+    "./components/shadcn/molecules/country-picker": {
+      "import": "./dist/components/shadcn/molecules/country-picker.js",
+      "require": "./dist/components/shadcn/molecules/country-picker.js"
     },
-    "./atoms/Form": {
-      "import": "./dist/atoms/Form/index.js",
-      "require": "./dist/atoms/Form/index.js"
+    "./components/shadcn/molecules/language-selector": {
+      "import": "./dist/components/shadcn/molecules/language-selector.js",
+      "require": "./dist/components/shadcn/molecules/language-selector.js"
     },
-    "./atoms/Form/Checkbox": {
-      "import": "./dist/atoms/Form/Checkbox.js",
-      "require": "./dist/atoms/Form/Checkbox.js"
+    "./components/shadcn/molecules/masked-phone-number": {
+      "import": "./dist/components/shadcn/molecules/masked-phone-number.js",
+      "require": "./dist/components/shadcn/molecules/masked-phone-number.js"
     },
-    "./atoms/Form/TermsLabel": {
-      "import": "./dist/atoms/Form/TermsLabel.js",
-      "require": "./dist/atoms/Form/TermsLabel.js"
+    "./components/shadcn/molecules/phone-input": {
+      "import": "./dist/components/shadcn/molecules/phone-input.js",
+      "require": "./dist/components/shadcn/molecules/phone-input.js"
     },
-    "./atoms/Form/TextField": {
-      "import": "./dist/atoms/Form/TextField.js",
-      "require": "./dist/atoms/Form/TextField.js"
+    "./components/shadcn/styles.css": "./dist/components/shadcn/styles.css",
+    "./components/shadcn/utils": {
+      "import": "./dist/components/shadcn/utils/index.js",
+      "require": "./dist/components/shadcn/utils/index.js"
     },
-    "./atoms/FormatedDate": {
-      "import": "./dist/atoms/FormatedDate/index.js",
-      "require": "./dist/atoms/FormatedDate/index.js"
-    },
-    "./atoms/FormatedDate/FormatedDate": {
-      "import": "./dist/atoms/FormatedDate/FormatedDate.js",
-      "require": "./dist/atoms/FormatedDate/FormatedDate.js"
-    },
-    "./atoms/Link": {
-      "import": "./dist/atoms/Link/index.js",
-      "require": "./dist/atoms/Link/index.js"
-    },
-    "./atoms/Link/Link": {
-      "import": "./dist/atoms/Link/Link.js",
-      "require": "./dist/atoms/Link/Link.js"
-    },
-    "./atoms/Map": {
-      "import": "./dist/atoms/Map/index.js",
-      "require": "./dist/atoms/Map/index.js"
-    },
-    "./atoms/Map/Map": {
-      "import": "./dist/atoms/Map/Map.js",
-      "require": "./dist/atoms/Map/Map.js"
-    },
-    "./atoms/Map/Root": {
-      "import": "./dist/atoms/Map/Root.js",
-      "require": "./dist/atoms/Map/Root.js"
-    },
-    "./atoms/Map/types": {
-      "import": "./dist/atoms/Map/types.js",
-      "require": "./dist/atoms/Map/types.js"
-    },
-    "./atoms/Pagination": {
-      "import": "./dist/atoms/Pagination/index.js",
-      "require": "./dist/atoms/Pagination/index.js"
-    },
-    "./atoms/Pagination/Pagination": {
-      "import": "./dist/atoms/Pagination/Pagination.js",
-      "require": "./dist/atoms/Pagination/Pagination.js"
-    },
-    "./atoms/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/index.js",
-      "require": "./dist/atoms/SvgIcon/index.js"
-    },
-    "./atoms/SvgIcon/SvgIcon": {
-      "import": "./dist/atoms/SvgIcon/SvgIcon.js",
-      "require": "./dist/atoms/SvgIcon/SvgIcon.js"
-    },
-    "./atoms/VideoPlayer": {
-      "import": "./dist/atoms/VideoPlayer/index.js",
-      "require": "./dist/atoms/VideoPlayer/index.js"
-    },
-    "./atoms/VideoPlayer/VideoPlayer": {
-      "import": "./dist/atoms/VideoPlayer/VideoPlayer.js",
-      "require": "./dist/atoms/VideoPlayer/VideoPlayer.js"
+    "./components/shadcn/utils/cn": {
+      "import": "./dist/components/shadcn/utils/cn.js",
+      "require": "./dist/components/shadcn/utils/cn.js"
     },
     "./config": {
       "import": "./dist/config/index.js",
@@ -262,9 +211,17 @@
       "import": "./dist/hooks/index.js",
       "require": "./dist/hooks/index.js"
     },
+    "./hooks/useCopyToClipboard": {
+      "import": "./dist/hooks/useCopyToClipboard.js",
+      "require": "./dist/hooks/useCopyToClipboard.js"
+    },
     "./hooks/useInfiniteSlides": {
       "import": "./dist/hooks/useInfiniteSlides.js",
       "require": "./dist/hooks/useInfiniteSlides.js"
+    },
+    "./hooks/useLanguageSelector": {
+      "import": "./dist/hooks/useLanguageSelector.js",
+      "require": "./dist/hooks/useLanguageSelector.js"
     },
     "./hooks/useMaskedPhoneReveal": {
       "import": "./dist/hooks/useMaskedPhoneReveal.js",
@@ -273,54 +230,6 @@
     "./hooks/useNormalizedPathname": {
       "import": "./dist/hooks/useNormalizedPathname.js",
       "require": "./dist/hooks/useNormalizedPathname.js"
-    },
-    "./molecules": {
-      "import": "./dist/molecules/exports.js",
-      "require": "./dist/molecules/exports.js"
-    },
-    "./molecules/CountryPicker": {
-      "import": "./dist/molecules/CountryPicker/index.js",
-      "require": "./dist/molecules/CountryPicker/index.js"
-    },
-    "./molecules/CountryPicker/CountryPicker": {
-      "import": "./dist/molecules/CountryPicker/CountryPicker.js",
-      "require": "./dist/molecules/CountryPicker/CountryPicker.js"
-    },
-    "./molecules/Crumbs": {
-      "import": "./dist/molecules/Crumbs/index.js",
-      "require": "./dist/molecules/Crumbs/index.js"
-    },
-    "./molecules/Crumbs/Crumbs": {
-      "import": "./dist/molecules/Crumbs/Crumbs.js",
-      "require": "./dist/molecules/Crumbs/Crumbs.js"
-    },
-    "./molecules/LanguageSelector": {
-      "import": "./dist/molecules/LanguageSelector/index.js",
-      "require": "./dist/molecules/LanguageSelector/index.js"
-    },
-    "./molecules/LanguageSelector/LanguageSelector": {
-      "import": "./dist/molecules/LanguageSelector/LanguageSelector.js",
-      "require": "./dist/molecules/LanguageSelector/LanguageSelector.js"
-    },
-    "./molecules/LanguageSelector/useLanguageSelector": {
-      "import": "./dist/molecules/LanguageSelector/useLanguageSelector.js",
-      "require": "./dist/molecules/LanguageSelector/useLanguageSelector.js"
-    },
-    "./molecules/MaskedPhoneNumber": {
-      "import": "./dist/molecules/MaskedPhoneNumber/index.js",
-      "require": "./dist/molecules/MaskedPhoneNumber/index.js"
-    },
-    "./molecules/MaskedPhoneNumber/MaskedPhoneNumber": {
-      "import": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js",
-      "require": "./dist/molecules/MaskedPhoneNumber/MaskedPhoneNumber.js"
-    },
-    "./molecules/PhoneInput": {
-      "import": "./dist/molecules/PhoneInput/index.js",
-      "require": "./dist/molecules/PhoneInput/index.js"
-    },
-    "./molecules/PhoneInput/PhoneInput": {
-      "import": "./dist/molecules/PhoneInput/PhoneInput.js",
-      "require": "./dist/molecules/PhoneInput/PhoneInput.js"
     },
     "./types": {
       "import": "./dist/types/index.js",
@@ -337,6 +246,10 @@
     "./utils/cmsMediaUrl": {
       "import": "./dist/utils/cmsMediaUrl.js",
       "require": "./dist/utils/cmsMediaUrl.js"
+    },
+    "./utils/constructCroppedImageUrl": {
+      "import": "./dist/utils/constructCroppedImageUrl.js",
+      "require": "./dist/utils/constructCroppedImageUrl.js"
     },
     "./utils/extractUrlFromText": {
       "import": "./dist/utils/extractUrlFromText.js",
@@ -364,7 +277,8 @@
     }
   },
   "scripts": {
-    "build": "rimraf dist && tsc -p tsconfig.build.json && node scripts/update-exports.js",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && yarn build:styles && node scripts/update-exports.js",
+    "build:styles": "tailwindcss -i src/library/components/shadcn/styles.css -o dist/components/shadcn/styles.css --minify",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "prepublishOnly": "yarn build",
     "storybook": "storybook dev -p 6006",
@@ -376,11 +290,7 @@
     "node": "24.x"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.3.4",
-    "@mui/icons-material": "^6.0.0",
-    "@mui/material": "^6.0.0",
     "@strapi/blocks-react-renderer": "^1.0.0",
     "motion": "^12.0.0",
     "next": "^15.0.0",
@@ -391,17 +301,15 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.3.4",
     "@imgproxy/imgproxy-node": "^1.0.6",
-    "@mui/icons-material": "^6.4.1",
-    "@mui/material": "^6.4.1",
     "@storybook/addon-a11y": "^10.1.11",
     "@storybook/addon-docs": "^10.1.11",
     "@storybook/nextjs-vite": "^10.1.11",
     "@strapi/blocks-react-renderer": "^1.0.0",
     "@strapi/strapi": "5.27.0",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/postcss": "^4.3.3",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/node": "^24",
     "@types/react": "^19",
@@ -423,6 +331,7 @@
     "rimraf": "^6.0.1",
     "schema-dts": "^1.1.2",
     "storybook": "10.1.11",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.4.5",
     "vite-plugin-node-polyfills": "^0.24.0",
     "vitest": "^2.1.9",
@@ -436,8 +345,13 @@
   },
   "packageManager": "yarn@4.10.3",
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cn": "^0.3.0",
     "i18n-iso-countries": "^7.14.0",
-    "mui-tel-input": "8.0.1",
-    "react-markdown": "9.1.0"
+    "lucide-react": "^1.46.0",
+    "radix-ui": "^1.6.7",
+    "react-markdown": "9.1.0",
+    "tailwind-merge": "^3.7.0"
   }
 }

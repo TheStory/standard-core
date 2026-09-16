@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/library/components/shadcn/styles.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@the-story/standard-core/components/shadcn",
+    "ui": "@the-story/standard-core/components/shadcn/atoms",
+    "utils": "@the-story/standard-core/components/shadcn/utils/cn",
+    "lib": "@the-story/standard-core/components/shadcn",
+    "hooks": "@the-story/standard-core/hooks"
+  }
+}

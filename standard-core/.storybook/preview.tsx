@@ -1,33 +1,24 @@
-import { CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
+import "../src/library/components/shadcn/styles.css";
 import type { Preview, StoryFn } from "@storybook/nextjs-vite";
-import {NextIntlClientProvider} from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 
 const messages = {
-  "common": {
-    "year": "year",
-    "reveal": "Reveal hidden items",
-    "seeAll": "See all",
-    "readMore": "Read more",
-    "backToTop": "Back to top"
-  }};
-
-
-
-import { theStoryTheme } from "../src/theme";
-
-export const withMuiTheme = (Story: StoryFn) => {
-  return (
-    <NextIntlClientProvider locale={"en"} messages={messages}>
-      <ThemeProvider theme={theStoryTheme}>
-        <CssBaseline />
-        <Story />
-      </ThemeProvider>
-    </NextIntlClientProvider>
-  );
+  common: {
+    year: "year",
+    reveal: "Reveal hidden items",
+    seeAll: "See all",
+    readMore: "Read more",
+    backToTop: "Back to top",
+  },
 };
 
-export const decorators = [withMuiTheme];
+export const withProviders = (Story: StoryFn) => (
+  <NextIntlClientProvider locale="en" messages={messages}>
+    <Story />
+  </NextIntlClientProvider>
+);
+
+export const decorators = [withProviders];
 
 const preview: Preview = {
   parameters: {
@@ -37,10 +28,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    nextjs: {
-      appDirectory: true,
-    }
-  }
+    nextjs: { appDirectory: true },
+  },
 };
 
 export default preview;

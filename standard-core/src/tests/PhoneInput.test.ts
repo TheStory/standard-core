@@ -1,17 +1,13 @@
 import {
+  type PhoneInputInfo,
   isValidPhoneNumber,
   normalizeAutofilledPhone,
-} from "../library/molecules/PhoneInput/PhoneInput";
-import type { MuiTelInputInfo } from "mui-tel-input";
+} from "../library/components/shadcn/molecules/phone-input";
 import { describe, expect, it } from "vitest";
 
-const info = (overrides: Partial<MuiTelInputInfo> = {}): MuiTelInputInfo => ({
+const info = (overrides: Partial<PhoneInputInfo> = {}): PhoneInputInfo => ({
   countryCallingCode: "48",
-  countryCode: "PL",
   nationalNumber: "48535111426",
-  numberType: null,
-  numberValue: null,
-  reason: "input",
   ...overrides,
 });
 

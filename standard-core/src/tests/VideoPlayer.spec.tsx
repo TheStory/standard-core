@@ -1,4 +1,4 @@
-import VideoPlayer from "../library/atoms/VideoPlayer/VideoPlayer";
+import { VideoPlayer } from "../library/components/shadcn/atoms/video-player";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 

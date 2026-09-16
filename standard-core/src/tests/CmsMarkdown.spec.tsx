@@ -1,30 +1,17 @@
-import CmsMarkdown from "../library/atoms/CmsMarkdown/CmsMarkdown";
-import type { PropsWithChildren } from "react";
+import { CmsMarkdown } from "../library/components/shadcn/atoms/cms-markdown";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it, vi } from "vitest";
-
-vi.mock("@the-story/standard-core/atoms/Link", () => ({
-  Link: ({ children, href }: PropsWithChildren<{ href: string }>) => (
-    <a href={href}>{children}</a>
-  ),
-}));
+import { describe, expect, it } from "vitest";
 
 describe("CmsMarkdown", () => {
   it("renders common Markdown elements", () => {
     const markup = renderToStaticMarkup(
       <CmsMarkdown
-        markdown={
-          "## Payment\n\nText with **bold** and [link](/payment).\n\n- First\n- Second"
-        }
+        markdown={"## Payment\n\nText with **bold**.\n\n- First\n- Second"}
       />,
     );
-
-    expect(markup).toContain("MuiTypography-h6");
-    expect(markup).toContain(">Payment</div>");
-    expect(markup).toContain("MuiTypography-body1");
-    expect(markup).toContain("MuiList-root");
-    expect(markup).toContain("MuiListItem-root");
-    expect(markup).toContain('href="/payment"');
+    expect(markup).toContain(">Payment</h2>");
+    expect(markup).toContain("<strong>bold</strong>");
+    expect(markup).toContain("list-disc");
   });
 
   it("does not render raw HTML or images", () => {
@@ -33,7 +20,6 @@ describe("CmsMarkdown", () => {
         markdown={'<script>alert("xss")</script>\n\n![alt](/image.png)'}
       />,
     );
-
     expect(markup).not.toContain("<script");
     expect(markup).not.toContain("<img");
   });

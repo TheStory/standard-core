@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 console.log("Updating exports in package.json...");
 
-const distPath = path.resolve(__dirname, '../dist');
-const packageJsonPath = path.resolve(__dirname, '../package.json');
+const distPath = path.resolve(__dirname, "../dist");
+const packageJsonPath = path.resolve(__dirname, "../package.json");
 const exportsMap = {
   ".": {
     import: "./dist/exports.js",
@@ -26,27 +26,32 @@ function processDirectory(dirPath, exportPath) {
 
     if (entry.isDirectory()) {
       processDirectory(fullPath, relativePath);
-    } else if (entry.isFile() && (entry.name === 'index.js' || entry.name === 'exports.js')) {
-      const basePath = path.posix.dirname(relativePath.replace(/^dist\//, ''));
+    } else if (
+      entry.isFile() &&
+      (entry.name === "index.js" || entry.name === "exports.js")
+    ) {
+      const basePath = path.posix.dirname(relativePath.replace(/^dist\//, ""));
       exportsMap[`./${basePath}`] = {
         import: `./${relativePath}`,
         require: `./${relativePath}`,
       };
-    } else if (entry.isFile() && entry.name.endsWith('.js')) {
-      const filePath = relativePath.replace(/^dist\//, '').replace(/\.js$/, '');
+    } else if (entry.isFile() && entry.name.endsWith(".js")) {
+      const filePath = relativePath.replace(/^dist\//, "").replace(/\.js$/, "");
       exportsMap[`./${filePath}`] = {
         import: `./${relativePath}`,
         require: `./${relativePath}`,
       };
+    } else if (entry.isFile() && entry.name.endsWith(".css")) {
+      const filePath = relativePath.replace(/^dist\//, "");
+      exportsMap[`./${filePath}`] = `./${relativePath}`;
     }
   });
 }
 
-
-processDirectory(distPath, 'dist');
+processDirectory(distPath, "dist");
 
 if (fs.existsSync(packageJsonPath)) {
-  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
   const sortedExports = Object.keys(exportsMap)
     .sort()
@@ -57,7 +62,10 @@ if (fs.existsSync(packageJsonPath)) {
 
   packageJson.exports = sortedExports;
 
-  fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n");
+  fs.writeFileSync(
+    packageJsonPath,
+    JSON.stringify(packageJson, null, 2) + "\n",
+  );
   console.log("Exports have been updated in package.json.");
 } else {
   console.error("Error: package.json not found!");
