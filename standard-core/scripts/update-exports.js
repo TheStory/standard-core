@@ -5,12 +5,23 @@ console.log("Updating exports in package.json...");
 
 const distPath = path.resolve(__dirname, "../dist");
 const packageJsonPath = path.resolve(__dirname, "../package.json");
+const shadcnSourcePath = path.resolve(
+  __dirname,
+  "../src/library/components/shadcn/source.css",
+);
+const shadcnSourceDistPath = path.resolve(
+  distPath,
+  "components/shadcn/source.css",
+);
 const exportsMap = {
   ".": {
     import: "./dist/exports.js",
     require: "./dist/exports.js",
   },
 };
+
+fs.mkdirSync(path.dirname(shadcnSourceDistPath), { recursive: true });
+fs.copyFileSync(shadcnSourcePath, shadcnSourceDistPath);
 
 /**
  * Recursively processes directories and generates entries for the `exports` section.

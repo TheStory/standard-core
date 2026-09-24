@@ -186,6 +186,7 @@
       "import": "./dist/components/shadcn/molecules/phone-input.js",
       "require": "./dist/components/shadcn/molecules/phone-input.js"
     },
+    "./components/shadcn/source.css": "./dist/components/shadcn/source.css",
     "./components/shadcn/styles.css": "./dist/components/shadcn/styles.css",
     "./components/shadcn/utils": {
       "import": "./dist/components/shadcn/utils/index.js",

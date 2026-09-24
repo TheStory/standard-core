@@ -1,0 +1,6 @@
+/*
+ * Tailwind source manifest for consumers of @the-story/standard-core.
+ * The path is relative to this file after it is copied to dist, so it works
+ * for registry installs, yalc installs, and any package-manager layout.
+ */
+@source "./**/*.{js,mjs}";
