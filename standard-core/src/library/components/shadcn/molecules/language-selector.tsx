@@ -18,7 +18,12 @@ function LanguageSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm"
+          data-testid="language-selector-button"
+          className="language-selector-button"
+        >
           <Languages /> {lang.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
