@@ -1,5 +1,6 @@
 import "../src/library/components/shadcn/styles.css";
 import type { Preview, StoryFn } from "@storybook/nextjs-vite";
+import { TooltipProvider } from "@the-story/standard-core/components/shadcn/atoms/tooltip";
 import { NextIntlClientProvider } from "next-intl";
 
 const messages = {
@@ -13,8 +14,10 @@ const messages = {
 };
 
 export const withProviders = (Story: StoryFn) => (
-  <NextIntlClientProvider locale="en" messages={messages}>
-    <Story />
+  <NextIntlClientProvider locale="en" messages={messages} timeZone="UTC">
+    <TooltipProvider>
+      <Story />
+    </TooltipProvider>
   </NextIntlClientProvider>
 );
 

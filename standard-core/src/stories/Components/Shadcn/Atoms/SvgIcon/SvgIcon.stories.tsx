@@ -47,7 +47,11 @@ export const Catalogue: Story = {
     <div className="grid grid-cols-4 gap-6">
       {Object.keys(iconNames).map((name) => (
         <div key={name} className="grid justify-items-center gap-2 text-xs">
-          <SvgIcon iconName={name as keyof typeof iconNames} size={28} />
+          <SvgIcon
+            iconName={name as keyof typeof iconNames}
+            size={28}
+            disableMask={name === "Google"}
+          />
           <span>{name}</span>
         </div>
       ))}
