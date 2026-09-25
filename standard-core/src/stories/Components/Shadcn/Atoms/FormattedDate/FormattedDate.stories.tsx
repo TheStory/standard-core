@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "FormattedDate presents a date according to the active locale.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: [],
           contract:
             "The date remains on one line and uses the locale medium-date format. Missing values render nothing.",

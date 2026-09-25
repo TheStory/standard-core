@@ -19,6 +19,7 @@ const meta = {
           purpose:
             "Accordion progressively reveals related content in a compact vertical list.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Accordion",
             "AccordionItem",

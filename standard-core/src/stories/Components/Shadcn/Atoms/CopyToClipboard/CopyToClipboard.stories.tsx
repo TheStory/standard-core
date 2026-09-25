@@ -14,7 +14,8 @@ const meta = {
           purpose:
             "CopyToClipboard copies a supplied value and confirms success without changing context.",
           classification: "Atom",
-          shadcn: ["Button", "Tooltip"],
+          implementation: "custom",
+          shadcn: ["Button", "Tooltip", "TooltipTrigger", "TooltipContent"],
           contract:
             "Provide copy and success icon states with localized accessible labels. Success feedback is temporary and must not shift layout.",
         }),

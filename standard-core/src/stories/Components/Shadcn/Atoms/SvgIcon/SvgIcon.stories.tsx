@@ -17,6 +17,7 @@ const meta = {
           purpose:
             "SvgIcon renders an icon from the shared icon service or an explicit SVG URL.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: [],
           contract:
             "Icons inherit text colour by default, remain decorative and use consistent named sizes. Product meaning must not rely on an icon alone.",

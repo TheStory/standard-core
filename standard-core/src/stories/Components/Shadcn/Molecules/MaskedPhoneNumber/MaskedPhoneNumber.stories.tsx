@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "MaskedPhoneNumber hides part of a phone number until the user explicitly reveals it.",
           classification: "Molecule",
+          implementation: "custom",
           shadcn: ["Button"],
           contract:
             "Combine a stable masked value with a link-style reveal action. After reveal, display a callable telephone link and remove the action.",

@@ -13,6 +13,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Skeleton reserves layout space while content is loading.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Skeleton"],
           contract:
             "Skeleton geometry should approximate the final content without presenting readable placeholder text.",

@@ -17,8 +17,9 @@ const meta = {
       description: {
         component: designSystemDocs({
           purpose:
-            "CountryPicker provides a localized, searchable-sized country choice for forms.",
+            "CountryPicker provides a localized country choice for forms.",
           classification: "Molecule",
+          implementation: "custom",
           shadcn: [
             "Label",
             "Select",

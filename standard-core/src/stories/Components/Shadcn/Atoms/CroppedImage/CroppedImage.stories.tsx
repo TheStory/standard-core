@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "CroppedImage requests an image crop for a defined visual slot.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: [],
           contract:
             "Designs specify width, height, aspect ratio and fill or fit behaviour. Separate desktop and mobile crops are allowed when composition changes.",

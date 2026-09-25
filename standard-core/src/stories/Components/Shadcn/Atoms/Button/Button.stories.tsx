@@ -16,7 +16,8 @@ another destination. Use one visually dominant button per decision area.
 ### Design-system mapping
 
 - **Classification:** Atom
-- **Shadcn mapping:** Button
+- **Implementation:** shadcn/ui component
+- **Shadcn equivalent:** Button
 
 ### Available variants
 

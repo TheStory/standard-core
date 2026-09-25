@@ -13,6 +13,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Progress communicates completion of a measurable process.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Progress"],
           contract:
             "Values range from 0 to 100. Pair the bar with textual context whenever users need the exact value.",

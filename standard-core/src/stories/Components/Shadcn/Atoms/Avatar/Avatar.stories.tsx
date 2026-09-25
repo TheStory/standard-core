@@ -21,12 +21,14 @@ const meta = {
           purpose:
             "Avatar represents a person or organisation with an image or fallback initials.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Avatar",
             "AvatarImage",
             "AvatarFallback",
             "AvatarBadge",
             "AvatarGroup",
+            "AvatarGroupCount",
           ],
           contract:
             "Support sm, default and lg sizes, image and fallback content, optional status badge and overlapping groups.",

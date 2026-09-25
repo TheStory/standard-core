@@ -15,6 +15,7 @@ const meta = {
           purpose:
             "PhoneInput collects a telephone number with appropriate keyboard and autocomplete semantics.",
           classification: "Molecule",
+          implementation: "custom",
           shadcn: ["Input"],
           contract:
             "Provide empty, filled, focus-visible, invalid and disabled states. Preserve international prefixes and never reformat user input while typing.",

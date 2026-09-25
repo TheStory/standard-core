@@ -15,6 +15,7 @@ const meta = {
           purpose:
             "Input collects a single line of textual, numeric or file data.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Input"],
           contract:
             "Provide empty, filled, placeholder, hover, focus-visible, invalid, disabled and file-input states. Pair with a visible Label.",

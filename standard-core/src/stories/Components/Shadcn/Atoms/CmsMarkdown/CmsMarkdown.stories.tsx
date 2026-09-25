@@ -26,7 +26,8 @@ const meta = {
           purpose:
             "CmsMarkdown renders editorial Markdown with the design system typography.",
           classification: "Atom",
-          shadcn: ["Separator", "Link styling"],
+          implementation: "custom",
+          shadcn: ["Separator"],
           contract:
             "Design headings, paragraphs, lists, quotes, links, code and separators as one consistent rich-content set. Embedded HTML and Markdown images are not rendered.",
         }),

@@ -23,6 +23,7 @@ const meta = {
           purpose:
             "Card groups related content and actions in a visually contained surface.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Card",
             "CardHeader",

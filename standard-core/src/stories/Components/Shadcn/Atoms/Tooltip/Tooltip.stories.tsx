@@ -20,6 +20,7 @@ const meta = {
           purpose:
             "Tooltip provides concise supporting information on hover or keyboard focus.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Tooltip",
             "TooltipTrigger",

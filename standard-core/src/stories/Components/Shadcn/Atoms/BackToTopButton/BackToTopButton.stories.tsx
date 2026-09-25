@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "BackToTopButton returns users to the beginning of a long page.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: ["Button"],
           contract:
             "The control appears only after meaningful scrolling, stays fixed in the lower corner and includes a text label plus upward arrow.",

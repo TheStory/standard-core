@@ -14,14 +14,15 @@ const meta = {
           purpose:
             "LanguageSelector displays the active locale and navigates to an equivalent localized page.",
           classification: "Molecule",
+          implementation: "custom",
           shadcn: [
             "Button",
             "DropdownMenu",
             "DropdownMenuTrigger",
             "DropdownMenuContent",
             "DropdownMenuItem",
-            "Link",
           ],
+          internal: ["Link"],
           contract:
             "The trigger combines a language icon and uppercase locale code. The menu lists every configured locale and preserves the current route when possible.",
         }),

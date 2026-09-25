@@ -23,6 +23,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Select lets users choose one value from a predefined list.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Select",
             "SelectTrigger",

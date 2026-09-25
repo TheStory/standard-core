@@ -14,6 +14,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Label gives a form control a visible, accessible name.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Label"],
           contract:
             "Labels remain visible above or beside their control. Required status and supporting text must not rely on placeholder content.",

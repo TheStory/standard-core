@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "Separator visually or semantically divides adjacent content groups.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Separator"],
           contract:
             "Support horizontal and vertical orientation. Decorative separators are ignored by assistive technology; semantic separators expose their role.",

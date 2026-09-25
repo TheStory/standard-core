@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "CtaButton presents a prominent navigational action with optional supporting overline.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: ["Button"],
           contract:
             "Support default and line variants, label-only and overline-plus-label content, and a trailing direction icon. The whole surface is one link.",

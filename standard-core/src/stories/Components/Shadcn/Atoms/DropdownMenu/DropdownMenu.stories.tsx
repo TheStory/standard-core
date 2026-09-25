@@ -26,6 +26,7 @@ const meta = {
           purpose:
             "DropdownMenu reveals a compact list of actions or choices from a trigger.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "DropdownMenu",
             "DropdownMenuTrigger",

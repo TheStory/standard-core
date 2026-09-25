@@ -16,6 +16,7 @@ const meta = {
           purpose:
             "VideoPlayer presents responsive video with either native controls or a simplified play/pause control.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: ["Button"],
           contract:
             "Define poster ratio, cover behaviour and play/pause states. Custom controls remain centred and keyboard accessible.",

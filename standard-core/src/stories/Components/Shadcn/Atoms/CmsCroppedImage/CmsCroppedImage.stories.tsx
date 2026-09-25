@@ -14,7 +14,9 @@ const meta = {
           purpose:
             "CmsCroppedImage adapts CMS media to responsive cropped-image slots.",
           classification: "Atom",
-          shadcn: ["CroppedImage"],
+          implementation: "custom",
+          shadcn: [],
+          internal: ["CroppedImage"],
           contract:
             "Designs may provide one shared crop or distinct xs and lg dimensions. Missing CMS media intentionally renders nothing.",
         }),

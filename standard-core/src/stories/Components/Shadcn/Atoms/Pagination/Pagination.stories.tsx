@@ -22,6 +22,7 @@ const meta = {
           purpose:
             "Pagination navigates between discrete pages of a larger result set.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Pagination",
             "PaginationContent",

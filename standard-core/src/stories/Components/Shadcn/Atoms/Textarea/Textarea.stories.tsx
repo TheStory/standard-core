@@ -14,6 +14,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Textarea collects longer, multi-line text.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Textarea"],
           contract:
             "Provide empty, filled, focus-visible, invalid and disabled states. The field grows with content and has a defined minimum height.",

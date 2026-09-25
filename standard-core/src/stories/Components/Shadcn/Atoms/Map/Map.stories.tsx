@@ -14,6 +14,7 @@ const meta = {
           purpose:
             "Map embeds a location supplied as an iframe URL or embed snippet.",
           classification: "Atom",
+          implementation: "custom",
           shadcn: [],
           contract:
             "Designs define container height and responsive width. The embedded provider controls internal map visuals; surrounding layout must not depend on them.",

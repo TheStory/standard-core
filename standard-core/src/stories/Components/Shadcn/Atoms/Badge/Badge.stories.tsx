@@ -13,6 +13,7 @@ const meta = {
         component: designSystemDocs({
           purpose: "Badge communicates a short status, category or attribute.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Badge"],
           contract:
             "Keep labels short. Provide default, secondary, outline, ghost, link and destructive variants with legible contrast.",

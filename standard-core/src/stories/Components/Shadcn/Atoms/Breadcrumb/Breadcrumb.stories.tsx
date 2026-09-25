@@ -22,6 +22,7 @@ const meta = {
           purpose:
             "Breadcrumb shows the current page position within a hierarchy.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: [
             "Breadcrumb",
             "BreadcrumbList",

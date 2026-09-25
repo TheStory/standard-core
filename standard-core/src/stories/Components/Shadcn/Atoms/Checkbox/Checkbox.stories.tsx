@@ -15,6 +15,7 @@ const meta = {
           purpose:
             "Checkbox lets users independently select one or more options.",
           classification: "Atom",
+          implementation: "shadcn",
           shadcn: ["Checkbox"],
           contract:
             "Provide unchecked, checked, indeterminate, hover, focus-visible, invalid and disabled states. Pair every checkbox with a visible label.",

@@ -45,7 +45,9 @@ const meta = {
           purpose:
             "CmsRichText renders structured editorial blocks supplied by the CMS.",
           classification: "Atom",
-          shadcn: ["Link"],
+          implementation: "custom",
+          shadcn: [],
+          internal: ["Link"],
           contract:
             "Design a coherent content set for headings, paragraphs, lists, quotes, links and code. Individual element types may be excluded by a consuming layout.",
         }),

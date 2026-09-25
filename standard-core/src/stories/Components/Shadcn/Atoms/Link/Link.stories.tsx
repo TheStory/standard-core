@@ -15,7 +15,8 @@ const meta = {
           purpose:
             "Link navigates to internal, localized or external destinations.",
           classification: "Atom",
-          shadcn: ["Link styling"],
+          implementation: "custom",
+          shadcn: [],
           contract:
             "Links are visually distinguishable from body text, provide hover and focus-visible states, and external destinations may include a supporting icon.",
         }),
