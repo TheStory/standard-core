@@ -1,3 +1,4 @@
+import { exampleImageUrl } from "../../../../fixtures/example-image";
 import { designSystemDocs } from "../../design-system-docs";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CroppedImage } from "@the-story/standard-core/components/shadcn/atoms/cropped-image";
@@ -33,7 +34,7 @@ const meta = {
     mobileOnly: { control: "boolean" },
   },
   args: {
-    src: "https://picsum.photos/800/600",
+    src: exampleImageUrl,
     width: 480,
     height: 300,
     alt: "Example furniture",

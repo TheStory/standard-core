@@ -46,8 +46,7 @@ const config: StorybookConfig = {
   framework: "@storybook/nextjs-vite",
   async viteFinal(config) {
     const cdn = process.env.NEXT_PUBLIC_CDN ?? "http://127.0.0.1:1337";
-    const imageProxy =
-      process.env.NEXT_PUBLIC_IMAGE_PROXY ?? "http://127.0.0.1:8080";
+    const imageProxy = process.env.NEXT_PUBLIC_IMAGE_PROXY ?? "";
     config.define = {
       ...(config.define || {}),
       "process.env.NEXT_PUBLIC_CDN": JSON.stringify(cdn),

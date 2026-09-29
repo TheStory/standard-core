@@ -1,13 +1,11 @@
+import { exampleCmsImage } from "../../../../fixtures/example-image";
 import { designSystemDocs } from "../../design-system-docs";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CmsImage } from "@the-story/standard-core/components/shadcn/atoms/cms-image";
 
-const exampleImage = {
-  url: "https://picsum.photos/640/400",
-  alternativeText: "Wooden furniture in a bright interior",
-  width: 640,
-  height: 400,
-} as NonNullable<Parameters<typeof CmsImage>[0]["image"]>;
+const exampleImage = exampleCmsImage as unknown as NonNullable<
+  Parameters<typeof CmsImage>[0]["image"]
+>;
 
 const meta = {
   title: "Design System/Atoms/CmsImage",

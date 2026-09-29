@@ -1,5 +1,13 @@
+import { exampleCmsImage } from "../../../fixtures/example-image";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import * as Atoms from "@the-story/standard-core/components/shadcn/atoms";
+
+const cmsImage = exampleCmsImage as unknown as NonNullable<
+  Parameters<typeof Atoms.CmsImage>[0]["image"]
+>;
+const cmsCroppedImage = exampleCmsImage as unknown as NonNullable<
+  Parameters<typeof Atoms.CmsCroppedImage>[0]["image"]
+>;
 
 const meta = {
   title: "Components/Shadcn/Atoms",
@@ -76,15 +84,15 @@ export const Checkbox: Story = {
 export const CmsCroppedImage: Story = {
   render: () => (
     <Atoms.CmsCroppedImage
-      image={null}
+      image={cmsCroppedImage}
       width={320}
       height={180}
-      alt="CMS cropped image requires CMS data"
+      cover
     />
   ),
 };
 export const CmsImage: Story = {
-  render: () => <Atoms.CmsImage image={null} />,
+  render: () => <Atoms.CmsImage image={cmsImage} />,
 };
 export const CmsMarkdown: Story = {
   render: () => (

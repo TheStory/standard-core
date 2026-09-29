@@ -1,6 +1,11 @@
+import { exampleCmsImage } from "../../../../fixtures/example-image";
 import { designSystemDocs } from "../../design-system-docs";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { CmsCroppedImage } from "@the-story/standard-core/components/shadcn/atoms/cms-cropped-image";
+
+const exampleImage = exampleCmsImage as unknown as NonNullable<
+  Parameters<typeof CmsCroppedImage>[0]["image"]
+>;
 
 const meta = {
   title: "Design System/Atoms/CmsCroppedImage",
@@ -31,6 +36,17 @@ const meta = {
 } satisfies Meta<typeof CmsCroppedImage>;
 export default meta;
 type Story = StoryObj<typeof meta>;
+export const Default: Story = {
+  args: { image: exampleImage, width: 480, height: 300, cover: true },
+};
+export const ResponsiveCrop: Story = {
+  args: {
+    image: exampleImage,
+    width: { xs: 320, lg: 560 },
+    height: { xs: 320, lg: 320 },
+    cover: true,
+  },
+};
 export const MissingMedia: Story = {
   args: { image: null, width: 480, height: 300 },
   parameters: {
