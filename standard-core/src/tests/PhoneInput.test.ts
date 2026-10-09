@@ -22,7 +22,19 @@ describe("PhoneInput", () => {
 
   it("removes a duplicated calling code produced by browser autofill", () => {
     expect(normalizeAutofilledPhone("+48 48 535 111 426", info())).toBe(
-      "+48535111426",
+      "+48 535 111 426",
+    );
+  });
+
+  it("formats valid compact values before passing them to the form", () => {
+    expect(normalizeAutofilledPhone("+48535111426", info())).toBe(
+      "+48 535 111 426",
+    );
+    expect(normalizeAutofilledPhone("+442079460018", info())).toBe(
+      "+44 20 7946 0018",
+    );
+    expect(normalizeAutofilledPhone("+48 535 111 426", info())).toBe(
+      "+48 535 111 426",
     );
   });
 
