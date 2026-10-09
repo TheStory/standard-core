@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  AsYouType,
   MuiTelInput,
   type MuiTelInputInfo,
   type MuiTelInputProps,
@@ -25,16 +26,16 @@ export const normalizeAutofilledPhone = (
 ) => {
   const { countryCallingCode, nationalNumber } = info;
 
-  if (
-    isValidPhoneNumber(value) ||
-    !countryCallingCode ||
-    !nationalNumber?.startsWith(countryCallingCode)
-  )
+  if (isValidPhoneNumber(value)) return new AsYouType().input(value);
+
+  if (!countryCallingCode || !nationalNumber?.startsWith(countryCallingCode))
     return value;
 
   const normalizedValue = `+${countryCallingCode}${nationalNumber.slice(countryCallingCode.length)}`;
 
-  return isValidPhoneNumber(normalizedValue) ? normalizedValue : value;
+  return isValidPhoneNumber(normalizedValue)
+    ? new AsYouType().input(normalizedValue)
+    : value;
 };
 
 const PhoneInput = ({ locale, onChange, ...props }: PhoneInputProps) => {
