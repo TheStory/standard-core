@@ -373,7 +373,7 @@
     "test:watch": "vitest --watch"
   },
   "engines": {
-    "node": ">=18"
+    "node": "24.x"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
@@ -403,7 +403,7 @@
     "@strapi/blocks-react-renderer": "^1.0.0",
     "@strapi/strapi": "5.27.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
@@ -423,7 +423,7 @@
     "rimraf": "^6.0.1",
     "schema-dts": "^1.1.2",
     "storybook": "10.1.11",
-    "typescript": "5.4.5",
+    "typescript": "5.9.3",
     "vite-plugin-node-polyfills": "^0.24.0",
     "vitest": "^2.1.9",
     "zod": "^3.22.4"
