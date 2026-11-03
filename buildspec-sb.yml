@@ -6,10 +6,10 @@ phases:
       nodejs: 20
     commands:
       - cd standard-core
-      - yarn install
+      - npm ci
   build:
     commands:
-      - yarn build-storybook
+      - npm run build-storybook
 artifacts:
   files:
     - "**/*"

@@ -125,7 +125,7 @@
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.build-storybook --debug.executor&quot;: &quot;Debug&quot;,
     &quot;npm.build-storybook.executor&quot;: &quot;Run&quot;,
     &quot;npm.build.executor&quot;: &quot;Run&quot;,

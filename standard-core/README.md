@@ -2,6 +2,12 @@
 
 A set of core UI components, configuration, and utilities to be reused across other projects. The library is developed in isolation in Storybook and then verified inside external applications.
 
+## Development setup
+
+Use npm 11 (the project records npm 11.6.2). From `standard-core/`, run `npm ci` to install the committed `package-lock.json`, then `npm run build`. CI also uses `npm ci`; commit dependency changes together with the lockfile. TypeScript remains pinned to 5.4.5 through npm overrides.
+
+Keep local yalc dependencies out of committed manifests and lockfiles. In a consuming application using a local yalc package, use `npm install` after adding it.
+
 ## How to use the library in a project
 
 During development, we use yalc for local linking (a lightweight alternative to a private npm registry).
@@ -13,7 +19,7 @@ During development, we use yalc for local linking (a lightweight alternative to 
    - Run "yalc:publish".
 2. In the consuming application:
    - Use the existing project configuration that adds the package via yalc (e.g., "yalc:add" or a "Shell Script" configuration with: yalc add @the-story/standard-core).
-   - Run the prepared configuration that installs dependencies (e.g., NPM "install"/"yarn install").
+   - Run the prepared configuration that installs dependencies (`npm install`).
    - Start the application using its dedicated Run configuration and verify it works.
 3. Updating when the library changes:
    - In the library: run "yalc:publish" to push the update to all consumers.

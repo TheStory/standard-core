@@ -10,8 +10,6 @@ This is the monorepo root. The UI and utilities library lives under the "standar
 
 ```
 npm install @the-story/standard-core
-# or
-yarn add @the-story/standard-core
 ```
 
 ## Package documentation
