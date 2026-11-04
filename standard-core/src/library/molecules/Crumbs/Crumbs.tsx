@@ -7,17 +7,25 @@ import { type SxProps, alpha } from "@mui/material/styles";
 import Link from "@the-story/standard-core/atoms/Link/Link";
 import type { APIString } from "@the-story/standard-core/types";
 import { useTranslations } from "next-intl";
-import Script from "next/script";
-import type { BreadcrumbList, WithContext } from "schema-dts";
 
-interface CrumbsProps {
+import type { BreadcrumbSchemaProps } from "./CrumbsSchema";
+import CrumbsSchema from "./CrumbsSchema";
+
+export interface CrumbsProps {
   crumbs?: { link?: APIString; href?: APIString }[];
   sx?: SxProps;
   lightVariant?: boolean;
+  schema?: BreadcrumbSchemaProps;
 }
 
-const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
+const Crumbs = ({
+  crumbs = [],
+  sx,
+  lightVariant = false,
+  schema,
+}: CrumbsProps) => {
   const t = useTranslations("components.nav.navItems");
+  const resolvedCrumbs = crumbs.length ? crumbs : (schema?.crumbs ?? []);
 
   const linkProps = {
     color: "inherit",
@@ -25,39 +33,9 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
     textTransform: "capitalize",
   } as const;
 
-  const convertToSchema: WithContext<BreadcrumbList>["itemListElement"] =
-    crumbs?.map((value, i) => {
-      if (!value.href)
-        return {
-          "@type": "ListItem",
-          position: i + 2,
-          name: value.link ?? undefined,
-        };
-
-      return {
-        "@type": "ListItem",
-        position: i + 2,
-        name: value.link ?? undefined,
-        item: `${process.env.NEXT_PUBLIC_BASE_URL}/${value?.href}`,
-      };
-    });
-
-  const schemaCrumbs: WithContext<BreadcrumbList> = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: t("mainSite"),
-        item: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
-      },
-      ...convertToSchema,
-    ],
-  };
-
   return (
     <>
+      {schema && <CrumbsSchema {...schema} crumbs={resolvedCrumbs} />}
       <BreadCrumbs
         data-testid="breadcrumbs"
         className="breadcrumbs"
@@ -74,7 +52,7 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
           {t("mainSite")}
         </Link>
 
-        {crumbs.map(({ href, link }, i) =>
+        {resolvedCrumbs.map(({ href, link }, i) =>
           href ? (
             <Link key={`crumb-${i}`} href={`/${href}`} {...linkProps}>
               {link}
@@ -93,15 +71,6 @@ const Crumbs = ({ crumbs = [], sx, lightVariant = false }: CrumbsProps) => {
           ),
         )}
       </BreadCrumbs>
-      <Script
-        id="schema-breadcrumbs"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            ...schemaCrumbs,
-          }),
-        }}
-      />
     </>
   );
 };
